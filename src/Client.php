@@ -6,23 +6,18 @@ namespace DnsMadeEasy;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Request;
 
 class Client
 {
-	const VERSION = '1.0.0';
-
 	protected $client;
-	protected $factory;
+	protected $apiKey;
+	protected $secretKey;
 
 	public function __construct(?ClientInterface $client = null)
 	{
-		if ($client === null) {
-			// No client, attempt to create one using Guzzle
-			if (class_exists('\GuzzleHttp\Client')) {
-				$client = new \GuzzleHttp\Client;
-			} elseif (class_exists('\Http\Adapter\Guzzle6\Client')) {
-				$client = new \Http\Adapter\Guzzle6\Client;
-			}
+		if ($client === null && class_exists('\GuzzleHttp\Client')) {
+			$client = new \GuzzleHttp\Client;
 		}
 
 		$this->setHttpClient($client);
@@ -39,51 +34,78 @@ class Client
 		return $this->client;
 	}
 
+	public function setApiKey(string $key): self
+	{
+		$this->apiKey = $key;
+		return $this;
+	}
+
+	public function getApiKey(): string
+	{
+		return $this->apiKey;
+	}
+
+	public function setSecretKey(string $key): self
+	{
+		$this->secretKey = $key;
+		return $this;
+	}
+
+	public function getSecretKey(): string
+	{
+		return $this->secretKey;
+	}
+
 	public function get(string $url, array $params = []): ResponseInterface
 	{
-		$queryString = '?' . http_build_query($params);
+		$queryString = '';
+		if ($params) {
+			$queryString = '?' . http_build_query($params);
+		}
 		$url .= $queryString;
 
-		$request = new Request($url, 'GET');
+		$request = new Request('GET', $url);
 		return $this->send($request);
 	}
 
 	public function post(string $url, array $params): ResponseInterface
 	{
-		$request = new Request($url, 'POST', 'php://temp', ['content-type' => 'application/json']);
+		$request = new Request('POST', $url, 'php://temp');
+		$request->withHeader('Content-Type', 'application/json');
 		$request->getBody()->write(json_encode($params));
 		return $this->send($request);
 	}
 
 	public function put(string $url, array $params): ResponseInterface
 	{
-		$request = new Request($url, 'PUT', 'php://temp', ['content-type' => 'application/json']);
+		$request = new Request('PUT', $url, 'php://temp');
+		$request->withHeader('Content-Type', 'application/json');
 		$request->getBody()->write(json_encode($params));
 		return $this->send($request);
 	}
 
 	public function delete(string $url): ResponseInterface
 	{
-		$request = new Request($url, 'DELETE');
+		$request = new Request('DELETE', $url);
 		return $this->send($request);
 	}
 
 	public function send(RequestInterface $request): ResponseInterface
 	{
-		$request = $this->setUserAgent($request);
-		$response = $this->client->sendRequest($request);
+		$request = $request->withHeader('Accept', 'application/json');
+		$request = $this->addAuthHeaders($request);
+		return $this->client->sendRequest($request);
 	}
 
-	protected function setUserAgent(RequestInterface $request): RequestInterface
+	protected function addAuthHeaders(RequestInterface $request): RequestInterface
 	{
-		$userAgent = [];
-		$userAgent[] = 'dns-made-easy/' . $this->getVersion();
-		$userAgent[] = 'php/' . PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;
-		return $request->withHeader('User-Agent', implode(' ', $userAgent));
-	}
+		$now = new \DateTime('now', new \DateTimeZone('UTC'));
+		$timestamp = $now->format('r');
+		$hmac = hash_hmac('sha1', $timestamp, $this->getSecretKey());
 
-	public function getVersion(): string
-	{
-		return self::VERSION;
+		$request = $request->withHeader('x-dnsme-apiKey', $this->getApiKey());
+		$request = $request->withHeader('x-dnsme-requestDate', $timestamp);
+		$request = $request->withHeader('x-dnsme-hmac', $hmac);
+		return $request;
 	}
 }
