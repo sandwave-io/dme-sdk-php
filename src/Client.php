@@ -3,16 +3,24 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy;
 
+use DnsMadeEasy\Contracts\ClientContract;
+use DnsMadeEasy\Factories\ContactListFactory;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\Request;
 
-class Client
+class Client implements ClientContract
 {
 	protected $client;
 	protected $apiKey;
 	protected $secretKey;
+
+	protected $factories = [];
+
+	protected $factoryMap = [
+	    'contactlists' => ContactListFactory::class,
+    ];
 
 	public function __construct(?ClientInterface $client = null)
 	{
@@ -108,4 +116,39 @@ class Client
 		$request = $request->withHeader('x-dnsme-hmac', $hmac);
 		return $request;
 	}
+
+	protected function hasFactory($name)
+    {
+        $name = strtolower($name);
+        return array_key_exists($name, $this->factoryMap);
+    }
+
+    protected function getFactory($name)
+    {
+        if (!$this->hasFactory($name)) {
+            return;
+        }
+
+        $name = strtolower($name);
+
+        if (!isset($this->factories[$name])) {
+            $this->factories[$name] = new $this->factoryMap[$name]($this);
+        }
+
+        return $this->factories[$name];
+    }
+
+	public function __get($name)
+    {
+        if ($this->hasFactory($name)) {
+            return $this->getFactory($name);
+        }
+    }
+
+    public function __call($name, $args)
+    {
+        if ($this->hasFactory($name)) {
+            return $this->getFactory($name);
+        }
+    }
 }
