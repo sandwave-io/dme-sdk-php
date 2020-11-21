@@ -3,44 +3,69 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy;
 
-use DnsMadeEasy\Contracts\ClientContract;
-use DnsMadeEasy\Factories\ContactListFactory;
-use Psr\Http\Client\ClientInterface;
+use DnsMadeEasy\Exceptions\Client\Http\BadRequestException;
+use DnsMadeEasy\Exceptions\Client\Http\HttpException;
+use DnsMadeEasy\Exceptions\Client\Http\NotFoundException;
+use DnsMadeEasy\Exceptions\Client\ManagerNotFoundException;
+use DnsMadeEasy\Interfaces\ClientInterface;
+use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
+use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
+use DnsMadeEasy\Managers\ContactListManager;
+use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
+use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\Request;
 
-class Client implements ClientContract
+class Client implements ClientInterface
 {
-	protected $client;
-	protected $apiKey;
-	protected $secretKey;
+	protected HttpClientInterface $client;
+	protected string $apiKey;
+	protected string $secretKey;
+    protected string $endpoint = 'https://api.dnsmadeeasy.com/V2.0';
 
-	protected $factories = [];
+    protected PaginatorFactoryInterface $paginatorFactory;
 
-	protected $factoryMap = [
-	    'contactlists' => ContactListFactory::class,
+	protected array $managers = [];
+	protected array $managerMap = [
+	    'contactlists' => ContactListManager::class,
     ];
 
-	public function __construct(?ClientInterface $client = null)
+	public function __construct(?HttpClientInterface $client = null, ?PaginatorFactoryInterface $paginatorFactory = null)
 	{
 		if ($client === null && class_exists('\GuzzleHttp\Client')) {
 			$client = new \GuzzleHttp\Client;
 		}
 
+		if ($paginatorFactory === null) {
+		    $this->paginatorFactory = new PaginatorFactory;
+        }
+
 		$this->setHttpClient($client);
+
 	}
 
-	public function setHttpClient(ClientInterface $client): self
+	public function setHttpClient(HttpClientInterface $client): self
 	{
 		$this->client = $client;
 		return $this;
 	}
 
-	public function getHttpClient(): ClientInterface
+	public function getHttpClient(): HttpClientInterface
 	{
 		return $this->client;
 	}
+
+	public function setEndpoint(string $endpoint): self
+    {
+        $this->endpoint = $endpoint;
+        return $this;
+    }
+
+    public function getEndpoint(): string
+    {
+        return $this->endpoint;
+    }
 
 	public function setApiKey(string $key): self
 	{
@@ -64,6 +89,17 @@ class Client implements ClientContract
 		return $this->secretKey;
 	}
 
+	public function setPaginatorFactory(PaginatorFactoryInterface $factory): self
+    {
+        $this->paginatorFactory = $factory;
+        return $this;
+    }
+
+    public function getPaginatorFactory(): PaginatorFactoryInterface
+    {
+        return $this->paginatorFactory;
+    }
+
 	public function get(string $url, array $params = []): ResponseInterface
 	{
 		$queryString = '';
@@ -72,29 +108,29 @@ class Client implements ClientContract
 		}
 		$url .= $queryString;
 
-		$request = new Request('GET', $url);
+		$request = new Request('GET', $this->endpoint . $url);
 		return $this->send($request);
 	}
 
-	public function post(string $url, array $params): ResponseInterface
+	public function post(string $url, $payload): ResponseInterface
 	{
-		$request = new Request('POST', $url, 'php://temp');
+		$request = new Request('POST', $this->endpoint . $url, [], 'php://temp');
 		$request->withHeader('Content-Type', 'application/json');
-		$request->getBody()->write(json_encode($params));
+		$request->getBody()->write(json_encode($payload));
 		return $this->send($request);
 	}
 
-	public function put(string $url, array $params): ResponseInterface
+	public function put(string $url, $payload): ResponseInterface
 	{
-		$request = new Request('PUT', $url, 'php://temp');
+		$request = new Request('PUT', $this->endpoint . $url, [], 'php://temp');
 		$request->withHeader('Content-Type', 'application/json');
-		$request->getBody()->write(json_encode($params));
+		$request->getBody()->write(json_encode($payload));
 		return $this->send($request);
 	}
 
 	public function delete(string $url): ResponseInterface
 	{
-		$request = new Request('DELETE', $url);
+		$request = new Request('DELETE', $this->endpoint . $url);
 		return $this->send($request);
 	}
 
@@ -102,7 +138,25 @@ class Client implements ClientContract
 	{
 		$request = $request->withHeader('Accept', 'application/json');
 		$request = $this->addAuthHeaders($request);
-		return $this->client->sendRequest($request);
+		$response = $this->client->sendRequest($request);
+		$statusCode = $response->getStatusCode();
+		if ((int) substr((string) $statusCode, 0, 1) <= 3) {
+		    return $response;
+        } else {
+		    $lookup = [
+		        400 => BadRequestException::class,
+                404 => NotFoundException::class,
+            ];
+		    if (array_key_exists($statusCode, $lookup)) {
+		        $exceptionClass = $lookup[$statusCode];
+            } else {
+		        $exceptionClass = HttpException::class;
+            }
+            $exception = new $exceptionClass($response->getReasonPhrase(), $statusCode);
+            $exception->setRequest($request);
+		    $exception->setResponse($response);
+		    throw $exception;
+        }
 	}
 
 	protected function addAuthHeaders(RequestInterface $request): RequestInterface
@@ -117,38 +171,38 @@ class Client implements ClientContract
 		return $request;
 	}
 
-	protected function hasFactory($name)
+	protected function hasManager($name): bool
     {
         $name = strtolower($name);
-        return array_key_exists($name, $this->factoryMap);
+        return array_key_exists($name, $this->managerMap);
     }
 
-    protected function getFactory($name)
+    protected function getManager($name): AbstractManagerInterface
     {
-        if (!$this->hasFactory($name)) {
-            return;
+        if (!$this->hasManager($name)) {
+            throw new ManagerNotFoundException;
         }
 
         $name = strtolower($name);
 
-        if (!isset($this->factories[$name])) {
-            $this->factories[$name] = new $this->factoryMap[$name]($this);
+        if (!isset($this->managers[$name])) {
+            $this->managers[$name] = new $this->managerMap[$name]($this);
         }
 
-        return $this->factories[$name];
+        return $this->managers[$name];
     }
 
 	public function __get($name)
     {
-        if ($this->hasFactory($name)) {
-            return $this->getFactory($name);
+        if ($this->hasManager($name)) {
+            return $this->getManager($name);
         }
     }
 
     public function __call($name, $args)
     {
-        if ($this->hasFactory($name)) {
-            return $this->getFactory($name);
+        if ($this->hasManager($name)) {
+            return $this->getManager($name);
         }
     }
 }
