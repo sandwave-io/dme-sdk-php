@@ -8,5 +8,5 @@ use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 interface ContactListManagerInterface extends AbstractManagerInterface
 {
     public function createObject(): ContactListInterface;
-    public function get(int $id): ?ContactListInterface;
+    public function get(int $id): ContactListInterface;
 }

@@ -11,6 +11,7 @@ use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
 use DnsMadeEasy\Managers\ContactListManager;
+use DnsMadeEasy\Managers\DomainManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
@@ -29,6 +30,7 @@ class Client implements ClientInterface
 	protected array $managers = [];
 	protected array $managerMap = [
 	    'contactlists' => ContactListManager::class,
+        'domains' => DomainManager::class,
     ];
 
 	public function __construct(?HttpClientInterface $client = null, ?PaginatorFactoryInterface $paginatorFactory = null)

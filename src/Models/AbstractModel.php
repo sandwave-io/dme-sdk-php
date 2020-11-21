@@ -49,8 +49,11 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     public function populateFromApi(object $data): void
     {
+        foreach ($data as $prop => $value) {
+            $this->{$prop} = $value;
+        }
+        $this->originalProps = $this->props;
         $this->changed = [];
-        $this->id = $data->id;
     }
 
     public function transformForApi(): object

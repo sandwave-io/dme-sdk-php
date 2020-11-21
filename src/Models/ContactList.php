@@ -12,16 +12,6 @@ class ContactList extends AbstractModel implements ContactListInterface
         'emails' => [],
         'groups' => [],
     ];
-    public function populateFromApi(object $data): void
-    {
-        parent::populateFromApi($data);
-
-        $this->props['name'] = $data->name;
-        $this->props['emails'] = $data->emails;
-        $this->props['groups'] = $data->groups;
-
-        $this->originalProps = $this->props;
-    }
 
     public function addEmail(string $email): self
     {

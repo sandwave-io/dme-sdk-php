@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace DnsMadeEasy\Managers;
 
 use DnsMadeEasy\Exceptions\Client\Http\BadRequestException;
+use DnsMadeEasy\Exceptions\Client\Http\NotFoundException;
+use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
@@ -45,10 +47,14 @@ abstract class AbstractManager implements AbstractManagerInterface
         return "{$this->getBaseUri()}/{$id}";
     }
 
-    public function get(int $id): ?AbstractModelInterface
+    public function get(int $id): AbstractModelInterface
     {
         $uri = $this->getObjectUri($id);
-        $response = $this->client->get($uri);
+        try {
+            $response = $this->client->get($uri);
+        } catch (NotFoundException $e) {
+            throw new ModelNotFoundException("Unable to find object with ID {$id}");
+        }
         $data = json_decode((string) $response->getBody());
         $object = $this->createObject();
         $object->populateFromApi($data);

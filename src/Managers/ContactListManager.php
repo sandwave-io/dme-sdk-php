@@ -16,7 +16,7 @@ class ContactListManager extends AbstractManager implements ContactListManagerIn
         return new ContactList($this);
     }
 
-    public function get(int $id): ?ContactListInterface
+    public function get(int $id): ContactListInterface
     {
         return parent::get($id);
     }
