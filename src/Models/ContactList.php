@@ -13,6 +13,12 @@ class ContactList extends AbstractModel implements ContactListInterface
         'groups' => [],
     ];
 
+    protected array $editable = [
+        'name',
+        'emails',
+        'groups',
+    ];
+
     public function addEmail(string $email): self
     {
         $emails = $this->emails;

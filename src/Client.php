@@ -11,14 +11,18 @@ use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
 use DnsMadeEasy\Managers\ContactListManager;
-use DnsMadeEasy\Managers\DomainManager;
+use DnsMadeEasy\Managers\FolderManager;
+use DnsMadeEasy\Managers\ManagedDomainManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\Request;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 
-class Client implements ClientInterface
+class Client implements ClientInterface, LoggerAwareInterface
 {
 	protected HttpClientInterface $client;
 	protected string $apiKey;
@@ -26,14 +30,16 @@ class Client implements ClientInterface
     protected string $endpoint = 'https://api.dnsmadeeasy.com/V2.0';
 
     protected PaginatorFactoryInterface $paginatorFactory;
+    public LoggerInterface $logger;
 
 	protected array $managers = [];
 	protected array $managerMap = [
 	    'contactlists' => ContactListManager::class,
-        'domains' => DomainManager::class,
+        'managed' => ManagedDomainManager::class,
+        'folders' => FolderManager::class,
     ];
 
-	public function __construct(?HttpClientInterface $client = null, ?PaginatorFactoryInterface $paginatorFactory = null)
+	public function __construct(?HttpClientInterface $client = null, ?PaginatorFactoryInterface $paginatorFactory = null, ?LoggerInterface $logger = null)
 	{
 		if ($client === null && class_exists('\GuzzleHttp\Client')) {
 			$client = new \GuzzleHttp\Client;
@@ -44,10 +50,18 @@ class Client implements ClientInterface
         }
 
 		$this->setHttpClient($client);
-
+		if ($logger === null) {
+		    $logger = new NullLogger();
+        }
+		$this->logger = $logger;
 	}
 
-	public function setHttpClient(HttpClientInterface $client): self
+	public function setLogger(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    public function setHttpClient(HttpClientInterface $client): self
 	{
 		$this->client = $client;
 		return $this;
@@ -102,7 +116,7 @@ class Client implements ClientInterface
         return $this->paginatorFactory;
     }
 
-	public function get(string $url, array $params = []): ResponseInterface
+    public function get(string $url, array $params = []): ResponseInterface
 	{
 		$queryString = '';
 		if ($params) {
@@ -138,9 +152,13 @@ class Client implements ClientInterface
 
 	public function send(RequestInterface $request): ResponseInterface
 	{
+	    $this->logger->debug("[DnsMadeEasy] API Request: {$request->getMethod()} {$request->getUri()}");
+
 		$request = $request->withHeader('Accept', 'application/json');
 		$request = $this->addAuthHeaders($request);
 		$response = $this->client->sendRequest($request);
+
+        $this->logger->debug("[DnsMadeEasy] API Response: {$response->getStatusCode()} {$response->getReasonPhrase()}");
 		$statusCode = $response->getStatusCode();
 		if ((int) substr((string) $statusCode, 0, 1) <= 3) {
 		    return $response;
