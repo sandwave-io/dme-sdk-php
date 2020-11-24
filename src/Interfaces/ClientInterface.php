@@ -4,13 +4,26 @@ declare(strict_types=1);
 namespace DnsMadeEasy\Interfaces;
 
 use DnsMadeEasy\Client;
+use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * DnsMadeEasy API Client SDK
+ *
+ * @package DnsMadeEasy
+ *
+ * @property-read ContactListManagerInterface $contactlists
+ * @property-read FolderManagerInterface $folders
+ * @property-read ManagedDomainManagerInterface $managed
+ *
+ */
 interface ClientInterface
 {
-    public function setHttpClient(HttpClientInterface $client): Client;
+    public function setHttpClient(HttpClientInterface $client): ClientInterface;
     public function getHttpClient(): HttpClientInterface;
 
     public function setEndpoint(string $endpoint): ClientInterface;

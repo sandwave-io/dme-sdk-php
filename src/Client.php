@@ -218,11 +218,4 @@ class Client implements ClientInterface, LoggerAwareInterface
             return $this->getManager($name);
         }
     }
-
-    public function __call($name, $args)
-    {
-        if ($this->hasManager($name)) {
-            return $this->getManager($name);
-        }
-    }
 }
