@@ -13,7 +13,7 @@ class ConciseFolder extends AbstractModel implements ConciseFolderInterface
         'name' => null,
     ];
 
-    public function getFull(): FolderInterface
+    protected function getFull(): FolderInterface
     {
         return $this->manager->get($this->id);
     }

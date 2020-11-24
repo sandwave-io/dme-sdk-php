@@ -13,7 +13,7 @@ class ManagedDomainManager extends AbstractManager implements ManagedDomainManag
 
     public function createObject(): ManagedDomainInterface
     {
-        return new ManagedDomain($this);
+        return parent::createObject();
     }
 
     public function get(int $id): ManagedDomainInterface

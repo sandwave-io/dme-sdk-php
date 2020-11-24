@@ -32,7 +32,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     public function delete(): void
     {
-        if (!$this->getId()) {
+        if (!$this->id) {
             return;
         }
         $this->manager->delete($this);
@@ -86,15 +86,10 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     public function transformForApi(): object
     {
         $obj = $this->jsonSerialize();
-        if ($this->getId() === null) {
+        if ($this->id === null) {
             unset($obj->{$this->id});
         }
         return $obj;
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function jsonSerialize()

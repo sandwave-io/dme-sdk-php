@@ -14,5 +14,4 @@ interface AbstractModelInterface
     public function hasChanged(): bool;
     public function populateFromApi(object $data): void;
     public function transformForApi(): object;
-    public function getId(): ?int;
 }

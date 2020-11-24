@@ -34,6 +34,11 @@ class FolderManager extends AbstractManager implements FolderManagerInterface
         return parent::get($id);
     }
 
+    public function createObject(): FolderInterface
+    {
+        return parent::createObject();
+    }
+
     protected function transformConciseApiData(object $data): object
     {
         return (object) [

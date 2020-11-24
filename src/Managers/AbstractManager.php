@@ -63,7 +63,7 @@ abstract class AbstractManager implements AbstractManagerInterface
 
     public function delete(AbstractModelInterface $object): void
     {
-        $id = $object->getId();
+        $id = $object->id;
         if (!$id) {
             return;
         }
@@ -147,6 +147,7 @@ abstract class AbstractManager implements AbstractManagerInterface
         $this->putInCache($objectId, $object);
 
         return $object;
+
     }
 
     protected function getFromCache($key)
