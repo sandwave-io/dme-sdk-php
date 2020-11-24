@@ -5,7 +5,7 @@ namespace DnsMadeEasy\Managers;
 
 use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
-use DnsMadeEasy\Models\ConciseFolder;
+use DnsMadeEasy\Models\Concise\ConciseFolder;
 
 class FolderManager extends AbstractManager implements FolderManagerInterface
 {
@@ -26,7 +26,7 @@ class FolderManager extends AbstractManager implements FolderManagerInterface
 
     public function getConciseModelClass(): string
     {
-        return \DnsMadeEasy\Models\Concise\ConciseFolder::class;
+        return ConciseFolder::class;
     }
 
     public function get(int $id): FolderInterface

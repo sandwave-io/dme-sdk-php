@@ -5,7 +5,6 @@ namespace DnsMadeEasy\Managers;
 
 use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
-use DnsMadeEasy\Models\ManagedDomain;
 
 class ManagedDomainManager extends AbstractManager implements ManagedDomainManagerInterface
 {
