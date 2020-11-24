@@ -18,6 +18,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     protected array $props = [];
     protected array $originalProps = [];
     protected array $editable = [];
+    protected ?object $apiData;
 
     public function save(): void
     {
@@ -64,6 +65,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     public function populateFromApi(object $data): void
     {
+        $this->apiData = $data;
         $this->id = $data->id;
         $this->parseApiData($data);
         $this->originalProps = $this->props;
@@ -97,9 +99,16 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     public function jsonSerialize()
     {
-        return (object) ([
-            'id' => $this->getId(),
-        ] + $this->props);
+        $result = (object) [
+            'id' => $this->id,
+        ];
+        foreach ($this->props as $name => $value) {
+            if ($value instanceof \DateTime) {
+                $value = $value->format('c');
+            }
+            $result->{$name} = $value;
+        }
+        return $result;
     }
 
     public function refresh(): void

@@ -50,6 +50,20 @@ class ManagedDomain extends AbstractModel implements ManagedDomainInterface
         if (!$this->transferAclId) {
             return;
         }
+    }
 
+    public function parseApiData(object $data): void
+    {
+        parent::parseApiData($data);
+        $this->props['updated'] = new \DateTime('@' . floor($data->updated / 1000));
+        $this->props['created'] = new \DateTime('@' . floor($data->created / 1000));
+    }
+
+    public function transformForApi(): object
+    {
+        $payload = parent::transformForApi();
+        $payload->updated = $this->apiData ? $this->apiData->updated : null;
+        $payload->created = $this->apiData ? $this->apiData->created : null;
+        return $payload;
     }
 }
