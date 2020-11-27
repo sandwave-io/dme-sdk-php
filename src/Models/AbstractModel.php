@@ -111,6 +111,11 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         $this->manager->refresh($this);
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
     public function __get($name)
     {
         $methodName = 'get' . ucfirst($name);

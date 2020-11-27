@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
 
+use DnsMadeEasy\Interfaces\Models\Concise\ConciseFolderInterface;
+use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 
 class ManagedDomain extends AbstractModel implements ManagedDomainInterface
@@ -23,6 +25,11 @@ class ManagedDomain extends AbstractModel implements ManagedDomainInterface
         'delegateNameServers' => [],
     ];
 
+    protected array $editable = [
+        'gtdEnabled',
+        'folderId',
+    ];
+
     public function getVanityNameserver()
     {
         if (!$this->vanityId) {
@@ -37,10 +44,10 @@ class ManagedDomain extends AbstractModel implements ManagedDomainInterface
         }
     }
 
-    public function getFolder()
+    public function getFolder(): ?FolderInterface
     {
         if (!$this->folderId) {
-            return;
+            return null;
         }
         return $this->client->folders->get($this->folderId);
     }
@@ -49,6 +56,15 @@ class ManagedDomain extends AbstractModel implements ManagedDomainInterface
     {
         if (!$this->transferAclId) {
             return;
+        }
+    }
+
+    public function setFolder($folder)
+    {
+        if (is_integer($folder)) {
+            $this->folderId = $folder;
+        } elseif ($folder instanceof FolderInterface || $folder instanceof ConciseFolderInterface) {
+            $this->folderId = $folder->id;
         }
     }
 
@@ -61,9 +77,20 @@ class ManagedDomain extends AbstractModel implements ManagedDomainInterface
 
     public function transformForApi(): object
     {
+        // Get the default API conversion
         $payload = parent::transformForApi();
+
+        // We can't update these
         $payload->updated = $this->apiData ? $this->apiData->updated : null;
         $payload->created = $this->apiData ? $this->apiData->created : null;
+
+        // These don't exist
+        foreach ($payload as $key => $value) {
+            if ($value === null || (is_array($value) && !$value)) {
+                unset($payload->$key);
+            }
+        }
+
         return $payload;
     }
 }

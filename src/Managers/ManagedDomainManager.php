@@ -5,6 +5,7 @@ namespace DnsMadeEasy\Managers;
 
 use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
+use DnsMadeEasy\Models\Concise\ConciseManagedDomain;
 
 class ManagedDomainManager extends AbstractManager implements ManagedDomainManagerInterface
 {
@@ -18,5 +19,10 @@ class ManagedDomainManager extends AbstractManager implements ManagedDomainManag
     public function get(int $id): ManagedDomainInterface
     {
         return parent::get($id);
+    }
+
+    public function getConciseModelClass(): string
+    {
+        return ConciseManagedDomain::class;
     }
 }
