@@ -9,7 +9,7 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 
 /**
  * Manages Managed Domain resources from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface ManagedDomainManagerInterface extends AbstractManagerInterface
 {
@@ -17,7 +17,7 @@ interface ManagedDomainManagerInterface extends AbstractManagerInterface
      * Creates a new Managed Domain.
      * @return ManagedDomainInterface
      */
-    public function createObject(): ManagedDomainInterface;
+    public function create(): ManagedDomainInterface;
 
     /**
      * Gets the ManagedDomain with the specified ID.

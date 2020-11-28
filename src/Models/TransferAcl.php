@@ -6,7 +6,10 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property string $name
+ * @property string[] $ips
  */
 class TransferAcl extends AbstractModel implements TransferAclInterface
 {

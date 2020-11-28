@@ -6,7 +6,17 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\SOARecordInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property string $email
+ * @property int $expire
+ * @property int $negativeCache
+ * @property int $refresh
+ * @property int $retry
+ * @property int $serial
+ * @property int $ttl
+ * @property string $comp
+ * @property string $name
  */
 class SOARecord extends AbstractModel implements SOARecordInterface
 {

@@ -11,7 +11,8 @@ use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 
 /**
- * @package DnsMadeEasy
+ * @internal
+ * @package DnsMadeEasy\Managers
  */
 abstract class AbstractManager implements AbstractManagerInterface
 {
@@ -35,7 +36,7 @@ abstract class AbstractManager implements AbstractManagerInterface
         return $this->client->getPaginatorFactory()->paginate($items, $data->totalRecords, $perPage, $page);
     }
 
-    public function get(int $id): AbstractModelInterface
+    protected function getObject(int $id): AbstractModelInterface
     {
         $objectId = $this->getObjectId($id);
         if ($this->getFromCache($objectId)) {
@@ -58,12 +59,17 @@ abstract class AbstractManager implements AbstractManagerInterface
         return $this->transformApiData($data);
     }
 
-    public function createObject(): AbstractModelInterface
+    protected function createObject(): AbstractModelInterface
     {
         $className = $this->getModelClass();
         return new $className($this, $this->client);
     }
 
+    /**
+     * @internal
+     * @param AbstractModelInterface $object
+     * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
+     */
     public function delete(AbstractModelInterface $object): void
     {
         $id = $object->id;
@@ -75,6 +81,11 @@ abstract class AbstractManager implements AbstractManagerInterface
         $this->removeFromCache($object);
     }
 
+    /**
+     * @internal
+     * @param AbstractModelInterface $object
+     * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
+     */
     public function save(AbstractModelInterface $object): void
     {
         try {
@@ -91,6 +102,11 @@ abstract class AbstractManager implements AbstractManagerInterface
         }
     }
 
+    /**
+     * AbstractManager constructor.
+     * @internal
+     * @param ClientInterface $client
+     */
     public function __construct(ClientInterface $client)
     {
         $this->client = $client;
@@ -176,6 +192,11 @@ abstract class AbstractManager implements AbstractManagerInterface
         }
     }
 
+    /**
+     * @internal
+     * @param AbstractModelInterface $object
+     * @throws ModelNotFoundException
+     */
     public function refresh(AbstractModelInterface $object): void
     {
         if (!$object->id) {

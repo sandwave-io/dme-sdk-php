@@ -8,7 +8,7 @@ use DnsMadeEasy\Interfaces\Models\SecondaryDomainInterface;
 
 /**
  * Manages Secondary Domain resources from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface SecondaryDomainManagerInterface extends AbstractManagerInterface
 {
@@ -16,7 +16,7 @@ interface SecondaryDomainManagerInterface extends AbstractManagerInterface
      * Creates a new Secondary Domain resource.
      * @return SecondaryDomainInterface
      */
-    public function createObject(): SecondaryDomainInterface;
+    public function create(): SecondaryDomainInterface;
 
     /**
      * Gets the Secondary Domain resource with the specified ID.

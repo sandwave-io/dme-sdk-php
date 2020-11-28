@@ -9,6 +9,16 @@ use DnsMadeEasy\Exceptions\Client\Http\NotFoundException;
 use DnsMadeEasy\Exceptions\Client\ManagerNotFoundException;
 use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\SecondaryDomainManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\SOARecordManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\TemplateManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\TransferAclManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\UsageManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface;
 use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
 use DnsMadeEasy\Managers\ContactListManager;
 use DnsMadeEasy\Managers\FolderManager;
@@ -32,6 +42,17 @@ use Psr\Log\NullLogger;
 /**
  * DNS Made Easy API Client SDK
  * @package DnsMadeEasy
+ *
+ * @property-read ContactListManagerInterface $contactlists
+ * @property-read FolderManagerInterface $folders
+ * @property-read ManagedDomainManagerInterface $domains
+ * @property-read VanityNameServerManagerInterface $vanity
+ * @property-read TemplateManagerInterface $templates
+ * @property-read TransferAclManagerInterface $transferacls
+ * @property-read SOARecordManagerInterface $soarecords
+ * @property-read UsageManagerInterface $usage
+ * @property-read SecondaryIPSetManagerInterface $secondaryipsets;
+ * @property-read SecondaryDomainManagerInterface $secondarydomains;
  */
 class Client implements ClientInterface, LoggerAwareInterface
 {

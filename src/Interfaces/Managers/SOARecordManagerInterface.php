@@ -8,7 +8,7 @@ use DnsMadeEasy\Interfaces\Models\SOARecordInterface;
 
 /**
  * Manages SOA Record resources from the API.
- * @package DnsMadeEasy\Interfaces\Managers
+ * @package DnsMadeEasy\Interfaces
  */
 interface SOARecordManagerInterface extends AbstractManagerInterface
 {
@@ -16,7 +16,7 @@ interface SOARecordManagerInterface extends AbstractManagerInterface
      * Creates a new SOA Record resource.
      * @return SOARecordInterface
      */
-    public function createObject(): SOARecordInterface;
+    public function create(): SOARecordInterface;
 
     /**
      * Returns the SORA Record resource with the specified ID.

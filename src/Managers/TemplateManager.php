@@ -8,20 +8,20 @@ use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class TemplateManager extends AbstractManager implements TemplateManagerInterface
 {
     protected string $baseUri = '/dns/template';
 
-    public function createObject(): TemplateInterface
+    public function create(): TemplateInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): TemplateInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 
     public function createFromDomain(CommonManagedDomainInterface $domain, string $name): TemplateInterface

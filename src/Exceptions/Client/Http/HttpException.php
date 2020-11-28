@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Represents an exception while communicating with the DnsMadeEasy API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Exceptions\HTTP
  */
 class HttpException extends DnsMadeEasyException
 {

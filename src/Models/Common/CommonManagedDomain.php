@@ -9,7 +9,7 @@ use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Models\AbstractModel;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
  */
 abstract class CommonManagedDomain extends AbstractModel implements CommonManagedDomainInterface
 {

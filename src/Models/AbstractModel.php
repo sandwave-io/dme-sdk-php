@@ -10,7 +10,10 @@ use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use JsonSerializable;
 
 /**
- * @package DnsMadeEasy
+ * @internal
+ * @package DnsMadeEasy\Models
+ *
+ * @property-read int $id
  */
 abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 {
@@ -41,6 +44,13 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         $this->manager->delete($this);
     }
 
+    /**
+     * AbstractModel constructor.
+     * @internal
+     * @param AbstractManagerInterface $manager
+     * @param ClientInterface $client
+     * @param object|null $data
+     */
     public function __construct(AbstractManagerInterface $manager, ClientInterface $client, ?object $data = null)
     {
         $this->manager = $manager;
@@ -51,6 +61,11 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         }
     }
 
+    /**
+     * @internal
+     * @return string
+     * @throws \ReflectionException
+     */
     public function __toString()
     {
         $rClass = new \ReflectionClass($this);
@@ -66,6 +81,10 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         return (bool) $this->changed;
     }
 
+    /**
+     * @internal
+     * @param object $data
+     */
     public function populateFromApi(object $data): void
     {
         $this->apiData = $data;
@@ -86,6 +105,10 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         }
     }
 
+    /**
+     * @internal
+     * @return object
+     */
     public function transformForApi(): object
     {
         $obj = $this->jsonSerialize();
@@ -101,6 +124,10 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         return $obj;
     }
 
+    /**
+     * @internal
+     * @return mixed|object
+     */
     public function jsonSerialize()
     {
         $result = (object) [
@@ -125,6 +152,11 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         return $this->id;
     }
 
+    /**
+     * @internal
+     * @param $name
+     * @return mixed
+     */
     public function __get($name)
     {
         $methodName = 'get' . ucfirst($name);
@@ -135,6 +167,12 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         }
     }
 
+    /**
+     * @internal
+     * @param $name
+     * @param $value
+     * @throws ReadOnlyPropertyException
+     */
     public function __set($name, $value)
     {
         $methodName = 'set' . ucfirst($name);

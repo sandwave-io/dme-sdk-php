@@ -7,7 +7,7 @@ use DnsMadeEasy\Exceptions\DnsMadeEasyException;
 
 /**
  * Exception thrown when an attempt is made to set a read-only property on an API resource.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Exceptions
  */
 class ReadOnlyPropertyException extends DnsMadeEasyException
 {

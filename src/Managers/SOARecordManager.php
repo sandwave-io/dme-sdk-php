@@ -7,19 +7,19 @@ use DnsMadeEasy\Interfaces\Managers\SOARecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\SOARecordInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class SOARecordManager extends AbstractManager implements SOARecordManagerInterface
 {
     protected string $baseUri = '/dns/soa';
 
-    public function createObject(): SOARecordInterface
+    public function create(): SOARecordInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): SOARecordInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 }

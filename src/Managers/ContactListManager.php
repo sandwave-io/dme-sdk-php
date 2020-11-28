@@ -7,19 +7,19 @@ use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class ContactListManager extends AbstractManager implements ContactListManagerInterface
 {
     protected string $baseUri = '/contactList';
 
-    public function createObject(): ContactListInterface
+    public function create(): ContactListInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): ContactListInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 }

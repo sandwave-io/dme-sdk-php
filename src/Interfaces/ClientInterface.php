@@ -4,16 +4,6 @@ declare(strict_types=1);
 namespace DnsMadeEasy\Interfaces;
 
 use DnsMadeEasy\Exceptions\Client\Http\HttpException;
-use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\SecondaryDomainManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\SOARecordManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\TemplateManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\TransferAclManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\UsageManagerInterface;
-use DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -21,18 +11,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * DnsMadeEasy API Client SDK
  *
- * @package DnsMadeEasy
- *
- * @property-read ContactListManagerInterface $contactlists
- * @property-read FolderManagerInterface $folders
- * @property-read ManagedDomainManagerInterface $domains
- * @property-read VanityNameServerManagerInterface $vanity
- * @property-read TemplateManagerInterface $templates
- * @property-read TransferAclManagerInterface $transferacls
- * @property-read SOARecordManagerInterface $soarecords
- * @property-read UsageManagerInterface $usage
- * @property-read SecondaryIPSetManagerInterface $secondaryipsets;
- * @property-read SecondaryDomainManagerInterface $secondarydomains;
+ * @package DnsMadeEasy\Interfaces
  *
  */
 interface ClientInterface

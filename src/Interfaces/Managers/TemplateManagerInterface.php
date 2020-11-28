@@ -10,7 +10,7 @@ use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 
 /**
  * Manages Template resources from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface TemplateManagerInterface extends AbstractManagerInterface
 {
@@ -18,7 +18,7 @@ interface TemplateManagerInterface extends AbstractManagerInterface
      * Creates a new Template resource.
      * @return TemplateInterface
      */
-    public function createObject(): TemplateInterface;
+    public function create(): TemplateInterface;
 
     /**
      * Fetches the template resource with the specified ID.

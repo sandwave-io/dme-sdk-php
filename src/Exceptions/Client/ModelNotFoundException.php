@@ -7,7 +7,7 @@ use DnsMadeEasy\Exceptions\DnsMadeEasyException;
 
 /**
  * Exception thrown when the specified resource could not be found.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Exceptions
  */
 class ModelNotFoundException extends DnsMadeEasyException
 {

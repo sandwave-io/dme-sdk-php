@@ -7,19 +7,19 @@ use DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class SecondaryIPSetManager extends AbstractManager implements SecondaryIPSetManagerInterface
 {
     protected string $baseUri = '/dns/secondary/ipSet';
 
-    public function createObject(): SecondaryIPSetInterface
+    public function create(): SecondaryIPSetInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): SecondaryIPSetInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 }

@@ -8,7 +8,7 @@ use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Models\Concise\ConciseFolder;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class FolderManager extends AbstractManager implements FolderManagerInterface
 {
@@ -27,19 +27,19 @@ class FolderManager extends AbstractManager implements FolderManagerInterface
         return $this->client->getPaginatorFactory()->paginate($items, count($data), $perPage, $page);
     }
 
-    public function getConciseModelClass(): string
+    protected function getConciseModelClass(): string
     {
         return ConciseFolder::class;
     }
 
     public function get(int $id): FolderInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 
-    public function createObject(): FolderInterface
+    public function create(): FolderInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     protected function transformConciseApiData(object $data): object

@@ -6,7 +6,11 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property string $name
+ * @property-read int[] $domainIds
+ * @property-read bool $publicTemplate
  */
 class Template extends AbstractModel implements TemplateInterface
 {

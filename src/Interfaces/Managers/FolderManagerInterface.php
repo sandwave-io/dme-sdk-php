@@ -9,7 +9,7 @@ use DnsMadeEasy\Interfaces\Models\FolderInterface;
 
 /**
  * Manages Folder objects from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface FolderManagerInterface extends AbstractManagerInterface
 {
@@ -17,7 +17,7 @@ interface FolderManagerInterface extends AbstractManagerInterface
      * Creates a new Folder resource.
      * @return FolderInterface
      */
-    public function createObject(): FolderInterface;
+    public function create(): FolderInterface;
 
     /**
      * Gets the Folder resource with the specified ID.

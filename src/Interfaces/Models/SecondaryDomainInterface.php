@@ -8,16 +8,7 @@ use DnsMadeEasy\Interfaces\Models\Common\CommonSecondaryDomainInterface;
 /**
  * Represents a Managed Domain resource
  *
- * @package DnsMadeEasy
- *
- * @property string $name
- * @property-read bool $gtdEnabled
- *
- * @property SecondaryIPSetInterface $ipSet
- * @property int $ipSetId
- * @property FolderInterface $folder
- * @property int $folderId
- * @property-read object[] $nameServers
+ * @package DnsMadeEasy\Interfaces
  */
 interface SecondaryDomainInterface extends CommonSecondaryDomainInterface
 {

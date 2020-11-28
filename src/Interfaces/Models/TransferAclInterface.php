@@ -6,10 +6,7 @@ namespace DnsMadeEasy\Interfaces\Models;
 /**
  * Represents a Transfer ACL (AXFR)
  *
- * @package DnsMadeEasy
- *
- * @property string $name
- * @property string[] $ips
+ * @package DnsMadeEasy\Interfaces
  */
 interface TransferAclInterface extends AbstractModelInterface
 {

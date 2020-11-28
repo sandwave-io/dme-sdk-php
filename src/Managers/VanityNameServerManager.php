@@ -7,19 +7,19 @@ use DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface;
 use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class VanityNameServerManager extends AbstractManager implements VanityNameServerManagerInterface
 {
     protected string $baseUri = '/dns/vanity';
 
-    public function createObject(): VanityNameServerInterface
+    public function create(): VanityNameServerInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): VanityNameServerInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 }

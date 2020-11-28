@@ -9,7 +9,7 @@ use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 
 /**
  * Manages ContactList objects from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface ContactListManagerInterface extends AbstractManagerInterface
 {
@@ -17,7 +17,7 @@ interface ContactListManagerInterface extends AbstractManagerInterface
      * Creates a new ContactList.
      * @return ContactListInterface
      */
-    public function createObject(): ContactListInterface;
+    public function create(): ContactListInterface;
 
     /**
      * Gets the ContactList with the specified ID.

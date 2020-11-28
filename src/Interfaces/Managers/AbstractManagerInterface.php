@@ -14,7 +14,8 @@ use DnsMadeEasy\Pagination\Paginator;
  * The manager is the way that resources are fetched, queried and updated in the SDK. There should be one for every
  * resource that can be manipulated.
  *
- * @package DnsMadeEasy
+ * @internal
+ * @package DnsMadeEasy\Interfaces
  */
 interface AbstractManagerInterface
 {
@@ -34,22 +35,8 @@ interface AbstractManagerInterface
     public function paginate(int $page = 1, int $perPage = 20);
 
     /**
-     * Returns a new instance of the resource.
-     * @return AbstractModelInterface
-     */
-    public function createObject(): AbstractModelInterface;
-
-    /**
-     * Returns the resource with the specified ID. If the resource is not found then a ModelNotFoundException is thrown.
-     * @param int $id
-     * @return AbstractModelInterface
-     * @throws ModelNotFoundException
-     * @throws HttpException
-     */
-    public function get(int $id): AbstractModelInterface;
-
-    /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
+     * @internal
      * @param AbstractModelInterface $object
      * @throws HttpException
      */
@@ -57,6 +44,7 @@ interface AbstractManagerInterface
 
     /**
      * Uses the API to delete the specified object. If the object is new, then no action is taken on the API.
+     * @internal
      * @param AbstractModelInterface $object
      * @throws HttpException
      */

@@ -10,7 +10,7 @@ use Traversable;
  * Simple object paginator. Can be iterated over, accessed like an array and used in a similar manner to Illuminate's
  * LengthAwarePaginator.
  *
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Pagination
  */
 class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 {

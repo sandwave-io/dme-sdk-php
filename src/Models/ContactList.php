@@ -6,7 +6,11 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property string $name
+ * @property string[] $emails
+ * @property int[] $groups
  */
 class ContactList extends AbstractModel implements ContactListInterface
 {

@@ -8,7 +8,7 @@ use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
 
 /**
  * Manages Vanity NameServer resources from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface VanityNameServerManagerInterface extends AbstractManagerInterface
 {
@@ -16,7 +16,7 @@ interface VanityNameServerManagerInterface extends AbstractManagerInterface
      * Creates a new Vanity NameServer resource.
      * @return VanityNameServerInterface
      */
-    public function createObject(): VanityNameServerInterface;
+    public function create(): VanityNameServerInterface;
 
     /**
      * Gets the Vanity NameServer resource with the specified ID.

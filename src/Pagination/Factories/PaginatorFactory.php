@@ -9,7 +9,7 @@ use DnsMadeEasy\Pagination\Paginator;
 /**
  * Factory for Paginator objects.
  *
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Pagination
  */
 class PaginatorFactory implements PaginatorFactoryInterface
 {

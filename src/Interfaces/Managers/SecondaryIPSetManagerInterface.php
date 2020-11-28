@@ -8,7 +8,7 @@ use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 
 /**
  * Manages Secondary IP Set resources from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface SecondaryIPSetManagerInterface extends AbstractManagerInterface
 {
@@ -16,7 +16,7 @@ interface SecondaryIPSetManagerInterface extends AbstractManagerInterface
      * Creates a new Secondary IP Set resource.
      * @return SecondaryIPSetInterface
      */
-    public function createObject(): SecondaryIPSetInterface;
+    public function create(): SecondaryIPSetInterface;
 
     /**
      * Gets the Secondary IP Set resource with the specified ID.

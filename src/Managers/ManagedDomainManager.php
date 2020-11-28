@@ -8,23 +8,23 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Models\Concise\ConciseManagedDomain;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class ManagedDomainManager extends AbstractManager implements ManagedDomainManagerInterface
 {
     protected string $baseUri = '/dns/managed';
 
-    public function createObject(): ManagedDomainInterface
+    public function create(): ManagedDomainInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): ManagedDomainInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 
-    public function getConciseModelClass(): string
+    protected function getConciseModelClass(): string
     {
         return ConciseManagedDomain::class;
     }

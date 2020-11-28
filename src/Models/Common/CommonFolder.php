@@ -7,7 +7,7 @@ use DnsMadeEasy\Interfaces\Models\Common\CommonFolderInterface;
 use DnsMadeEasy\Models\AbstractModel;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
  */
 abstract class CommonFolder extends AbstractModel implements CommonFolderInterface
 {

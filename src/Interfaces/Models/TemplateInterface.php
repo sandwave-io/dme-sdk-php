@@ -6,11 +6,7 @@ namespace DnsMadeEasy\Interfaces\Models;
 /**
  * Represents a Template resource.
  *
- * @package DnsMadeEasy\Interfaces\Models
- *
- * @property string $name
- * @property-read int[] $domainIds
- * @property-read bool $publicTemplate
+ * @package DnsMadeEasy\Interfaces\Models\Interfaces
  */
 interface TemplateInterface extends AbstractModelInterface
 {

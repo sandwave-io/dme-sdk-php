@@ -9,9 +9,8 @@ use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 /**
  * Represents a resource from the DNS Made Easy API.
  *
- * @package DnsMadeEasy
- *
- * @property-read int $id
+ * @internal
+ * @package DnsMadeEasy\Interfaces
  */
 interface AbstractModelInterface
 {
@@ -49,6 +48,7 @@ interface AbstractModelInterface
     /**
      * Populate the object from API data.
      *
+     * @internal
      * @param object $data
      */
     public function populateFromApi(object $data): void;
@@ -56,6 +56,7 @@ interface AbstractModelInterface
     /**
      * Generate a representation of the object for sending to the API.
      *
+     * @internal
      * @return object
      */
     public function transformForApi(): object;

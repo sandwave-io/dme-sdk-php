@@ -8,7 +8,10 @@ use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Models\Common\CommonFolder;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property-read string $name
+ * @property-read FolderInterface $full
  */
 class ConciseFolder extends CommonFolder implements ConciseFolderInterface
 {

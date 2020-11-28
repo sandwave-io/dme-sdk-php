@@ -9,7 +9,7 @@ use \Illuminate\Pagination\LengthAwarePaginator;
 /**
  * A pagination factory for use with Laravel/Lumen frameworks or anything that is also using the Illuminate pagination
  * libraries.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Pagination
  */
 class IlluminatePaginatorFactory implements PaginatorFactoryInterface
 {

@@ -8,7 +8,7 @@ use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 
 /**
  * Manages Transfer ACL resources from the API.
- * @package DnsMadeEasy\Interfaces\Managers
+ * @package DnsMadeEasy\Interfaces
  */
 interface TransferAclManagerInterface extends AbstractManagerInterface
 {
@@ -16,7 +16,7 @@ interface TransferAclManagerInterface extends AbstractManagerInterface
      * Creates a new Transfer ACL resource.
      * @return TransferAclInterface
      */
-    public function createObject(): TransferAclInterface;
+    public function create(): TransferAclInterface;
 
     /**
      * Returns the TransferAcl resource with the specified ID.

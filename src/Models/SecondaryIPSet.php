@@ -6,7 +6,10 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property string $name
+ * @property string[] $ips
  */
 class SecondaryIPSet extends AbstractModel implements SecondaryIPSetInterface
 {

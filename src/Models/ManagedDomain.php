@@ -5,14 +5,34 @@ namespace DnsMadeEasy\Models;
 
 use DnsMadeEasy\Exceptions\Client\ReadOnlyPropertyException;
 use DnsMadeEasy\Interfaces\Models\Common\CommonFolderInterface;
+use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
+use DnsMadeEasy\Interfaces\Models\SOARecordInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
 use DnsMadeEasy\Models\Common\CommonManagedDomain;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property string $name
+ * @property-read array $activeThirdParties
+ * @property-read \DateTime $created
+ * @property-read \DateTime $updated
+ * @property bool $gtdEnabled
+ * @property-read string[] $axfrServers
+ * @property-read string[] $delegateNameservers
+ * @property SOARecordInterface $soa;
+ * @property int $soaID
+ * @property VanityNameServerInterface $vanity
+ * @property int $vanityId
+ * @property TransferAcl $transferAcl
+ * @property int $transferAclId
+ * @property FolderInterface $folder
+ * @property int $folderId
+ * @property TemplateInterface $template
+ * @property int $templateId
  */
 class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterface
 {
@@ -76,6 +96,23 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         }
     }
 
+    protected function setSOA($soa)
+    {
+        if (is_integer($soa)) {
+            $this->soaID = $soa;
+        } elseif ($soa instanceof SOARecordInterface) {
+            $this->soaID = $soa->id;
+        }
+    }
+
+    protected function getSOA(): ?SOARecordInterface
+    {
+        if (!$this->soaID) {
+            return null;
+        }
+        return $this->client->soarecords->get($this->soaID);
+    }
+
     protected function getTransferAcl(): ?TransferAclInterface
     {
         if (!$this->transferAclId) {
@@ -100,6 +137,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         $this->props['name'] = $name;
     }
 
+    /**
+     * @internal
+     * @return object
+     */
     public function transformForApi(): object
     {
         // Get the default API conversion

@@ -6,10 +6,7 @@ namespace DnsMadeEasy\Interfaces\Models;
 /**
  * Represents a Secondary IP Set resource.
  *
- * @package DnsMadeEasy
- *
- * @property string $name
- * @property string[] $ips
+ * @package DnsMadeEasy\Interfaces
  */
 interface SecondaryIPSetInterface extends AbstractModelInterface
 {

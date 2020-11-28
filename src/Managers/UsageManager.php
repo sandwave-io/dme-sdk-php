@@ -10,12 +10,17 @@ use DnsMadeEasy\Interfaces\Models\UsageInterface;
 use DnsMadeEasy\Models\Usage;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class UsageManager implements UsageManagerInterface
 {
     protected ClientInterface $client;
 
+    /**
+     * UsageManager constructor.
+     * @internal
+     * @param ClientInterface $client
+     */
     public function __construct(ClientInterface $client)
     {
         $this->client = $client;

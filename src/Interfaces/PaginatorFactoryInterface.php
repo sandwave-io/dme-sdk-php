@@ -3,11 +3,9 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces;
 
-use DnsMadeEasy\Pagination\Paginator;
-
 /**
  * A factory for creating paginated collections of items.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface PaginatorFactoryInterface
 {

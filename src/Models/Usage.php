@@ -8,7 +8,20 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\UsageInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property-read int $primaryCount
+ * @property-read int $primaryTotal
+ * @property-read int $secondaryCount
+ * @property-read int $secondaryTotal
+ * @property-read int[] $listOfMonths
+ * @property-read int[] $listOfYears
+ * @property-read int $month
+ * @property-read int $day
+ * @property-read int $accountId
+ * @property-read int $total
+ * @property-read int $domainId
+ * @property-read ManagedDomainInterface $domain
  */
 class Usage extends AbstractModel implements UsageInterface
 {

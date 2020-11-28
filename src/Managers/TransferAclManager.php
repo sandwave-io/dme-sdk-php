@@ -7,19 +7,19 @@ use DnsMadeEasy\Interfaces\Managers\TransferAclManagerInterface;
 use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class TransferAclManager extends AbstractManager implements TransferAclManagerInterface
 {
     protected string $baseUri = '/dns/transferAcl';
 
-    public function createObject(): TransferAclInterface
+    public function create(): TransferAclInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): TransferAclInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 }

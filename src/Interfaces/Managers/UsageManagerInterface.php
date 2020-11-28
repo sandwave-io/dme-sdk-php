@@ -10,12 +10,13 @@ use DnsMadeEasy\Interfaces\Models\UsageInterface;
 
 /**
  * Gets usage from the API.
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  */
 interface UsageManagerInterface
 {
     /**
      * Creates the Usage Manager.
+     * @internal
      * @param ClientInterface $client
      */
     public function __construct(ClientInterface $client);

@@ -11,7 +11,7 @@ use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Models\AbstractModel;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
  */
 abstract class CommonSecondaryDomain extends AbstractModel implements CommonSecondaryDomainInterface
 {

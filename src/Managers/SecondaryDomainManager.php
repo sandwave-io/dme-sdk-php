@@ -8,23 +8,23 @@ use DnsMadeEasy\Interfaces\Models\SecondaryDomainInterface;
 use DnsMadeEasy\Models\Concise\ConciseSecondaryDomain;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Managers
  */
 class SecondaryDomainManager extends AbstractManager implements SecondaryDomainManagerInterface
 {
     protected string $baseUri = '/dns/secondary';
 
-    public function createObject(): SecondaryDomainInterface
+    public function create(): SecondaryDomainInterface
     {
-        return parent::createObject();
+        return $this->createObject();
     }
 
     public function get(int $id): SecondaryDomainInterface
     {
-        return parent::get($id);
+        return $this->getObject($id);
     }
 
-    public function getConciseModelClass(): string
+    protected function getConciseModelClass(): string
     {
         return ConciseSecondaryDomain::class;
     }

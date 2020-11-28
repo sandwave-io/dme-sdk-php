@@ -6,17 +6,7 @@ namespace DnsMadeEasy\Interfaces\Models;
 /**
  * Represents an SOA Record
  *
- * @package DnsMadeEasy
- *
- * @property string $email
- * @property int $expire
- * @property int $negativeCache
- * @property int $refresh
- * @property int $retry
- * @property int $serial
- * @property int $ttl
- * @property string $comp
- * @property string $name
+ * @package DnsMadeEasy\Interfaces
  */
 interface SOARecordInterface extends AbstractModelInterface
 {

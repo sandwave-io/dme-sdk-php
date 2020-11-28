@@ -7,7 +7,13 @@ use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Models\Common\CommonFolder;
 
 /**
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Models
+ *
+ * @property string $name
+ * @property-read int[] $domains
+ * @property-read int[] $secondaries
+ * @property-read object $folderPermissions
+ * @property bool $defaultFolder
  */
 class Folder extends CommonFolder implements FolderInterface
 {

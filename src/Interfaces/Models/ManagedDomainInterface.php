@@ -9,7 +9,7 @@ use DnsMadeEasy\Models\TransferAcl;
 /**
  * Represents a Managed Domain resource
  *
- * @package DnsMadeEasy
+ * @package DnsMadeEasy\Interfaces
  *
  * @property bool $gtdEnabled
  * @property-read int $soaID
