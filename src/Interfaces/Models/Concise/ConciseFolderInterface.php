@@ -3,8 +3,16 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces\Models\Concise;
 
-use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
+use DnsMadeEasy\Interfaces\Models\Common\CommonFolderInterface;
+use DnsMadeEasy\Interfaces\Models\FolderInterface;
 
-interface ConciseFolderInterface extends AbstractModelInterface
+/**
+ * Represents a concise version of the Folder resource
+ *
+ * @package DnsMadeEasy
+ *
+ * @property-read FolderInterface $full
+ */
+interface ConciseFolderInterface extends CommonFolderInterface
 {
 }

@@ -7,6 +7,9 @@ use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Models\Concise\ConciseManagedDomain;
 
+/**
+ * @package DnsMadeEasy
+ */
 class ManagedDomainManager extends AbstractManager implements ManagedDomainManagerInterface
 {
     protected string $baseUri = '/dns/managed';

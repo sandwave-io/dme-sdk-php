@@ -5,6 +5,10 @@ namespace DnsMadeEasy\Exceptions\Client;
 
 use DnsMadeEasy\Exceptions\DnsMadeEasyException;
 
+/**
+ * Exception thrown when the specified resource could not be found.
+ * @package DnsMadeEasy
+ */
 class ModelNotFoundException extends DnsMadeEasyException
 {
 

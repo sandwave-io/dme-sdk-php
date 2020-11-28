@@ -3,11 +3,18 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
 
-use DnsMadeEasy\Interfaces\Models\Concise\ConciseFolderInterface;
-use DnsMadeEasy\Interfaces\Models\FolderInterface;
+use DnsMadeEasy\Exceptions\Client\ReadOnlyPropertyException;
+use DnsMadeEasy\Interfaces\Models\Common\CommonFolderInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
+use DnsMadeEasy\Interfaces\Models\TemplateInterface;
+use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
+use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
+use DnsMadeEasy\Models\Common\CommonManagedDomain;
 
-class ManagedDomain extends AbstractModel implements ManagedDomainInterface
+/**
+ * @package DnsMadeEasy
+ */
+class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterface
 {
     protected array $props = [
         'name' => null,
@@ -28,51 +35,69 @@ class ManagedDomain extends AbstractModel implements ManagedDomainInterface
     protected array $editable = [
         'gtdEnabled',
         'folderId',
+        'vanityId',
+        'transferAclId',
+        'templateId',
     ];
 
-    public function getVanityNameserver()
-    {
-        if (!$this->vanityId) {
-            return;
-        }
-    }
-
-    public function getTemplate()
-    {
-        if (!$this->templateId) {
-            return;
-        }
-    }
-
-    public function getFolder(): ?FolderInterface
-    {
-        if (!$this->folderId) {
-            return null;
-        }
-        return $this->client->folders->get($this->folderId);
-    }
-
-    public function getTransferAcl()
-    {
-        if (!$this->transferAclId) {
-            return;
-        }
-    }
-
-    public function setFolder($folder)
+    protected function setFolder($folder)
     {
         if (is_integer($folder)) {
             $this->folderId = $folder;
-        } elseif ($folder instanceof FolderInterface || $folder instanceof ConciseFolderInterface) {
+        } elseif ($folder instanceof CommonFolderInterface) {
             $this->folderId = $folder->id;
         }
     }
 
-    public function parseApiData(object $data): void
+    protected function setVanity($vanity)
     {
-        parent::parseApiData($data);
-        $this->props['updated'] = new \DateTime('@' . floor($data->updated / 1000));
-        $this->props['created'] = new \DateTime('@' . floor($data->created / 1000));
+        if (is_integer($vanity)) {
+            $this->vanityId = $vanity;
+        } elseif ($vanity instanceof VanityNameServerInterface) {
+            $this->vanityId = $vanity->id;
+        }
+    }
+
+    protected function setTransferAcl($transferAcl)
+    {
+        if (is_integer($transferAcl)) {
+            $this->transferAclId = $transferAcl;
+        } elseif ($transferAcl instanceof TransferAclInterface) {
+            $this->transferAclId = $transferAcl->id;
+        }
+    }
+
+    protected function setTemplate($template)
+    {
+        if (is_integer($template)) {
+            $this->templateId = $template;
+        } elseif ($template instanceof TemplateInterface) {
+            $this->templateId = $template->id;
+        }
+    }
+
+    protected function getTransferAcl(): ?TransferAclInterface
+    {
+        if (!$this->transferAclId) {
+            return null;
+        }
+        return $this->client->transferacls->get($this->transferAclId);
+    }
+
+    protected function getVanity(): ?VanityNameServerInterface
+    {
+        if (!$this->vanityId) {
+            return null;
+        }
+        return $this->client->vanity->get($this->vanityId);
+    }
+
+    protected function setName(string $name)
+    {
+        if ($this->id) {
+            throw new ReadOnlyPropertyException('Unable to set name');
+        }
+        $this->props['name'] = $name;
     }
 
     public function transformForApi(): object
@@ -83,13 +108,6 @@ class ManagedDomain extends AbstractModel implements ManagedDomainInterface
         // We can't update these
         $payload->updated = $this->apiData ? $this->apiData->updated : null;
         $payload->created = $this->apiData ? $this->apiData->created : null;
-
-        // These don't exist
-        foreach ($payload as $key => $value) {
-            if ($value === null || (is_array($value) && !$value)) {
-                unset($payload->$key);
-            }
-        }
 
         return $payload;
     }

@@ -5,9 +5,12 @@ namespace DnsMadeEasy\Models\Concise;
 
 use DnsMadeEasy\Interfaces\Models\Concise\ConciseManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
-use DnsMadeEasy\Models\AbstractModel;
+use DnsMadeEasy\Models\Common\CommonManagedDomain;
 
-class ConciseManagedDomain extends AbstractModel implements ConciseManagedDomainInterface
+/**
+ * @package DnsMadeEasy
+ */
+class ConciseManagedDomain extends CommonManagedDomain implements ConciseManagedDomainInterface
 {
     protected array $props = [
         'name' => null,
@@ -18,6 +21,7 @@ class ConciseManagedDomain extends AbstractModel implements ConciseManagedDomain
         'updated' => null,
         'created' => null,
         'axfrServer' => [],
+        'pendingActionid' => null,
         'delegateNameServers' => [],
     ];
 
@@ -31,10 +35,8 @@ class ConciseManagedDomain extends AbstractModel implements ConciseManagedDomain
         return;
     }
 
-    public function parseApiData(object $data): void
+    public function refresh(): void
     {
-        parent::parseApiData($data);
-        $this->props['updated'] = new \DateTime('@' . floor($data->updated / 1000));
-        $this->props['created'] = new \DateTime('@' . floor($data->created / 1000));
+        return;
     }
 }

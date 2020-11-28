@@ -9,6 +9,9 @@ use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use JsonSerializable;
 
+/**
+ * @package DnsMadeEasy
+ */
 abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 {
     protected AbstractManagerInterface $manager;
@@ -18,7 +21,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     protected array $props = [];
     protected array $originalProps = [];
     protected array $editable = [];
-    protected ?object $apiData;
+    protected ?object $apiData = null;
 
     public function save(): void
     {
@@ -89,6 +92,12 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         if ($this->id === null) {
             unset($obj->{$this->id});
         }
+        // These don't exist
+        foreach ($obj as $key => $value) {
+            if ($value === null || (is_array($value) && !$value)) {
+                unset($obj->$key);
+            }
+        }
         return $obj;
     }
 
@@ -111,7 +120,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         $this->manager->refresh($this);
     }
 
-    public function getId(): ?int
+    protected function getId(): ?int
     {
         return $this->id;
     }

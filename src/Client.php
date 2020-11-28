@@ -13,6 +13,13 @@ use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
 use DnsMadeEasy\Managers\ContactListManager;
 use DnsMadeEasy\Managers\FolderManager;
 use DnsMadeEasy\Managers\ManagedDomainManager;
+use DnsMadeEasy\Managers\SecondaryDomainManager;
+use DnsMadeEasy\Managers\SecondaryIPSetManager;
+use DnsMadeEasy\Managers\SOARecordManager;
+use DnsMadeEasy\Managers\TemplateManager;
+use DnsMadeEasy\Managers\TransferAclManager;
+use DnsMadeEasy\Managers\UsageManager;
+use DnsMadeEasy\Managers\VanityNameServerManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
@@ -22,6 +29,10 @@ use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
+/**
+ * DNS Made Easy API Client SDK
+ * @package DnsMadeEasy
+ */
 class Client implements ClientInterface, LoggerAwareInterface
 {
 	protected HttpClientInterface $client;
@@ -35,8 +46,14 @@ class Client implements ClientInterface, LoggerAwareInterface
 	protected array $managers = [];
 	protected array $managerMap = [
 	    'contactlists' => ContactListManager::class,
-        'managed' => ManagedDomainManager::class,
+        'domains' => ManagedDomainManager::class,
         'folders' => FolderManager::class,
+        'vanity' => VanityNameServerManager::class,
+        'templates' => TemplateManager::class,
+        'transferacls' => TransferAclManager::class,
+        'soarecords' => SOARecordManager::class,
+        'secondaryipsets' => SecondaryIPSetManager::class,
+        'secondarydomains' => SecondaryDomainManager::class,
     ];
 
 	public function __construct(?HttpClientInterface $client = null, ?PaginatorFactoryInterface $paginatorFactory = null, ?LoggerInterface $logger = null)
@@ -214,6 +231,12 @@ class Client implements ClientInterface, LoggerAwareInterface
 
 	public function __get($name)
     {
+        if ($name == 'usage') {
+            if (!isset($this->managers['usage'])) {
+                $this->managers['usage'] = new UsageManager($this);
+            }
+            return $this->managers['usage'];
+        }
         if ($this->hasManager($name)) {
             return $this->getManager($name);
         }

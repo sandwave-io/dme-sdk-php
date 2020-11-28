@@ -10,6 +10,9 @@ use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 
+/**
+ * @package DnsMadeEasy
+ */
 abstract class AbstractManager implements AbstractManagerInterface
 {
     protected ClientInterface $client;

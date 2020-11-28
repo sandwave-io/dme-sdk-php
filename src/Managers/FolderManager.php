@@ -7,6 +7,9 @@ use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Models\Concise\ConciseFolder;
 
+/**
+ * @package DnsMadeEasy
+ */
 class FolderManager extends AbstractManager implements FolderManagerInterface
 {
     protected string $baseUri = '/security/folder';

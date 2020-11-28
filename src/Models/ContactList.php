@@ -5,6 +5,9 @@ namespace DnsMadeEasy\Models;
 
 use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 
+/**
+ * @package DnsMadeEasy
+ */
 class ContactList extends AbstractModel implements ContactListInterface
 {
     protected array $props = [

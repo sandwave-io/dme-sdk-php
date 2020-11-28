@@ -5,9 +5,12 @@ namespace DnsMadeEasy\Models\Concise;
 
 use DnsMadeEasy\Interfaces\Models\Concise\ConciseFolderInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
-use DnsMadeEasy\Models\AbstractModel;
+use DnsMadeEasy\Models\Common\CommonFolder;
 
-class ConciseFolder extends AbstractModel implements ConciseFolderInterface
+/**
+ * @package DnsMadeEasy
+ */
+class ConciseFolder extends CommonFolder implements ConciseFolderInterface
 {
     protected array $props = [
         'name' => null,
@@ -19,6 +22,11 @@ class ConciseFolder extends AbstractModel implements ConciseFolderInterface
     }
 
     public function save(): void
+    {
+        return;
+    }
+
+    public function refresh(): void
     {
         return;
     }
