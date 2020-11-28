@@ -10,7 +10,6 @@ use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use JsonSerializable;
 
 /**
- * @internal
  * @package DnsMadeEasy\Models
  *
  * @property-read int $id

@@ -9,14 +9,16 @@ use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 /**
  * Represents a resource from the DNS Made Easy API.
  *
- * @internal
  * @package DnsMadeEasy\Interfaces
+ *
+ * @property-read int $id
  */
 interface AbstractModelInterface
 {
     /**
      * Creates a new model of the resource
      *
+     * @internal
      * @param AbstractManagerInterface $manager
      * @param ClientInterface $client
      * @param object|null $data

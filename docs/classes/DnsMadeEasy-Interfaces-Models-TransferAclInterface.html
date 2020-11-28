@@ -98,7 +98,7 @@
     TransferAclInterface
             <span class="phpdocumentor-interface__extends">
             extends
-                            <abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr>                    </span>
+                            <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a>                    </span>
                 <div class="phpdocumentor-element__package">
             in
             <ul class="phpdocumentor-breadcrumbs">
@@ -111,7 +111,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Models/TransferAclInterface.php"><a href="files/src-interfaces-models-transferaclinterface.html"><abbr title="src/Interfaces/Models/TransferAclInterface.php">TransferAclInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 </aside>
 
             <p class="phpdocumentor-summary">Represents a Transfer ACL (AXFR)</p>
@@ -139,11 +139,39 @@
 <dd>Add an IP address to the ACL&#039;s IPs.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_delete">delete()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Deletes the object.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_hasChanged">hasChanged()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Returns true if the object has been modified since it was fetched.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_refresh">refresh()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Fetch the latest version of the object from the API. This will overwrite changes that have been made.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DnsMadeEasy-Interfaces-Models-TransferAclInterface.html#method_removeIP">removeIP()</a>
     <span>
                         &nbsp;: $this    </span>
 </dt>
 <dd>Remove the IP address from the ACL&#039;s IPs.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_save">save()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Saves the object.</dd>
 
         </dl>
 
@@ -169,7 +197,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Models/TransferAclInterface.php"><a href="files/src-interfaces-models-transferaclinterface.html"><abbr title="src/Interfaces/Models/TransferAclInterface.php">TransferAclInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add an IP address to the ACL&#039;s IPs.</p>
@@ -207,6 +235,108 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_delete">
+        delete()
+        <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Models/AbstractModelInterface.php"><a href="files/src-interfaces-models-abstractmodelinterface.html"><abbr title="src/Interfaces/Models/AbstractModelInterface.php">AbstractModelInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Deletes the object.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">delete</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_hasChanged">
+        hasChanged()
+        <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_hasChanged" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Models/AbstractModelInterface.php"><a href="files/src-interfaces-models-abstractmodelinterface.html"><abbr title="src/Interfaces/Models/AbstractModelInterface.php">AbstractModelInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns true if the object has been modified since it was fetched.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">hasChanged</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_refresh">
+        refresh()
+        <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_refresh" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Models/AbstractModelInterface.php"><a href="files/src-interfaces-models-abstractmodelinterface.html"><abbr title="src/Interfaces/Models/AbstractModelInterface.php">AbstractModelInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Fetch the latest version of the object from the API. This will overwrite changes that have been made.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">refresh</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_removeIP">
         removeIP()
         <a href="classes/DnsMadeEasy-Interfaces-Models-TransferAclInterface.html#method_removeIP" class="headerlink"><i class="fas fa-link"></i></a>
@@ -214,7 +344,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Models/TransferAclInterface.php"><a href="files/src-interfaces-models-transferaclinterface.html"><abbr title="src/Interfaces/Models/TransferAclInterface.php">TransferAclInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove the IP address from the ACL&#039;s IPs.</p>
@@ -241,6 +371,40 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_save">
+        save()
+        <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_save" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Models/AbstractModelInterface.php"><a href="files/src-interfaces-models-abstractmodelinterface.html"><abbr title="src/Interfaces/Models/AbstractModelInterface.php">AbstractModelInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">31</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Saves the object.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">save</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

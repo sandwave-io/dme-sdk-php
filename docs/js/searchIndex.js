@@ -406,6 +406,31 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020Vanity\u0020NameServer\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Interfaces-Managers-VanityNameServerManagerInterface.html#method_get"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface",
+            "name": "AbstractModelInterface",
+            "summary": "Represents\u0020a\u0020resource\u0020from\u0020the\u0020DNS\u0020Made\u0020Easy\u0020API.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Saves\u0020the\u0020object.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_save"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020the\u0020object.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003AhasChanged\u0028\u0029",
+            "name": "hasChanged",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020object\u0020has\u0020been\u0020modified\u0020since\u0020it\u0020was\u0020fetched.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_hasChanged"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003Arefresh\u0028\u0029",
+            "name": "refresh",
+            "summary": "Fetch\u0020the\u0020latest\u0020version\u0020of\u0020the\u0020object\u0020from\u0020the\u0020API.\u0020This\u0020will\u0020overwrite\u0020changes\u0020that\u0020have\u0020been\u0020made.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_refresh"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\Common\\CommonFolderInterface",
             "name": "CommonFolderInterface",
             "summary": "Represents\u0020the\u0020properties\u0020and\u0020methods\u0020common\u0020between\u0020full\u0020Folder\u0020and\u0020concise\u0020Folder\u0020objects.\u0020For\u0020use\nwhen\u0020you\u0020only\u0020need\u0020these\u0020basic\u0020properties\u0020and\u0020methods.",
@@ -711,6 +736,31 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020Vanity\u0020NameServer\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-VanityNameServerManager.html#method_get"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel",
+            "name": "AbstractModel",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Saves\u0020the\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_save"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020the\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003AhasChanged\u0028\u0029",
+            "name": "hasChanged",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020object\u0020has\u0020been\u0020modified\u0020since\u0020it\u0020was\u0020fetched.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_hasChanged"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003Arefresh\u0028\u0029",
+            "name": "refresh",
+            "summary": "Fetch\u0020the\u0020latest\u0020version\u0020of\u0020the\u0020object\u0020from\u0020the\u0020API.\u0020This\u0020will\u0020overwrite\u0020changes\u0020that\u0020have\u0020been\u0020made.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_refresh"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonFolder",
             "name": "CommonFolder",
             "summary": "",
@@ -863,17 +913,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Usage\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "",
+            "summary": "Saves\u0020the\u0020object.",
             "url": "classes/DnsMadeEasy-Models-Usage.html#method_save"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Usage\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "",
+            "summary": "Deletes\u0020the\u0020object.",
             "url": "classes/DnsMadeEasy-Models-Usage.html#method_delete"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Usage\u003A\u003Arefresh\u0028\u0029",
             "name": "refresh",
-            "summary": "",
+            "summary": "Fetch\u0020the\u0020latest\u0020version\u0020of\u0020the\u0020object\u0020from\u0020the\u0020API.\u0020This\u0020will\u0020overwrite\u0020changes\u0020that\u0020have\u0020been\u0020made.",
             "url": "classes/DnsMadeEasy-Models-Usage.html#method_refresh"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\VanityNameServer",

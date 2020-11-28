@@ -14,7 +14,6 @@ use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
 /**
  * @package DnsMadeEasy\Models
  *
- *
  * @property-read string $name
  * @property-read \DateTime $created
  * @property-read \DateTime $updated
