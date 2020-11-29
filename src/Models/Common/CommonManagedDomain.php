@@ -23,7 +23,7 @@ abstract class CommonManagedDomain extends AbstractModel implements CommonManage
     protected function getTemplate(): ?TemplateInterface
     {
         if (!$this->templateId) {
-            return;
+            return null;
         }
 
         return $this->client->templates->get($this->templateId);

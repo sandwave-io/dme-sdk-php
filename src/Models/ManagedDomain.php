@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace DnsMadeEasy\Models;
 
 use DnsMadeEasy\Exceptions\Client\ReadOnlyPropertyException;
+use DnsMadeEasy\Interfaces\Managers\DomainRecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\Common\CommonFolderInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
@@ -11,6 +12,7 @@ use DnsMadeEasy\Interfaces\Models\SOARecordInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
+use DnsMadeEasy\Managers\DomainRecordManager;
 use DnsMadeEasy\Models\Common\CommonManagedDomain;
 
 /**
@@ -33,6 +35,7 @@ use DnsMadeEasy\Models\Common\CommonManagedDomain;
  * @property int $folderId
  * @property TemplateInterface $template
  * @property int $templateId
+ * @property-read DomainRecordManagerInterface $records
  */
 class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterface
 {
@@ -59,6 +62,8 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         'transferAclId',
         'templateId',
     ];
+
+    protected ?DomainRecordManagerInterface $recordManager = null;
 
     protected function setFolder($folder)
     {
@@ -135,6 +140,15 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
             throw new ReadOnlyPropertyException('Unable to set name');
         }
         $this->props['name'] = $name;
+    }
+
+    protected function getRecords(): DomainRecordManagerInterface
+    {
+        if (!$this->recordManager) {
+            $this->recordManager = new DomainRecordManager($this->client);
+            $this->recordManager->setDomain($this);
+        }
+        return $this->recordManager;
     }
 
     /**

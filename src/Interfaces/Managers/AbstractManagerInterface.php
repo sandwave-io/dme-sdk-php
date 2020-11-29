@@ -14,7 +14,6 @@ use DnsMadeEasy\Pagination\Paginator;
  * The manager is the way that resources are fetched, queried and updated in the SDK. There should be one for every
  * resource that can be manipulated.
  *
- * @internal
  * @package DnsMadeEasy\Interfaces
  */
 interface AbstractManagerInterface

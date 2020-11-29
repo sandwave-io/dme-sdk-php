@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces\Models;
 
+use DnsMadeEasy\Interfaces\Managers\DomainRecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
 use DnsMadeEasy\Models\TransferAcl;
 
@@ -21,6 +22,7 @@ use DnsMadeEasy\Models\TransferAcl;
  * @property int $folderId
  * @property TemplateInterface $template
  * @property int $templateId
+ * @property-read DomainRecordManagerInterface $records
  *
  */
 interface ManagedDomainInterface extends CommonManagedDomainInterface

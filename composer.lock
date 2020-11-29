@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ba40913529add9c5945abebabfbafda",
+    "content-hash": "af70c9c7441e4a4de9bb80eef161a238",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -489,6 +489,82 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "spatie/enum",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/enum.git",
+                "reference": "ce851dc270358acbcc64cd86abe1076e492ac18e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/enum/zipball/ce851dc270358acbcc64cd86abe1076e492ac18e",
+                "reference": "ce851dc270358acbcc64cd86abe1076e492ac18e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "^1.9.1",
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^9.0",
+                "vimeo/psalm": "^3.12"
+            },
+            "suggest": {
+                "fzaninotto/faker": "To use the enum faker provider",
+                "phpunit/phpunit": "To use the enum assertions"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Enum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev@gummibeer.de",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Enums",
+            "homepage": "https://github.com/spatie/enum",
+            "keywords": [
+                "enum",
+                "enumerable",
+                "spatie"
+            ],
+            "support": {
+                "docs": "https://docs.spatie.be/enum",
+                "issues": "https://github.com/spatie/enum/issues",
+                "source": "https://github.com/spatie/enum"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-26T10:26:47+00:00"
         }
     ],
     "packages-dev": [

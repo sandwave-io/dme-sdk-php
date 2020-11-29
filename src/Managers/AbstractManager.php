@@ -11,7 +11,6 @@ use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 
 /**
- * @internal
  * @package DnsMadeEasy\Managers
  */
 abstract class AbstractManager implements AbstractManagerInterface
@@ -59,9 +58,11 @@ abstract class AbstractManager implements AbstractManagerInterface
         return $this->transformApiData($data);
     }
 
-    protected function createObject(): AbstractModelInterface
+    protected function createObject(?string $className = null): AbstractModelInterface
     {
-        $className = $this->getModelClass();
+        if (!$className) {
+            $className = $this->getModelClass();
+        }
         return new $className($this, $this->client);
     }
 
@@ -160,7 +161,7 @@ abstract class AbstractManager implements AbstractManagerInterface
             return $this->getFromCache($objectId);
         }
 
-        $object = new $className($this, $this->client);
+        $object = $this->createObject($className);
         $object->populateFromApi($data);
 
         $this->putInCache($objectId, $object);
