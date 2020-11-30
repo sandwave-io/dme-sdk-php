@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
@@ -27,23 +28,26 @@ class RecordFailoverManager extends AbstractManager implements RecordFailoverMan
             return $this->getObject($recordId);
         } catch (ModelNotFoundException $e) {
             $model = $this->createObject($this->getModelClass());
-            $model->populateFromApi((object) [
-                'id' => $recordId,
-            ]);
+            $model->populateFromApi(
+                (object)[
+                    'id' => $recordId,
+                ]
+            );
             return $model;
         }
     }
 
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
-     * @internal
      * @param RecordFailoverInterface $object
      * @throws HttpException
+     * @internal
      */
     public function save(AbstractModelInterface $object): void
     {
         $this->client->put($this->getObjectUri($object->id), $object->transformForApi());
     }
+
     /**
      * Applies transformations to the API data before it is used to instantiate a model.
      * @param object $data

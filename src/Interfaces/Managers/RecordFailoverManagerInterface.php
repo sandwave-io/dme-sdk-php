@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
@@ -23,17 +24,17 @@ interface RecordFailoverManagerInterface
 
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
-     * @internal
      * @param RecordFailoverInterface $object
      * @throws HttpException
+     * @internal
      */
     public function save(RecordFailoverInterface $recordFailover): void;
 
     /**
      * Uses the API to delete the specified object. If the object is new, then no action is taken on the API.
-     * @internal
      * @param RecordFailoverInterface $recordFailover
      * @throws HttpException
+     * @internal
      */
     public function delete(RecordFailoverInterface $recordFailover): void;
 }

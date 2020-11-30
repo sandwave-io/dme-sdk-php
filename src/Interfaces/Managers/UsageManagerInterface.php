@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
@@ -16,8 +17,8 @@ interface UsageManagerInterface
 {
     /**
      * Creates the Usage Manager.
-     * @internal
      * @param ClientInterface $client
+     * @internal
      */
     public function __construct(ClientInterface $client);
 

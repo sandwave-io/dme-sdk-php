@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
@@ -40,12 +41,12 @@ class TemplateManager extends AbstractManager implements TemplateManagerInterfac
 
     public function createFromDomainId(int $domainId, string $name): TemplateInterface
     {
-        $payload = (object) [
+        $payload = (object)[
             'name' => $name,
             'fromDomainId' => $domainId,
         ];
         $response = $this->client->post($this->baseUri, $payload);
-        $data = json_decode((string) $response->getBody());
+        $data = json_decode((string)$response->getBody());
 
         $object = $this->createObject();
         $object->populateFromApi($data);

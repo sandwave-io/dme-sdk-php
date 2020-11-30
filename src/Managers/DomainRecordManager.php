@@ -1,13 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
-use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Interfaces\Managers\DomainRecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use DnsMadeEasy\Interfaces\Models\DomainRecordInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
+
 /**
  * Represents a Domain Record.
  * @package DnsMadeEasy\Managers
@@ -38,9 +39,9 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
 
     /**
      * Sets the domain used for the manager.
-     * @internal
      * @param ManagedDomainInterface $domain
      * @return $this
+     * @internal
      */
     public function setDomain(ManagedDomainInterface $domain): DomainRecordManagerInterface
     {
@@ -51,8 +52,8 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
 
     /**
      * Fetches the domain for the manager.
-     * @internal
      * @return ManagedDomainInterface|null
+     * @internal
      */
     public function getDomain(): ?ManagedDomainInterface
     {

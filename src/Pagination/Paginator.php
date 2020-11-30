@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Pagination;
@@ -33,7 +34,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
         $this->totalItems = $totalItems;
         $this->perPage = $perPage;
         $this->currentPage = $currentPage;
-        $this->lastPage = max((int) ceil($totalItems / $perPage), 1);
+        $this->lastPage = max((int)ceil($totalItems / $perPage), 1);
     }
 
     /**
@@ -81,7 +82,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function count()
     {
-        return (int) count($this->items);
+        return (int)count($this->items);
     }
 
     /**

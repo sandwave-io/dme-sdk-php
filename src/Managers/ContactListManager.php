@@ -1,10 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
-use DnsMadeEasy\Exceptions\Client\Http\HttpException;
-use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;

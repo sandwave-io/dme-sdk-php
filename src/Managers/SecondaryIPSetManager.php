@@ -1,9 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
-use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;

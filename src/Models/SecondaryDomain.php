@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
@@ -118,12 +119,12 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
     }
 
     /**
-     * @internal
      * @return object
+     * @internal
      */
     public function transformForApi(): object
     {
-        $payload = (object) [];
+        $payload = (object)[];
         if (!$this->id) {
             $payload->name = $this->name;
         }

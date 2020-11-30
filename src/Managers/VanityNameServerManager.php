@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
@@ -12,7 +13,8 @@ use DnsMadeEasy\Traits\ListableManager;
  * Manager for Vanity NameServer resources.
  * @package DnsMadeEasy\Managers
  */
-class VanityNameServerManager extends AbstractManager implements VanityNameServerManagerInterface, ListableManagerInterface
+class VanityNameServerManager extends AbstractManager implements VanityNameServerManagerInterface,
+                                                                 ListableManagerInterface
 {
     use ListableManager;
 

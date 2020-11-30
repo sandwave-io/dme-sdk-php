@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
@@ -19,15 +20,16 @@ class UsageManager implements UsageManagerInterface
 
     /**
      * Createsa new Query Usage manager.
-     * @internal
      * @param ClientInterface $client
+     * @internal
      */
     public function __construct(ClientInterface $client)
     {
         $this->client = $client;
     }
 
-    public function all(): array {
+    public function all(): array
+    {
         return $this->getData('/usageApi/queriesApi');
     }
 
@@ -56,10 +58,13 @@ class UsageManager implements UsageManagerInterface
     protected function getData(string $url, ?int $domainId = null): array
     {
         $response = $this->client->get($url);
-        $data = json_decode((string) $response->getBody());
-        return array_map(function ($item) use ($domainId) {
-            $item->domainId = $domainId;
-            return new Usage($this->client, $this, $item);
-        }, $data);
+        $data = json_decode((string)$response->getBody());
+        return array_map(
+            function ($item) use ($domainId) {
+                $item->domainId = $domainId;
+                return new Usage($this->client, $this, $item);
+            },
+            $data
+        );
     }
 }

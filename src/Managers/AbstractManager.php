@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
@@ -68,7 +69,7 @@ abstract class AbstractManager implements AbstractManagerInterface
         } catch (NotFoundException $e) {
             throw new ModelNotFoundException("Unable to find object with ID {$id}");
         }
-        $data = json_decode((string) $response->getBody());
+        $data = json_decode((string)$response->getBody());
         return $this->transformApiData($data);
     }
 
@@ -88,9 +89,9 @@ abstract class AbstractManager implements AbstractManagerInterface
     /**
      * Deletes the object passed to it. If the object doesn't have an ID, no action is taken. The object is also
      * removed from the cache.
-     * @internal
      * @param AbstractModelInterface $object
      * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
+     * @internal
      */
     public function delete(AbstractModelInterface $object): void
     {
@@ -105,9 +106,9 @@ abstract class AbstractManager implements AbstractManagerInterface
 
     /**
      * Saves the object passed to it.
-     * @internal
      * @param AbstractModelInterface $object
      * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
+     * @internal
      */
     public function save(AbstractModelInterface $object): void
     {
@@ -115,15 +116,15 @@ abstract class AbstractManager implements AbstractManagerInterface
             $this->client->put($this->getObjectUri($object->id), $object->transformForApi());
         } else {
             $response = $this->client->post($this->getBaseUri(), $object->transformForApi());
-            $data = json_decode((string) $response->getBody());
+            $data = json_decode((string)$response->getBody());
             $object->populateFromApi($data);
         }
     }
 
     /**
      * Constructor for a Manager class.
-     * @internal
      * @param ClientInterface $client
+     * @internal
      */
     public function __construct(ClientInterface $client)
     {
@@ -193,7 +194,7 @@ abstract class AbstractManager implements AbstractManagerInterface
         } elseif (is_array($input) && array_key_exists($input, 'id')) {
             return "{$name}:{$input['id']}";
         }
-        return "{$name}:" . (string) $input;
+        return "{$name}:" . (string)$input;
     }
 
     /**
@@ -216,7 +217,6 @@ abstract class AbstractManager implements AbstractManagerInterface
         $this->putInCache($objectId, $object);
 
         return $object;
-
     }
 
     /**
@@ -258,9 +258,9 @@ abstract class AbstractManager implements AbstractManagerInterface
 
     /**
      * Updates the object to the latest version in the API.
-     * @internal
      * @param AbstractModelInterface $object
      * @throws ModelNotFoundException
+     * @internal
      */
     public function refresh(AbstractModelInterface $object): void
     {

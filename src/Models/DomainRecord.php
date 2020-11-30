@@ -1,10 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
 
 use DnsMadeEasy\Exceptions\Client\ReadOnlyPropertyException;
-use DnsMadeEasy\Exceptions\DnsMadeEasyException;
 use DnsMadeEasy\Interfaces\Models\DomainRecordInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 
@@ -21,10 +21,10 @@ class DomainRecord extends Record implements DomainRecordInterface
 
     /**
      * Sets the domain for the record. This can only be set once.
-     * @internal
      * @param ManagedDomainInterface $domain
      * @return $this
      * @throws ReadOnlyPropertyException
+     * @internal
      */
     public function setDomain(ManagedDomainInterface $domain): self
     {

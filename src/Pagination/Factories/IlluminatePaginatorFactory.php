@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Pagination\Factories;
 
 use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
-use \Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
  * A pagination factory for use with Laravel/Lumen frameworks or anything that is also using the Illuminate pagination

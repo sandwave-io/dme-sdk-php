@@ -1,10 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
-use DnsMadeEasy\Exceptions\Client\Http\HttpException;
-use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
@@ -34,6 +33,7 @@ class ManagedDomainManager extends AbstractManager implements ManagedDomainManag
     {
         return $this->getObject($id);
     }
+
     /**
      * Return the name of the model class for the concise version of a managed domains.
      * @return string

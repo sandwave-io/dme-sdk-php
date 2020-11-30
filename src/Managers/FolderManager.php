@@ -1,15 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
-use DnsMadeEasy\Exceptions\Client\Http\HttpException;
-use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
 use DnsMadeEasy\Models\Concise\ConciseFolder;
-use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Manager for Folder resources.
@@ -37,12 +35,15 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
     public function paginate(int $page = 1, int $perPage = 20)
     {
         $response = $this->client->get($this->getBaseUri());
-        $data = json_decode((string) $response->getBody());
+        $data = json_decode((string)$response->getBody());
         $dataSet = array_slice($data, ($page - 1) * $perPage, $perPage);
-        $items = array_map(function ($data) {
-            $data = $this->transformConciseApiData($data);
-            return $this->createExistingObject($data, $this->getConciseModelClass());;
-        }, $dataSet);
+        $items = array_map(
+            function ($data) {
+                $data = $this->transformConciseApiData($data);
+                return $this->createExistingObject($data, $this->getConciseModelClass());;
+            },
+            $dataSet
+        );
 
         return $this->client->getPaginatorFactory()->paginate($items, count($data), $perPage, $page);
     }
@@ -73,7 +74,7 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
      */
     protected function transformConciseApiData(object $data): object
     {
-        return (object) [
+        return (object)[
             'id' => $data->value,
             'label' => $data->label,
         ];

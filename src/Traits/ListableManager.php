@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Traits;
@@ -6,7 +7,8 @@ namespace DnsMadeEasy\Traits;
 use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Pagination\Paginator;
 
-trait ListableManager {
+trait ListableManager
+{
     /**
      * Fetch a paginated subset of the resources. You can specify the page and the number of items per-page. The result
      * will be an object representing the paginated results. By specifying a custom Paginator Factory on the client
@@ -27,11 +29,14 @@ trait ListableManager {
             'rows' => $perPage,
         ];
         $response = $this->client->get($this->getBaseUri(), $params);
-        $data = json_decode((string) $response->getBody());
-        $items = array_map(function ($data) {
-            $data = $this->transformConciseApiData($data);
-            return $this->createExistingObject($data, $this->getConciseModelClass());;
-        }, $data->data);
+        $data = json_decode((string)$response->getBody());
+        $items = array_map(
+            function ($data) {
+                $data = $this->transformConciseApiData($data);
+                return $this->createExistingObject($data, $this->getConciseModelClass());;
+            },
+            $data->data
+        );
 
         return $this->client->getPaginatorFactory()->paginate($items, $data->totalRecords, $perPage, $page);
     }

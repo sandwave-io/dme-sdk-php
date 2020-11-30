@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
@@ -35,7 +36,7 @@ class ContactList extends AbstractModel implements ContactListInterface
                 return $this;
             }
         }
-        $emails[] = (object) [
+        $emails[] = (object)[
             'email' => $email,
             'confirmed' => false,
         ];

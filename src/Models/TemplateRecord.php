@@ -1,12 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
 
-use DnsMadeEasy\Enums\RecordType;
 use DnsMadeEasy\Exceptions\Client\ReadOnlyPropertyException;
-use DnsMadeEasy\Interfaces\Models\DomainRecordInterface;
-use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
 
@@ -23,10 +21,10 @@ class TemplateRecord extends Record implements TemplateRecordInterface
 
     /**
      * Sets the template for the record.
-     * @internal
      * @param TemplateInterface $template
      * @return $this
      * @throws ReadOnlyPropertyException
+     * @internal
      */
     public function setTemplate(TemplateInterface $template): self
     {

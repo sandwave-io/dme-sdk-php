@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
@@ -94,8 +95,8 @@ abstract class Record extends AbstractModel implements RecordInterface
     }
 
     /**
-     * @internal
      * @return mixed|object
+     * @internal
      */
     public function jsonSerialize()
     {

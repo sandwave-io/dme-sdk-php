@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
@@ -85,10 +86,10 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Creates the model and optionally populates it with data.
-     * @internal
      * @param AbstractManagerInterface $manager
      * @param ClientInterface $client
      * @param object|null $data
+     * @internal
      */
     public function __construct(AbstractManagerInterface $manager, ClientInterface $client, ?object $data = null)
     {
@@ -102,9 +103,9 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Returns a string representation of the model's class and ID.
-     * @internal
      * @return string
      * @throws \ReflectionException
+     * @internal
      */
     public function __toString()
     {
@@ -118,12 +119,12 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     public function hasChanged(): bool
     {
-        return (bool) $this->changed;
+        return (bool)$this->changed;
     }
 
     /**
-     * @internal
      * @param object $data
+     * @internal
      */
     public function populateFromApi(object $data): void
     {
@@ -151,8 +152,8 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Generate a representation of the object for sending to the API.
-     * @internal
      * @return object
+     * @internal
      */
     public function transformForApi(): object
     {
@@ -171,12 +172,12 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Returns a JSON serializable representation of the resource.
-     * @internal
      * @return mixed|object
+     * @internal
      */
     public function jsonSerialize()
     {
-        $result = (object) [
+        $result = (object)[
             'id' => $this->id,
         ];
         foreach ($this->props as $name => $value) {
@@ -205,9 +206,9 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     /**
      * Magic method to fetch properties for the object. If a get{Name} method exists, it will be called  first,
      * otherwise it will try and fetch it from the properties array.
-     * @internal
      * @param $name
      * @return mixed
+     * @internal
      */
     public function __get($name)
     {
@@ -225,10 +226,10 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
      *
      * Changes are tracked to allow us to see any changes.
      *
-     * @internal
      * @param $name
      * @param $value
      * @throws ReadOnlyPropertyException
+     * @internal
      */
     public function __set($name, $value)
     {

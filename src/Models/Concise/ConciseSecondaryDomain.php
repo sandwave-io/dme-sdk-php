@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models\Concise;
@@ -50,6 +51,7 @@ class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSec
     {
         return $this->manager->get($this->id);
     }
+
     /**
      * Override the save method, we can't save concise resources, so we don't do anything.
      * @internal

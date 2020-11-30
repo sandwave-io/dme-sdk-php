@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
@@ -198,8 +199,8 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
     }
 
     /**
-     * @internal
      * @return object
+     * @internal
      */
     public function transformForApi(): object
     {

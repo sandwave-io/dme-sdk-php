@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces\Models;
@@ -18,10 +19,10 @@ interface AbstractModelInterface
     /**
      * Creates a new model of the resource
      *
-     * @internal
      * @param AbstractManagerInterface $manager
      * @param ClientInterface $client
      * @param object|null $data
+     * @internal
      */
     public function __construct(AbstractManagerInterface $manager, ClientInterface $client, ?object $data = null);
 
@@ -50,16 +51,16 @@ interface AbstractModelInterface
     /**
      * Populate the object from API data.
      *
-     * @internal
      * @param object $data
+     * @internal
      */
     public function populateFromApi(object $data): void;
 
     /**
      * Generate a representation of the object for sending to the API.
      *
-     * @internal
      * @return object
+     * @internal
      */
     public function transformForApi(): object;
 }

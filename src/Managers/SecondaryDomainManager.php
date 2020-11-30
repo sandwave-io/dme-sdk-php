@@ -1,9 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
-use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Interfaces\Managers\SecondaryDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryDomainInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
@@ -14,7 +14,8 @@ use DnsMadeEasy\Traits\ListableManager;
  * Manager for Secondary Domain resources.
  * @package DnsMadeEasy\Managers
  */
-class SecondaryDomainManager extends AbstractManager implements SecondaryDomainManagerInterface, ListableManagerInterface
+class SecondaryDomainManager extends AbstractManager implements SecondaryDomainManagerInterface,
+                                                                ListableManagerInterface
 {
     use ListableManager;
 
@@ -33,6 +34,7 @@ class SecondaryDomainManager extends AbstractManager implements SecondaryDomainM
     {
         return $this->getObject($id);
     }
+
     /**
      * Return the name of the model class for the concise version secondary domain resources.
      * @return string

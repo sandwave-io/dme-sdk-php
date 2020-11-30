@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy;
@@ -33,10 +34,10 @@ use DnsMadeEasy\Managers\TransferAclManager;
 use DnsMadeEasy\Managers\UsageManager;
 use DnsMadeEasy\Managers\VanityNameServerManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
+use GuzzleHttp\Psr7\Request;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Psr7\Request;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -63,19 +64,19 @@ class Client implements ClientInterface, LoggerAwareInterface
      * The HTTP Client for all requests.
      * @var HttpClientInterface
      */
-	protected HttpClientInterface $client;
+    protected HttpClientInterface $client;
 
     /**
      * The DNS Made Easy API Key
      * @var string
      */
-	protected string $apiKey;
+    protected string $apiKey;
 
     /**
      * The DNS Made Easy Secret Key
      * @var string
      */
-	protected string $secretKey;
+    protected string $secretKey;
 
     /**
      * The DNS Made Easy API Endpoint
@@ -99,14 +100,14 @@ class Client implements ClientInterface, LoggerAwareInterface
      * A cache of instantiated manager classes.
      * @var array
      */
-	protected array $managers = [];
+    protected array $managers = [];
 
     /**
      * A map of manager names to classes.
      * @var array|string[]
      */
-	protected array $managerMap = [
-	    'contactlists' => ContactListManager::class,
+    protected array $managerMap = [
+        'contactlists' => ContactListManager::class,
         'domains' => ManagedDomainManager::class,
         'folders' => FolderManager::class,
         'vanity' => VanityNameServerManager::class,
@@ -125,44 +126,47 @@ class Client implements ClientInterface, LoggerAwareInterface
      * @param PaginatorFactoryInterface|null $paginatorFactory
      * @param LoggerInterface|null $logger
      */
-	public function __construct(?HttpClientInterface $client = null, ?PaginatorFactoryInterface $paginatorFactory = null, ?LoggerInterface $logger = null)
-	{
-	    // If we weren't given a HTTP client, create a new Guzzle client.
-		if ($client === null) {
-			$client = new \GuzzleHttp\Client;
-		}
-
-		// If we don't have a paginator factory, use our own.
-		if ($paginatorFactory === null) {
-		    $this->paginatorFactory = new PaginatorFactory;
+    public function __construct(
+        ?HttpClientInterface $client = null,
+        ?PaginatorFactoryInterface $paginatorFactory = null,
+        ?LoggerInterface $logger = null
+    ) {
+        // If we weren't given a HTTP client, create a new Guzzle client.
+        if ($client === null) {
+            $client = new \GuzzleHttp\Client;
         }
 
-		$this->setHttpClient($client);
-
-		// If we don't have a logger, use the null logger.
-		if ($logger === null) {
-		    $logger = new NullLogger();
+        // If we don't have a paginator factory, use our own.
+        if ($paginatorFactory === null) {
+            $this->paginatorFactory = new PaginatorFactory;
         }
-		$this->logger = $logger;
-	}
 
-	public function setLogger(LoggerInterface $logger)
+        $this->setHttpClient($client);
+
+        // If we don't have a logger, use the null logger.
+        if ($logger === null) {
+            $logger = new NullLogger();
+        }
+        $this->logger = $logger;
+    }
+
+    public function setLogger(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
     public function setHttpClient(HttpClientInterface $client): self
-	{
-		$this->client = $client;
-		return $this;
-	}
+    {
+        $this->client = $client;
+        return $this;
+    }
 
-	public function getHttpClient(): HttpClientInterface
-	{
-		return $this->client;
-	}
+    public function getHttpClient(): HttpClientInterface
+    {
+        return $this->client;
+    }
 
-	public function setEndpoint(string $endpoint): self
+    public function setEndpoint(string $endpoint): self
     {
         $this->endpoint = $endpoint;
         return $this;
@@ -173,29 +177,29 @@ class Client implements ClientInterface, LoggerAwareInterface
         return $this->endpoint;
     }
 
-	public function setApiKey(string $key): self
-	{
-		$this->apiKey = $key;
-		return $this;
-	}
+    public function setApiKey(string $key): self
+    {
+        $this->apiKey = $key;
+        return $this;
+    }
 
-	public function getApiKey(): string
-	{
-		return $this->apiKey;
-	}
+    public function getApiKey(): string
+    {
+        return $this->apiKey;
+    }
 
-	public function setSecretKey(string $key): self
-	{
-		$this->secretKey = $key;
-		return $this;
-	}
+    public function setSecretKey(string $key): self
+    {
+        $this->secretKey = $key;
+        return $this;
+    }
 
-	public function getSecretKey(): string
-	{
-		return $this->secretKey;
-	}
+    public function getSecretKey(): string
+    {
+        return $this->secretKey;
+    }
 
-	public function setPaginatorFactory(PaginatorFactoryInterface $factory): self
+    public function setPaginatorFactory(PaginatorFactoryInterface $factory): self
     {
         $this->paginatorFactory = $factory;
         return $this;
@@ -207,67 +211,67 @@ class Client implements ClientInterface, LoggerAwareInterface
     }
 
     public function get(string $url, array $params = []): ResponseInterface
-	{
-		$queryString = '';
-		if ($params) {
-			$queryString = '?' . http_build_query($params);
-		}
-		$url .= $queryString;
+    {
+        $queryString = '';
+        if ($params) {
+            $queryString = '?' . http_build_query($params);
+        }
+        $url .= $queryString;
 
-		$request = new Request('GET', $this->endpoint . $url);
-		return $this->send($request);
-	}
+        $request = new Request('GET', $this->endpoint . $url);
+        return $this->send($request);
+    }
 
-	public function post(string $url, $payload): ResponseInterface
-	{
-		$request = new Request('POST', $this->endpoint . $url, [], 'php://temp');
-		$request->withHeader('Content-Type', 'application/json');
-		$request->getBody()->write(json_encode($payload));
-		return $this->send($request);
-	}
+    public function post(string $url, $payload): ResponseInterface
+    {
+        $request = new Request('POST', $this->endpoint . $url, [], 'php://temp');
+        $request->withHeader('Content-Type', 'application/json');
+        $request->getBody()->write(json_encode($payload));
+        return $this->send($request);
+    }
 
-	public function put(string $url, $payload): ResponseInterface
-	{
-		$request = new Request('PUT', $this->endpoint . $url, [], 'php://temp');
-		$request->withHeader('Content-Type', 'application/json');
-		$request->getBody()->write(json_encode($payload));
-		return $this->send($request);
-	}
+    public function put(string $url, $payload): ResponseInterface
+    {
+        $request = new Request('PUT', $this->endpoint . $url, [], 'php://temp');
+        $request->withHeader('Content-Type', 'application/json');
+        $request->getBody()->write(json_encode($payload));
+        return $this->send($request);
+    }
 
-	public function delete(string $url): ResponseInterface
-	{
-		$request = new Request('DELETE', $this->endpoint . $url);
-		return $this->send($request);
-	}
+    public function delete(string $url): ResponseInterface
+    {
+        $request = new Request('DELETE', $this->endpoint . $url);
+        return $this->send($request);
+    }
 
-	public function send(RequestInterface $request): ResponseInterface
-	{
-	    $this->logger->debug("[DnsMadeEasy] API Request: {$request->getMethod()} {$request->getUri()}");
+    public function send(RequestInterface $request): ResponseInterface
+    {
+        $this->logger->debug("[DnsMadeEasy] API Request: {$request->getMethod()} {$request->getUri()}");
 
-		$request = $request->withHeader('Accept', 'application/json');
-		$request = $this->addAuthHeaders($request);
-		$response = $this->client->sendRequest($request);
+        $request = $request->withHeader('Accept', 'application/json');
+        $request = $this->addAuthHeaders($request);
+        $response = $this->client->sendRequest($request);
 
         $this->logger->debug("[DnsMadeEasy] API Response: {$response->getStatusCode()} {$response->getReasonPhrase()}");
-		$statusCode = $response->getStatusCode();
-		if ((int) substr((string) $statusCode, 0, 1) <= 3) {
-		    return $response;
+        $statusCode = $response->getStatusCode();
+        if ((int)substr((string)$statusCode, 0, 1) <= 3) {
+            return $response;
         } else {
-		    $lookup = [
-		        400 => BadRequestException::class,
+            $lookup = [
+                400 => BadRequestException::class,
                 404 => NotFoundException::class,
             ];
-		    if (array_key_exists($statusCode, $lookup)) {
-		        $exceptionClass = $lookup[$statusCode];
+            if (array_key_exists($statusCode, $lookup)) {
+                $exceptionClass = $lookup[$statusCode];
             } else {
-		        $exceptionClass = HttpException::class;
+                $exceptionClass = HttpException::class;
             }
             $exception = new $exceptionClass($response->getReasonPhrase(), $statusCode);
             $exception->setRequest($request);
-		    $exception->setResponse($response);
-		    throw $exception;
+            $exception->setResponse($response);
+            throw $exception;
         }
-	}
+    }
 
     /**
      * Adds auth headers to requests. These are generated based on the Api Key and the Secret Key.
@@ -275,24 +279,24 @@ class Client implements ClientInterface, LoggerAwareInterface
      * @return RequestInterface
      * @throws \Exception
      */
-	protected function addAuthHeaders(RequestInterface $request): RequestInterface
-	{
-		$now = new \DateTime('now', new \DateTimeZone('UTC'));
-		$timestamp = $now->format('r');
-		$hmac = hash_hmac('sha1', $timestamp, $this->getSecretKey());
+    protected function addAuthHeaders(RequestInterface $request): RequestInterface
+    {
+        $now = new \DateTime('now', new \DateTimeZone('UTC'));
+        $timestamp = $now->format('r');
+        $hmac = hash_hmac('sha1', $timestamp, $this->getSecretKey());
 
-		$request = $request->withHeader('x-dnsme-apiKey', $this->getApiKey());
-		$request = $request->withHeader('x-dnsme-requestDate', $timestamp);
-		$request = $request->withHeader('x-dnsme-hmac', $hmac);
-		return $request;
-	}
+        $request = $request->withHeader('x-dnsme-apiKey', $this->getApiKey());
+        $request = $request->withHeader('x-dnsme-requestDate', $timestamp);
+        $request = $request->withHeader('x-dnsme-hmac', $hmac);
+        return $request;
+    }
 
     /**
      * Check if a manager exists with that name in our manager map.
      * @param $name
      * @return bool
      */
-	protected function hasManager($name): bool
+    protected function hasManager($name): bool
     {
         $name = strtolower($name);
         return array_key_exists($name, $this->managerMap);
@@ -319,7 +323,7 @@ class Client implements ClientInterface, LoggerAwareInterface
         return $this->managers[$name];
     }
 
-	public function __get($name)
+    public function __get($name)
     {
         // Usage is a special manager and not like the others.
         if ($name == 'usage') {

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
@@ -38,9 +39,9 @@ class TemplateRecordManager extends RecordManager implements TemplateRecordManag
 
     /**
      * Sets the template for the manager.
-     * @internal
      * @param TemplateInterface $template
      * @return $this|TemplateRecordManagerInterface
+     * @internal
      */
     public function setTemplate(TemplateInterface $template): TemplateRecordManagerInterface
     {
@@ -51,8 +52,8 @@ class TemplateRecordManager extends RecordManager implements TemplateRecordManag
 
     /**
      * Gets the template for the manager.
-     * @internal
      * @return TemplateInterface|null
+     * @internal
      */
     public function getTemplate(): ?TemplateInterface
     {

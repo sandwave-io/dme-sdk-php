@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
 
 use DnsMadeEasy\Exceptions\Client\Http\HttpException;
-use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
+use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
 
 /**
  * Manages Template Record resources from the API

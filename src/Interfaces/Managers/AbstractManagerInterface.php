@@ -1,12 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
 
 use DnsMadeEasy\Exceptions\Client\Http\HttpException;
-use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
-use DnsMadeEasy\Pagination\Paginator;
 
 /**
  * Defines the interface of a Manager for a particular resource in the DNS Made Easy API.
@@ -21,17 +20,17 @@ interface AbstractManagerInterface
 
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
-     * @internal
      * @param AbstractModelInterface $object
      * @throws HttpException
+     * @internal
      */
     public function save(AbstractModelInterface $object): void;
 
     /**
      * Uses the API to delete the specified object. If the object is new, then no action is taken on the API.
-     * @internal
      * @param AbstractModelInterface $object
      * @throws HttpException
+     * @internal
      */
     public function delete(AbstractModelInterface $object): void;
 }

@@ -1,9 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models;
 
-use DnsMadeEasy\Interfaces\Managers\UsageManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\UsageInterface;
 
@@ -69,6 +69,7 @@ class Usage extends AbstractModel implements UsageInterface
     {
         return;
     }
+
     /**
      * Usage is read-only and can't be deleted.
      */
@@ -76,6 +77,7 @@ class Usage extends AbstractModel implements UsageInterface
     {
         return;
     }
+
     /**
      * Usage is read-only and can't be refreshed.
      */

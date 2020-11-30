@@ -1,13 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DnsMadeEasy\Models\Common;
 
-use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\Common\CommonSecondaryDomainInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
-use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
-use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Models\AbstractModel;
 
 /**
