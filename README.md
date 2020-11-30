@@ -73,27 +73,6 @@ $client = new \DnsMadeEasy\Client($myClient);
 $client->setHttpClient($myClient);
 ```
 
-### Managers
-
-Managers are used for managing your access to resources on the API, including creating new resources and fetching existing ones from the API. These can be accessed as properties on the client.
-
-```php
-$domainsManager = $client->domains;
-$domain = $domainsManager->get(1234);
-```
-
-### Models
-
-The models themselves follow an ActiveRecord pattern. Properties can be updated and `save()` called on the model to update the API, or you can call `delete()` on the models to delete that resource from the API.
-
-```php
-$domain = $client->domains->get(1234);
-$domain->gtdEnabled = true;
-$domain->save();
-```
-
-
-
 ## Examples
 
 Full documentation of the library methods are in the docs folder.
