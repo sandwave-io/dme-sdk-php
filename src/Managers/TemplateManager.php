@@ -6,12 +6,21 @@ namespace DnsMadeEasy\Managers;
 use DnsMadeEasy\Interfaces\Managers\TemplateManagerInterface;
 use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
+use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Traits\ListableManager;
 
 /**
+ * Manager for Template resources.
  * @package DnsMadeEasy\Managers
  */
-class TemplateManager extends AbstractManager implements TemplateManagerInterface
+class TemplateManager extends AbstractManager implements TemplateManagerInterface, ListableManagerInterface
 {
+    use ListableManager;
+
+    /**
+     * Base URI for template resources.
+     * @var string
+     */
     protected string $baseUri = '/dns/template';
 
     public function create(): TemplateInterface

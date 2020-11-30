@@ -58,6 +58,7 @@
                                             <li><a href="namespaces/dnsmadeeasy-managers.html"><abbr title="\DnsMadeEasy\Managers">Managers</abbr></a></li>
                                             <li><a href="namespaces/dnsmadeeasy-models.html"><abbr title="\DnsMadeEasy\Models">Models</abbr></a></li>
                                             <li><a href="namespaces/dnsmadeeasy-pagination.html"><abbr title="\DnsMadeEasy\Pagination">Pagination</abbr></a></li>
+                                            <li><a href="namespaces/dnsmadeeasy-traits.html"><abbr title="\DnsMadeEasy\Traits">Traits</abbr></a></li>
                                     </ul>
                         </section>
 
@@ -112,17 +113,21 @@
     
             <span class="phpdocumentor-element__implements">
             implements
-                            <a href="classes/DnsMadeEasy-Interfaces-Managers-VanityNameServerManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface">VanityNameServerManagerInterface</abbr></a>                    </span>
+                            <a href="classes/DnsMadeEasy-Interfaces-Managers-VanityNameServerManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface">VanityNameServerManagerInterface</abbr></a>,                             <a href="classes/DnsMadeEasy-Interfaces-Traits-ListableManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Traits\ListableManagerInterface">ListableManagerInterface</abbr></a>                    </span>
     
+            <span class="phpdocumentor-element__extends">
+            Uses
+                            <a href="classes/DnsMadeEasy-Traits-ListableManager.html"><abbr title="\DnsMadeEasy\Traits\ListableManager">ListableManager</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Managers/VanityNameServerManager.php"><a href="files/src-managers-vanitynameservermanager.html"><abbr title="src/Managers/VanityNameServerManager.php">VanityNameServerManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 </aside>
 
-        
+            <p class="phpdocumentor-summary">Manager for Vanity NameServer resources.</p>
+
     <section class="phpdocumentor-description"></section>
 
 
@@ -138,6 +143,8 @@
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-VanityNameServerManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface">VanityNameServerManagerInterface</abbr></a></dt>
         <dd>Manages Vanity NameServer resources from the API.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Traits-ListableManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Traits\ListableManagerInterface">ListableManagerInterface</abbr></a></dt>
+        <dd>Fnctionality for paginated indexed resources.</dd>
     
     
     </dl>
@@ -164,7 +171,7 @@
 <dd>Gets the Vanity NameServer resource with the specified ID.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DnsMadeEasy-Managers-AbstractManager.html#method_paginate">paginate()</a>
+    <a href="classes/DnsMadeEasy-Traits-ListableManager.html#method_paginate">paginate()</a>
     <span>
                         &nbsp;: <a href="classes/DnsMadeEasy-Pagination-Paginator.html"><abbr title="\DnsMadeEasy\Pagination\Paginator">Paginator</abbr></a>|mixed    </span>
 </dt>
@@ -198,7 +205,7 @@ you can change the type of result you get from this method.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Managers/VanityNameServerManager.php"><a href="files/src-managers-vanitynameservermanager.html"><abbr title="src/Managers/VanityNameServerManager.php">VanityNameServerManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a new Vanity NameServer resource.</p>
@@ -232,7 +239,7 @@ you can change the type of result you get from this method.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Managers/VanityNameServerManager.php"><a href="files/src-managers-vanitynameservermanager.html"><abbr title="src/Managers/VanityNameServerManager.php">VanityNameServerManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the Vanity NameServer resource with the specified ID.</p>
@@ -272,12 +279,12 @@ you can change the type of result you get from this method.</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method_paginate">
         paginate()
-        <a href="classes/DnsMadeEasy-Managers-AbstractManager.html#method_paginate" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/DnsMadeEasy-Traits-ListableManager.html#method_paginate" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Managers/AbstractManager.php"><a href="files/src-managers-abstractmanager.html"><abbr title="src/Managers/AbstractManager.php">AbstractManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/ListableManager.php"><a href="files/src-traits-listablemanager.html"><abbr title="src/Traits/ListableManager.php">ListableManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetch a paginated subset of the resources. You can specify the page and the number of items per-page. The result
@@ -313,6 +320,21 @@ Laravel.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/DnsMadeEasy-Exceptions-Client-Http-HttpException.html"><abbr title="\DnsMadeEasy\Exceptions\Client\Http\HttpException">HttpException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/DnsMadeEasy-Pagination-Paginator.html"><abbr title="\DnsMadeEasy\Pagination\Paginator">Paginator</abbr></a>|mixed</span>

@@ -6,6 +6,7 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 
 /**
+ * Represents a Secondary IP Set resource.
  * @package DnsMadeEasy\Models
  *
  * @property string $name

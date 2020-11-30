@@ -58,6 +58,7 @@
                                             <li><a href="namespaces/dnsmadeeasy-managers.html"><abbr title="\DnsMadeEasy\Managers">Managers</abbr></a></li>
                                             <li><a href="namespaces/dnsmadeeasy-models.html"><abbr title="\DnsMadeEasy\Models">Models</abbr></a></li>
                                             <li><a href="namespaces/dnsmadeeasy-pagination.html"><abbr title="\DnsMadeEasy\Pagination">Pagination</abbr></a></li>
+                                            <li><a href="namespaces/dnsmadeeasy-traits.html"><abbr title="\DnsMadeEasy\Traits">Traits</abbr></a></li>
                                     </ul>
                         </section>
 
@@ -119,10 +120,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Models/ManagedDomain.php"><a href="files/src-models-manageddomain.html"><abbr title="src/Models/ManagedDomain.php">ManagedDomain.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 </aside>
 
-        
+            <p class="phpdocumentor-summary">Represents a Managed Domain resource.</p>
+
     <section class="phpdocumentor-description"></section>
 
 
@@ -287,7 +289,7 @@
     <span>
                         &nbsp;: <a href="classes/DnsMadeEasy-Interfaces-Models-TemplateInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\TemplateInterface">TemplateInterface</abbr></a>    </span>
 </dt>
-<dd>Create a new template based on this domain.</dd>
+<dd>Create a new template based on the records in this domain.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DnsMadeEasy-Models-AbstractModel.html#method_delete">delete()</a>
@@ -299,9 +301,9 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DnsMadeEasy-Models-Common-CommonManagedDomain.html#method_getUsage">getUsage()</a>
     <span>
-                        &nbsp;: array&lt;string|int, <a href="classes/DnsMadeEasy-Interfaces-Models-UsageInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\UsageInterface">UsageInterface</abbr></a>&gt;    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Get query usage for the domain.</dd>
+<dd>Get query usage data for this domain.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DnsMadeEasy-Models-AbstractModel.html#method_hasChanged">hasChanged()</a>
@@ -945,10 +947,10 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Models/Common/CommonManagedDomain.php"><a href="files/src-models-common-commonmanageddomain.html"><abbr title="src/Models/Common/CommonManagedDomain.php">CommonManagedDomain.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Create a new template based on this domain.</p>
+        <p class="phpdocumentor-summary">Create a new template based on the records in this domain.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -990,7 +992,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Models/AbstractModel.php"><a href="files/src-models-abstractmodel.html"><abbr title="src/Models/AbstractModel.php">AbstractModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
         <p class="phpdocumentor-summary">Deletes the object.</p>
@@ -1024,14 +1026,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Models/Common/CommonManagedDomain.php"><a href="files/src-models-common-commonmanageddomain.html"><abbr title="src/Models/Common/CommonManagedDomain.php">CommonManagedDomain.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Get query usage for the domain.</p>
+        <p class="phpdocumentor-summary">Get query usage data for this domain.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getUsage</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$year</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$month</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/DnsMadeEasy-Interfaces-Models-UsageInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\UsageInterface">UsageInterface</abbr></a>&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getUsage</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$year</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$month</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1058,7 +1060,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/DnsMadeEasy-Interfaces-Models-UsageInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\UsageInterface">UsageInterface</abbr></a>&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1077,7 +1079,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Models/AbstractModel.php"><a href="files/src-models-abstractmodel.html"><abbr title="src/Models/AbstractModel.php">AbstractModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if the object has been modified since it was fetched.</p>
@@ -1111,7 +1113,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Models/AbstractModel.php"><a href="files/src-models-abstractmodel.html"><abbr title="src/Models/AbstractModel.php">AbstractModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetch the latest version of the object from the API. This will overwrite changes that have been made.</p>
@@ -1145,7 +1147,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Models/AbstractModel.php"><a href="files/src-models-abstractmodel.html"><abbr title="src/Models/AbstractModel.php">AbstractModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
         <p class="phpdocumentor-summary">Saves the object.</p>

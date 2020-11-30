@@ -6,6 +6,7 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 
 /**
+ * Represents a Contact List resource.
  * @package DnsMadeEasy\Models
  *
  * @property string $name

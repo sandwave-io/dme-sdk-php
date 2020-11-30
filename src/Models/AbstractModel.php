@@ -10,19 +10,59 @@ use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use JsonSerializable;
 
 /**
- * @package DnsMadeEasy\Models
+ * An abstract class for resource models in the Dns Made Easy API.
  *
+ * @package DnsMadeEasy\Models
  * @property-read int $id
  */
 abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 {
+    /**
+     * The manager for this object.
+     * @var AbstractManagerInterface
+     */
     protected AbstractManagerInterface $manager;
+
+    /**
+     * The Dns Made Easy API Client
+     * @var ClientInterface
+     */
     protected ClientInterface $client;
+
+    /**
+     * The ID of the object.
+     * @var int|null
+     */
     protected ?int $id = null;
+
+    /**
+     * A list of properties that have been modified since the object was last saved.
+     * @var array
+     */
     protected array $changed = [];
+
+    /**
+     * The properties of this object.
+     * @var array
+     */
     protected array $props = [];
+
+    /**
+     * The original properties from when the object was instantiated/last loaded from the API.
+     * @var array
+     */
     protected array $originalProps = [];
+
+    /**
+     * A list of properties that are editable on this model.
+     * @var array
+     */
     protected array $editable = [];
+
+    /**
+     * The original data retrieved from the API.
+     * @var object|null
+     */
     protected ?object $apiData = null;
 
     public function save(): void
@@ -44,7 +84,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     }
 
     /**
-     * AbstractModel constructor.
+     * Creates the model and optionally populates it with data.
      * @internal
      * @param AbstractManagerInterface $manager
      * @param ClientInterface $client
@@ -61,6 +101,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     }
 
     /**
+     * Returns a string representation of the model's class and ID.
      * @internal
      * @return string
      * @throws \ReflectionException
@@ -93,6 +134,10 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         $this->changed = [];
     }
 
+    /**
+     * Parses the API data and assigns it to properties on this object.
+     * @param object $data
+     */
     protected function parseApiData(object $data): void
     {
         foreach ($data as $prop => $value) {
@@ -105,6 +150,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     }
 
     /**
+     * Generate a representation of the object for sending to the API.
      * @internal
      * @return object
      */
@@ -124,6 +170,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     }
 
     /**
+     * Returns a JSON serializable representation of the resource.
      * @internal
      * @return mixed|object
      */
@@ -146,12 +193,18 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         $this->manager->refresh($this);
     }
 
+    /**
+     * Returns the ID of the object. Since ID is a protected property, this is required for fetching it.
+     * @return int|null
+     */
     protected function getId(): ?int
     {
         return $this->id;
     }
 
     /**
+     * Magic method to fetch properties for the object. If a get{Name} method exists, it will be called  first,
+     * otherwise it will try and fetch it from the properties array.
      * @internal
      * @param $name
      * @return mixed
@@ -167,6 +220,11 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     }
 
     /**
+     * Magic method for setting properties for the object. If a method called set{Name} exists, then it will be called,
+     * otherwise if the property is in the props array and is editable, it will be updated.
+     *
+     * Changes are tracked to allow us to see any changes.
+     *
      * @internal
      * @param $name
      * @param $value

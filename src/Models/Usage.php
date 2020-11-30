@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\UsageInterface;
 
 /**
+ * Represents Query Usage statistics.
  * @package DnsMadeEasy\Models
  *
  * @property-read int $primaryCount
@@ -39,6 +40,10 @@ class Usage extends AbstractModel implements UsageInterface
         'domainId' => null,
     ];
 
+    /**
+     * Get the domain associated with the usage.
+     * @return ManagedDomainInterface|null
+     */
     protected function getDomain(): ?ManagedDomainInterface
     {
         if (!$this->domainId) {
@@ -47,21 +52,33 @@ class Usage extends AbstractModel implements UsageInterface
         return $this->client->domain->get($this->domainId);
     }
 
+    /**
+     * Since there's no string representation of usage, just return 'Usage'.
+     * @return string
+     * @internal
+     */
     public function __toString()
     {
         return 'Usage';
     }
 
+    /**
+     * Usage is read-only and can't be saved.
+     */
     public function save(): void
     {
         return;
     }
-
+    /**
+     * Usage is read-only and can't be deleted.
+     */
     public function delete(): void
     {
         return;
     }
-
+    /**
+     * Usage is read-only and can't be refreshed.
+     */
     public function refresh(): void
     {
         return;

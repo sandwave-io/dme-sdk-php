@@ -19,7 +19,7 @@ interface SOARecordManagerInterface extends AbstractManagerInterface
     public function create(): SOARecordInterface;
 
     /**
-     * Returns the SORA Record resource with the specified ID.
+     * Returns the SOA Record resource with the specified ID.
      * @param int $id
      * @return SOARecordInterface
      * @throws HttpException

@@ -6,6 +6,7 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
 
 /**
+ * Represents a Vanity Nameserver resource.
  * @package DnsMadeEasy\Models
  *
  * @property int $nameServerGroupId
@@ -19,7 +20,6 @@ use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
 class VanityNameServer extends AbstractModel implements VanityNameServerInterface
 {
     protected array $props = [
-        // Default the nameserver group to the DME values
         'nameServerGroupId' => 1,
         'nameServerGroup' => 'ns0,ns1,ns2,ns3,ns4.dnsmadeeasy.com',
         'default' => null,

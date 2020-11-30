@@ -3,15 +3,16 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Models\Concise;
 
-use DnsMadeEasy\Interfaces\Models\Concise\ConciseManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\Concise\ConciseSecondaryDomainInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
-use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryDomainInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
 
 /**
+ * A concise representation of Secondary Domain resources from the API. This is returned from paginate() calls to the
+ * manager. The full version of the resource can be requested if required.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property-read string $name
@@ -29,6 +30,7 @@ use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
  */
 class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSecondaryDomainInterface
 {
+
     protected array $props = [
         'name' => null,
         'gtdEnabled' => null,
@@ -40,21 +42,35 @@ class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSec
         'nameServerGroupId' => [],
     ];
 
+    /**
+     * Retrieves the full representation of the Secondary Domain.
+     * @return SecondaryDomainInterface
+     */
     protected function getFull(): SecondaryDomainInterface
     {
         return $this->manager->get($this->id);
     }
-
+    /**
+     * Override the save method, we can't save concise resources, so we don't do anything.
+     * @internal
+     */
     public function save(): void
     {
         return;
     }
 
+    /**
+     * Override the refresh method. Refreshing it would fetch the full version of the resource.
+     */
     public function refresh(): void
     {
         return;
     }
 
+    /**
+     * Return the Secondary IP set assigned to this domain.
+     * @return SecondaryIPSetInterface|null
+     */
     protected function getIpSet(): ?SecondaryIPSetInterface
     {
         if (!$this->ipSetId) {

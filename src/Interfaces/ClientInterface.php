@@ -93,6 +93,7 @@ interface ClientInterface
      * @param string $url
      * @param array $params
      * @return ResponseInterface
+     * @throws HttpException
      */
     public function get(string $url, array $params = []): ResponseInterface;
 

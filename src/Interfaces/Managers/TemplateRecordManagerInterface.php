@@ -18,7 +18,7 @@ interface TemplateRecordManagerInterface extends AbstractManagerInterface
      * @param TemplateInterface $template
      * @return $this
      */
-    public function setDomain(TemplateInterface $template): self;
+    public function setTemplate(TemplateInterface $template): self;
 
     /**
      * Creates a new Template Record resource.

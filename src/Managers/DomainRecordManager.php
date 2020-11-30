@@ -3,17 +3,27 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
+use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Interfaces\Managers\DomainRecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use DnsMadeEasy\Interfaces\Models\DomainRecordInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
-
 /**
+ * Represents a Domain Record.
  * @package DnsMadeEasy\Managers
  */
-class DomainRecordManager extends AbstractManager implements DomainRecordManagerInterface
+class DomainRecordManager extends RecordManager implements DomainRecordManagerInterface
 {
+    /**
+     * The base URI for domain records.
+     * @var string
+     */
     protected string $baseUri = '/dns/managed/:domain/records';
+
+    /**
+     * The domain for this manager.
+     * @var ManagedDomainInterface|null
+     */
     protected ?ManagedDomainInterface $domain = null;
 
     public function create(): DomainRecordInterface
@@ -27,9 +37,10 @@ class DomainRecordManager extends AbstractManager implements DomainRecordManager
     }
 
     /**
+     * Sets the domain used for the manager.
      * @internal
      * @param ManagedDomainInterface $domain
-     * @return $this|DomainRecordManagerInterface
+     * @return $this
      */
     public function setDomain(ManagedDomainInterface $domain): DomainRecordManagerInterface
     {
@@ -39,6 +50,7 @@ class DomainRecordManager extends AbstractManager implements DomainRecordManager
     }
 
     /**
+     * Fetches the domain for the manager.
      * @internal
      * @return ManagedDomainInterface|null
      */
@@ -47,6 +59,11 @@ class DomainRecordManager extends AbstractManager implements DomainRecordManager
         return $this->domain;
     }
 
+    /**
+     * Creates a new instance of a Domain Record with the Domain property set.
+     * @param string|null $className
+     * @return AbstractModelInterface
+     */
     protected function createObject(?string $className = null): AbstractModelInterface
     {
         $record = parent::createObject($className);

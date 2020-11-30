@@ -12,6 +12,7 @@ use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
 use DnsMadeEasy\Models\Concise\CommonManagedDomain;
 
 /**
+ * Represents a Secondary Domain resource.
  * @package DnsMadeEasy\Models
  *
  * @property string $name
@@ -48,6 +49,10 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
         'folderId',
     ];
 
+    /**
+     * Sets the folder the domain has been assigned to.
+     * @param $folder
+     */
     protected function setFolder($folder)
     {
         if (is_integer($folder)) {
@@ -57,18 +62,30 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
         }
     }
 
+    /**
+     * Sets the secondary IP set for the domain.
+     * @param SecondaryIPSet $set
+     */
     protected function setIpSet(SecondaryIPSet $set)
     {
         $this->props['ipSet'] = $set;
         $this->props['ipSetId'] = $set->id;
     }
 
+    /**
+     * Sets the secondary IP set ID for the domain.
+     * @param int $id
+     */
     protected function setIpSetId(int $id)
     {
         $this->props['ipSetId'] = $id;
         $this->props['ipSet'] = null;
     }
 
+    /**
+     * Get the secondary IP set for the domain.
+     * @return mixed|null
+     */
     protected function getIpSet()
     {
         if ($this->props['ipSet']) {
@@ -79,6 +96,11 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
         return null;
     }
 
+    /**
+     * Set the name of the domain. This can only be set on new domain objects.
+     * @param string $name
+     * @throws ReadOnlyPropertyException
+     */
     protected function setName(string $name)
     {
         if ($this->id) {

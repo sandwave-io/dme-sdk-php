@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
-use DnsMadeEasy\Exceptions\Client\Http\BadRequestException;
+use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Exceptions\Client\Http\NotFoundException;
 use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\ClientInterface;
@@ -11,30 +11,37 @@ use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 
 /**
+ * Abstract class for a resource manager.
  * @package DnsMadeEasy\Managers
  */
 abstract class AbstractManager implements AbstractManagerInterface
 {
+    /**
+     * The Dns Made Easy API Client.
+     * @var ClientInterface
+     */
     protected ClientInterface $client;
+
+    /**
+     * The URI for the resource.
+     * @var string
+     */
     protected string $baseUri;
+
+    /**
+     * A cache of objects fetched from the API.
+     * @var AbstractModelInterface[]
+     */
     protected array $objectCache = [];
 
-    public function paginate(int $page = 1, int $perPage = 20)
-    {
-        $params = [
-            'page' => $page,
-            'rows' => $perPage,
-        ];
-        $response = $this->client->get($this->getBaseUri(), $params);
-        $data = json_decode((string) $response->getBody());
-        $items = array_map(function ($data) {
-            $data = $this->transformConciseApiData($data);
-            return $this->createExistingObject($data, $this->getConciseModelClass());;
-        }, $data->data);
-
-        return $this->client->getPaginatorFactory()->paginate($items, $data->totalRecords, $perPage, $page);
-    }
-
+    /**
+     * Fetches an object from the cache, or if not found, from the API.
+     * @param int $id
+     * @return AbstractModelInterface
+     * @throws ModelNotFoundException
+     * @throws HttpException
+     * @throws \ReflectionException
+     */
     protected function getObject(int $id): AbstractModelInterface
     {
         $objectId = $this->getObjectId($id);
@@ -46,6 +53,13 @@ abstract class AbstractManager implements AbstractManagerInterface
         return $this->createExistingObject($data, $this->getModelClass());
     }
 
+    /**
+     * Get the object from the API.
+     * @param int $id
+     * @return object
+     * @throws ModelNotFoundException
+     * @throws HttpException
+     */
     protected function getFromApi(int $id): object
     {
         $uri = $this->getObjectUri($id);
@@ -58,6 +72,11 @@ abstract class AbstractManager implements AbstractManagerInterface
         return $this->transformApiData($data);
     }
 
+    /**
+     * Create a new object.
+     * @param string|null $className
+     * @return AbstractModelInterface
+     */
     protected function createObject(?string $className = null): AbstractModelInterface
     {
         if (!$className) {
@@ -67,6 +86,8 @@ abstract class AbstractManager implements AbstractManagerInterface
     }
 
     /**
+     * Deletes the object passed to it. If the object doesn't have an ID, no action is taken. The object is also
+     * removed from the cache.
      * @internal
      * @param AbstractModelInterface $object
      * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
@@ -83,28 +104,24 @@ abstract class AbstractManager implements AbstractManagerInterface
     }
 
     /**
+     * Saves the object passed to it.
      * @internal
      * @param AbstractModelInterface $object
      * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
      */
     public function save(AbstractModelInterface $object): void
     {
-        try {
-            if ($object->id) {
-                $this->client->put($this->getObjectUri($object->id), $object->transformForApi());
-            } else {
-                $response = $this->client->post($this->getBaseUri(), $object->transformForApi());
-                $data = json_decode((string) $response->getBody());
-                $object->populateFromApi($data);
-            }
-        } catch (BadRequestException $e) {
-            print_r($e->getResponse()->getStatusCode());
-            print_r((string) $e->getResponse()->getBody());
+        if ($object->id) {
+            $this->client->put($this->getObjectUri($object->id), $object->transformForApi());
+        } else {
+            $response = $this->client->post($this->getBaseUri(), $object->transformForApi());
+            $data = json_decode((string) $response->getBody());
+            $object->populateFromApi($data);
         }
     }
 
     /**
-     * AbstractManager constructor.
+     * Constructor for a Manager class.
      * @internal
      * @param ClientInterface $client
      */
@@ -113,18 +130,30 @@ abstract class AbstractManager implements AbstractManagerInterface
         $this->client = $client;
     }
 
+    /**
+     * Fetches the base URI for the resource.
+     * @return string
+     */
     protected function getBaseUri(): string
     {
         return $this->baseUri;
     }
 
+    /**
+     * Fetches the URI for a resource with the specified ID.
+     * @param int $id
+     * @return string
+     */
     protected function getObjectUri(int $id): string
     {
         return "{$this->getBaseUri()}/{$id}";
     }
 
-    // Methods to help with ORM and Model instantiation
-
+    /**
+     * Return the name of the model class for this resource.
+     * @return string
+     * @throws \ReflectionException
+     */
     protected function getModelClass(): string
     {
         $rClass = new \ReflectionClass($this);
@@ -132,11 +161,23 @@ abstract class AbstractManager implements AbstractManagerInterface
         return '\DnsMadeEasy\Models\\' . $modelName;
     }
 
+    /**
+     * Return the name of the model class for the concise version of the resource.
+     * @return string
+     * @throws \ReflectionException
+     */
     protected function getConciseModelClass(): string
     {
         return $this->getModelClass();
     }
 
+    /**
+     * Returns a string ID to give a unique ID to this resource.
+     * @param $input
+     * @param string|null $name
+     * @return string
+     * @throws \ReflectionException
+     */
     protected function getObjectId($input, string $name = null)
     {
         if ($name === null) {
@@ -152,8 +193,16 @@ abstract class AbstractManager implements AbstractManagerInterface
         } elseif (is_array($input) && array_key_exists($input, 'id')) {
             return "{$name}:{$input['id']}";
         }
+        return "{$name}:" . (string) $input;
     }
 
+    /**
+     * Creates a new instance of an object from existing API data.
+     * @param object $data
+     * @param string $className
+     * @return AbstractModelInterface
+     * @throws \ReflectionException
+     */
     protected function createExistingObject(object $data, string $className): AbstractModelInterface
     {
         $objectId = $this->getObjectId($data, $className);
@@ -170,6 +219,11 @@ abstract class AbstractManager implements AbstractManagerInterface
 
     }
 
+    /**
+     * Fetch the object from the local cache.
+     * @param $key
+     * @return AbstractModelInterface
+     */
     protected function getFromCache($key)
     {
         if (array_key_exists($key, $this->objectCache)) {
@@ -178,12 +232,21 @@ abstract class AbstractManager implements AbstractManagerInterface
         }
     }
 
+    /**
+     * Put the object into the local cache.
+     * @param $key
+     * @param $object
+     */
     protected function putInCache($key, $object)
     {
         $this->client->logger->debug("[DnsMadeEasy] Object Cache: Putting {$key}");
         $this->objectCache[$key] = $object;
     }
 
+    /**
+     * Remove the object from the local cache.
+     * @param $object
+     */
     protected function removeFromCache($object)
     {
         $index = array_search($object, $this->objectCache);
@@ -194,6 +257,7 @@ abstract class AbstractManager implements AbstractManagerInterface
     }
 
     /**
+     * Updates the object to the latest version in the API.
      * @internal
      * @param AbstractModelInterface $object
      * @throws ModelNotFoundException
@@ -208,11 +272,21 @@ abstract class AbstractManager implements AbstractManagerInterface
         $object->populateFromApi($data);
     }
 
+    /**
+     * Applies transformations to the API data before it is used to instantiate a model.
+     * @param object $data
+     * @return object
+     */
     protected function transformApiData(object $data): object
     {
         return $data;
     }
 
+    /**
+     * Applies transformations to the concise API data before it is used to instantiate a model.
+     * @param object $data
+     * @return object
+     */
     protected function transformConciseApiData(object $data): object
     {
         return $this->transformApiData($data);

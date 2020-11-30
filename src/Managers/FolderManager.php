@@ -3,17 +3,37 @@ declare(strict_types=1);
 
 namespace DnsMadeEasy\Managers;
 
+use DnsMadeEasy\Exceptions\Client\Http\HttpException;
+use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
+use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
 use DnsMadeEasy\Models\Concise\ConciseFolder;
+use DnsMadeEasy\Traits\ListableManager;
 
 /**
+ * Manager for Folder resources.
  * @package DnsMadeEasy\Managers
  */
-class FolderManager extends AbstractManager implements FolderManagerInterface
+class FolderManager extends AbstractManager implements FolderManagerInterface, ListableManagerInterface
 {
+    /**
+     * Base URI for Folder resources
+     * @var string
+     */
     protected string $baseUri = '/security/folder';
 
+    /**
+     * Paginates folder resources.
+     *
+     * {@internal This is different to the other resources in that the API endpoint does not appear to
+     * be paginated. Instead for consistency, we'll simulate pagination.}
+     *
+     * @param int $page
+     * @param int $perPage
+     * @return \DnsMadeEasy\Pagination\Paginator|mixed
+     * @throws \ReflectionException
+     */
     public function paginate(int $page = 1, int $perPage = 20)
     {
         $response = $this->client->get($this->getBaseUri());
@@ -27,6 +47,10 @@ class FolderManager extends AbstractManager implements FolderManagerInterface
         return $this->client->getPaginatorFactory()->paginate($items, count($data), $perPage, $page);
     }
 
+    /**
+     * Returns the model class for Concise Folder resources.
+     * @return string
+     */
     protected function getConciseModelClass(): string
     {
         return ConciseFolder::class;
@@ -42,6 +66,11 @@ class FolderManager extends AbstractManager implements FolderManagerInterface
         return $this->createObject();
     }
 
+    /**
+     * Applies transformations to the concise data for a Folder.
+     * @param object $data
+     * @return object
+     */
     protected function transformConciseApiData(object $data): object
     {
         return (object) [

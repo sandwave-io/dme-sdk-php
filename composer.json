@@ -1,5 +1,5 @@
 {
-    "name": "dns-made-easy/php-sdk",
+    "name": "tiggee/dnsmadeeasy-client",
     "description": "PHP SDK for the DNS Made Easy API",
     "type": "library",
     "require": {
@@ -10,11 +10,11 @@
         "psr/http-client-implementation": "^1.0",
         "guzzlehttp/psr7": "^1.7",
         "psr/log": "^1.1",
-        "spatie/enum": "^3.6"
+        "spatie/enum": "^3.6",
+        "guzzlehttp/guzzle": ">=6",
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
-        "guzzlehttp/guzzle": ">=6",
         "php-http/mock-client": "^1.4",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.5",

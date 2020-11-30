@@ -11,10 +11,16 @@ use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Models\AbstractModel;
 
 /**
+ * Abstract model representing common properties and functionality between secondary domain model implementions.
  * @package DnsMadeEasy\Models
  */
 abstract class CommonSecondaryDomain extends AbstractModel implements CommonSecondaryDomainInterface
 {
+    /**
+     * Parses the API data.
+     * @param object $data
+     * @throws \Exception
+     */
     protected function parseApiData(object $data): void
     {
         parent::parseApiData($data);
@@ -22,6 +28,10 @@ abstract class CommonSecondaryDomain extends AbstractModel implements CommonSeco
         $this->props['created'] = new \DateTime('@' . floor($data->created / 1000));
     }
 
+    /**
+     * Fetches the folder that the secondary domain is using.
+     * @return FolderInterface|null
+     */
     protected function getFolder(): ?FolderInterface
     {
         if (!$this->folderId) {

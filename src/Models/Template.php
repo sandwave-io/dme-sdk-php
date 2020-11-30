@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Managers\TemplateRecordManager;
 
 /**
+ * Represents a Template resource.
  * @package DnsMadeEasy\Models
  *
  * @property string $name
@@ -17,6 +18,10 @@ use DnsMadeEasy\Managers\TemplateRecordManager;
  */
 class Template extends AbstractModel implements TemplateInterface
 {
+    /**
+     * The record manager for the template.
+     * @var TemplateRecordManagerInterface|null
+     */
     protected ?TemplateRecordManagerInterface $recordManager = null;
     protected array $props = [
         'name',
@@ -28,6 +33,10 @@ class Template extends AbstractModel implements TemplateInterface
         'name',
     ];
 
+    /**
+     * Returns the record manager for this template.
+     * @return TemplateRecordManagerInterface
+     */
     protected function getRecords(): TemplateRecordManagerInterface
     {
         if (!$this->recordManager) {

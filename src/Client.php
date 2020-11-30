@@ -12,6 +12,7 @@ use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\RecordFailoverManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\SecondaryDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\SOARecordManagerInterface;
@@ -23,6 +24,7 @@ use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
 use DnsMadeEasy\Managers\ContactListManager;
 use DnsMadeEasy\Managers\FolderManager;
 use DnsMadeEasy\Managers\ManagedDomainManager;
+use DnsMadeEasy\Managers\RecordFailoverManager;
 use DnsMadeEasy\Managers\SecondaryDomainManager;
 use DnsMadeEasy\Managers\SecondaryIPSetManager;
 use DnsMadeEasy\Managers\SOARecordManager;
@@ -53,18 +55,56 @@ use Psr\Log\NullLogger;
  * @property-read UsageManagerInterface $usage
  * @property-read SecondaryIPSetManagerInterface $secondaryipsets;
  * @property-read SecondaryDomainManagerInterface $secondarydomains;
+ * @property-read RecordFailoverManagerInterface $failover;
  */
 class Client implements ClientInterface, LoggerAwareInterface
 {
+    /**
+     * The HTTP Client for all requests.
+     * @var HttpClientInterface
+     */
 	protected HttpClientInterface $client;
+
+    /**
+     * The DNS Made Easy API Key
+     * @var string
+     */
 	protected string $apiKey;
+
+    /**
+     * The DNS Made Easy Secret Key
+     * @var string
+     */
 	protected string $secretKey;
+
+    /**
+     * The DNS Made Easy API Endpoint
+     * @var string
+     */
     protected string $endpoint = 'https://api.dnsmadeeasy.com/V2.0';
 
+    /**
+     * The pagination factory to use for paginated resource collections
+     * @var PaginatorFactoryInterface|PaginatorFactory
+     */
     protected PaginatorFactoryInterface $paginatorFactory;
+
+    /**
+     * Logger interface to use for log messages
+     * @var LoggerInterface|NullLogger|null
+     */
     public LoggerInterface $logger;
 
+    /**
+     * A cache of instantiated manager classes.
+     * @var array
+     */
 	protected array $managers = [];
+
+    /**
+     * A map of manager names to classes.
+     * @var array|string[]
+     */
 	protected array $managerMap = [
 	    'contactlists' => ContactListManager::class,
         'domains' => ManagedDomainManager::class,
@@ -75,19 +115,31 @@ class Client implements ClientInterface, LoggerAwareInterface
         'soarecords' => SOARecordManager::class,
         'secondaryipsets' => SecondaryIPSetManager::class,
         'secondarydomains' => SecondaryDomainManager::class,
+        'failover' => RecordFailoverManager::class,
     ];
 
+    /**
+     * Creates a new client.
+     *
+     * @param HttpClientInterface|null $client
+     * @param PaginatorFactoryInterface|null $paginatorFactory
+     * @param LoggerInterface|null $logger
+     */
 	public function __construct(?HttpClientInterface $client = null, ?PaginatorFactoryInterface $paginatorFactory = null, ?LoggerInterface $logger = null)
 	{
-		if ($client === null && class_exists('\GuzzleHttp\Client')) {
+	    // If we weren't given a HTTP client, create a new Guzzle client.
+		if ($client === null) {
 			$client = new \GuzzleHttp\Client;
 		}
 
+		// If we don't have a paginator factory, use our own.
 		if ($paginatorFactory === null) {
 		    $this->paginatorFactory = new PaginatorFactory;
         }
 
 		$this->setHttpClient($client);
+
+		// If we don't have a logger, use the null logger.
 		if ($logger === null) {
 		    $logger = new NullLogger();
         }
@@ -217,6 +269,12 @@ class Client implements ClientInterface, LoggerAwareInterface
         }
 	}
 
+    /**
+     * Adds auth headers to requests. These are generated based on the Api Key and the Secret Key.
+     * @param RequestInterface $request
+     * @return RequestInterface
+     * @throws \Exception
+     */
 	protected function addAuthHeaders(RequestInterface $request): RequestInterface
 	{
 		$now = new \DateTime('now', new \DateTimeZone('UTC'));
@@ -229,12 +287,23 @@ class Client implements ClientInterface, LoggerAwareInterface
 		return $request;
 	}
 
+    /**
+     * Check if a manager exists with that name in our manager map.
+     * @param $name
+     * @return bool
+     */
 	protected function hasManager($name): bool
     {
         $name = strtolower($name);
         return array_key_exists($name, $this->managerMap);
     }
 
+    /**
+     * Gets the manager with the specified name.
+     * @param $name
+     * @return AbstractManagerInterface
+     * @throws ManagerNotFoundException
+     */
     protected function getManager($name): AbstractManagerInterface
     {
         if (!$this->hasManager($name)) {
@@ -252,12 +321,15 @@ class Client implements ClientInterface, LoggerAwareInterface
 
 	public function __get($name)
     {
+        // Usage is a special manager and not like the others.
         if ($name == 'usage') {
             if (!isset($this->managers['usage'])) {
                 $this->managers['usage'] = new UsageManager($this);
             }
             return $this->managers['usage'];
         }
+
+        // If we have a manager with this name, return it.
         if ($this->hasManager($name)) {
             return $this->getManager($name);
         }

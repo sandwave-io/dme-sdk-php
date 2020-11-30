@@ -16,6 +16,7 @@ use DnsMadeEasy\Managers\DomainRecordManager;
 use DnsMadeEasy\Models\Common\CommonManagedDomain;
 
 /**
+ * Represents a Managed Domain resource.
  * @package DnsMadeEasy\Models
  *
  * @property string $name
@@ -63,8 +64,16 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         'templateId',
     ];
 
+    /**
+     * The record manager for this domain.
+     * @var DomainRecordManagerInterface|null
+     */
     protected ?DomainRecordManagerInterface $recordManager = null;
 
+    /**
+     * Sets the folder for domain.
+     * @param $folder
+     */
     protected function setFolder($folder)
     {
         if (is_integer($folder)) {
@@ -74,6 +83,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         }
     }
 
+    /**
+     * Sets the Vanity Nameserver for the domain.
+     * @param $vanity
+     */
     protected function setVanity($vanity)
     {
         if (is_integer($vanity)) {
@@ -83,6 +96,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         }
     }
 
+    /**
+     * Sets the Transfer ACL for the domain.
+     * @param $transferAcl
+     */
     protected function setTransferAcl($transferAcl)
     {
         if (is_integer($transferAcl)) {
@@ -92,6 +109,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         }
     }
 
+    /**
+     * Sets the Template for the domain.
+     * @param $template
+     */
     protected function setTemplate($template)
     {
         if (is_integer($template)) {
@@ -101,6 +122,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         }
     }
 
+    /**
+     * Set the custom SOA Record for the domain.
+     * @param $soa
+     */
     protected function setSOA($soa)
     {
         if (is_integer($soa)) {
@@ -110,6 +135,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         }
     }
 
+    /**
+     * Get the custom SOA record assigned to the domain.
+     * @return SOARecordInterface|null
+     */
     protected function getSOA(): ?SOARecordInterface
     {
         if (!$this->soaID) {
@@ -118,6 +147,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         return $this->client->soarecords->get($this->soaID);
     }
 
+    /**
+     * Get the Transfer ACL assigned to the domain.
+     * @return TransferAclInterface|null
+     */
     protected function getTransferAcl(): ?TransferAclInterface
     {
         if (!$this->transferAclId) {
@@ -126,6 +159,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         return $this->client->transferacls->get($this->transferAclId);
     }
 
+    /**
+     * Get the Vanity Nameserver assigned to the domain.
+     * @return VanityNameServerInterface|null
+     */
     protected function getVanity(): ?VanityNameServerInterface
     {
         if (!$this->vanityId) {
@@ -134,6 +171,11 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         return $this->client->vanity->get($this->vanityId);
     }
 
+    /**
+     * Sets the name of the domain. This can only be set on new domains.
+     * @param string $name
+     * @throws ReadOnlyPropertyException
+     */
     protected function setName(string $name)
     {
         if ($this->id) {
@@ -142,6 +184,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         $this->props['name'] = $name;
     }
 
+    /**
+     * Gets the record manager for this domain.
+     * @return DomainRecordManagerInterface
+     */
     protected function getRecords(): DomainRecordManagerInterface
     {
         if (!$this->recordManager) {

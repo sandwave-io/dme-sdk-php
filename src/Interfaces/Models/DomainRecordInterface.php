@@ -13,5 +13,10 @@ namespace DnsMadeEasy\Interfaces\Models;
  */
 interface DomainRecordInterface extends RecordInterface
 {
+    /**
+     * Set the domain for the record.
+     * @param ManagedDomainInterface $domain
+     * @return $this
+     */
     public function setDomain(ManagedDomainInterface $domain): self;
 }

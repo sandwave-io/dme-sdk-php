@@ -58,6 +58,7 @@
                                             <li><a href="namespaces/dnsmadeeasy-managers.html"><abbr title="\DnsMadeEasy\Managers">Managers</abbr></a></li>
                                             <li><a href="namespaces/dnsmadeeasy-models.html"><abbr title="\DnsMadeEasy\Models">Models</abbr></a></li>
                                             <li><a href="namespaces/dnsmadeeasy-pagination.html"><abbr title="\DnsMadeEasy\Pagination">Pagination</abbr></a></li>
+                                            <li><a href="namespaces/dnsmadeeasy-traits.html"><abbr title="\DnsMadeEasy\Traits">Traits</abbr></a></li>
                                     </ul>
                         </section>
 
@@ -114,7 +115,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 </aside>
 
             <p class="phpdocumentor-summary">DNS Made Easy API Client SDK</p>
@@ -162,6 +163,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/DnsMadeEasy-Client.html#property_failover;">$failover;</a>
+    <span>
+                &nbsp;: <a href="classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\RecordFailoverManagerInterface">RecordFailoverManagerInterface</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/DnsMadeEasy-Client.html#property_folders">$folders</a>
     <span>
                 &nbsp;: <a href="classes/DnsMadeEasy-Interfaces-Managers-FolderManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\FolderManagerInterface">FolderManagerInterface</abbr></a>            </span>
@@ -173,7 +181,7 @@
     <span>
                 &nbsp;: <abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>            </span>
 </dt>
-<dd></dd>
+<dd>Logger interface to use for log messages</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/DnsMadeEasy-Client.html#property_secondarydomains;">$secondarydomains;</a>
@@ -229,7 +237,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Creates a new client.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DnsMadeEasy-Client.html#method___get">__get()</a>
@@ -436,6 +444,37 @@ such as the LengthAwarePaginator in Laravel.</dd>
             -public
                                                 -read-only        "
 >
+    <h4 class="phpdocumentor-element__name" id="property_failover;">
+        $failover;
+        <a href="classes/DnsMadeEasy-Client.html#property_failover;" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                        <small class="phpdocumentor-element__modifier">read-only</small>        </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">0</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\RecordFailoverManagerInterface">RecordFailoverManagerInterface</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$failover;</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                -read-only        "
+>
     <h4 class="phpdocumentor-element__name" id="property_folders">
         $folders
         <a href="classes/DnsMadeEasy-Client.html#property_folders" class="headerlink"><i class="fas fa-link"></i></a>
@@ -476,17 +515,19 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Logger interface to use for log messages</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr></span>
     <span class="phpdocumentor-signature__name">$logger</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -727,15 +768,17 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Creates a new client.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Client\ClientInterface">ClientInterface</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$client</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/DnsMadeEasy-Interfaces-PaginatorFactoryInterface.html"><abbr title="\DnsMadeEasy\Interfaces\PaginatorFactoryInterface">PaginatorFactoryInterface</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$paginatorFactory</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -743,21 +786,24 @@ such as the LengthAwarePaginator in Laravel.</dd>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Client\ClientInterface">ClientInterface</abbr>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$paginatorFactory</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/DnsMadeEasy-Interfaces-PaginatorFactoryInterface.html"><abbr title="\DnsMadeEasy\Interfaces\PaginatorFactoryInterface">PaginatorFactoryInterface</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$logger</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -783,7 +829,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">253</span>
+    <span class="phpdocumentor-element-found-in__line">322</span>
 </aside>
 
     
@@ -825,7 +871,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">237</span>
 </aside>
 
         <p class="phpdocumentor-summary">Make a DELETE request to the API.</p>
@@ -870,7 +916,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 </aside>
 
         <p class="phpdocumentor-summary">Make a GET request to the API. The parameters will be encoded as query string parameters.</p>
@@ -923,7 +969,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetch the current API key.</p>
@@ -957,7 +1003,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetch the current API endpoint</p>
@@ -991,7 +1037,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetches the current HTTP Client used for requests.</p>
@@ -1025,7 +1071,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetch the current paginator factory interface.</p>
@@ -1059,7 +1105,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetch the current secret key.</p>
@@ -1093,7 +1139,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 </aside>
 
         <p class="phpdocumentor-summary">Make a POST request to the API. The payload will be JSON encoded and sent in the body of the request with
@@ -1147,7 +1193,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 </aside>
 
         <p class="phpdocumentor-summary">Make a PUT request to the API. The payload will be JSON encoded and sent in the body of the request with
@@ -1201,7 +1247,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 </aside>
 
         <p class="phpdocumentor-summary">Makes a HTTP request to the API.</p>
@@ -1246,7 +1292,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the API key used for requests.</p>
@@ -1291,7 +1337,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the API endpoint to use. By default this is `https://api.dnsmadeeasy.com/V2.0`. You can set this to
@@ -1337,7 +1383,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set a custom HTTP Client for all requests. If one is not provided, one is created automatically.</p>
@@ -1382,7 +1428,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
     
@@ -1424,7 +1470,7 @@ such as the LengthAwarePaginator in Laravel.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">198</span>
 </aside>
 
         <p class="phpdocumentor-summary">This sets a Paginator Factory for the client. Any paginated responses will be created using the factory
@@ -1473,7 +1519,7 @@ and is iterable.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Client.php"><a href="files/src-client.html"><abbr title="src/Client.php">Client.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the secret key for requests.</p>

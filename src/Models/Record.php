@@ -6,9 +6,12 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Enums\GTDLocation;
 use DnsMadeEasy\Enums\RecordType;
 use DnsMadeEasy\Exceptions\Client\ReadOnlyPropertyException;
+use DnsMadeEasy\Exceptions\DnsMadeEasyException;
+use DnsMadeEasy\Interfaces\Models\RecordFailoverInterface;
 use DnsMadeEasy\Interfaces\Models\RecordInterface;
 
 /**
+ * Abstract model representing records for domains and templates.
  * @package DnsMadeEasy\Models
  *
  * @property string $value
@@ -106,11 +109,29 @@ abstract class Record extends AbstractModel implements RecordInterface
         return $obj;
     }
 
+    /**
+     * Sets the type of record. This can only be done on new records.
+     * @param RecordType $type
+     * @throws ReadOnlyPropertyException
+     */
     protected function setType(RecordType $type)
     {
         if ($this->id && $this->props['type']) {
             throw new ReadOnlyPropertyException('Type can only be set before a record has been saved');
         }
         $this->props['type'] = $type;
+    }
+
+    /**
+     * Get the record's failover and monitoring configuration.
+     * @return RecordFailoverInterface
+     * @throws DnsMadeEasyException
+     */
+    public function getRecordFailover(): RecordFailoverInterface
+    {
+        if (!$this->id) {
+            throw new DnsMadeEasyException('Unable to fetch failover record for a record that has not been saved');
+        }
+        return $this->client->failover->get($this->id);
     }
 }

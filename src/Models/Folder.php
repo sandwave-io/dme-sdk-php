@@ -7,6 +7,7 @@ use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Models\Common\CommonFolder;
 
 /**
+ * Represents a Folder resource.
  * @package DnsMadeEasy\Models
  *
  * @property string $name

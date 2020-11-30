@@ -6,6 +6,7 @@ namespace DnsMadeEasy\Models;
 use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 
 /**
+ * Represents a Transfer ACL (AXFR) resource.
  * @package DnsMadeEasy\Models
  *
  * @property string $name
