@@ -120,6 +120,24 @@ class Client implements ClientInterface, LoggerAwareInterface
     ];
 
     /**
+     * The ID of the last request to the API.
+     * @var string|null
+     */
+    protected ?string $requestId;
+
+    /**
+     * The request limit on the API.
+     * @var int|null
+     */
+    protected ?int $requestLimit;
+
+    /**
+     * The number of requests remaining until the limit is hit.
+     * @var int|null
+     */
+    protected ?int $requestsRemaining;
+
+    /**
      * Creates a new client.
      *
      * @param HttpClientInterface|null $client
@@ -238,9 +256,13 @@ class Client implements ClientInterface, LoggerAwareInterface
         return $this->send($request);
     }
 
-    public function delete(string $url): ResponseInterface
+    public function delete(string $url, $payload = null): ResponseInterface
     {
         $request = new Request('DELETE', $this->endpoint . $url);
+        if ($payload) {
+            $request->withHeader('Content-Type', 'application/json');
+            $request->getBody()->write(json_encode($payload));
+        }
         return $this->send($request);
     }
 
@@ -253,6 +275,7 @@ class Client implements ClientInterface, LoggerAwareInterface
         $response = $this->client->sendRequest($request);
 
         $this->logger->debug("[DnsMadeEasy] API Response: {$response->getStatusCode()} {$response->getReasonPhrase()}");
+        $this->updateLimits($response);
         $statusCode = $response->getStatusCode();
         if ((int)substr((string)$statusCode, 0, 1) <= 3) {
             return $response;
@@ -271,6 +294,55 @@ class Client implements ClientInterface, LoggerAwareInterface
             $exception->setResponse($response);
             throw $exception;
         }
+    }
+
+    /**
+     * Fetch the API request details from the last API response.
+     * @param ResponseInterface $response
+     */
+    protected function updateLimits(ResponseInterface $response)
+    {
+        $this->requestId = current($response->getHeader('x-dnsme-requestId'));
+        if ($this->requestId === false) {
+            $this->requestId = null;
+        }
+
+        $this->requestsRemaining = (int)current($response->getHeader('x-dnsme-requestsRemaining'));
+        if ($this->requestsRemaining === false) {
+            $this->requestsRemaining = null;
+        }
+
+        $this->requestLimit = (int)current($response->getHeader('x-dnsme-requestLimit'));
+        if ($this->requestLimit === false) {
+            $this->requestLimit = null;
+        }
+    }
+
+    /**
+     * Return the ID of the last API request.
+     * @return string|null
+     */
+    public function getLastRequestId(): ?string
+    {
+        return $this->requestId;
+    }
+
+    /**
+     * Get the request limit.
+     * @return int|null
+     */
+    public function getRequestLimit(): ?int
+    {
+        return $this->requestLimit;
+    }
+
+    /**
+     * Get the number of requests remaining before you hit the request limit.
+     * @return int|null
+     */
+    public function getRequestsRemaining(): ?int
+    {
+        return $this->requestsRemaining;
     }
 
     /**

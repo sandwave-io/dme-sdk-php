@@ -19,15 +19,16 @@ trait ListableManager
      *
      * @param int $page
      * @param int $perPage
+     * @param array|null $filters
      * @return Paginator|mixed
      * @throws HttpException
      */
-    public function paginate(int $page = 1, int $perPage = 20)
+    public function paginate(int $page = 1, int $perPage = 20, $filters = [])
     {
-        $params = [
-            'page' => $page,
-            'rows' => $perPage,
-        ];
+        $params = $filters + [
+                'page' => $page,
+                'rows' => $perPage,
+            ];
         $response = $this->client->get($this->getBaseUri(), $params);
         $data = json_decode((string)$response->getBody());
         $items = array_map(

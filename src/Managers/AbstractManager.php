@@ -223,8 +223,9 @@ abstract class AbstractManager implements AbstractManagerInterface
      * Fetch the object from the local cache.
      * @param $key
      * @return AbstractModelInterface
+     * @internal
      */
-    protected function getFromCache($key)
+    public function getFromCache($key)
     {
         if (array_key_exists($key, $this->objectCache)) {
             $this->client->logger->debug("[DnsMadeEasy] Object Cache: Fetching {$key}");
@@ -236,8 +237,9 @@ abstract class AbstractManager implements AbstractManagerInterface
      * Put the object into the local cache.
      * @param $key
      * @param $object
+     * @internal
      */
-    protected function putInCache($key, $object)
+    public function putInCache($key, $object)
     {
         $this->client->logger->debug("[DnsMadeEasy] Object Cache: Putting {$key}");
         $this->objectCache[$key] = $object;
@@ -246,11 +248,18 @@ abstract class AbstractManager implements AbstractManagerInterface
     /**
      * Remove the object from the local cache.
      * @param $object
+     * @internal
      */
-    protected function removeFromCache($object)
+    public function removeFromCache($object)
     {
-        $index = array_search($object, $this->objectCache);
-        if ($index !== false) {
+        if (is_object($object)) {
+            $index = array_search($object, $this->objectCache);
+            if ($index !== false) {
+                $this->client->logger->debug("[DnsMadeEasy] Object Cache: Removing {$index}");
+                unset($this->objectCache[$index]);
+            }
+        } else {
+            $index = (string)$object;
             $this->client->logger->debug("[DnsMadeEasy] Object Cache: Removing {$index}");
             unset($this->objectCache[$index]);
         }

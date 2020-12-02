@@ -7,10 +7,13 @@ namespace DnsMadeEasy\Interfaces\Managers;
 use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
+use DnsMadeEasy\Managers\Multiple\MultipleDomainManager;
 
 /**
  * Manages Managed Domain resources from the API.
  * @package DnsMadeEasy\Interfaces
+ *
+ * @property-read MultipleDomainManager $multiple;
  */
 interface ManagedDomainManagerInterface extends AbstractManagerInterface
 {

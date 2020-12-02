@@ -5,6 +5,17 @@ declare(strict_types=1);
 namespace DnsMadeEasy\Interfaces;
 
 use DnsMadeEasy\Exceptions\Client\Http\HttpException;
+use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\RecordFailoverManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\SecondaryDomainManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\SOARecordManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\TemplateManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\TransferAclManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\UsageManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -13,7 +24,17 @@ use Psr\Http\Message\ResponseInterface;
  * DnsMadeEasy API Client SDK
  *
  * @package DnsMadeEasy\Interfaces
- *
+ * @property-read ContactListManagerInterface $contactlists
+ * @property-read FolderManagerInterface $folders
+ * @property-read ManagedDomainManagerInterface $domains
+ * @property-read VanityNameServerManagerInterface $vanity
+ * @property-read TemplateManagerInterface $templates
+ * @property-read TransferAclManagerInterface $transferacls
+ * @property-read SOARecordManagerInterface $soarecords
+ * @property-read UsageManagerInterface $usage
+ * @property-read SecondaryIPSetManagerInterface $secondaryipsets;
+ * @property-read SecondaryDomainManagerInterface $secondarydomains;
+ * @property-read RecordFailoverManagerInterface $failover;
  */
 interface ClientInterface
 {
@@ -121,17 +142,35 @@ interface ClientInterface
     /**
      * Make a DELETE request to the API.
      * @param string $url
+     * @param mixed|null $payload
      * @return ResponseInterface
      * @throws HttpException
      */
-    public function delete(string $url): ResponseInterface;
+    public function delete(string $url, $payload = null): ResponseInterface;
 
     /**
      * Makes a HTTP request to the API.
-     *
      * @param RequestInterface $request
      * @return ResponseInterface
      * @throws HttpException
      */
     public function send(RequestInterface $request): ResponseInterface;
+
+    /**
+     * Return the ID of the last API request.
+     * @return string|null
+     */
+    public function getLastRequestId(): ?string;
+
+    /**
+     * Get the request limit.
+     * @return int|null
+     */
+    public function getRequestLimit(): ?int;
+
+    /**
+     * Get the number of requests remaining before you hit the request limit.
+     * @return int|null
+     */
+    public function getRequestsRemaining(): ?int;
 }

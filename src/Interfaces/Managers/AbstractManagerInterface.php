@@ -33,4 +33,27 @@ interface AbstractManagerInterface
      * @internal
      */
     public function delete(AbstractModelInterface $object): void;
+
+    /**
+     * Fetch the object from the local cache.
+     * @param $key
+     * @return AbstractModelInterface
+     * @internal
+     */
+    public function getFromCache($key);
+
+    /**
+     * Put the object into the local cache.
+     * @param $key
+     * @param $object
+     * @internal
+     */
+    public function putInCache($key, $object);
+
+    /**
+     * Remove the object from the local cache.
+     * @param $object
+     * @internal
+     */
+    public function removeFromCache($object);
 }

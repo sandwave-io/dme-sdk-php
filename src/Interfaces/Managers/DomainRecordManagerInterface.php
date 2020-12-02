@@ -34,4 +34,10 @@ interface DomainRecordManagerInterface extends AbstractManagerInterface
      * @throws HttpException
      */
     public function get(int $id): DomainRecordInterface;
+
+    /**
+     * Delete all records on the domain.
+     * @throws HttpException
+     */
+    public function deleteAll(): void;
 }

@@ -91,15 +91,110 @@ Search.appendIndex(
             "summary": "Makes\u0020a\u0020HTTP\u0020request\u0020to\u0020the\u0020API.",
             "url": "classes/DnsMadeEasy-Client.html#method_send"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003AupdateLimits\u0028\u0029",
+            "name": "updateLimits",
+            "summary": "Fetch\u0020the\u0020API\u0020request\u0020details\u0020from\u0020the\u0020last\u0020API\u0020response.",
+            "url": "classes/DnsMadeEasy-Client.html#method_updateLimits"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003AgetLastRequestId\u0028\u0029",
+            "name": "getLastRequestId",
+            "summary": "Return\u0020the\u0020ID\u0020of\u0020the\u0020last\u0020API\u0020request.",
+            "url": "classes/DnsMadeEasy-Client.html#method_getLastRequestId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003AgetRequestLimit\u0028\u0029",
+            "name": "getRequestLimit",
+            "summary": "Get\u0020the\u0020request\u0020limit.",
+            "url": "classes/DnsMadeEasy-Client.html#method_getRequestLimit"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003AgetRequestsRemaining\u0028\u0029",
+            "name": "getRequestsRemaining",
+            "summary": "Get\u0020the\u0020number\u0020of\u0020requests\u0020remaining\u0020before\u0020you\u0020hit\u0020the\u0020request\u0020limit.",
+            "url": "classes/DnsMadeEasy-Client.html#method_getRequestsRemaining"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003AaddAuthHeaders\u0028\u0029",
+            "name": "addAuthHeaders",
+            "summary": "Adds\u0020auth\u0020headers\u0020to\u0020requests.\u0020These\u0020are\u0020generated\u0020based\u0020on\u0020the\u0020Api\u0020Key\u0020and\u0020the\u0020Secret\u0020Key.",
+            "url": "classes/DnsMadeEasy-Client.html#method_addAuthHeaders"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003AhasManager\u0028\u0029",
+            "name": "hasManager",
+            "summary": "Check\u0020if\u0020a\u0020manager\u0020exists\u0020with\u0020that\u0020name\u0020in\u0020our\u0020manager\u0020map.",
+            "url": "classes/DnsMadeEasy-Client.html#method_hasManager"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003AgetManager\u0028\u0029",
+            "name": "getManager",
+            "summary": "Gets\u0020the\u0020manager\u0020with\u0020the\u0020specified\u0020name.",
+            "url": "classes/DnsMadeEasy-Client.html#method_getManager"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A__get\u0028\u0029",
             "name": "__get",
             "summary": "",
             "url": "classes/DnsMadeEasy-Client.html#method___get"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024client",
+            "name": "client",
+            "summary": "The\u0020HTTP\u0020Client\u0020for\u0020all\u0020requests.",
+            "url": "classes/DnsMadeEasy-Client.html#property_client"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024apiKey",
+            "name": "apiKey",
+            "summary": "The\u0020DNS\u0020Made\u0020Easy\u0020API\u0020Key",
+            "url": "classes/DnsMadeEasy-Client.html#property_apiKey"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024secretKey",
+            "name": "secretKey",
+            "summary": "The\u0020DNS\u0020Made\u0020Easy\u0020Secret\u0020Key",
+            "url": "classes/DnsMadeEasy-Client.html#property_secretKey"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024endpoint",
+            "name": "endpoint",
+            "summary": "The\u0020DNS\u0020Made\u0020Easy\u0020API\u0020Endpoint",
+            "url": "classes/DnsMadeEasy-Client.html#property_endpoint"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024paginatorFactory",
+            "name": "paginatorFactory",
+            "summary": "The\u0020pagination\u0020factory\u0020to\u0020use\u0020for\u0020paginated\u0020resource\u0020collections",
+            "url": "classes/DnsMadeEasy-Client.html#property_paginatorFactory"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024logger",
             "name": "logger",
             "summary": "Logger\u0020interface\u0020to\u0020use\u0020for\u0020log\u0020messages",
             "url": "classes/DnsMadeEasy-Client.html#property_logger"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024managers",
+            "name": "managers",
+            "summary": "A\u0020cache\u0020of\u0020instantiated\u0020manager\u0020classes.",
+            "url": "classes/DnsMadeEasy-Client.html#property_managers"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024managerMap",
+            "name": "managerMap",
+            "summary": "A\u0020map\u0020of\u0020manager\u0020names\u0020to\u0020classes.",
+            "url": "classes/DnsMadeEasy-Client.html#property_managerMap"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024requestId",
+            "name": "requestId",
+            "summary": "The\u0020ID\u0020of\u0020the\u0020last\u0020request\u0020to\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Client.html#property_requestId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024requestLimit",
+            "name": "requestLimit",
+            "summary": "The\u0020request\u0020limit\u0020on\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Client.html#property_requestLimit"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Client\u003A\u003A\u0024requestsRemaining",
+            "name": "requestsRemaining",
+            "summary": "The\u0020number\u0020of\u0020requests\u0020remaining\u0020until\u0020the\u0020limit\u0020is\u0020hit.",
+            "url": "classes/DnsMadeEasy-Client.html#property_requestsRemaining"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Enums\\GTDLocation",
+            "name": "GTDLocation",
+            "summary": "Enums\u0020to\u0020represent\u0020Global\u0020Traffic\u0020Director\u0020locations",
+            "url": "classes/DnsMadeEasy-Enums-GTDLocation.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Enums\\RecordType",
+            "name": "RecordType",
+            "summary": "Enums\u0020to\u0020represent\u0020record\u0020types",
+            "url": "classes/DnsMadeEasy-Enums-RecordType.html"
         },                {
             "fqsen": "\\DnsMadeEasy\\Exceptions\\Client\\Http\\BadRequestException",
             "name": "BadRequestException",
@@ -130,6 +225,16 @@ Search.appendIndex(
             "name": "getResponse",
             "summary": "Get\u0020the\u0020response\u0020that\u0020caused\u0020the\u0020exception.",
             "url": "classes/DnsMadeEasy-Exceptions-Client-Http-HttpException.html#method_getResponse"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Exceptions\\Client\\Http\\HttpException\u003A\u003A\u0024request",
+            "name": "request",
+            "summary": "The\u0020request\u0020that\u0020was\u0020made\u0020when\u0020the\u0020exception\u0020was\u0020thrown.",
+            "url": "classes/DnsMadeEasy-Exceptions-Client-Http-HttpException.html#property_request"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Exceptions\\Client\\Http\\HttpException\u003A\u003A\u0024response",
+            "name": "response",
+            "summary": "The\u0020response\u0020to\u0020the\u0020request.",
+            "url": "classes/DnsMadeEasy-Exceptions-Client-Http-HttpException.html#property_response"
         },                {
             "fqsen": "\\DnsMadeEasy\\Exceptions\\Client\\Http\\NotFoundException",
             "name": "NotFoundException",
@@ -236,10 +341,50 @@ Search.appendIndex(
             "summary": "Makes\u0020a\u0020HTTP\u0020request\u0020to\u0020the\u0020API.",
             "url": "classes/DnsMadeEasy-Interfaces-ClientInterface.html#method_send"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\ClientInterface\u003A\u003AgetLastRequestId\u0028\u0029",
+            "name": "getLastRequestId",
+            "summary": "Return\u0020the\u0020ID\u0020of\u0020the\u0020last\u0020API\u0020request.",
+            "url": "classes/DnsMadeEasy-Interfaces-ClientInterface.html#method_getLastRequestId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\ClientInterface\u003A\u003AgetRequestLimit\u0028\u0029",
+            "name": "getRequestLimit",
+            "summary": "Get\u0020the\u0020request\u0020limit.",
+            "url": "classes/DnsMadeEasy-Interfaces-ClientInterface.html#method_getRequestLimit"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\ClientInterface\u003A\u003AgetRequestsRemaining\u0028\u0029",
+            "name": "getRequestsRemaining",
+            "summary": "Get\u0020the\u0020number\u0020of\u0020requests\u0020remaining\u0020before\u0020you\u0020hit\u0020the\u0020request\u0020limit.",
+            "url": "classes/DnsMadeEasy-Interfaces-ClientInterface.html#method_getRequestsRemaining"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\AbstractManagerInterface",
             "name": "AbstractManagerInterface",
             "summary": "Defines\u0020the\u0020interface\u0020of\u0020a\u0020Manager\u0020for\u0020a\u0020particular\u0020resource\u0020in\u0020the\u0020DNS\u0020Made\u0020Easy\u0020API.",
             "url": "classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\AbstractManagerInterface\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Updates\u0020the\u0020API\u0020with\u0020changes\u0020made\u0020to\u0020the\u0020specified\u0020object.\u0020If\u0020the\u0020object\u0020is\u0020new,\u0020it\u0020will\u0020be\u0020created.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_save"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\AbstractManagerInterface\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Uses\u0020the\u0020API\u0020to\u0020delete\u0020the\u0020specified\u0020object.\u0020If\u0020the\u0020object\u0020is\u0020new,\u0020then\u0020no\u0020action\u0020is\u0020taken\u0020on\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\AbstractManagerInterface\u003A\u003AgetFromCache\u0028\u0029",
+            "name": "getFromCache",
+            "summary": "Fetch\u0020the\u0020object\u0020from\u0020the\u0020local\u0020cache.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_getFromCache"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\AbstractManagerInterface\u003A\u003AputInCache\u0028\u0029",
+            "name": "putInCache",
+            "summary": "Put\u0020the\u0020object\u0020into\u0020the\u0020local\u0020cache.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_putInCache"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\AbstractManagerInterface\u003A\u003AremoveFromCache\u0028\u0029",
+            "name": "removeFromCache",
+            "summary": "Remove\u0020the\u0020object\u0020from\u0020the\u0020local\u0020cache.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_removeFromCache"
         },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\ContactListManagerInterface",
             "name": "ContactListManagerInterface",
@@ -255,6 +400,31 @@ Search.appendIndex(
             "name": "get",
             "summary": "Gets\u0020the\u0020ContactList\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Interfaces-Managers-ContactListManagerInterface.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface",
+            "name": "DomainRecordManagerInterface",
+            "summary": "Manages\u0020Domain\u0020Record\u0020resources\u0020from\u0020the\u0020API",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface\u003A\u003AsetDomain\u0028\u0029",
+            "name": "setDomain",
+            "summary": "Sets\u0020the\u0020domain\u0020used\u0020for\u0020the\u0020manager.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html#method_setDomain"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020Domain\u0020Record\u0020resource.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Returns\u0020the\u0020Domain\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface\u003A\u003AdeleteAll\u0028\u0029",
+            "name": "deleteAll",
+            "summary": "Delete\u0020all\u0020records\u0020on\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html#method_deleteAll"
         },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\FolderManagerInterface",
             "name": "FolderManagerInterface",
@@ -285,6 +455,76 @@ Search.appendIndex(
             "name": "get",
             "summary": "Gets\u0020the\u0020ManagedDomain\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Interfaces-Managers-ManagedDomainManagerInterface.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleDomainManagerInterface",
+            "name": "MultipleDomainManagerInterface",
+            "summary": "Manages\u0020creation,\u0020updation\u0020and\u0020deletion\u0020of\u0020multiple\u0020domains.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleDomainManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleDomainManagerInterface\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creates\u0020a\u0020new\u0020Multiple\u0020Domain\u0020Manager.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleDomainManagerInterface.html#method___construct"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleDomainManagerInterface\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020new\u0020domains\u0020with\u0020the\u0020specified\u0020names\u0020and\u0020the\u0020properties.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleDomainManagerInterface.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleDomainManagerInterface\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020the\u0020domains\u0020with\u0020the\u0020IDs\u0020specified,\u0020with\u0020the\u0020properties\u0020in\u0020the\u0020properties\u0020object.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleDomainManagerInterface.html#method_update"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleDomainManagerInterface\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020the\u0020domains\u0020with\u0020the\u0020specified\u0020IDs.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleDomainManagerInterface.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleRecordManagerInterface",
+            "name": "MultipleRecordManagerInterface",
+            "summary": "Manages\u0020creation,\u0020deletion\u0020and\u0020updating\u0020of\u0020multiple\u0020domain\u0020records.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleRecordManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleRecordManagerInterface\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creates\u0020a\u0020new\u0020manager\u0020for\u0020the\u0020supplied\u0020domain.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleRecordManagerInterface.html#method___construct"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleRecordManagerInterface\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020the\u0020supplied\u0020records\u0020in\u0020a\u0020single\u0020API\u0020call.\u0020This\u0020will\u0020return\u0020a\u0020new\u0020array\u0020containing\u0020new\u0020objects\u0020for\u0020the\nnewly\u0020created\u0020records.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleRecordManagerInterface.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleRecordManagerInterface\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020the\u0020supplied\u0020records\u0020in\u0020a\u0020single\u0020API\u0020call.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleRecordManagerInterface.html#method_update"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\MultipleRecordManagerInterface\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020the\u0020records\u0020matching\u0020the\u0020IDs\u0020specified.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-MultipleRecordManagerInterface.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\RecordFailoverManagerInterface",
+            "name": "RecordFailoverManagerInterface",
+            "summary": "Manages\u0020record\u0020failover\u0020and\u0020monitoring\u0020resources",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\RecordFailoverManagerInterface\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Returns\u0020the\u0020failover\u0020resource\u0020for\u0020the\u0020specified\u0020record\u0020ID.\u0020If\u0020the\u0020resource\u0020doesn\u0027t\u0020exist,\u0020a\u0020new\u0020one\u0020is\u0020created.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\RecordFailoverManagerInterface\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Updates\u0020the\u0020API\u0020with\u0020changes\u0020made\u0020to\u0020the\u0020specified\u0020object.\u0020If\u0020the\u0020object\u0020is\u0020new,\u0020it\u0020will\u0020be\u0020created.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html#method_save"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\RecordFailoverManagerInterface\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Uses\u0020the\u0020API\u0020to\u0020delete\u0020the\u0020specified\u0020object.\u0020If\u0020the\u0020object\u0020is\u0020new,\u0020then\u0020no\u0020action\u0020is\u0020taken\u0020on\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html#method_delete"
         },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\SecondaryDomainManagerInterface",
             "name": "SecondaryDomainManagerInterface",
@@ -356,6 +596,26 @@ Search.appendIndex(
             "summary": "Creates\u0020a\u0020new\u0020Template\u0020based\u0020on\u0020the\u0020specified\u0020domain\u0020ID.\u0020This\u0020is\u0020created\u0020immediately\u0020on\u0020the\u0020API\u0020and\u0020save\u0028\u0029\u0020does\nnot\u0020need\u0020to\u0020be\u0020called\u0020on\u0020the\u0020created\u0020resource.",
             "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateManagerInterface.html#method_createFromDomainId"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface",
+            "name": "TemplateRecordManagerInterface",
+            "summary": "Manages\u0020Template\u0020Record\u0020resources\u0020from\u0020the\u0020API",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface\u003A\u003AsetTemplate\u0028\u0029",
+            "name": "setTemplate",
+            "summary": "Sets\u0020the\u0020template\u0020used\u0020for\u0020the\u0020manager.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html#method_setTemplate"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020Template\u0020Record\u0020resource.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Returns\u0020the\u0020Template\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html#method_get"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TransferAclManagerInterface",
             "name": "TransferAclManagerInterface",
             "summary": "Manages\u0020Transfer\u0020ACL\u0020resources\u0020from\u0020the\u0020API.",
@@ -375,6 +635,11 @@ Search.appendIndex(
             "name": "UsageManagerInterface",
             "summary": "Gets\u0020usage\u0020from\u0020the\u0020API.",
             "url": "classes/DnsMadeEasy-Interfaces-Managers-UsageManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\UsageManagerInterface\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creates\u0020the\u0020Usage\u0020Manager.",
+            "url": "classes/DnsMadeEasy-Interfaces-Managers-UsageManagerInterface.html#method___construct"
         },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\UsageManagerInterface\u003A\u003Aall\u0028\u0029",
             "name": "all",
@@ -416,6 +681,11 @@ Search.appendIndex(
             "summary": "Represents\u0020a\u0020resource\u0020from\u0020the\u0020DNS\u0020Made\u0020Easy\u0020API.",
             "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creates\u0020a\u0020new\u0020model\u0020of\u0020the\u0020resource",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method___construct"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003Asave\u0028\u0029",
             "name": "save",
             "summary": "Saves\u0020the\u0020object.",
@@ -435,6 +705,16 @@ Search.appendIndex(
             "name": "refresh",
             "summary": "Fetch\u0020the\u0020latest\u0020version\u0020of\u0020the\u0020object\u0020from\u0020the\u0020API.\u0020This\u0020will\u0020overwrite\u0020changes\u0020that\u0020have\u0020been\u0020made.",
             "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_refresh"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003ApopulateFromApi\u0028\u0029",
+            "name": "populateFromApi",
+            "summary": "Populate\u0020the\u0020object\u0020from\u0020API\u0020data.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_populateFromApi"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\AbstractModelInterface\u003A\u003AtransformForApi\u0028\u0029",
+            "name": "transformForApi",
+            "summary": "Generate\u0020a\u0020representation\u0020of\u0020the\u0020object\u0020for\u0020sending\u0020to\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html#method_transformForApi"
         },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\Common\\CommonFolderInterface",
             "name": "CommonFolderInterface",
@@ -491,6 +771,16 @@ Search.appendIndex(
             "summary": "Remove\u0020an\u0020email\u0020from\u0020the\u0020contactlist.",
             "url": "classes/DnsMadeEasy-Interfaces-Models-ContactListInterface.html#method_removeEmail"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\DomainRecordInterface",
+            "name": "DomainRecordInterface",
+            "summary": "Represents\u0020a\u0020Record",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-DomainRecordInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\DomainRecordInterface\u003A\u003AsetDomain\u0028\u0029",
+            "name": "setDomain",
+            "summary": "Set\u0020the\u0020domain\u0020for\u0020the\u0020record.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-DomainRecordInterface.html#method_setDomain"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\FolderInterface",
             "name": "FolderInterface",
             "summary": "Represents\u0020a\u0020Folder\u0020resource",
@@ -500,6 +790,16 @@ Search.appendIndex(
             "name": "ManagedDomainInterface",
             "summary": "Represents\u0020a\u0020Managed\u0020Domain\u0020resource",
             "url": "classes/DnsMadeEasy-Interfaces-Models-ManagedDomainInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\RecordFailoverInterface",
+            "name": "RecordFailoverInterface",
+            "summary": "Represents\u0020record\u0020failover\u0020configuration.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-RecordFailoverInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\RecordInterface",
+            "name": "RecordInterface",
+            "summary": "Represents\u0020a\u0020Record",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-RecordInterface.html"
         },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\SecondaryDomainInterface",
             "name": "SecondaryDomainInterface",
@@ -530,6 +830,16 @@ Search.appendIndex(
             "name": "TemplateInterface",
             "summary": "Represents\u0020a\u0020Template\u0020resource.",
             "url": "classes/DnsMadeEasy-Interfaces-Models-TemplateInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\TemplateRecordInterface",
+            "name": "TemplateRecordInterface",
+            "summary": "Represents\u0020a\u0020Record",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-TemplateRecordInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\TemplateRecordInterface\u003A\u003AsetTemplate\u0028\u0029",
+            "name": "setTemplate",
+            "summary": "Set\u0020the\u0020template\u0020for\u0020the\u0020record.",
+            "url": "classes/DnsMadeEasy-Interfaces-Models-TemplateRecordInterface.html#method_setTemplate"
         },                {
             "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\TransferAclInterface",
             "name": "TransferAclInterface",
@@ -566,10 +876,125 @@ Search.appendIndex(
             "summary": "Returns\u0020a\u0020pagination\u0020object\u0020based\u0020on\u0020the\u0020supplied\u0020parameters.",
             "url": "classes/DnsMadeEasy-Interfaces-PaginatorFactoryInterface.html#method_paginate"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Traits\\ListableManagerInterface",
+            "name": "ListableManagerInterface",
+            "summary": "Fnctionality\u0020for\u0020paginated\u0020indexed\u0020resources.",
+            "url": "classes/DnsMadeEasy-Interfaces-Traits-ListableManagerInterface.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Interfaces\\Traits\\ListableManagerInterface\u003A\u003Apaginate\u0028\u0029",
+            "name": "paginate",
+            "summary": "Fetch\u0020a\u0020paginated\u0020subset\u0020of\u0020the\u0020resources.\u0020You\u0020can\u0020specify\u0020the\u0020page\u0020and\u0020the\u0020number\u0020of\u0020items\u0020per\u002Dpage.\u0020The\u0020result\nwill\u0020be\u0020an\u0020object\u0020representing\u0020the\u0020paginated\u0020results.\u0020By\u0020specifying\u0020a\u0020custom\u0020Paginator\u0020Factory\u0020on\u0020the\u0020client\nyou\u0020can\u0020change\u0020the\u0020type\u0020of\u0020result\u0020you\u0020get\u0020from\u0020this\u0020method.",
+            "url": "classes/DnsMadeEasy-Interfaces-Traits-ListableManagerInterface.html#method_paginate"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager",
             "name": "AbstractManager",
             "summary": "Abstract\u0020class\u0020for\u0020a\u0020resource\u0020manager.",
             "url": "classes/DnsMadeEasy-Managers-AbstractManager.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetObject\u0028\u0029",
+            "name": "getObject",
+            "summary": "Fetches\u0020an\u0020object\u0020from\u0020the\u0020cache,\u0020or\u0020if\u0020not\u0020found,\u0020from\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getObject"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetFromApi\u0028\u0029",
+            "name": "getFromApi",
+            "summary": "Get\u0020the\u0020object\u0020from\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getFromApi"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AcreateObject\u0028\u0029",
+            "name": "createObject",
+            "summary": "Create\u0020a\u0020new\u0020object.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_createObject"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020the\u0020object\u0020passed\u0020to\u0020it.\u0020If\u0020the\u0020object\u0020doesn\u0027t\u0020have\u0020an\u0020ID,\u0020no\u0020action\u0020is\u0020taken.\u0020The\u0020object\u0020is\u0020also\nremoved\u0020from\u0020the\u0020cache.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Saves\u0020the\u0020object\u0020passed\u0020to\u0020it.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_save"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020for\u0020a\u0020Manager\u0020class.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method___construct"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetBaseUri\u0028\u0029",
+            "name": "getBaseUri",
+            "summary": "Fetches\u0020the\u0020base\u0020URI\u0020for\u0020the\u0020resource.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getBaseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetObjectUri\u0028\u0029",
+            "name": "getObjectUri",
+            "summary": "Fetches\u0020the\u0020URI\u0020for\u0020a\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getObjectUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetModelClass\u0028\u0029",
+            "name": "getModelClass",
+            "summary": "Return\u0020the\u0020name\u0020of\u0020the\u0020model\u0020class\u0020for\u0020this\u0020resource.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getModelClass"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetConciseModelClass\u0028\u0029",
+            "name": "getConciseModelClass",
+            "summary": "Return\u0020the\u0020name\u0020of\u0020the\u0020model\u0020class\u0020for\u0020the\u0020concise\u0020version\u0020of\u0020the\u0020resource.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getConciseModelClass"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetObjectId\u0028\u0029",
+            "name": "getObjectId",
+            "summary": "Returns\u0020a\u0020string\u0020ID\u0020to\u0020give\u0020a\u0020unique\u0020ID\u0020to\u0020this\u0020resource.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getObjectId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AcreateExistingObject\u0028\u0029",
+            "name": "createExistingObject",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020an\u0020object\u0020from\u0020existing\u0020API\u0020data.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_createExistingObject"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AgetFromCache\u0028\u0029",
+            "name": "getFromCache",
+            "summary": "Fetch\u0020the\u0020object\u0020from\u0020the\u0020local\u0020cache.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_getFromCache"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AputInCache\u0028\u0029",
+            "name": "putInCache",
+            "summary": "Put\u0020the\u0020object\u0020into\u0020the\u0020local\u0020cache.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_putInCache"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AremoveFromCache\u0028\u0029",
+            "name": "removeFromCache",
+            "summary": "Remove\u0020the\u0020object\u0020from\u0020the\u0020local\u0020cache.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_removeFromCache"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003Arefresh\u0028\u0029",
+            "name": "refresh",
+            "summary": "Updates\u0020the\u0020object\u0020to\u0020the\u0020latest\u0020version\u0020in\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_refresh"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AtransformApiData\u0028\u0029",
+            "name": "transformApiData",
+            "summary": "Applies\u0020transformations\u0020to\u0020the\u0020API\u0020data\u0020before\u0020it\u0020is\u0020used\u0020to\u0020instantiate\u0020a\u0020model.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_transformApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003AtransformConciseApiData\u0028\u0029",
+            "name": "transformConciseApiData",
+            "summary": "Applies\u0020transformations\u0020to\u0020the\u0020concise\u0020API\u0020data\u0020before\u0020it\u0020is\u0020used\u0020to\u0020instantiate\u0020a\u0020model.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#method_transformConciseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003A\u0024client",
+            "name": "client",
+            "summary": "The\u0020Dns\u0020Made\u0020Easy\u0020API\u0020Client.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#property_client"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "The\u0020URI\u0020for\u0020the\u0020resource.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\AbstractManager\u003A\u003A\u0024objectCache",
+            "name": "objectCache",
+            "summary": "A\u0020cache\u0020of\u0020objects\u0020fetched\u0020from\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Managers-AbstractManager.html#property_objectCache"
         },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\ContactListManager",
             "name": "ContactListManager",
@@ -586,6 +1011,66 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020ContactList\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-ContactListManager.html#method_get"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\ContactListManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "The\u0020base\u0020URI\u0020for\u0020contact\u0020lists.",
+            "url": "classes/DnsMadeEasy-Managers-ContactListManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager",
+            "name": "DomainRecordManager",
+            "summary": "Represents\u0020a\u0020Domain\u0020Record.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020Domain\u0020Record\u0020resource.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Returns\u0020the\u0020Domain\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003AsetDomain\u0028\u0029",
+            "name": "setDomain",
+            "summary": "Sets\u0020the\u0020domain\u0020used\u0020for\u0020the\u0020manager.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_setDomain"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003AgetDomain\u0028\u0029",
+            "name": "getDomain",
+            "summary": "Fetches\u0020the\u0020domain\u0020for\u0020the\u0020manager.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_getDomain"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003AcreateObject\u0028\u0029",
+            "name": "createObject",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020Domain\u0020Record\u0020with\u0020the\u0020Domain\u0020property\u0020set.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_createObject"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003AdeleteAll\u0028\u0029",
+            "name": "deleteAll",
+            "summary": "Delete\u0020all\u0020records\u0020on\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_deleteAll"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003A__get\u0028\u0029",
+            "name": "__get",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method___get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "The\u0020base\u0020URI\u0020for\u0020domain\u0020records.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003A\u0024multipleRecordManager",
+            "name": "multipleRecordManager",
+            "summary": "Manager\u0020for\u0020multiple\u0020domain\u0020records.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#property_multipleRecordManager"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003A\u0024domain",
+            "name": "domain",
+            "summary": "The\u0020domain\u0020for\u0020this\u0020manager.",
+            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#property_domain"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\FolderManager",
             "name": "FolderManager",
             "summary": "Manager\u0020for\u0020Folder\u0020resources.",
@@ -596,6 +1081,11 @@ Search.appendIndex(
             "summary": "Paginates\u0020folder\u0020resources.",
             "url": "classes/DnsMadeEasy-Managers-FolderManager.html#method_paginate"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\FolderManager\u003A\u003AgetConciseModelClass\u0028\u0029",
+            "name": "getConciseModelClass",
+            "summary": "Returns\u0020the\u0020model\u0020class\u0020for\u0020Concise\u0020Folder\u0020resources.",
+            "url": "classes/DnsMadeEasy-Managers-FolderManager.html#method_getConciseModelClass"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\FolderManager\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Gets\u0020the\u0020Folder\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
@@ -605,6 +1095,16 @@ Search.appendIndex(
             "name": "create",
             "summary": "Creates\u0020a\u0020new\u0020Folder\u0020resource.",
             "url": "classes/DnsMadeEasy-Managers-FolderManager.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\FolderManager\u003A\u003AtransformConciseApiData\u0028\u0029",
+            "name": "transformConciseApiData",
+            "summary": "Applies\u0020transformations\u0020to\u0020the\u0020concise\u0020data\u0020for\u0020a\u0020Folder.",
+            "url": "classes/DnsMadeEasy-Managers-FolderManager.html#method_transformConciseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\FolderManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020Folder\u0020resources",
+            "url": "classes/DnsMadeEasy-Managers-FolderManager.html#property_baseUri"
         },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\ManagedDomainManager",
             "name": "ManagedDomainManager",
@@ -621,6 +1121,141 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020ManagedDomain\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-ManagedDomainManager.html#method_get"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\ManagedDomainManager\u003A\u003AgetConciseModelClass\u0028\u0029",
+            "name": "getConciseModelClass",
+            "summary": "Return\u0020the\u0020name\u0020of\u0020the\u0020model\u0020class\u0020for\u0020the\u0020concise\u0020version\u0020of\u0020a\u0020managed\u0020domains.",
+            "url": "classes/DnsMadeEasy-Managers-ManagedDomainManager.html#method_getConciseModelClass"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\ManagedDomainManager\u003A\u003A__get\u0028\u0029",
+            "name": "__get",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Managers-ManagedDomainManager.html#method___get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\ManagedDomainManager\u003A\u003A\u0024multipleDomainManager",
+            "name": "multipleDomainManager",
+            "summary": "Manager\u0020for\u0020multiple\u0020domains.",
+            "url": "classes/DnsMadeEasy-Managers-ManagedDomainManager.html#property_multipleDomainManager"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\ManagedDomainManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020managed\u0020domain\u0020objects",
+            "url": "classes/DnsMadeEasy-Managers-ManagedDomainManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager",
+            "name": "MultipleDomainManager",
+            "summary": "Manages\u0020multiple\u0020domains.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creates\u0020a\u0020new\u0020Multiple\u0020Domain\u0020Manager.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#method___construct"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003AgetPayload\u0028\u0029",
+            "name": "getPayload",
+            "summary": "Gets\u0020the\u0020payload\u0020based\u0020on\u0020the\u0020supplied\u0020properties.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#method_getPayload"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020new\u0020domains\u0020with\u0020the\u0020specified\u0020names\u0020and\u0020the\u0020properties.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020the\u0020domains\u0020with\u0020the\u0020IDs\u0020specified,\u0020with\u0020the\u0020properties\u0020in\u0020the\u0020properties\u0020object.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#method_update"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020the\u0020domains\u0020with\u0020the\u0020specified\u0020IDs.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003A\u0024client",
+            "name": "client",
+            "summary": "The\u0020DNS\u0020Made\u0020Easy\u0020API\u0020Client",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#property_client"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "The\u0020URI\u0020for\u0020managed\u0020domains",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleDomainManager\u003A\u003A\u0024validProperties",
+            "name": "validProperties",
+            "summary": "Properties\u0020that\u0020are\u0020valid\u0020for\u0020being\u0020set\u0020on\u0020multiple\u0020domains.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleDomainManager.html#property_validProperties"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager",
+            "name": "MultipleRecordManager",
+            "summary": "Manages\u0020multiple\u0020domain\u0020records\u0020at\u0020once.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creates\u0020a\u0020new\u0020manager\u0020for\u0020the\u0020supplied\u0020domain.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html#method___construct"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020the\u0020supplied\u0020records\u0020in\u0020a\u0020single\u0020API\u0020call.\u0020This\u0020will\u0020return\u0020a\u0020new\u0020array\u0020containing\u0020new\u0020objects\u0020for\u0020the\nnewly\u0020created\u0020records.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020the\u0020supplied\u0020records\u0020in\u0020a\u0020single\u0020API\u0020call.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html#method_update"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020the\u0020records\u0020matching\u0020the\u0020IDs\u0020specified.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html#method_delete"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager\u003A\u003A\u0024client",
+            "name": "client",
+            "summary": "The\u0020DNS\u0020Made\u0020Easy\u0020API\u0020Client",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html#property_client"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager\u003A\u003A\u0024domain",
+            "name": "domain",
+            "summary": "The\u0020domain\u0020to\u0020manage\u0020records\u0020for.",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html#property_domain"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple\\MultipleRecordManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "The\u0020base\u0020URI\u0020for\u0020managed\u0020domains",
+            "url": "classes/DnsMadeEasy-Managers-Multiple-MultipleRecordManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\RecordFailoverManager",
+            "name": "RecordFailoverManager",
+            "summary": "Manager\u0020for\u0020Record\u0020Failover\u0020configuration.",
+            "url": "classes/DnsMadeEasy-Managers-RecordFailoverManager.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\RecordFailoverManager\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Returns\u0020the\u0020failover\u0020resource\u0020for\u0020the\u0020specified\u0020record\u0020ID.\u0020If\u0020the\u0020resource\u0020doesn\u0027t\u0020exist,\u0020a\u0020new\u0020one\u0020is\u0020created.",
+            "url": "classes/DnsMadeEasy-Managers-RecordFailoverManager.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\RecordFailoverManager\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Updates\u0020the\u0020API\u0020with\u0020changes\u0020made\u0020to\u0020the\u0020specified\u0020object.\u0020If\u0020the\u0020object\u0020is\u0020new,\u0020it\u0020will\u0020be\u0020created.",
+            "url": "classes/DnsMadeEasy-Managers-RecordFailoverManager.html#method_save"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\RecordFailoverManager\u003A\u003AtransformApiData\u0028\u0029",
+            "name": "transformApiData",
+            "summary": "Applies\u0020transformations\u0020to\u0020the\u0020API\u0020data\u0020before\u0020it\u0020is\u0020used\u0020to\u0020instantiate\u0020a\u0020model.",
+            "url": "classes/DnsMadeEasy-Managers-RecordFailoverManager.html#method_transformApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\RecordFailoverManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020failover\u0020configuration.",
+            "url": "classes/DnsMadeEasy-Managers-RecordFailoverManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\RecordManager",
+            "name": "RecordManager",
+            "summary": "Abstract\u0020class\u0020for\u0020Domain\u0020and\u0020Template\u0020record\u0020managers.",
+            "url": "classes/DnsMadeEasy-Managers-RecordManager.html"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\SecondaryDomainManager",
             "name": "SecondaryDomainManager",
             "summary": "Manager\u0020for\u0020Secondary\u0020Domain\u0020resources.",
@@ -635,6 +1270,16 @@ Search.appendIndex(
             "name": "get",
             "summary": "Gets\u0020the\u0020Secondary\u0020Domain\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-SecondaryDomainManager.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\SecondaryDomainManager\u003A\u003AgetConciseModelClass\u0028\u0029",
+            "name": "getConciseModelClass",
+            "summary": "Return\u0020the\u0020name\u0020of\u0020the\u0020model\u0020class\u0020for\u0020the\u0020concise\u0020version\u0020secondary\u0020domain\u0020resources.",
+            "url": "classes/DnsMadeEasy-Managers-SecondaryDomainManager.html#method_getConciseModelClass"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\SecondaryDomainManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020secondary\u0020domain\u0020resources.",
+            "url": "classes/DnsMadeEasy-Managers-SecondaryDomainManager.html#property_baseUri"
         },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\SecondaryIPSetManager",
             "name": "SecondaryIPSetManager",
@@ -651,6 +1296,11 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020Secondary\u0020IP\u0020Set\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-SecondaryIPSetManager.html#method_get"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\SecondaryIPSetManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020secondary\u0020domain\u0020IP\u0020sets.",
+            "url": "classes/DnsMadeEasy-Managers-SecondaryIPSetManager.html#property_baseUri"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\SOARecordManager",
             "name": "SOARecordManager",
             "summary": "Manager\u0020for\u0020SOA\u0020Record\u0020resources.",
@@ -665,6 +1315,11 @@ Search.appendIndex(
             "name": "get",
             "summary": "Returns\u0020the\u0020SOA\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-SOARecordManager.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\SOARecordManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020SOA\u0020records.",
+            "url": "classes/DnsMadeEasy-Managers-SOARecordManager.html#property_baseUri"
         },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\TemplateManager",
             "name": "TemplateManager",
@@ -691,6 +1346,51 @@ Search.appendIndex(
             "summary": "Creates\u0020a\u0020new\u0020Template\u0020based\u0020on\u0020the\u0020specified\u0020domain\u0020ID.\u0020This\u0020is\u0020created\u0020immediately\u0020on\u0020the\u0020API\u0020and\u0020save\u0028\u0029\u0020does\nnot\u0020need\u0020to\u0020be\u0020called\u0020on\u0020the\u0020created\u0020resource.",
             "url": "classes/DnsMadeEasy-Managers-TemplateManager.html#method_createFromDomainId"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020template\u0020resources.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager",
+            "name": "TemplateRecordManager",
+            "summary": "Manager\u0020for\u0020Template\u0020record\u0020resources.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020Template\u0020Record\u0020resource.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#method_create"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Returns\u0020the\u0020Template\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003AsetTemplate\u0028\u0029",
+            "name": "setTemplate",
+            "summary": "Sets\u0020the\u0020template\u0020for\u0020the\u0020manager.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#method_setTemplate"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003AgetTemplate\u0028\u0029",
+            "name": "getTemplate",
+            "summary": "Gets\u0020the\u0020template\u0020for\u0020the\u0020manager.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#method_getTemplate"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003AcreateObject\u0028\u0029",
+            "name": "createObject",
+            "summary": "Create\u0020a\u0020new\u0020Template\u0020Record.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#method_createObject"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020template\u0020record\u0020resources.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#property_baseUri"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003A\u0024template",
+            "name": "template",
+            "summary": "The\u0020Template\u0020for\u0020the\u0020manager.",
+            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#property_template"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\TransferAclManager",
             "name": "TransferAclManager",
             "summary": "Manager\u0020for\u0020Transfer\u0020ACL\u0020resources.",
@@ -706,10 +1406,20 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020TransferAcl\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-TransferAclManager.html#method_get"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\TransferAclManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020Transfer\u0020ACLs",
+            "url": "classes/DnsMadeEasy-Managers-TransferAclManager.html#property_baseUri"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\UsageManager",
             "name": "UsageManager",
             "summary": "Manager\u0020for\u0020query\u0020usage.",
             "url": "classes/DnsMadeEasy-Managers-UsageManager.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\UsageManager\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Createsa\u0020new\u0020Query\u0020Usage\u0020manager.",
+            "url": "classes/DnsMadeEasy-Managers-UsageManager.html#method___construct"
         },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\UsageManager\u003A\u003Aall\u0028\u0029",
             "name": "all",
@@ -731,6 +1441,16 @@ Search.appendIndex(
             "summary": "Fetches\u0020usage\u0020for\u0020the\u0020specified\u0020domain\u0020ID,\u0020year\u0020and\u0020month",
             "url": "classes/DnsMadeEasy-Managers-UsageManager.html#method_forDomainId"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\UsageManager\u003A\u003AgetData\u0028\u0029",
+            "name": "getData",
+            "summary": "Returns\u0020the\u0020data\u0020from\u0020the\u0020API\u0020for\u0020the\u0020usage\u0020requested.",
+            "url": "classes/DnsMadeEasy-Managers-UsageManager.html#method_getData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\UsageManager\u003A\u003A\u0024client",
+            "name": "client",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Managers-UsageManager.html#property_client"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Managers\\VanityNameServerManager",
             "name": "VanityNameServerManager",
             "summary": "Manager\u0020for\u0020Vanity\u0020NameServer\u0020resources.",
@@ -745,6 +1465,11 @@ Search.appendIndex(
             "name": "get",
             "summary": "Gets\u0020the\u0020Vanity\u0020NameServer\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
             "url": "classes/DnsMadeEasy-Managers-VanityNameServerManager.html#method_get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\VanityNameServerManager\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "Base\u0020URI\u0020for\u0020Vanity\u0020NameServer\u0020resources.",
+            "url": "classes/DnsMadeEasy-Managers-VanityNameServerManager.html#property_baseUri"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel",
             "name": "AbstractModel",
@@ -761,15 +1486,100 @@ Search.appendIndex(
             "summary": "Deletes\u0020the\u0020object.",
             "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_delete"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creates\u0020the\u0020model\u0020and\u0020optionally\u0020populates\u0020it\u0020with\u0020data.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method___construct"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "Returns\u0020a\u0020string\u0020representation\u0020of\u0020the\u0020model\u0027s\u0020class\u0020and\u0020ID.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method___toString"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003AhasChanged\u0028\u0029",
             "name": "hasChanged",
             "summary": "Returns\u0020true\u0020if\u0020the\u0020object\u0020has\u0020been\u0020modified\u0020since\u0020it\u0020was\u0020fetched.",
             "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_hasChanged"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003ApopulateFromApi\u0028\u0029",
+            "name": "populateFromApi",
+            "summary": "Populate\u0020the\u0020object\u0020from\u0020API\u0020data.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_populateFromApi"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003AparseApiData\u0028\u0029",
+            "name": "parseApiData",
+            "summary": "Parses\u0020the\u0020API\u0020data\u0020and\u0020assigns\u0020it\u0020to\u0020properties\u0020on\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_parseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003AtransformForApi\u0028\u0029",
+            "name": "transformForApi",
+            "summary": "Generate\u0020a\u0020representation\u0020of\u0020the\u0020object\u0020for\u0020sending\u0020to\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_transformForApi"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003AjsonSerialize\u0028\u0029",
+            "name": "jsonSerialize",
+            "summary": "Returns\u0020a\u0020JSON\u0020serializable\u0020representation\u0020of\u0020the\u0020resource.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_jsonSerialize"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003Arefresh\u0028\u0029",
             "name": "refresh",
             "summary": "Fetch\u0020the\u0020latest\u0020version\u0020of\u0020the\u0020object\u0020from\u0020the\u0020API.\u0020This\u0020will\u0020overwrite\u0020changes\u0020that\u0020have\u0020been\u0020made.",
             "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_refresh"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "Returns\u0020the\u0020ID\u0020of\u0020the\u0020object.\u0020Since\u0020ID\u0020is\u0020a\u0020protected\u0020property,\u0020this\u0020is\u0020required\u0020for\u0020fetching\u0020it.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method_getId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A__get\u0028\u0029",
+            "name": "__get",
+            "summary": "Magic\u0020method\u0020to\u0020fetch\u0020properties\u0020for\u0020the\u0020object.\u0020If\u0020a\u0020get\u007BName\u007D\u0020method\u0020exists,\u0020it\u0020will\u0020be\u0020called\u0020\u0020first,\notherwise\u0020it\u0020will\u0020try\u0020and\u0020fetch\u0020it\u0020from\u0020the\u0020properties\u0020array.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method___get"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A__set\u0028\u0029",
+            "name": "__set",
+            "summary": "Magic\u0020method\u0020for\u0020setting\u0020properties\u0020for\u0020the\u0020object.\u0020If\u0020a\u0020method\u0020called\u0020set\u007BName\u007D\u0020exists,\u0020then\u0020it\u0020will\u0020be\u0020called,\notherwise\u0020if\u0020the\u0020property\u0020is\u0020in\u0020the\u0020props\u0020array\u0020and\u0020is\u0020editable,\u0020it\u0020will\u0020be\u0020updated.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#method___set"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024manager",
+            "name": "manager",
+            "summary": "The\u0020manager\u0020for\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_manager"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024client",
+            "name": "client",
+            "summary": "The\u0020Dns\u0020Made\u0020Easy\u0020API\u0020Client",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_client"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "The\u0020ID\u0020of\u0020the\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_id"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024changed",
+            "name": "changed",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020have\u0020been\u0020modified\u0020since\u0020the\u0020object\u0020was\u0020last\u0020saved.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_changed"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024originalProps",
+            "name": "originalProps",
+            "summary": "The\u0020original\u0020properties\u0020from\u0020when\u0020the\u0020object\u0020was\u0020instantiated\/last\u0020loaded\u0020from\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_originalProps"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_editable"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\AbstractModel\u003A\u003A\u0024apiData",
+            "name": "apiData",
+            "summary": "The\u0020original\u0020data\u0020retrieved\u0020from\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Models-AbstractModel.html#property_apiData"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonFolder",
             "name": "CommonFolder",
@@ -780,6 +1590,21 @@ Search.appendIndex(
             "name": "CommonManagedDomain",
             "summary": "Abstract\u0020model\u0020representing\u0020common\u0020properties\u0020and\u0020functionality\u0020between\u0020managed\u0020domain\u0020model\u0020implementations.",
             "url": "classes/DnsMadeEasy-Models-Common-CommonManagedDomain.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonManagedDomain\u003A\u003AparseApiData\u0028\u0029",
+            "name": "parseApiData",
+            "summary": "Parses\u0020the\u0020API\u0020data\u0020and\u0020sets\u0020the\u0020properties\u0020on\u0020the\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-Common-CommonManagedDomain.html#method_parseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonManagedDomain\u003A\u003AgetTemplate\u0028\u0029",
+            "name": "getTemplate",
+            "summary": "Get\u0020the\u0020template\u0020associated\u0020with\u0020this\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-Common-CommonManagedDomain.html#method_getTemplate"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonManagedDomain\u003A\u003AgetFolder\u0028\u0029",
+            "name": "getFolder",
+            "summary": "Get\u0020the\u0020folder\u0020that\u0020the\u0020domain\u0020has\u0020been\u0020assigned\u0020to.",
+            "url": "classes/DnsMadeEasy-Models-Common-CommonManagedDomain.html#method_getFolder"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonManagedDomain\u003A\u003AgetUsage\u0028\u0029",
             "name": "getUsage",
@@ -796,35 +1621,100 @@ Search.appendIndex(
             "summary": "Abstract\u0020model\u0020representing\u0020common\u0020properties\u0020and\u0020functionality\u0020between\u0020secondary\u0020domain\u0020model\u0020implementions.",
             "url": "classes/DnsMadeEasy-Models-Common-CommonSecondaryDomain.html"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonSecondaryDomain\u003A\u003AparseApiData\u0028\u0029",
+            "name": "parseApiData",
+            "summary": "Parses\u0020the\u0020API\u0020data.",
+            "url": "classes/DnsMadeEasy-Models-Common-CommonSecondaryDomain.html#method_parseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Common\\CommonSecondaryDomain\u003A\u003AgetFolder\u0028\u0029",
+            "name": "getFolder",
+            "summary": "Fetches\u0020the\u0020folder\u0020that\u0020the\u0020secondary\u0020domain\u0020is\u0020using.",
+            "url": "classes/DnsMadeEasy-Models-Common-CommonSecondaryDomain.html#method_getFolder"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseFolder",
             "name": "ConciseFolder",
             "summary": "A\u0020concise\u0020representation\u0020of\u0020Folder\u0020resources\u0020from\u0020the\u0020API.\u0020This\u0020is\u0020returned\u0020from\u0020paginate\u0028\u0029\u0020calls\u0020to\u0020the\u0020manager.\u0020The\nfull\u0020version\u0020of\u0020the\u0020resource\u0020can\u0020be\u0020requested\u0020if\u0020required.",
             "url": "classes/DnsMadeEasy-Models-Concise-ConciseFolder.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseFolder\u003A\u003AgetFull\u0028\u0029",
+            "name": "getFull",
+            "summary": "Get\u0020the\u0020full\u0020representation\u0020of\u0020the\u0020Folder.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseFolder.html#method_getFull"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseFolder\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Override\u0020the\u0020save\u0020method,\u0020we\u0020can\u0027t\u0020save\u0020concise\u0020resources,\u0020so\u0020we\u0020don\u0027t\u0020do\u0020anything.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseFolder.html#method_save"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseFolder\u003A\u003Arefresh\u0028\u0029",
             "name": "refresh",
             "summary": "Override\u0020the\u0020refresh\u0020method.\u0020Refreshing\u0020it\u0020would\u0020fetch\u0020the\u0020full\u0020version\u0020of\u0020the\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-Concise-ConciseFolder.html#method_refresh"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseFolder\u003A\u003AparseApiData\u0028\u0029",
+            "name": "parseApiData",
+            "summary": "Parse\u0020the\u0020API\u0020data\u0020and\u0020assign\u0020it\u0020to\u0020properties\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseFolder.html#method_parseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseFolder\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseFolder.html#property_props"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseManagedDomain",
             "name": "ConciseManagedDomain",
             "summary": "A\u0020concise\u0020representation\u0020of\u0020Managed\u0020Domain\u0020resources\u0020from\u0020the\u0020API.\u0020This\u0020is\u0020returned\u0020from\u0020paginate\u0028\u0029\u0020calls\u0020to\u0020the\nmanager.\u0020The\u0020full\u0020version\u0020of\u0020the\u0020resource\u0020can\u0020be\u0020requested\u0020if\u0020required.",
             "url": "classes/DnsMadeEasy-Models-Concise-ConciseManagedDomain.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseManagedDomain\u003A\u003AgetFull\u0028\u0029",
+            "name": "getFull",
+            "summary": "Retrieves\u0020the\u0020full\u0020representation\u0020of\u0020the\u0020ManagedDomain.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseManagedDomain.html#method_getFull"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseManagedDomain\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Override\u0020the\u0020save\u0020method,\u0020we\u0020can\u0027t\u0020save\u0020concise\u0020resources,\u0020so\u0020we\u0020don\u0027t\u0020do\u0020anything.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseManagedDomain.html#method_save"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseManagedDomain\u003A\u003Arefresh\u0028\u0029",
             "name": "refresh",
             "summary": "Override\u0020the\u0020refresh\u0020method.\u0020Refreshing\u0020it\u0020would\u0020fetch\u0020the\u0020full\u0020version\u0020of\u0020the\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-Concise-ConciseManagedDomain.html#method_refresh"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseManagedDomain\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseManagedDomain.html#property_props"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseSecondaryDomain",
             "name": "ConciseSecondaryDomain",
             "summary": "A\u0020concise\u0020representation\u0020of\u0020Secondary\u0020Domain\u0020resources\u0020from\u0020the\u0020API.\u0020This\u0020is\u0020returned\u0020from\u0020paginate\u0028\u0029\u0020calls\u0020to\u0020the\nmanager.\u0020The\u0020full\u0020version\u0020of\u0020the\u0020resource\u0020can\u0020be\u0020requested\u0020if\u0020required.",
             "url": "classes/DnsMadeEasy-Models-Concise-ConciseSecondaryDomain.html"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseSecondaryDomain\u003A\u003AgetFull\u0028\u0029",
+            "name": "getFull",
+            "summary": "Retrieves\u0020the\u0020full\u0020representation\u0020of\u0020the\u0020Secondary\u0020Domain.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseSecondaryDomain.html#method_getFull"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseSecondaryDomain\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Override\u0020the\u0020save\u0020method,\u0020we\u0020can\u0027t\u0020save\u0020concise\u0020resources,\u0020so\u0020we\u0020don\u0027t\u0020do\u0020anything.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseSecondaryDomain.html#method_save"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseSecondaryDomain\u003A\u003Arefresh\u0028\u0029",
             "name": "refresh",
             "summary": "Override\u0020the\u0020refresh\u0020method.\u0020Refreshing\u0020it\u0020would\u0020fetch\u0020the\u0020full\u0020version\u0020of\u0020the\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-Concise-ConciseSecondaryDomain.html#method_refresh"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseSecondaryDomain\u003A\u003AgetIpSet\u0028\u0029",
+            "name": "getIpSet",
+            "summary": "Return\u0020the\u0020Secondary\u0020IP\u0020set\u0020assigned\u0020to\u0020this\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseSecondaryDomain.html#method_getIpSet"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Concise\\ConciseSecondaryDomain\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-Concise-ConciseSecondaryDomain.html#property_props"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\ContactList",
             "name": "ContactList",
@@ -841,20 +1731,240 @@ Search.appendIndex(
             "summary": "Remove\u0020an\u0020email\u0020from\u0020the\u0020contactlist.",
             "url": "classes/DnsMadeEasy-Models-ContactList.html#method_removeEmail"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ContactList\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-ContactList.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ContactList\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-ContactList.html#property_editable"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\DomainRecord",
+            "name": "DomainRecord",
+            "summary": "Represents\u0020a\u0020Domain\u0020Record.",
+            "url": "classes/DnsMadeEasy-Models-DomainRecord.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\DomainRecord\u003A\u003AsetDomain\u0028\u0029",
+            "name": "setDomain",
+            "summary": "Sets\u0020the\u0020domain\u0020for\u0020the\u0020record.\u0020This\u0020can\u0020only\u0020be\u0020set\u0020once.",
+            "url": "classes/DnsMadeEasy-Models-DomainRecord.html#method_setDomain"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\DomainRecord\u003A\u003AgetDomain\u0028\u0029",
+            "name": "getDomain",
+            "summary": "Get\u0020the\u0020domain\u0020associated\u0020with\u0020this\u0020record.",
+            "url": "classes/DnsMadeEasy-Models-DomainRecord.html#method_getDomain"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\DomainRecord\u003A\u003AgetDomainId\u0028\u0029",
+            "name": "getDomainId",
+            "summary": "Get\u0020the\u0020ID\u0020of\u0020the\u0020domain\u0020associated\u0020with\u0020the\u0020record.",
+            "url": "classes/DnsMadeEasy-Models-DomainRecord.html#method_getDomainId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\DomainRecord\u003A\u003A\u0024domain",
+            "name": "domain",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-DomainRecord.html#property_domain"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Folder",
             "name": "Folder",
             "summary": "Represents\u0020a\u0020Folder\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-Folder.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Folder\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-Folder.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Folder\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-Folder.html#property_editable"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain",
             "name": "ManagedDomain",
             "summary": "Represents\u0020a\u0020Managed\u0020Domain\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-ManagedDomain.html"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AsetFolder\u0028\u0029",
+            "name": "setFolder",
+            "summary": "Sets\u0020the\u0020folder\u0020for\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_setFolder"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AsetVanity\u0028\u0029",
+            "name": "setVanity",
+            "summary": "Sets\u0020the\u0020Vanity\u0020Nameserver\u0020for\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_setVanity"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AsetTransferAcl\u0028\u0029",
+            "name": "setTransferAcl",
+            "summary": "Sets\u0020the\u0020Transfer\u0020ACL\u0020for\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_setTransferAcl"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AsetTemplate\u0028\u0029",
+            "name": "setTemplate",
+            "summary": "Sets\u0020the\u0020Template\u0020for\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_setTemplate"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AsetSOA\u0028\u0029",
+            "name": "setSOA",
+            "summary": "Set\u0020the\u0020custom\u0020SOA\u0020Record\u0020for\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_setSOA"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AgetSOA\u0028\u0029",
+            "name": "getSOA",
+            "summary": "Get\u0020the\u0020custom\u0020SOA\u0020record\u0020assigned\u0020to\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_getSOA"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AgetTransferAcl\u0028\u0029",
+            "name": "getTransferAcl",
+            "summary": "Get\u0020the\u0020Transfer\u0020ACL\u0020assigned\u0020to\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_getTransferAcl"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AgetVanity\u0028\u0029",
+            "name": "getVanity",
+            "summary": "Get\u0020the\u0020Vanity\u0020Nameserver\u0020assigned\u0020to\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_getVanity"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "Sets\u0020the\u0020name\u0020of\u0020the\u0020domain.\u0020This\u0020can\u0020only\u0020be\u0020set\u0020on\u0020new\u0020domains.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_setName"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AgetRecords\u0028\u0029",
+            "name": "getRecords",
+            "summary": "Gets\u0020the\u0020record\u0020manager\u0020for\u0020this\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_getRecords"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003AtransformForApi\u0028\u0029",
+            "name": "transformForApi",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#method_transformForApi"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#property_editable"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\ManagedDomain\u003A\u003A\u0024recordManager",
+            "name": "recordManager",
+            "summary": "The\u0020record\u0020manager\u0020for\u0020this\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-ManagedDomain.html#property_recordManager"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Record",
+            "name": "Record",
+            "summary": "Abstract\u0020model\u0020representing\u0020records\u0020for\u0020domains\u0020and\u0020templates.",
+            "url": "classes/DnsMadeEasy-Models-Record.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Record\u003A\u003AparseApiData\u0028\u0029",
+            "name": "parseApiData",
+            "summary": "Parses\u0020the\u0020API\u0020data\u0020and\u0020assigns\u0020it\u0020to\u0020properties\u0020on\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-Record.html#method_parseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Record\u003A\u003AjsonSerialize\u0028\u0029",
+            "name": "jsonSerialize",
+            "summary": "Returns\u0020a\u0020JSON\u0020serializable\u0020representation\u0020of\u0020the\u0020resource.",
+            "url": "classes/DnsMadeEasy-Models-Record.html#method_jsonSerialize"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Record\u003A\u003AsetType\u0028\u0029",
+            "name": "setType",
+            "summary": "Sets\u0020the\u0020type\u0020of\u0020record.\u0020This\u0020can\u0020only\u0020be\u0020done\u0020on\u0020new\u0020records.",
+            "url": "classes/DnsMadeEasy-Models-Record.html#method_setType"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Record\u003A\u003AgetRecordFailover\u0028\u0029",
+            "name": "getRecordFailover",
+            "summary": "Get\u0020the\u0020record\u0027s\u0020failover\u0020and\u0020monitoring\u0020configuration.",
+            "url": "classes/DnsMadeEasy-Models-Record.html#method_getRecordFailover"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Record\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-Record.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Record\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-Record.html#property_editable"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover",
+            "name": "RecordFailover",
+            "summary": "Represents\u0020Record\u0020Failover\u0020and\u0020Monitoring\u0020Configuration.",
+            "url": "classes/DnsMadeEasy-Models-RecordFailover.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover\u003A\u003AtransformForApi\u0028\u0029",
+            "name": "transformForApi",
+            "summary": "Generate\u0020a\u0020representation\u0020of\u0020the\u0020object\u0020for\u0020sending\u0020to\u0020the\u0020API.",
+            "url": "classes/DnsMadeEasy-Models-RecordFailover.html#method_transformForApi"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Saves\u0020the\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-RecordFailover.html#method_save"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-RecordFailover.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-RecordFailover.html#property_editable"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain",
             "name": "SecondaryDomain",
             "summary": "Represents\u0020a\u0020Secondary\u0020Domain\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003AsetFolder\u0028\u0029",
+            "name": "setFolder",
+            "summary": "Sets\u0020the\u0020folder\u0020the\u0020domain\u0020has\u0020been\u0020assigned\u0020to.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#method_setFolder"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003AsetIpSet\u0028\u0029",
+            "name": "setIpSet",
+            "summary": "Sets\u0020the\u0020secondary\u0020IP\u0020set\u0020for\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#method_setIpSet"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003AsetIpSetId\u0028\u0029",
+            "name": "setIpSetId",
+            "summary": "Sets\u0020the\u0020secondary\u0020IP\u0020set\u0020ID\u0020for\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#method_setIpSetId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003AgetIpSet\u0028\u0029",
+            "name": "getIpSet",
+            "summary": "Get\u0020the\u0020secondary\u0020IP\u0020set\u0020for\u0020the\u0020domain.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#method_getIpSet"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "Set\u0020the\u0020name\u0020of\u0020the\u0020domain.\u0020This\u0020can\u0020only\u0020be\u0020set\u0020on\u0020new\u0020domain\u0020objects.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#method_setName"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003AparseApiData\u0028\u0029",
+            "name": "parseApiData",
+            "summary": "Parses\u0020the\u0020API\u0020data.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#method_parseApiData"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003AtransformForApi\u0028\u0029",
+            "name": "transformForApi",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#method_transformForApi"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryDomain\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-SecondaryDomain.html#property_editable"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\SecondaryIPSet",
             "name": "SecondaryIPSet",
@@ -871,15 +1981,80 @@ Search.appendIndex(
             "summary": "Remove\u0020the\u0020IP\u0020address\u0020from\u0020the\u0020secondary\u0020IP\u0020set.",
             "url": "classes/DnsMadeEasy-Models-SecondaryIPSet.html#method_removeIP"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryIPSet\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryIPSet.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SecondaryIPSet\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-SecondaryIPSet.html#property_editable"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\SOARecord",
             "name": "SOARecord",
             "summary": "Represents\u0020a\u0020Custom\u0020SOA\u0020Record\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-SOARecord.html"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SOARecord\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-SOARecord.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\SOARecord\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-SOARecord.html#property_editable"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Template",
             "name": "Template",
             "summary": "Represents\u0020a\u0020Template\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-Template.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Template\u003A\u003AgetRecords\u0028\u0029",
+            "name": "getRecords",
+            "summary": "Returns\u0020the\u0020record\u0020manager\u0020for\u0020this\u0020template.",
+            "url": "classes/DnsMadeEasy-Models-Template.html#method_getRecords"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Template\u003A\u003A\u0024recordManager",
+            "name": "recordManager",
+            "summary": "The\u0020record\u0020manager\u0020for\u0020the\u0020template.",
+            "url": "classes/DnsMadeEasy-Models-Template.html#property_recordManager"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Template\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-Template.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Template\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-Template.html#property_editable"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\TemplateRecord",
+            "name": "TemplateRecord",
+            "summary": "Represents\u0020a\u0020Template\u0020Record\u0020resource.",
+            "url": "classes/DnsMadeEasy-Models-TemplateRecord.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\TemplateRecord\u003A\u003AsetTemplate\u0028\u0029",
+            "name": "setTemplate",
+            "summary": "Sets\u0020the\u0020template\u0020for\u0020the\u0020record.",
+            "url": "classes/DnsMadeEasy-Models-TemplateRecord.html#method_setTemplate"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\TemplateRecord\u003A\u003AgetTemplate\u0028\u0029",
+            "name": "getTemplate",
+            "summary": "Gets\u0020the\u0020template\u0020for\u0020the\u0020record.",
+            "url": "classes/DnsMadeEasy-Models-TemplateRecord.html#method_getTemplate"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\TemplateRecord\u003A\u003AgetTemplateId\u0028\u0029",
+            "name": "getTemplateId",
+            "summary": "Gets\u0020the\u0020template\u0020ID\u0020for\u0020the\u0020record.",
+            "url": "classes/DnsMadeEasy-Models-TemplateRecord.html#method_getTemplateId"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\TemplateRecord\u003A\u003A\u0024template",
+            "name": "template",
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Models-TemplateRecord.html#property_template"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\TransferAcl",
             "name": "TransferAcl",
@@ -896,10 +2071,30 @@ Search.appendIndex(
             "summary": "Remove\u0020the\u0020IP\u0020address\u0020from\u0020the\u0020ACL\u0027s\u0020IPs.",
             "url": "classes/DnsMadeEasy-Models-TransferAcl.html#method_removeIP"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\TransferAcl\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-TransferAcl.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\TransferAcl\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-TransferAcl.html#property_editable"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Usage",
             "name": "Usage",
             "summary": "Represents\u0020Query\u0020Usage\u0020statistics.",
             "url": "classes/DnsMadeEasy-Models-Usage.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Usage\u003A\u003AgetDomain\u0028\u0029",
+            "name": "getDomain",
+            "summary": "Get\u0020the\u0020domain\u0020associated\u0020with\u0020the\u0020usage.",
+            "url": "classes/DnsMadeEasy-Models-Usage.html#method_getDomain"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Usage\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "Since\u0020there\u0027s\u0020no\u0020string\u0020representation\u0020of\u0020usage,\u0020just\u0020return\u0020\u0027Usage\u0027.",
+            "url": "classes/DnsMadeEasy-Models-Usage.html#method___toString"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models\\Usage\u003A\u003Asave\u0028\u0029",
             "name": "save",
@@ -916,10 +2111,25 @@ Search.appendIndex(
             "summary": "Usage\u0020is\u0020read\u002Donly\u0020and\u0020can\u0027t\u0020be\u0020refreshed.",
             "url": "classes/DnsMadeEasy-Models-Usage.html#method_refresh"
         },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\Usage\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-Usage.html#property_props"
+        },                {
             "fqsen": "\\DnsMadeEasy\\Models\\VanityNameServer",
             "name": "VanityNameServer",
             "summary": "Represents\u0020a\u0020Vanity\u0020Nameserver\u0020resource.",
             "url": "classes/DnsMadeEasy-Models-VanityNameServer.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\VanityNameServer\u003A\u003A\u0024props",
+            "name": "props",
+            "summary": "The\u0020properties\u0020of\u0020this\u0020object.",
+            "url": "classes/DnsMadeEasy-Models-VanityNameServer.html#property_props"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Models\\VanityNameServer\u003A\u003A\u0024editable",
+            "name": "editable",
+            "summary": "A\u0020list\u0020of\u0020properties\u0020that\u0020are\u0020editable\u0020on\u0020this\u0020model.",
+            "url": "classes/DnsMadeEasy-Models-VanityNameServer.html#property_editable"
         },                {
             "fqsen": "\\DnsMadeEasy\\Pagination\\Factories\\IlluminatePaginatorFactory",
             "name": "IlluminatePaginatorFactory",
@@ -976,10 +2186,10 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020number\u0020of\u0020items\u0020in\u0020the\u0020current\u0020page.",
             "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_count"
         },                {
-            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003Aitems\u0028\u0029",
+            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003A\u0024items",
             "name": "items",
-            "summary": "Gets\u0020the\u0020items\u0020in\u0020the\u0020current\u0020page.",
-            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_items"
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#property_items"
         },                {
             "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003AfirstItem\u0028\u0029",
             "name": "firstItem",
@@ -991,25 +2201,25 @@ Search.appendIndex(
             "summary": "Get\u0020the\u0020index\u0020of\u0020the\u0020last\u0020item\u0020in\u0020the\u0020page.",
             "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_lastItem"
         },                {
-            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003AperPage\u0028\u0029",
+            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003A\u0024perPage",
             "name": "perPage",
-            "summary": "Get\u0020the\u0020current\u0020number\u0020of\u0020items\u0020per\u0020page\u0020in\u0020the\u0020pagination.",
-            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_perPage"
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#property_perPage"
         },                {
             "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003Atotal\u0028\u0029",
             "name": "total",
             "summary": "Get\u0020the\u0020total\u0020number\u0020of\u0020items\u0020we\u0020are\u0020paginating\u0020through.",
             "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_total"
         },                {
-            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003AlastPage\u0028\u0029",
+            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003A\u0024lastPage",
             "name": "lastPage",
-            "summary": "Get\u0020the\u0020number\u0020of\u0020the\u0020last\u0020page.",
-            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_lastPage"
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#property_lastPage"
         },                {
-            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003AcurrentPage\u0028\u0029",
+            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003A\u0024currentPage",
             "name": "currentPage",
-            "summary": "Get\u0020the\u0020number\u0020of\u0020the\u0020current\u0020page.",
-            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_currentPage"
+            "summary": "",
+            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#property_currentPage"
         },                {
             "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003AonFirstPage\u0028\u0029",
             "name": "onFirstPage",
@@ -1026,185 +2236,10 @@ Search.appendIndex(
             "summary": "Fetch\u0020an\u0020iterator\u0020for\u0020the\u0020items\u0020in\u0020the\u0020page.\u0020Allows\u0020the\u0020paginator\u0020to\u0020be\u0020iterated\u0020through.",
             "url": "classes/DnsMadeEasy-Pagination-Paginator.html#method_getIterator"
         },                {
-            "fqsen": "\\DnsMadeEasy\\Enums\\GTDLocation",
-            "name": "GTDLocation",
-            "summary": "Enums\u0020to\u0020represent\u0020Global\u0020Traffic\u0020Director\u0020locations",
-            "url": "classes/DnsMadeEasy-Enums-GTDLocation.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Enums\\RecordType",
-            "name": "RecordType",
-            "summary": "Enums\u0020to\u0020represent\u0020record\u0020types",
-            "url": "classes/DnsMadeEasy-Enums-RecordType.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface",
-            "name": "DomainRecordManagerInterface",
-            "summary": "Manages\u0020Domain\u0020Record\u0020resources\u0020from\u0020the\u0020API",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface\u003A\u003AsetDomain\u0028\u0029",
-            "name": "setDomain",
-            "summary": "Sets\u0020the\u0020domain\u0020used\u0020for\u0020the\u0020manager.",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html#method_setDomain"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Creates\u0020a\u0020new\u0020Domain\u0020Record\u0020resource.",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html#method_create"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\DomainRecordManagerInterface\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Returns\u0020the\u0020Domain\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html#method_get"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface",
-            "name": "TemplateRecordManagerInterface",
-            "summary": "Manages\u0020Template\u0020Record\u0020resources\u0020from\u0020the\u0020API",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface\u003A\u003AsetTemplate\u0028\u0029",
-            "name": "setTemplate",
-            "summary": "Sets\u0020the\u0020template\u0020used\u0020for\u0020the\u0020manager.",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html#method_setTemplate"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Creates\u0020a\u0020new\u0020Template\u0020Record\u0020resource.",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html#method_create"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\TemplateRecordManagerInterface\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Returns\u0020the\u0020Template\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html#method_get"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\DomainRecordInterface",
-            "name": "DomainRecordInterface",
-            "summary": "Represents\u0020a\u0020Record",
-            "url": "classes/DnsMadeEasy-Interfaces-Models-DomainRecordInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\DomainRecordInterface\u003A\u003AsetDomain\u0028\u0029",
-            "name": "setDomain",
-            "summary": "Set\u0020the\u0020domain\u0020for\u0020the\u0020record.",
-            "url": "classes/DnsMadeEasy-Interfaces-Models-DomainRecordInterface.html#method_setDomain"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\RecordInterface",
-            "name": "RecordInterface",
-            "summary": "Represents\u0020a\u0020Record",
-            "url": "classes/DnsMadeEasy-Interfaces-Models-RecordInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\TemplateRecordInterface",
-            "name": "TemplateRecordInterface",
-            "summary": "Represents\u0020a\u0020Record",
-            "url": "classes/DnsMadeEasy-Interfaces-Models-TemplateRecordInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\TemplateRecordInterface\u003A\u003AsetTemplate\u0028\u0029",
-            "name": "setTemplate",
-            "summary": "Set\u0020the\u0020template\u0020for\u0020the\u0020record.",
-            "url": "classes/DnsMadeEasy-Interfaces-Models-TemplateRecordInterface.html#method_setTemplate"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager",
-            "name": "DomainRecordManager",
-            "summary": "Represents\u0020a\u0020Domain\u0020Record.",
-            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Creates\u0020a\u0020new\u0020Domain\u0020Record\u0020resource.",
-            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_create"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\DomainRecordManager\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Returns\u0020the\u0020Domain\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
-            "url": "classes/DnsMadeEasy-Managers-DomainRecordManager.html#method_get"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\RecordManager",
-            "name": "RecordManager",
-            "summary": "Abstract\u0020class\u0020for\u0020Domain\u0020and\u0020Template\u0020record\u0020managers.",
-            "url": "classes/DnsMadeEasy-Managers-RecordManager.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager",
-            "name": "TemplateRecordManager",
-            "summary": "Manager\u0020for\u0020Template\u0020record\u0020resources.",
-            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Creates\u0020a\u0020new\u0020Template\u0020Record\u0020resource.",
-            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#method_create"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\TemplateRecordManager\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Returns\u0020the\u0020Template\u0020Record\u0020resource\u0020with\u0020the\u0020specified\u0020ID.",
-            "url": "classes/DnsMadeEasy-Managers-TemplateRecordManager.html#method_get"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Models\\DomainRecord",
-            "name": "DomainRecord",
-            "summary": "Represents\u0020a\u0020Domain\u0020Record.",
-            "url": "classes/DnsMadeEasy-Models-DomainRecord.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Models\\Record",
-            "name": "Record",
-            "summary": "Abstract\u0020model\u0020representing\u0020records\u0020for\u0020domains\u0020and\u0020templates.",
-            "url": "classes/DnsMadeEasy-Models-Record.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Models\\Record\u003A\u003AgetRecordFailover\u0028\u0029",
-            "name": "getRecordFailover",
-            "summary": "Get\u0020the\u0020record\u0027s\u0020failover\u0020and\u0020monitoring\u0020configuration.",
-            "url": "classes/DnsMadeEasy-Models-Record.html#method_getRecordFailover"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Models\\TemplateRecord",
-            "name": "TemplateRecord",
-            "summary": "Represents\u0020a\u0020Template\u0020Record\u0020resource.",
-            "url": "classes/DnsMadeEasy-Models-TemplateRecord.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\RecordFailoverManagerInterface",
-            "name": "RecordFailoverManagerInterface",
-            "summary": "Manages\u0020record\u0020failover\u0020and\u0020monitoring\u0020resources",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Managers\\RecordFailoverManagerInterface\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Returns\u0020the\u0020failover\u0020resource\u0020for\u0020the\u0020specified\u0020record\u0020ID.\u0020If\u0020the\u0020resource\u0020doesn\u0027t\u0020exist,\u0020a\u0020new\u0020one\u0020is\u0020created.",
-            "url": "classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html#method_get"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Models\\RecordFailoverInterface",
-            "name": "RecordFailoverInterface",
-            "summary": "Represents\u0020record\u0020failover\u0020configuration.",
-            "url": "classes/DnsMadeEasy-Interfaces-Models-RecordFailoverInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Traits\\ListableManagerInterface",
-            "name": "ListableManagerInterface",
-            "summary": "Fnctionality\u0020for\u0020paginated\u0020indexed\u0020resources.",
-            "url": "classes/DnsMadeEasy-Interfaces-Traits-ListableManagerInterface.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Interfaces\\Traits\\ListableManagerInterface\u003A\u003Apaginate\u0028\u0029",
-            "name": "paginate",
-            "summary": "Fetch\u0020a\u0020paginated\u0020subset\u0020of\u0020the\u0020resources.\u0020You\u0020can\u0020specify\u0020the\u0020page\u0020and\u0020the\u0020number\u0020of\u0020items\u0020per\u002Dpage.\u0020The\u0020result\nwill\u0020be\u0020an\u0020object\u0020representing\u0020the\u0020paginated\u0020results.\u0020By\u0020specifying\u0020a\u0020custom\u0020Paginator\u0020Factory\u0020on\u0020the\u0020client\nyou\u0020can\u0020change\u0020the\u0020type\u0020of\u0020result\u0020you\u0020get\u0020from\u0020this\u0020method.",
-            "url": "classes/DnsMadeEasy-Interfaces-Traits-ListableManagerInterface.html#method_paginate"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\RecordFailoverManager",
-            "name": "RecordFailoverManager",
-            "summary": "Manager\u0020for\u0020Record\u0020Failover\u0020configuration.",
-            "url": "classes/DnsMadeEasy-Managers-RecordFailoverManager.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Managers\\RecordFailoverManager\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Returns\u0020the\u0020failover\u0020resource\u0020for\u0020the\u0020specified\u0020record\u0020ID.\u0020If\u0020the\u0020resource\u0020doesn\u0027t\u0020exist,\u0020a\u0020new\u0020one\u0020is\u0020created.",
-            "url": "classes/DnsMadeEasy-Managers-RecordFailoverManager.html#method_get"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover",
-            "name": "RecordFailover",
-            "summary": "Represents\u0020Record\u0020Failover\u0020and\u0020Monitoring\u0020Configuration.",
-            "url": "classes/DnsMadeEasy-Models-RecordFailover.html"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover\u003A\u003AtransformForApi\u0028\u0029",
-            "name": "transformForApi",
+            "fqsen": "\\DnsMadeEasy\\Pagination\\Paginator\u003A\u003A\u0024totalItems",
+            "name": "totalItems",
             "summary": "",
-            "url": "classes/DnsMadeEasy-Models-RecordFailover.html#method_transformForApi"
-        },                {
-            "fqsen": "\\DnsMadeEasy\\Models\\RecordFailover\u003A\u003Asave\u0028\u0029",
-            "name": "save",
-            "summary": "Saves\u0020the\u0020object.",
-            "url": "classes/DnsMadeEasy-Models-RecordFailover.html#method_save"
+            "url": "classes/DnsMadeEasy-Pagination-Paginator.html#property_totalItems"
         },                {
             "fqsen": "\\DnsMadeEasy\\Traits\\ListableManager",
             "name": "ListableManager",
@@ -1280,6 +2315,11 @@ Search.appendIndex(
             "name": "Managers",
             "summary": "",
             "url": "namespaces/dnsmadeeasy-managers.html"
+        },                {
+            "fqsen": "\\DnsMadeEasy\\Managers\\Multiple",
+            "name": "Multiple",
+            "summary": "",
+            "url": "namespaces/dnsmadeeasy-managers-multiple.html"
         },                {
             "fqsen": "\\DnsMadeEasy\\Models",
             "name": "Models",

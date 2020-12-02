@@ -67,12 +67,12 @@
                     <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/DnsMadeEasy.html"><abbr title="\DnsMadeEasy">DnsMadeEasy</abbr></a></h3>
                         <ul class="phpdocumentor-list">
+                                    <li><a href="packages/DnsMadeEasy-Enums.html"><abbr title="\DnsMadeEasy\Enums">Enums</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Exceptions.html"><abbr title="\DnsMadeEasy\Exceptions">Exceptions</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Interfaces.html"><abbr title="\DnsMadeEasy\Interfaces">Interfaces</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Managers.html"><abbr title="\DnsMadeEasy\Managers">Managers</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Models.html"><abbr title="\DnsMadeEasy\Models">Models</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Pagination.html"><abbr title="\DnsMadeEasy\Pagination">Pagination</abbr></a></li>
-                                    <li><a href="packages/DnsMadeEasy-Enums.html"><abbr title="\DnsMadeEasy\Enums">Enums</abbr></a></li>
                             </ul>
                         </section>
     
@@ -142,11 +142,46 @@
 <dd>Creates a new Secondary IP Set resource.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_delete">delete()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Uses the API to delete the specified object. If the object is new, then no action is taken on the API.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DnsMadeEasy-Interfaces-Managers-SecondaryIPSetManagerInterface.html#method_get">get()</a>
     <span>
                         &nbsp;: <a href="classes/DnsMadeEasy-Interfaces-Models-SecondaryIPSetInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface">SecondaryIPSetInterface</abbr></a>    </span>
 </dt>
 <dd>Gets the Secondary IP Set resource with the specified ID.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_getFromCache">getFromCache()</a>
+    <span>
+                        &nbsp;: <a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a>    </span>
+</dt>
+<dd>Fetch the object from the local cache.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_putInCache">putInCache()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Put the object into the local cache.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_removeFromCache">removeFromCache()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Remove the object from the local cache.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_save">save()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Updates the API with changes made to the specified object. If the object is new, it will be created.</dd>
 
         </dl>
 
@@ -188,6 +223,74 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/DnsMadeEasy-Interfaces-Models-SecondaryIPSetInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface">SecondaryIPSetInterface</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_delete">
+        delete()
+        <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Managers/AbstractManagerInterface.php"><a href="files/src-interfaces-managers-abstractmanagerinterface.html"><abbr title="src/Interfaces/Managers/AbstractManagerInterface.php">AbstractManagerInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Uses the API to delete the specified object. If the object is new, then no action is taken on the API.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/DnsMadeEasy-Exceptions-Client-Http-HttpException.html"><abbr title="\DnsMadeEasy\Exceptions\Client\Http\HttpException">HttpException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">internal</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -248,6 +351,259 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/DnsMadeEasy-Interfaces-Models-SecondaryIPSetInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface">SecondaryIPSetInterface</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getFromCache">
+        getFromCache()
+        <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_getFromCache" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Managers/AbstractManagerInterface.php"><a href="files/src-interfaces-managers-abstractmanagerinterface.html"><abbr title="src/Interfaces/Managers/AbstractManagerInterface.php">AbstractManagerInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Fetch the object from the local cache.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getFromCache</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">internal</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_putInCache">
+        putInCache()
+        <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_putInCache" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Managers/AbstractManagerInterface.php"><a href="files/src-interfaces-managers-abstractmanagerinterface.html"><abbr title="src/Interfaces/Managers/AbstractManagerInterface.php">AbstractManagerInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Put the object into the local cache.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">putInCache</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">internal</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_removeFromCache">
+        removeFromCache()
+        <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_removeFromCache" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Managers/AbstractManagerInterface.php"><a href="files/src-interfaces-managers-abstractmanagerinterface.html"><abbr title="src/Interfaces/Managers/AbstractManagerInterface.php">AbstractManagerInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">58</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Remove the object from the local cache.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">removeFromCache</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">internal</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_save">
+        save()
+        <a href="classes/DnsMadeEasy-Interfaces-Managers-AbstractManagerInterface.html#method_save" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Interfaces/Managers/AbstractManagerInterface.php"><a href="files/src-interfaces-managers-abstractmanagerinterface.html"><abbr title="src/Interfaces/Managers/AbstractManagerInterface.php">AbstractManagerInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Updates the API with changes made to the specified object. If the object is new, it will be created.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">save</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/DnsMadeEasy-Interfaces-Models-AbstractModelInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\AbstractModelInterface">AbstractModelInterface</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/DnsMadeEasy-Exceptions-Client-Http-HttpException.html"><abbr title="\DnsMadeEasy\Exceptions\Client\Http\HttpException">HttpException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">internal</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

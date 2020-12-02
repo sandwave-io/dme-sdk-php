@@ -67,12 +67,12 @@
                     <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/DnsMadeEasy.html"><abbr title="\DnsMadeEasy">DnsMadeEasy</abbr></a></h3>
                         <ul class="phpdocumentor-list">
+                                    <li><a href="packages/DnsMadeEasy-Enums.html"><abbr title="\DnsMadeEasy\Enums">Enums</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Exceptions.html"><abbr title="\DnsMadeEasy\Exceptions">Exceptions</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Interfaces.html"><abbr title="\DnsMadeEasy\Interfaces">Interfaces</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Managers.html"><abbr title="\DnsMadeEasy\Managers">Managers</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Models.html"><abbr title="\DnsMadeEasy\Models">Models</abbr></a></li>
                                     <li><a href="packages/DnsMadeEasy-Pagination.html"><abbr title="\DnsMadeEasy\Pagination">Pagination</abbr></a></li>
-                                    <li><a href="packages/DnsMadeEasy-Enums.html"><abbr title="\DnsMadeEasy\Enums">Enums</abbr></a></li>
                             </ul>
                         </section>
     
@@ -119,10 +119,18 @@
         <dd>Defines the interface of a Manager for a particular resource in the DNS Made Easy API.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-ContactListManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface">ContactListManagerInterface</abbr></a></dt>
         <dd>Manages ContactList objects from the API.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\DomainRecordManagerInterface">DomainRecordManagerInterface</abbr></a></dt>
+        <dd>Manages Domain Record resources from the API</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-FolderManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\FolderManagerInterface">FolderManagerInterface</abbr></a></dt>
         <dd>Manages Folder objects from the API.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-ManagedDomainManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface">ManagedDomainManagerInterface</abbr></a></dt>
         <dd>Manages Managed Domain resources from the API.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-MultipleDomainManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\MultipleDomainManagerInterface">MultipleDomainManagerInterface</abbr></a></dt>
+        <dd>Manages creation, updation and deletion of multiple domains.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-MultipleRecordManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\MultipleRecordManagerInterface">MultipleRecordManagerInterface</abbr></a></dt>
+        <dd>Manages creation, deletion and updating of multiple domain records.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\RecordFailoverManagerInterface">RecordFailoverManagerInterface</abbr></a></dt>
+        <dd>Manages record failover and monitoring resources</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-SecondaryDomainManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\SecondaryDomainManagerInterface">SecondaryDomainManagerInterface</abbr></a></dt>
         <dd>Manages Secondary Domain resources from the API.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-SecondaryIPSetManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface">SecondaryIPSetManagerInterface</abbr></a></dt>
@@ -131,6 +139,8 @@
         <dd>Manages SOA Record resources from the API.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-TemplateManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\TemplateManagerInterface">TemplateManagerInterface</abbr></a></dt>
         <dd>Manages Template resources from the API.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\TemplateRecordManagerInterface">TemplateRecordManagerInterface</abbr></a></dt>
+        <dd>Manages Template Record resources from the API</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-TransferAclManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\TransferAclManagerInterface">TransferAclManagerInterface</abbr></a></dt>
         <dd>Manages Transfer ACL resources from the API.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-UsageManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\UsageManagerInterface">UsageManagerInterface</abbr></a></dt>
@@ -156,16 +166,24 @@ use when you only need these basic properties and methods.</dd>
         <dd>Represents a concise version of a Secondary Domain resource</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-ContactListInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\ContactListInterface">ContactListInterface</abbr></a></dt>
         <dd>Represents a Contact List resource</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-DomainRecordInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\DomainRecordInterface">DomainRecordInterface</abbr></a></dt>
+        <dd>Represents a Record</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-FolderInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\FolderInterface">FolderInterface</abbr></a></dt>
         <dd>Represents a Folder resource</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-ManagedDomainInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\ManagedDomainInterface">ManagedDomainInterface</abbr></a></dt>
         <dd>Represents a Managed Domain resource</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-RecordFailoverInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\RecordFailoverInterface">RecordFailoverInterface</abbr></a></dt>
+        <dd>Represents record failover configuration.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-RecordInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\RecordInterface">RecordInterface</abbr></a></dt>
+        <dd>Represents a Record</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-SecondaryDomainInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\SecondaryDomainInterface">SecondaryDomainInterface</abbr></a></dt>
         <dd>Represents a Managed Domain resource</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-SecondaryIPSetInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface">SecondaryIPSetInterface</abbr></a></dt>
         <dd>Represents a Secondary IP Set resource.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-SOARecordInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\SOARecordInterface">SOARecordInterface</abbr></a></dt>
         <dd>Represents an SOA Record</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-TemplateRecordInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\TemplateRecordInterface">TemplateRecordInterface</abbr></a></dt>
+        <dd>Represents a Record</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-TransferAclInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\TransferAclInterface">TransferAclInterface</abbr></a></dt>
         <dd>Represents a Transfer ACL (AXFR)</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-UsageInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\UsageInterface">UsageInterface</abbr></a></dt>
@@ -174,20 +192,6 @@ use when you only need these basic properties and methods.</dd>
         <dd>Represents a Vanity NameServer resource.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-PaginatorFactoryInterface.html"><abbr title="\DnsMadeEasy\Interfaces\PaginatorFactoryInterface">PaginatorFactoryInterface</abbr></a></dt>
         <dd>A factory for creating paginated collections of items.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-DomainRecordManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\DomainRecordManagerInterface">DomainRecordManagerInterface</abbr></a></dt>
-        <dd>Manages Domain Record resources from the API</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-TemplateRecordManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\TemplateRecordManagerInterface">TemplateRecordManagerInterface</abbr></a></dt>
-        <dd>Manages Template Record resources from the API</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-DomainRecordInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\DomainRecordInterface">DomainRecordInterface</abbr></a></dt>
-        <dd>Represents a Record</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-RecordInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\RecordInterface">RecordInterface</abbr></a></dt>
-        <dd>Represents a Record</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-TemplateRecordInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\TemplateRecordInterface">TemplateRecordInterface</abbr></a></dt>
-        <dd>Represents a Record</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Managers-RecordFailoverManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Managers\RecordFailoverManagerInterface">RecordFailoverManagerInterface</abbr></a></dt>
-        <dd>Manages record failover and monitoring resources</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Models-RecordFailoverInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Models\RecordFailoverInterface">RecordFailoverInterface</abbr></a></dt>
-        <dd>Represents record failover configuration.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/DnsMadeEasy-Interfaces-Traits-ListableManagerInterface.html"><abbr title="\DnsMadeEasy\Interfaces\Traits\ListableManagerInterface">ListableManagerInterface</abbr></a></dt>
         <dd>Fnctionality for paginated indexed resources.</dd>
     

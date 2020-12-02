@@ -5,18 +5,28 @@ declare(strict_types=1);
 namespace DnsMadeEasy\Managers;
 
 use DnsMadeEasy\Interfaces\Managers\ManagedDomainManagerInterface;
+use DnsMadeEasy\Interfaces\Managers\MultipleDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Managers\Multiple\MultipleDomainManager;
 use DnsMadeEasy\Models\Concise\ConciseManagedDomain;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Manager for Managed Domain objects.
  * @package DnsMadeEasy\Managers
+ *
+ * @property-read MultipleDomainManagerInterface $multiple;
  */
 class ManagedDomainManager extends AbstractManager implements ManagedDomainManagerInterface, ListableManagerInterface
 {
     use ListableManager;
+
+    /**
+     * Manager for multiple domains.
+     * @var MultipleDomainManagerInterface|null
+     */
+    protected ?MultipleDomainManagerInterface $multipleDomainManager = null;
 
     /**
      * Base URI for managed domain objects
@@ -42,5 +52,15 @@ class ManagedDomainManager extends AbstractManager implements ManagedDomainManag
     protected function getConciseModelClass(): string
     {
         return ConciseManagedDomain::class;
+    }
+
+    public function __get($name)
+    {
+        if ($name == 'multiple') {
+            if (!$this->multipleDomainManager) {
+                $this->multipleDomainManager = new MultipleDomainManager($this->client);
+            }
+            return $this->multipleDomainManager;
+        }
     }
 }
