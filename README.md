@@ -17,7 +17,7 @@ The easiest way to install and use this client library is using Composer. The fo
 composer require tiggee/dnsmadeeasy-client
 ```
 
-## Usage
+## Getting Started
 
 You will need a DNS Made Easy account and API credentials. You can get an account at the [DNS Made Easy website](https://www.dnsmadeeasy.com). There is an API sandbox available, you can create a [new account here](https://sandbox.dnsmadeeasy.com/account/new).
 
@@ -44,6 +44,44 @@ You can tell the client to use the sandbox API endpoint by using the `setEndpoin
 ```php
 $client->setEndpoint('https://api.sandbox.dnsmadeeasy.com/V2.0');
 ```
+
+### Putting it all together
+
+Putting this together, it's time for the API equivalent of Hello World. Let's get a list of your domains.
+
+```php
+<?php
+// Load the library and dependencies
+require_once 'vendor/_autoload.php';
+
+// Create a new client and set our credentials
+$client = new \DnsMadeEasy\Client;
+$client->setApiKey("Your API Key");
+$client->setSecretKey("Your Secret Key");
+
+// Configure it to use the Sandbox
+$client->setEndpoint('https://api.sandbox.dnsmadeeasy.com/V2.0');
+
+// Create a new domain
+$domain = $client->domains->create();
+$domain->name = 'mydomain.example.com';
+$domain->save();
+
+// Print out our domain
+echo json_encode($domain, JSON_PRETTY_PRINT);
+
+// Now fetch a list of our domains
+$domains = $client->domains->paginate();
+foreach ($domains as $domain) {
+    echo json_encode($domain, JSON_PRETTY_PRINT);
+}
+```
+
+There's more examples further down of using the API client SDK.
+
+## Configuration
+
+There's additional configuration options you can use with the client as well as just specifying the sandbox.
 
  ### Logging
 
@@ -131,7 +169,7 @@ $domain = $client->domains->get(1234);
 $domain->delete();
 ```
 
-### Full Example
+### Creating a domain and records
 
 This example creates a new domain and adds records to it.
 
