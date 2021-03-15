@@ -25,7 +25,6 @@ More information about the API may be found in the [official API documentation](
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
-- [License](#license)
 
 ## Installation
 
@@ -39,13 +38,7 @@ composer require sandwave-io/dns-made-easy
 
 You will need a DNS Made Easy account and API credentials. You can get an account at the [DNS Made Easy website](https://www.dnsmadeeasy.com). There is an API sandbox available, you can create a [new account here](https://sandbox.dnsmadeeasy.com/account/new).
 
-If you are using Composer, you should be running Composer's autoload to load libraries:
-
-```php
-require_once 'vendor/_autoload.php';
-```
-
-With the libraries loaded, you just need to create the client and set the API key and secret key.
+With the package installed through composer, you just need to create the client and set the API key and secret key.
 
 ```php
 $client = new \DnsMadeEasy\Client;
@@ -69,8 +62,6 @@ Putting this together, it's time for the API equivalent of Hello World. Let's ge
 
 ```php
 <?php
-// Load the library and dependencies
-require_once 'vendor/_autoload.php';
 
 // Create a new client and set our credentials
 $client = new \DnsMadeEasy\Client;
@@ -95,11 +86,11 @@ foreach ($domains as $domain) {
 }
 ```
 
-There's more examples further down of using the API client SDK.
+There are more examples further down of using the API client SDK.
 
 ## Configuration
 
-There's additional configuration options you can use with the client as well as just specifying the sandbox.
+There are additional configuration options you can use with the client as well as just specifying the sandbox.
 
 ### Logging
 
@@ -192,9 +183,6 @@ $domain->delete();
 This example creates a new domain and adds records to it.
 
 ```php
-// Include composer libraries
-require_once 'vendor/_autoload.php';
-
 // Create the client
 $client = new \DnsMadeEasy\Client;
 $client->setApiKey(API_KEY);
@@ -218,27 +206,3 @@ foreach ($domains as $domain) {
     print_r(json_encode($domain, JSON_PRETTY_PRINT));
 }
 ```
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2020 DNS Made Easy, a subsidiary of Tiggee LLC.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
