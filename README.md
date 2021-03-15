@@ -1,20 +1,38 @@
+[![](https://user-images.githubusercontent.com/60096509/91668964-54ecd500-eb11-11ea-9c35-e8f0b20b277a.png)](https://sandwave.io)
+
 # DNS Made Easy PHP Client Library
+
+[![Codecov](https://codecov.io/gh/sandwave-io/dme-sdk-php/branch/master/graph/badge.svg?token=CWWIFWRKZC)](https://packagist.org/packages/sandwave-io/dme-sdk-php)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sandwave-io/dme-sdk-php/CI)](https://packagist.org/packages/sandwave-io/dme-sdk-php)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/sandwave-io/dme-sdk-php)](https://packagist.org/packages/sandwave-io/dme-sdk-php)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/v/sandwave-io/dme-sdk-php)](https://packagist.org/packages/sandwave-io/dme-sdk-php)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/sandwave-io/dme-sdk-php)](https://packagist.org/packages/sandwave-io/dme-sdk-php)
+
+<p align="center">
+<br><br>
+<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/tractor_1f69c.png" />
+ <br><br>
+</p>
+<p align="center">
+This package is a fork from the original <a href="https://github.com/DNSMadeEasy/dme-php-sdk">DNSMadeEasy/dme-php-sdk</a>. 
+<br><br>
+</p>
 
 This is an API client library for the [DNS Made Easy](https://www.dnsmadeeasy.com) API.
 
 More information about the API may be found in the [official API documentation](https://api-docs.dnsmadeeasy.com/).
 
- - [Installation](#installation)
- - [Usage](#usage)
- - [Examples](#examples)
- - [License](#license)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [License](#license)
 
 ## Installation
 
 The easiest way to install and use this client library is using Composer. The following command will add the library to your application and install it from Packagist.
 
 ```bash
-composer require tiggee/dnsmadeeasy-client
+composer require sandwave-io/dns-made-easy
 ```
 
 ## Getting Started
@@ -83,7 +101,7 @@ There's more examples further down of using the API client SDK.
 
 There's additional configuration options you can use with the client as well as just specifying the sandbox.
 
- ### Logging
+### Logging
 
 You can specify a logger that implements the [PSR-3 Logger](https://www.php-fig.org/psr/psr-3/) specification such as MonoLog. The client is a `LoggerAwareInterface` and the logger can be specified either in the constructor or via a method call.
 
