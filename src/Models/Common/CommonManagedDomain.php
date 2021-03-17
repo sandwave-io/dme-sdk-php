@@ -12,6 +12,8 @@ use DnsMadeEasy\Models\AbstractModel;
 /**
  * Abstract model representing common properties and functionality between managed domain model implementations.
  * @package DnsMadeEasy\Models
+ * @property int|null $templateId
+ * @property int|null $folderId
  */
 abstract class CommonManagedDomain extends AbstractModel implements CommonManagedDomainInterface
 {

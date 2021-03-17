@@ -11,6 +11,7 @@ use DnsMadeEasy\Models\AbstractModel;
 /**
  * Abstract model representing common properties and functionality between secondary domain model implementions.
  * @package DnsMadeEasy\Models
+ * @property int|null $folderId
  */
 abstract class CommonSecondaryDomain extends AbstractModel implements CommonSecondaryDomainInterface
 {
