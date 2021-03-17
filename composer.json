@@ -1,11 +1,11 @@
 {
-    "name": "tiggee/dnsmadeeasy-client",
+    "name": "sandwave-io/dns-made-easy",
     "description": "PHP SDK for the DNS Made Easy API",
     "type": "library",
     "require": {
-        "ext-json": "^7.4",
-        "php": "^7.4",
-        "ext-mbstring": "^7.4",
+        "ext-json": "*",
+        "php": "^7.4|^8.0",
+        "ext-mbstring": "*",
         "psr/container": "^1.0",
         "psr/http-client-implementation": "^1.0",
         "guzzlehttp/psr7": "^1.7",
