@@ -2,3 +2,4 @@
 /.idea
 /.phpdoc
 composer.lock
+.phpunit.result.cache
