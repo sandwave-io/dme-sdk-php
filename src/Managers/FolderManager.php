@@ -29,10 +29,12 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
      *
      * @param int $page
      * @param int $perPage
+     * @param array|null $filters
      * @return \DnsMadeEasy\Pagination\Paginator|mixed
+     * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
      * @throws \ReflectionException
      */
-    public function paginate(int $page = 1, int $perPage = 20)
+    public function paginate(int $page = 1, int $perPage = 20, $filters = [])
     {
         $response = $this->client->get($this->getBaseUri());
         $data = json_decode((string)$response->getBody());
