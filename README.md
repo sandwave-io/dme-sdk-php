@@ -201,6 +201,14 @@ foreach ($domains as $domain) {
 }
 ```
 
+## Contributing
+
+When contributing to this project, you can run the following quality checks:
+
+```bash
+$ vendor/bin/phpstan
+```
+
 ## License
 
 The MIT License (MIT)
