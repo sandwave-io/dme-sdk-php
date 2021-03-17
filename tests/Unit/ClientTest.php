@@ -3,8 +3,11 @@
 namespace DnsMadeEasy\Tests\Unit;
 
 use DnsMadeEasy\Client;
+use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
+use DnsMadeEasy\Interfaces\PaginatorFactoryInterface;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Client\ClientInterface as HttpClientInterface;
 
 class ClientTest extends TestCase
 {
@@ -13,6 +16,8 @@ class ClientTest extends TestCase
     {
         $client = new Client();
 
-        Assert::assertInstanceOf(Client::class, $client);
+        Assert::assertInstanceOf(HttpClientInterface::class, $client->getHttpClient());
+		Assert::assertIsString($client->getEndpoint());
+		Assert::assertInstanceOf(PaginatorFactoryInterface::class, $client->getPaginatorFactory());
     }
 }
