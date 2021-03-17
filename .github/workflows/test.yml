@@ -33,6 +33,9 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
+      - name: Static analysis
+        run: vendor/bin/phpstan --memory-limit=1G
+
 #      TODO: Add codestyle checks
 
 #      TODO: Add unit tests
