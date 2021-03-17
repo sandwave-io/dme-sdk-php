@@ -29,7 +29,7 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
      *
      * @param int $page
      * @param int $perPage
-     * @param array $filters
+     * @param array|null $filters
      * @return \DnsMadeEasy\Pagination\Paginator|mixed
      * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
      * @throws \ReflectionException
