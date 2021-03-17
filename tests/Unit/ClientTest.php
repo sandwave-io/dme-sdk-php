@@ -16,8 +16,6 @@ class ClientTest extends TestCase
     {
         $client = new Client();
 
-        Assert::assertInstanceOf(HttpClientInterface::class, $client->getHttpClient());
-		Assert::assertIsString($client->getEndpoint());
-		Assert::assertInstanceOf(PaginatorFactoryInterface::class, $client->getPaginatorFactory());
+        Assert::assertSame('https://api.dnsmadeeasy.com/V2.0', $client->getEndpoint());
     }
 }
