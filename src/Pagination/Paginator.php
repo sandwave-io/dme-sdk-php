@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Pagination;
 
@@ -22,11 +22,12 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
     protected int $lastPage;
 
     /**
-     * Creates a new Paginator
+     * Creates a new Paginator.
+     *
      * @param array $items
-     * @param int $totalItems
-     * @param int $perPage
-     * @param int $currentPage
+     * @param int   $totalItems
+     * @param int   $perPage
+     * @param int   $currentPage
      */
     public function __construct(array $items, int $totalItems, int $perPage, int $currentPage = 1)
     {
@@ -34,12 +35,14 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
         $this->totalItems = $totalItems;
         $this->perPage = $perPage;
         $this->currentPage = $currentPage;
-        $this->lastPage = max((int)ceil($totalItems / $perPage), 1);
+        $this->lastPage = max((int) ceil($totalItems / $perPage), 1);
     }
 
     /**
      * Returns true if the specified offset exists in the items.
+     *
      * @param mixed $offset
+     *
      * @return bool
      */
     public function offsetExists($offset)
@@ -49,7 +52,9 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the item at the specified offset.
+     *
      * @param mixed $offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -59,6 +64,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Sets the item at the specified offset.
+     *
      * @param mixed $offset
      * @param mixed $value
      */
@@ -69,6 +75,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Removes the item at the specified offset.
+     *
      * @param mixed $offset
      */
     public function offsetUnset($offset)
@@ -78,15 +85,17 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Gets the number of items in the current page.
+     *
      * @return int
      */
     public function count()
     {
-        return (int)count($this->items);
+        return (int) count($this->items);
     }
 
     /**
      * Gets the items in the current page.
+     *
      * @return array
      */
     public function items(): array
@@ -96,6 +105,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the index of the first item in the page.
+     *
      * @return int|null
      */
     public function firstItem(): ?int
@@ -108,6 +118,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the index of the last item in the page.
+     *
      * @return int|null
      */
     public function lastItem(): ?int
@@ -120,6 +131,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the current number of items per page in the pagination.
+     *
      * @return int
      */
     public function perPage(): int
@@ -129,6 +141,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the total number of items we are paginating through.
+     *
      * @return int
      */
     public function total(): int
@@ -138,6 +151,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the number of the last page.
+     *
      * @return int
      */
     public function lastPage(): int
@@ -147,6 +161,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the number of the current page.
+     *
      * @return int
      */
     public function currentPage(): int
@@ -156,6 +171,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Return true if this is the first page.
+     *
      * @return bool
      */
     public function onFirstPage(): bool
@@ -165,6 +181,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Return true if there are more pages after this page.
+     *
      * @return bool
      */
     public function hasMorePages(): bool
@@ -174,6 +191,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Fetch an iterator for the items in the page. Allows the paginator to be iterated through.
+     *
      * @return ArrayIterator|Traversable
      */
     public function getIterator()

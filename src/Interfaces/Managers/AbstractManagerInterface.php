@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
 
@@ -17,42 +17,54 @@ use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
  */
 interface AbstractManagerInterface
 {
-
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
+     *
      * @param AbstractModelInterface $object
+     *
      * @throws HttpException
+     *
      * @internal
      */
     public function save(AbstractModelInterface $object): void;
 
     /**
      * Uses the API to delete the specified object. If the object is new, then no action is taken on the API.
+     *
      * @param AbstractModelInterface $object
+     *
      * @throws HttpException
+     *
      * @internal
      */
     public function delete(AbstractModelInterface $object): void;
 
     /**
      * Fetch the object from the local cache.
+     *
      * @param $key
+     *
      * @return AbstractModelInterface
+     *
      * @internal
      */
     public function getFromCache($key);
 
     /**
      * Put the object into the local cache.
+     *
      * @param $key
      * @param $object
+     *
      * @internal
      */
     public function putInCache($key, $object);
 
     /**
      * Remove the object from the local cache.
+     *
      * @param $object
+     *
      * @internal
      */
     public function removeFromCache($object);

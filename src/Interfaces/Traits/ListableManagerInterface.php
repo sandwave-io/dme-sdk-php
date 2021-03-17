@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Traits;
 
@@ -9,6 +9,7 @@ use DnsMadeEasy\Pagination\Paginator;
 
 /**
  * Fnctionality for paginated indexed resources.
+ *
  * @package DnsMadeEasy\Interfaces
  */
 interface ListableManagerInterface
@@ -21,11 +22,13 @@ interface ListableManagerInterface
      * By default this is a Paginator with a similar interface to the LengthAwarePaginator that is provided with
      * Laravel.
      *
-     * @param int $page
-     * @param int $perPage
+     * @param int        $page
+     * @param int        $perPage
      * @param array|null $filters
-     * @return Paginator|mixed
+     *
      * @throws HttpException
+     *
+     * @return Paginator|mixed
      */
     public function paginate(int $page = 1, int $perPage = 20, $filters = []);
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
 
@@ -11,47 +11,58 @@ use DnsMadeEasy\Interfaces\Models\UsageInterface;
 
 /**
  * Gets usage from the API.
+ *
  * @package DnsMadeEasy\Interfaces
  */
 interface UsageManagerInterface
 {
     /**
      * Creates the Usage Manager.
+     *
      * @param ClientInterface $client
+     *
      * @internal
      */
     public function __construct(ClientInterface $client);
 
     /**
      * Returns all usage from the API.
+     *
      * @return UsageInterface[]
      */
     public function all(): array;
 
     /**
      * Fetches usage for the specified year and month.
+     *
      * @param int $year
      * @param int $month
+     *
      * @return UsageInterface[]
      */
     public function forMonth(int $year, int $month): array;
 
     /**
-     * Fetches usage for the specified domain ID, year and month
+     * Fetches usage for the specified domain ID, year and month.
+     *
      * @param int $domainId
      * @param int $year
      * @param int $month
+     *
      * @return UsageInterface[]
      */
     public function forDomainId(int $domainId, int $year, int $month): array;
 
     /**
-     * Fetches usage for the specified domain, year and month
+     * Fetches usage for the specified domain, year and month.
+     *
      * @param CommonManagedDomainInterface $domain
-     * @param int $year
-     * @param int $month
-     * @return UsageInterface[]
+     * @param int                          $year
+     * @param int                          $month
+     *
      * @throws HttpException
+     *
+     * @return UsageInterface[]
      */
     public function forDomain(CommonManagedDomainInterface $domain, int $year, int $month);
 }

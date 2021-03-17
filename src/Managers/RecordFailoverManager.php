@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -12,12 +12,14 @@ use DnsMadeEasy\Interfaces\Models\RecordFailoverInterface;
 
 /**
  * Manager for Record Failover configuration.
+ *
  * @package DnsMadeEasy\Managers
  */
 class RecordFailoverManager extends AbstractManager implements RecordFailoverManagerInterface
 {
     /**
      * Base URI for failover configuration.
+     *
      * @var string
      */
     protected string $baseUri = '/monitor';
@@ -29,7 +31,7 @@ class RecordFailoverManager extends AbstractManager implements RecordFailoverMan
         } catch (ModelNotFoundException $e) {
             $model = $this->createObject($this->getModelClass());
             $model->populateFromApi(
-                (object)[
+                (object) [
                     'id' => $recordId,
                 ]
             );
@@ -39,8 +41,11 @@ class RecordFailoverManager extends AbstractManager implements RecordFailoverMan
 
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
+     *
      * @param RecordFailoverInterface $object
+     *
      * @throws HttpException
+     *
      * @internal
      */
     public function save(AbstractModelInterface $object): void
@@ -50,7 +55,9 @@ class RecordFailoverManager extends AbstractManager implements RecordFailoverMan
 
     /**
      * Applies transformations to the API data before it is used to instantiate a model.
+     *
      * @param object $data
+     *
      * @return object
      */
     protected function transformApiData(object $data): object

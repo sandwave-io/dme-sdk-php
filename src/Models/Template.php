@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -10,6 +10,7 @@ use DnsMadeEasy\Managers\TemplateRecordManager;
 
 /**
  * Represents a Template resource.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property string $name
@@ -21,6 +22,7 @@ class Template extends AbstractModel implements TemplateInterface
 {
     /**
      * The record manager for the template.
+     *
      * @var TemplateRecordManagerInterface|null
      */
     protected ?TemplateRecordManagerInterface $recordManager = null;
@@ -36,11 +38,12 @@ class Template extends AbstractModel implements TemplateInterface
 
     /**
      * Returns the record manager for this template.
+     *
      * @return TemplateRecordManagerInterface
      */
     protected function getRecords(): TemplateRecordManagerInterface
     {
-        if (!$this->recordManager) {
+        if (! $this->recordManager) {
             $this->recordManager = new TemplateRecordManager($this->client);
             $this->recordManager->setDomain($this);
         }

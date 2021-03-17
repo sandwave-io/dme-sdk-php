@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -11,6 +11,7 @@ use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Manager for Transfer ACL resources.
+ *
  * @package DnsMadeEasy\Managers
  */
 class TransferAclManager extends AbstractManager implements TransferAclManagerInterface, ListableManagerInterface
@@ -18,7 +19,8 @@ class TransferAclManager extends AbstractManager implements TransferAclManagerIn
     use ListableManager;
 
     /**
-     * Base URI for Transfer ACLs
+     * Base URI for Transfer ACLs.
+     *
      * @var string
      */
     protected string $baseUri = '/dns/transferAcl';

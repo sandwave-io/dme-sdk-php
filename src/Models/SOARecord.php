@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Models\SOARecordInterface;
 
 /**
  * Represents a Custom SOA Record resource.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property string $email

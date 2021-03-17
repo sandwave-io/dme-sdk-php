@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -12,6 +12,7 @@ use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Manager for Template resources.
+ *
  * @package DnsMadeEasy\Managers
  */
 class TemplateManager extends AbstractManager implements TemplateManagerInterface, ListableManagerInterface
@@ -20,6 +21,7 @@ class TemplateManager extends AbstractManager implements TemplateManagerInterfac
 
     /**
      * Base URI for template resources.
+     *
      * @var string
      */
     protected string $baseUri = '/dns/template';
@@ -41,12 +43,12 @@ class TemplateManager extends AbstractManager implements TemplateManagerInterfac
 
     public function createFromDomainId(int $domainId, string $name): TemplateInterface
     {
-        $payload = (object)[
+        $payload = (object) [
             'name' => $name,
             'fromDomainId' => $domainId,
         ];
         $response = $this->client->post($this->baseUri, $payload);
-        $data = json_decode((string)$response->getBody());
+        $data = json_decode((string) $response->getBody());
 
         $object = $this->createObject();
         $object->populateFromApi($data);

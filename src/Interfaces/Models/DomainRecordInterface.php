@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models;
 
 /**
- * Represents a Record
+ * Represents a Record.
  *
  * @package DnsMadeEasy\Interfaces
  *
@@ -16,7 +16,9 @@ interface DomainRecordInterface extends RecordInterface
 {
     /**
      * Set the domain for the record.
+     *
      * @param ManagedDomainInterface $domain
+     *
      * @return $this
      */
     public function setDomain(ManagedDomainInterface $domain): self;

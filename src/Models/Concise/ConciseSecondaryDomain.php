@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models\Concise;
 
@@ -22,7 +22,6 @@ use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
  * @property-read bool $gtdEnabled
  * @property-read int $nameServerGroupId
  * @property-read int $pendingActionId
- *
  * @property-read SecondaryIPSetInterface $ipSet
  * @property-read int $ipSetId
  * @property-read FolderInterface $folder
@@ -31,7 +30,6 @@ use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
  */
 class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSecondaryDomainInterface
 {
-
     protected array $props = [
         'name' => null,
         'gtdEnabled' => null,
@@ -44,7 +42,24 @@ class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSec
     ];
 
     /**
+     * Override the save method, we can't save concise resources, so we don't do anything.
+     *
+     * @internal
+     */
+    public function save(): void
+    {
+    }
+
+    /**
+     * Override the refresh method. Refreshing it would fetch the full version of the resource.
+     */
+    public function refresh(): void
+    {
+    }
+
+    /**
      * Retrieves the full representation of the Secondary Domain.
+     *
      * @return SecondaryDomainInterface
      */
     protected function getFull(): SecondaryDomainInterface
@@ -53,29 +68,13 @@ class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSec
     }
 
     /**
-     * Override the save method, we can't save concise resources, so we don't do anything.
-     * @internal
-     */
-    public function save(): void
-    {
-        return;
-    }
-
-    /**
-     * Override the refresh method. Refreshing it would fetch the full version of the resource.
-     */
-    public function refresh(): void
-    {
-        return;
-    }
-
-    /**
      * Return the Secondary IP set assigned to this domain.
+     *
      * @return SecondaryIPSetInterface|null
      */
     protected function getIpSet(): ?SecondaryIPSetInterface
     {
-        if (!$this->ipSetId) {
+        if (! $this->ipSetId) {
             return null;
         }
         return $this->client->secondaryipsets->get($this->ipSetId);

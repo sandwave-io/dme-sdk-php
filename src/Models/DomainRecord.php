@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -10,6 +10,7 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 
 /**
  * Represents a Domain Record.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property ManagedDomainInterface $domain
@@ -21,9 +22,13 @@ class DomainRecord extends Record implements DomainRecordInterface
 
     /**
      * Sets the domain for the record. This can only be set once.
+     *
      * @param ManagedDomainInterface $domain
-     * @return $this
+     *
      * @throws ReadOnlyPropertyException
+     *
+     * @return $this
+     *
      * @internal
      */
     public function setDomain(ManagedDomainInterface $domain): self
@@ -37,6 +42,7 @@ class DomainRecord extends Record implements DomainRecordInterface
 
     /**
      * Get the domain associated with this record.
+     *
      * @return ManagedDomainInterface|null
      */
     protected function getDomain(): ?ManagedDomainInterface
@@ -46,11 +52,12 @@ class DomainRecord extends Record implements DomainRecordInterface
 
     /**
      * Get the ID of the domain associated with the record.
+     *
      * @return int|null
      */
     protected function getDomainId(): ?int
     {
-        if (!$this->domain) {
+        if (! $this->domain) {
             return null;
         }
         return $this->domain->id;

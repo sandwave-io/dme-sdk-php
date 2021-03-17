@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -11,6 +11,7 @@ use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Manager for SOA Record resources.
+ *
  * @package DnsMadeEasy\Managers
  */
 class SOARecordManager extends AbstractManager implements SOARecordManagerInterface, ListableManagerInterface
@@ -19,6 +20,7 @@ class SOARecordManager extends AbstractManager implements SOARecordManagerInterf
 
     /**
      * Base URI for SOA records.
+     *
      * @var string
      */
     protected string $baseUri = '/dns/soa';

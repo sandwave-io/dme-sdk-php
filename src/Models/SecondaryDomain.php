@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -10,10 +10,10 @@ use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryDomainInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
-use DnsMadeEasy\Models\Concise\CommonManagedDomain;
 
 /**
  * Represents a Secondary Domain resource.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property string $name
@@ -22,7 +22,6 @@ use DnsMadeEasy\Models\Concise\CommonManagedDomain;
  * @property-read bool $gtdEnabled
  * @property-read int $nameServerGroupId
  * @property-read int $pendingActionId
- *
  * @property SecondaryIPSetInterface $ipSet
  * @property int $ipSetId
  * @property FolderInterface $folder
@@ -51,7 +50,28 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
     ];
 
     /**
+     * @return object
+     *
+     * @internal
+     */
+    public function transformForApi(): object
+    {
+        $payload = (object) [];
+        if (! $this->id) {
+            $payload->name = $this->name;
+        }
+        if ($this->ipSetId) {
+            $payload->ipSetId = $this->ipSetId;
+        }
+        if ($this->folderId) {
+            $payload->folderId = $this->folderId;
+        }
+        return $payload;
+    }
+
+    /**
      * Sets the folder the domain has been assigned to.
+     *
      * @param $folder
      */
     protected function setFolder($folder)
@@ -65,6 +85,7 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Sets the secondary IP set for the domain.
+     *
      * @param SecondaryIPSet $set
      */
     protected function setIpSet(SecondaryIPSet $set)
@@ -75,6 +96,7 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Sets the secondary IP set ID for the domain.
+     *
      * @param int $id
      */
     protected function setIpSetId(int $id)
@@ -85,6 +107,7 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Get the secondary IP set for the domain.
+     *
      * @return mixed|null
      */
     protected function getIpSet()
@@ -99,7 +122,9 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Set the name of the domain. This can only be set on new domain objects.
+     *
      * @param string $name
+     *
      * @throws ReadOnlyPropertyException
      */
     protected function setName(string $name)
@@ -116,24 +141,5 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
             $data->ipSet = new SecondaryIPSet($this->client->secondaryipsets, $this->client, $data->ipSet);
         }
         parent::parseApiData($data);
-    }
-
-    /**
-     * @return object
-     * @internal
-     */
-    public function transformForApi(): object
-    {
-        $payload = (object)[];
-        if (!$this->id) {
-            $payload->name = $this->name;
-        }
-        if ($this->ipSetId) {
-            $payload->ipSetId = $this->ipSetId;
-        }
-        if ($this->folderId) {
-            $payload->folderId = $this->folderId;
-        }
-        return $payload;
     }
 }

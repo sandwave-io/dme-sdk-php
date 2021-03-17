@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Pagination\Factories;
 
@@ -18,9 +18,10 @@ class PaginatorFactory implements PaginatorFactoryInterface
      * Returns a paginator based on the supplied items and parameters.
      *
      * @param array $items
-     * @param int $totalItems
-     * @param int $perPage
-     * @param int $currentPage
+     * @param int   $totalItems
+     * @param int   $perPage
+     * @param int   $currentPage
+     *
      * @return Paginator
      */
     public function paginate(array $items, int $totalItems, int $perPage, int $currentPage = 1)
