@@ -38,4 +38,5 @@ jobs:
 
 #      TODO: Add codestyle checks
 
-#      TODO: Add unit tests
+      - name: Run testsuite
+        run: vendor/bin/phpunit
