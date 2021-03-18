@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Managers\TemplateManagerInterface;
 use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Models\Template;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -18,6 +19,8 @@ use DnsMadeEasy\Traits\ListableManager;
 class TemplateManager extends AbstractManager implements TemplateManagerInterface, ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = Template::class;
 
     /**
      * Base URI for template resources.

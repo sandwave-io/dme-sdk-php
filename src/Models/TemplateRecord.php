@@ -43,11 +43,11 @@ class TemplateRecord extends Record implements TemplateRecordInterface
     /**
      * Gets the template for the record.
      *
-     * @return TemplateRecordInterface|null
+     * @return TemplateInterface|null
      */
-    protected function getTemplate(): ?TemplateRecordInterface
+    protected function getTemplate(): ?TemplateInterface
     {
-        return $this->domain;
+        return $this->template;
     }
 
     /**

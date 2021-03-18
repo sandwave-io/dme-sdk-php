@@ -9,6 +9,7 @@ use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\Managers\RecordFailoverManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use DnsMadeEasy\Interfaces\Models\RecordFailoverInterface;
+use DnsMadeEasy\Models\RecordFailover;
 
 /**
  * Manager for Record Failover configuration.
@@ -17,6 +18,8 @@ use DnsMadeEasy\Interfaces\Models\RecordFailoverInterface;
  */
 class RecordFailoverManager extends AbstractManager implements RecordFailoverManagerInterface
 {
+    protected string $model = RecordFailover::class;
+
     /**
      * Base URI for failover configuration.
      *

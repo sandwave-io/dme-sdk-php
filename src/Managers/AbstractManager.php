@@ -10,6 +10,7 @@ use DnsMadeEasy\Exceptions\Client\ModelNotFoundException;
 use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\AbstractManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
+use ReflectionException;
 
 /**
  * Abstract class for a resource manager.
@@ -38,6 +39,13 @@ abstract class AbstractManager implements AbstractManagerInterface
      * @var AbstractModelInterface[]
      */
     protected array $objectCache = [];
+
+    /**
+     * Model namespace associated with the manager.
+     *
+     * @var class-string
+     */
+    protected string $model;
 
     /**
      * Constructor for a Manager class.
@@ -171,7 +179,7 @@ abstract class AbstractManager implements AbstractManagerInterface
      *
      * @throws ModelNotFoundException
      * @throws HttpException
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
      * @return AbstractModelInterface
      */
@@ -248,21 +256,19 @@ abstract class AbstractManager implements AbstractManagerInterface
     /**
      * Return the name of the model class for this resource.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
-     * @return string
+     * @return class-string
      */
     protected function getModelClass(): string
     {
-        $rClass = new \ReflectionClass($this);
-        $modelName = substr($rClass->getShortName(), 0, -7);
-        return '\DnsMadeEasy\Models\\' . $modelName;
+        return $this->model;
     }
 
     /**
      * Return the name of the model class for the concise version of the resource.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
      * @return string
      */
@@ -275,9 +281,9 @@ abstract class AbstractManager implements AbstractManagerInterface
      * Returns a string ID to give a unique ID to this resource.
      *
      * @param $input
-     * @param string|null $name
+     * @param class-string|null $name
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
      * @return string
      */
@@ -293,7 +299,7 @@ abstract class AbstractManager implements AbstractManagerInterface
             return "{$name}:{$input}";
         } elseif (is_object($input) && property_exists($input, 'id')) {
             return "{$name}:{$input->id}";
-        } elseif (is_array($input) && array_key_exists($input, 'id')) {
+        } elseif (is_array($input) && array_key_exists('id', $input)) {
             return "{$name}:{$input['id']}";
         }
         return "{$name}:" . (string) $input;
@@ -305,12 +311,18 @@ abstract class AbstractManager implements AbstractManagerInterface
      * @param object $data
      * @param string $className
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
+     * @throws ModelNotFoundException
      *
      * @return AbstractModelInterface
+     *
      */
     protected function createExistingObject(object $data, string $className): AbstractModelInterface
     {
+        if (! class_exists($className)) {
+            throw new ModelNotFoundException("Class {$className} not found.");
+        }
+        /** @var class-string $className */
         $objectId = $this->getObjectId($data, $className);
         if ($this->getFromCache($objectId)) {
             return $this->getFromCache($objectId);

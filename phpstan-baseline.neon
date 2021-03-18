@@ -1,0 +1,1452 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^PHPDoc tag @var for property DnsMadeEasy\\\\Client\\:\\:\\$logger with type Psr\\\\Log\\\\LoggerInterface\\|null is not subtype of native type Psr\\\\Log\\\\LoggerInterface\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Client\\:\\:\\$managers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:__get\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:__get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:get\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, array given\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:post\\(\\) has parameter \\$payload with no typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of method Psr\\\\Http\\\\Message\\\\StreamInterface\\:\\:write\\(\\) expects string, string\\|false given\\.$#"
+			count: 3
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:put\\(\\) has parameter \\$payload with no typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, mixed given\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:updateLimits\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Client\\:\\:\\$requestId \\(string\\|null\\) does not accept string\\|false\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between int and false will always evaluate to false\\.$#"
+			count: 2
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:hasManager\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 93$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:getManager\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 74$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Exceptions\\\\Client\\\\Http\\\\HttpException\\:\\:setRequest\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Exceptions/Client/Http/HttpException.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Exceptions\\\\Client\\\\Http\\\\HttpException\\:\\:setResponse\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Exceptions/Client/Http/HttpException.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\ClientInterface\\:\\:get\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Interfaces/ClientInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\ClientInterface\\:\\:post\\(\\) has parameter \\$payload with no typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/ClientInterface.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$payload\\)\\: Unexpected token \"\\$payload\", expected type at offset 213$#"
+			count: 1
+			path: src/Interfaces/ClientInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\ClientInterface\\:\\:put\\(\\) has parameter \\$payload with no typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/ClientInterface.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$payload\\)\\: Unexpected token \"\\$payload\", expected type at offset 212$#"
+			count: 1
+			path: src/Interfaces/ClientInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:getFromCache\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 71$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:putInCache\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:putInCache\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:putInCache\\(\\) has parameter \\$object with no typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 69$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 88$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:removeFromCache\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:removeFromCache\\(\\) has parameter \\$object with no typehint specified\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 72$#"
+			count: 1
+			path: src/Interfaces/Managers/AbstractManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\MultipleDomainManagerInterface\\:\\:create\\(\\) has parameter \\$domainNames with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/MultipleDomainManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\MultipleDomainManagerInterface\\:\\:create\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/MultipleDomainManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\MultipleDomainManagerInterface\\:\\:update\\(\\) has parameter \\$ids with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/MultipleDomainManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\MultipleDomainManagerInterface\\:\\:delete\\(\\) has parameter \\$ids with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Interfaces/Managers/MultipleDomainManagerInterface.php
+
+		-
+			message: "#^PHPDoc tag @param references unknown parameter\\: \\$object$#"
+			count: 1
+			path: src/Interfaces/Managers/RecordFailoverManagerInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\PaginatorFactoryInterface\\:\\:paginate\\(\\) has parameter \\$items with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Interfaces/PaginatorFactoryInterface.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Interfaces\\\\Traits\\\\ListableManagerInterface\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Interfaces/Traits/ListableManagerInterface.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int given\\.$#"
+			count: 2
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int given\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:getFromCache\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 71$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:getFromCache\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface but return statement is missing\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Access to an undefined property DnsMadeEasy\\\\Interfaces\\\\ClientInterface\\:\\:\\$logger\\.$#"
+			count: 4
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:putInCache\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:putInCache\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:putInCache\\(\\) has parameter \\$object with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 69$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 88$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:removeFromCache\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:removeFromCache\\(\\) has parameter \\$object with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 72$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Call to function array_search\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 2
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface given\\.$#"
+			count: 2
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 2
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, string\\|null given\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:getObjectId\\(\\) has parameter \\$input with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$input\\)\\: Unexpected token \"\\$input\", expected type at offset 90$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ContactListManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ContactListInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/ContactListManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ContactListManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ContactListInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/ContactListManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ContactListManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/ContactListManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/ContactListManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/ContactListManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:__get\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:__get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleRecordManager\\|null given\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Parameter \\#2 \\$domain of class DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleRecordManager constructor expects DnsMadeEasy\\\\Interfaces\\\\Models\\\\Common\\\\CommonManagedDomainInterface, DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface\\|null given\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Parameter \\#2 \\$replace of function str_replace expects array\\|string, int given\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\:\\:setDomain\\(\\)\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\FolderManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/FolderManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/FolderManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\FolderManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\FolderInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/FolderManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\FolderManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\FolderInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/FolderManager.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$value\\.$#"
+			count: 1
+			path: src/Managers/FolderManager.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$label\\.$#"
+			count: 1
+			path: src/Managers/FolderManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:__get\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:__get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, DnsMadeEasy\\\\Interfaces\\\\Managers\\\\MultipleDomainManagerInterface\\|null given\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleDomainManager\\:\\:create\\(\\) has parameter \\$domainNames with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleDomainManager\\:\\:create\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, array given\\.$#"
+			count: 3
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$names\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$id\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleDomainManager\\:\\:update\\(\\) has parameter \\$ids with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$ids\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleDomainManager\\:\\:delete\\(\\) has parameter \\$ids with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, object\\|null given\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Variable property access on object\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Instanceof between DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface and DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface will always evaluate to true\\.$#"
+			count: 2
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int given\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, string given\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Interfaces\\\\Models\\\\RecordInterface\\:\\:\\$gtdLocation \\(string\\) does not accept DnsMadeEasy\\\\Enums\\\\GTDLocation\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, array\\<int, object\\> given\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int given\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Call to function is_numeric\\(\\) with int will always evaluate to true\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Access to an undefined property DnsMadeEasy\\\\Interfaces\\\\Models\\\\Common\\\\CommonManagedDomainInterface\\:\\:\\$records\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\RecordFailoverManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\RecordFailoverInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 2
+			path: src/Managers/RecordFailoverManager.php
+
+		-
+			message: "#^Parameter \\#1 \\$object \\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\RecordFailoverInterface\\) of method DnsMadeEasy\\\\Managers\\\\RecordFailoverManager\\:\\:save\\(\\) should be contravariant with parameter \\$object \\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\) of method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:save\\(\\)$#"
+			count: 1
+			path: src/Managers/RecordFailoverManager.php
+
+		-
+			message: "#^Parameter \\#1 \\$object \\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\RecordFailoverInterface\\) of method DnsMadeEasy\\\\Managers\\\\RecordFailoverManager\\:\\:save\\(\\) should be contravariant with parameter \\$object \\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\) of method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:save\\(\\)$#"
+			count: 1
+			path: src/Managers/RecordFailoverManager.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$id\\.$#"
+			count: 1
+			path: src/Managers/RecordFailoverManager.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$recordId\\.$#"
+			count: 1
+			path: src/Managers/RecordFailoverManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SOARecordManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\SOARecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/SOARecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SOARecordManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\SOARecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/SOARecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SOARecordManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/SOARecordManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/SOARecordManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/SOARecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SecondaryDomainManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/SecondaryDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SecondaryDomainManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/SecondaryDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SecondaryDomainManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/SecondaryDomainManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/SecondaryDomainManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/SecondaryDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SecondaryIPSetManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryIPSetInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/SecondaryIPSetManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SecondaryIPSetManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryIPSetInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/SecondaryIPSetManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\SecondaryIPSetManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/SecondaryIPSetManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/SecondaryIPSetManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/SecondaryIPSetManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TemplateManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\TemplateInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/TemplateManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TemplateManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\TemplateInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/TemplateManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TemplateManager\\:\\:createFromDomainId\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\TemplateInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/TemplateManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TemplateManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/TemplateManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/TemplateManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/TemplateManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TemplateRecordManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\TemplateRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/TemplateRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TemplateRecordManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\TemplateRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/TemplateRecordManager.php
+
+		-
+			message: "#^Return type \\(DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateRecordManagerInterface\\) of method DnsMadeEasy\\\\Managers\\\\TemplateRecordManager\\:\\:setTemplate\\(\\) should be covariant with return type \\(\\$this\\(DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateRecordManagerInterface\\)\\) of method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateRecordManagerInterface\\:\\:setTemplate\\(\\)$#"
+			count: 1
+			path: src/Managers/TemplateRecordManager.php
+
+		-
+			message: "#^Parameter \\#2 \\$replace of function str_replace expects array\\|string, int given\\.$#"
+			count: 1
+			path: src/Managers/TemplateRecordManager.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\:\\:setTemplate\\(\\)\\.$#"
+			count: 1
+			path: src/Managers/TemplateRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TransferAclManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\TransferAclInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/TransferAclManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TransferAclManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\TransferAclInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/TransferAclManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\TransferAclManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/TransferAclManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/TransferAclManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/TransferAclManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\UsageManager\\:\\:getData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/UsageManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Models\\\\Usage\"\\.$#"
+			count: 1
+			path: src/Managers/UsageManager.php
+
+		-
+			message: "#^Parameter \\#1 \\$manager of class DnsMadeEasy\\\\Models\\\\Usage constructor expects DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface, DnsMadeEasy\\\\Interfaces\\\\ClientInterface given\\.$#"
+			count: 1
+			path: src/Managers/UsageManager.php
+
+		-
+			message: "#^Parameter \\#2 \\$client of class DnsMadeEasy\\\\Models\\\\Usage constructor expects DnsMadeEasy\\\\Interfaces\\\\ClientInterface, \\$this\\(DnsMadeEasy\\\\Managers\\\\UsageManager\\) given\\.$#"
+			count: 1
+			path: src/Managers/UsageManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\VanityNameServerManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\VanityNameServerInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/VanityNameServerManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\VanityNameServerManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\VanityNameServerInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/VanityNameServerManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\VanityNameServerManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/VanityNameServerManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/VanityNameServerManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/VanityNameServerManager.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:\\$changed type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:\\$originalProps type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, object\\|null given\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:__get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 206$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:__get\\(\\) should return mixed but return statement is missing\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Variable method call on \\$this\\(DnsMadeEasy\\\\Models\\\\AbstractModel\\)\\.$#"
+			count: 2
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:__set\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:__set\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\AbstractModel\\:\\:__set\\(\\) has parameter \\$value with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 303$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$value\\)\\: Unexpected token \"\\$value\", expected type at offset 323$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Only booleans are allowed in &&, int\\|null given on the left side\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$id\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Variable property access on mixed\\.$#"
+			count: 2
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, array given\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:refresh\\(\\)\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Argument of an invalid type object supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Variable property access on \\$this\\(DnsMadeEasy\\\\Models\\\\AbstractModel\\)\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$updated\\.$#"
+			count: 1
+			path: src/Models/Common/CommonManagedDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$created\\.$#"
+			count: 1
+			path: src/Models/Common/CommonManagedDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 2
+			path: src/Models/Common/CommonManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\Common\\\\CommonManagedDomain\\:\\:getUsage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Common/CommonManagedDomain.php
+
+		-
+			message: "#^Return type \\(array\\) of method DnsMadeEasy\\\\Models\\\\Common\\\\CommonManagedDomain\\:\\:getUsage\\(\\) should be covariant with return type \\(array\\<DnsMadeEasy\\\\Interfaces\\\\Models\\\\UsageInterface\\>\\) of method DnsMadeEasy\\\\Interfaces\\\\Models\\\\Common\\\\CommonManagedDomainInterface\\:\\:getUsage\\(\\)$#"
+			count: 1
+			path: src/Models/Common/CommonManagedDomain.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\UsageManagerInterface\\:\\:getForDomain\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Common/CommonManagedDomain.php
+
+		-
+			message: "#^Parameter \\#1 \\$domain of method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateManagerInterface\\:\\:createFromDomain\\(\\) expects DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface, \\$this\\(DnsMadeEasy\\\\Models\\\\Common\\\\CommonManagedDomain\\) given\\.$#"
+			count: 1
+			path: src/Models/Common/CommonManagedDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$updated\\.$#"
+			count: 1
+			path: src/Models/Common/CommonSecondaryDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$created\\.$#"
+			count: 1
+			path: src/Models/Common/CommonSecondaryDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/Common/CommonSecondaryDomain.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Concise\\\\ConciseFolder\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseFolder.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:get\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseFolder.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$label\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseFolder.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Concise\\\\ConciseManagedDomain\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseManagedDomain.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:get\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseManagedDomain.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Concise\\\\ConciseSecondaryDomain\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseSecondaryDomain.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:get\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseSecondaryDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int given\\.$#"
+			count: 1
+			path: src/Models/Concise/ConciseSecondaryDomain.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\ContactList\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/ContactList.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\ContactList\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/ContactList.php
+
+		-
+			message: "#^Cannot access property \\$email on string\\.$#"
+			count: 2
+			path: src/Models/ContactList.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\ContactList\\:\\:\\$emails \\(array\\<string\\>\\) does not accept array\\<stdClass\\|string\\>\\.$#"
+			count: 1
+			path: src/Models/ContactList.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface\\|null given\\.$#"
+			count: 1
+			path: src/Models/DomainRecord.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface\\|null given\\.$#"
+			count: 1
+			path: src/Models/DomainRecord.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Folder\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Folder.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Folder\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Folder.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$updated\\.$#"
+			count: 2
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a ternary operator condition, object\\|null given\\.$#"
+			count: 2
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$created\\.$#"
+			count: 2
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setFolder\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setFolder\\(\\) has parameter \\$folder with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$folder\\)\\: Unexpected token \"\\$folder\", expected type at offset 60$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setVanity\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setVanity\\(\\) has parameter \\$vanity with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$vanity\\)\\: Unexpected token \"\\$vanity\", expected type at offset 75$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setTransferAcl\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setTransferAcl\\(\\) has parameter \\$transferAcl with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$transferAcl\\)\\: Unexpected token \"\\$transferAcl\", expected type at offset 70$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setTemplate\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setTemplate\\(\\) has parameter \\$template with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$template\\)\\: Unexpected token \"\\$template\", expected type at offset 66$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setSOA\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setSOA\\(\\) has parameter \\$soa with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$soa\\)\\: Unexpected token \"\\$soa\", expected type at offset 74$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int given\\.$#"
+			count: 3
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setName\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, DnsMadeEasy\\\\Interfaces\\\\Managers\\\\DomainRecordManagerInterface\\|null given\\.$#"
+			count: 1
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Record\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Record.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Record\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Record.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/Record.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\Record\\:\\:setType\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/Record.php
+
+		-
+			message: "#^Only booleans are allowed in &&, int\\|null given on the left side\\.$#"
+			count: 1
+			path: src/Models/Record.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\RecordFailover\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/RecordFailover.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\RecordFailover\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/RecordFailover.php
+
+		-
+			message: "#^Only booleans are allowed in &&, int given on the left side\\.$#"
+			count: 1
+			path: src/Models/RecordFailover.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\SOARecord\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/SOARecord.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\SOARecord\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/SOARecord.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int given\\.$#"
+			count: 2
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:setFolder\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:setFolder\\(\\) has parameter \\$folder with no typehint specified\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$folder\\)\\: Unexpected token \"\\$folder\", expected type at offset 81$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:setIpSet\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:setIpSetId\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Elseif condition is always false\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Only booleans are allowed in an elseif condition, array\\|float\\|int\\|string\\|false\\|null given\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:setName\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$ipSetId\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$ipSet\\.$#"
+			count: 2
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\SecondaryIPSet\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/SecondaryIPSet.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\SecondaryIPSet\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/SecondaryIPSet.php
+
+		-
+			message: "#^Return type \\(DnsMadeEasy\\\\Models\\\\SecondaryIPSet\\) of method DnsMadeEasy\\\\Models\\\\SecondaryIPSet\\:\\:addIP\\(\\) should be covariant with return type \\(\\$this\\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryIPSetInterface\\)\\) of method DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryIPSetInterface\\:\\:addIP\\(\\)$#"
+			count: 1
+			path: src/Models/SecondaryIPSet.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Models/SecondaryIPSet.php
+
+		-
+			message: "#^Return type \\(DnsMadeEasy\\\\Models\\\\SecondaryIPSet\\) of method DnsMadeEasy\\\\Models\\\\SecondaryIPSet\\:\\:removeIP\\(\\) should be covariant with return type \\(\\$this\\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryIPSetInterface\\)\\) of method DnsMadeEasy\\\\Interfaces\\\\Models\\\\SecondaryIPSetInterface\\:\\:removeIP\\(\\)$#"
+			count: 1
+			path: src/Models/SecondaryIPSet.php
+
+		-
+			message: "#^Call to function array_search\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Models/SecondaryIPSet.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Template\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Template.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Template\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Template.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateRecordManagerInterface\\|null given\\.$#"
+			count: 1
+			path: src/Models/Template.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Managers\\\\TemplateRecordManager\\:\\:setDomain\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Template.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, DnsMadeEasy\\\\Interfaces\\\\Models\\\\TemplateInterface\\|null given\\.$#"
+			count: 1
+			path: src/Models/TemplateRecord.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, DnsMadeEasy\\\\Interfaces\\\\Models\\\\TemplateInterface\\|null given\\.$#"
+			count: 1
+			path: src/Models/TemplateRecord.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\TransferAcl\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/TransferAcl.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\TransferAcl\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/TransferAcl.php
+
+		-
+			message: "#^Return type \\(DnsMadeEasy\\\\Models\\\\TransferAcl\\) of method DnsMadeEasy\\\\Models\\\\TransferAcl\\:\\:addIP\\(\\) should be covariant with return type \\(\\$this\\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\TransferAclInterface\\)\\) of method DnsMadeEasy\\\\Interfaces\\\\Models\\\\TransferAclInterface\\:\\:addIP\\(\\)$#"
+			count: 1
+			path: src/Models/TransferAcl.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Models/TransferAcl.php
+
+		-
+			message: "#^Return type \\(DnsMadeEasy\\\\Models\\\\TransferAcl\\) of method DnsMadeEasy\\\\Models\\\\TransferAcl\\:\\:removeIP\\(\\) should be covariant with return type \\(\\$this\\(DnsMadeEasy\\\\Interfaces\\\\Models\\\\TransferAclInterface\\)\\) of method DnsMadeEasy\\\\Interfaces\\\\Models\\\\TransferAclInterface\\:\\:removeIP\\(\\)$#"
+			count: 1
+			path: src/Models/TransferAcl.php
+
+		-
+			message: "#^Call to function array_search\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Models/TransferAcl.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\Usage\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/Usage.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int given\\.$#"
+			count: 1
+			path: src/Models/Usage.php
+
+		-
+			message: "#^Access to an undefined property DnsMadeEasy\\\\Interfaces\\\\ClientInterface\\:\\:\\$domain\\.$#"
+			count: 1
+			path: src/Models/Usage.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\VanityNameServer\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/VanityNameServer.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Models\\\\VanityNameServer\\:\\:\\$editable type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Models/VanityNameServer.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Pagination\\\\Factories\\\\IlluminatePaginatorFactory\\:\\:paginate\\(\\) has parameter \\$items with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Pagination/Factories/IlluminatePaginatorFactory.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Pagination\\\\Factories\\\\IlluminatePaginatorFactory\\:\\:paginate\\(\\) return type has no value type specified in iterable type Illuminate\\\\Pagination\\\\LengthAwarePaginator\\.$#"
+			count: 1
+			path: src/Pagination/Factories/IlluminatePaginatorFactory.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Pagination\\\\Factories\\\\PaginatorFactory\\:\\:paginate\\(\\) has parameter \\$items with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Pagination/Factories/PaginatorFactory.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Pagination\\\\Factories\\\\PaginatorFactory\\:\\:paginate\\(\\) return type has no value type specified in iterable type DnsMadeEasy\\\\Pagination\\\\Paginator\\.$#"
+			count: 1
+			path: src/Pagination/Factories/PaginatorFactory.php
+
+		-
+			message: "#^Class DnsMadeEasy\\\\Pagination\\\\Paginator implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Class DnsMadeEasy\\\\Pagination\\\\Paginator implements generic interface IteratorAggregate but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Property DnsMadeEasy\\\\Pagination\\\\Paginator\\:\\:\\$items type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Pagination\\\\Paginator\\:\\:__construct\\(\\) has parameter \\$items with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Casting to int\\<0, max\\> something that's already int\\<0, max\\>\\.$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Pagination\\\\Paginator\\:\\:items\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Only numeric types are allowed in \\+, int\\|null given on the left side\\.$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Call to method DnsMadeEasy\\\\Pagination\\\\Paginator\\:\\:lastPage\\(\\) with incorrect case\\: lastpage$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Pagination\\\\Paginator\\:\\:getIterator\\(\\) return type has no value type specified in iterable type Traversable\\.$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Return type \\(Traversable\\) of method DnsMadeEasy\\\\Pagination\\\\Paginator\\:\\:getIterator\\(\\) should be covariant with return type \\(Traversable\\<mixed, mixed\\>\\) of method IteratorAggregate\\<mixed,mixed\\>\\:\\:getIterator\\(\\)$#"
+			count: 1
+			path: src/Pagination/Paginator.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\RecordManager\\:\\:paginate\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/RecordManager.php
+
+		-
+			message: "#^Binary operation \"\\+\" between array\\|null and array\\('page' \\=\\> int, 'rows' \\=\\> int\\) results in an error\\.$#"
+			count: 1
+			path: src/Managers/RecordManager.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
+			count: 1
+			path: src/Managers/RecordManager.php
+

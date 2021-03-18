@@ -19,6 +19,8 @@ class UsageManager implements UsageManagerInterface
 {
     protected ClientInterface $client;
 
+    protected string $model = Usage::class;
+
     /**
      * Createsa new Query Usage manager.
      *

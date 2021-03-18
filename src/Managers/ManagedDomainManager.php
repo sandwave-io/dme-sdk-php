@@ -10,6 +10,7 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
 use DnsMadeEasy\Managers\Multiple\MultipleDomainManager;
 use DnsMadeEasy\Models\Concise\ConciseManagedDomain;
+use DnsMadeEasy\Models\ManagedDomain;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -22,6 +23,8 @@ use DnsMadeEasy\Traits\ListableManager;
 class ManagedDomainManager extends AbstractManager implements ManagedDomainManagerInterface, ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = ManagedDomain::class;
 
     /**
      * Manager for multiple domains.

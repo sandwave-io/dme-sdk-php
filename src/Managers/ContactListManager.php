@@ -7,6 +7,7 @@ namespace DnsMadeEasy\Managers;
 use DnsMadeEasy\Interfaces\Managers\ContactListManagerInterface;
 use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Models\ContactList;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -17,6 +18,8 @@ use DnsMadeEasy\Traits\ListableManager;
 class ContactListManager extends AbstractManager implements ContactListManagerInterface, ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = ContactList::class;
 
     /**
      * The base URI for contact lists.

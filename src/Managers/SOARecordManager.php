@@ -7,6 +7,7 @@ namespace DnsMadeEasy\Managers;
 use DnsMadeEasy\Interfaces\Managers\SOARecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\SOARecordInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Models\SOARecord;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -17,6 +18,8 @@ use DnsMadeEasy\Traits\ListableManager;
 class SOARecordManager extends AbstractManager implements SOARecordManagerInterface, ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = SOARecord::class;
 
     /**
      * Base URI for SOA records.

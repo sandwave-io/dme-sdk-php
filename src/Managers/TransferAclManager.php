@@ -7,6 +7,7 @@ namespace DnsMadeEasy\Managers;
 use DnsMadeEasy\Interfaces\Managers\TransferAclManagerInterface;
 use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Models\TransferAcl;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -17,6 +18,8 @@ use DnsMadeEasy\Traits\ListableManager;
 class TransferAclManager extends AbstractManager implements TransferAclManagerInterface, ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = TransferAcl::class;
 
     /**
      * Base URI for Transfer ACLs.
