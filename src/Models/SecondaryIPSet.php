@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 
 /**
  * Represents a Secondary IP Set resource.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property string $name
@@ -27,7 +28,7 @@ class SecondaryIPSet extends AbstractModel implements SecondaryIPSetInterface
 
     public function addIP(string $ip): self
     {
-        if (!in_array($ip, $this->props['ips'])) {
+        if (! in_array($ip, $this->props['ips'])) {
             $this->props['ips'][] = $ip;
         }
         return $this;

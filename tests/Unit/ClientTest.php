@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace DnsMadeEasy\Tests\Unit;
 
@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class ClientTest extends TestCase
 {
-
     public function testCreateClient(): void
     {
         $client = new Client();

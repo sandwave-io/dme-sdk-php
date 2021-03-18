@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers\Multiple;
 
@@ -13,24 +13,28 @@ use DnsMadeEasy\Models\DomainRecord;
 
 /**
  * Manages multiple domain records at once.
+ *
  * @package DnsMadeEasy\Managers
  */
 class MultipleRecordManager implements MultipleRecordManagerInterface
 {
     /**
-     * The DNS Made Easy API Client
+     * The DNS Made Easy API Client.
+     *
      * @var ClientInterface
      */
     protected ClientInterface $client;
 
     /**
      * The domain to manage records for.
+     *
      * @var CommonManagedDomainInterface
      */
     protected CommonManagedDomainInterface $domain;
 
     /**
-     * The base URI for managed domains
+     * The base URI for managed domains.
+     *
      * @var string
      */
     protected string $baseUri = '/dns/managed';
@@ -47,7 +51,7 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
         $payload = [];
         foreach ($records as $record) {
             // We only handle Domain Records
-            if (!$record instanceof DomainRecordInterface) {
+            if (! $record instanceof DomainRecordInterface) {
                 continue;
             }
 
@@ -55,18 +59,18 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
             if ($record->id) {
                 continue;
             }
-            if (!$record->gtdLocation) {
+            if (! $record->gtdLocation) {
                 $record->gtdLocation = GTDLocation::DEFAULT();
             }
             $payload[] = $record->transformForApi();
         }
 
-        if (!$payload) {
+        if (! $payload) {
             return [];
         }
 
         $response = $this->client->post($this->baseUri . '/createMulti', $payload);
-        $data = json_decode((string)$response->getBody());
+        $data = json_decode((string) $response->getBody());
         $result = [];
         foreach ($data as $recordData) {
             $result[] = new DomainRecord($this->client->domains, $this->client, $recordData);
@@ -79,12 +83,12 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
         $payload = [];
         foreach ($records as $record) {
             // We only handle Domain Records
-            if (!$record instanceof DomainRecordInterface) {
+            if (! $record instanceof DomainRecordInterface) {
                 continue;
             }
 
             // We only work on exsiting records
-            if (!$record->id) {
+            if (! $record->id) {
                 continue;
             }
             $payload[] = $record->transformForApi();

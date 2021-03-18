@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -9,6 +9,7 @@ use DnsMadeEasy\Interfaces\Models\UsageInterface;
 
 /**
  * Represents Query Usage statistics.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property-read int $primaryCount
@@ -41,20 +42,10 @@ class Usage extends AbstractModel implements UsageInterface
     ];
 
     /**
-     * Get the domain associated with the usage.
-     * @return ManagedDomainInterface|null
-     */
-    protected function getDomain(): ?ManagedDomainInterface
-    {
-        if (!$this->domainId) {
-            return null;
-        }
-        return $this->client->domain->get($this->domainId);
-    }
-
-    /**
      * Since there's no string representation of usage, just return 'Usage'.
+     *
      * @return string
+     *
      * @internal
      */
     public function __toString()
@@ -67,7 +58,6 @@ class Usage extends AbstractModel implements UsageInterface
      */
     public function save(): void
     {
-        return;
     }
 
     /**
@@ -75,7 +65,6 @@ class Usage extends AbstractModel implements UsageInterface
      */
     public function delete(): void
     {
-        return;
     }
 
     /**
@@ -83,6 +72,18 @@ class Usage extends AbstractModel implements UsageInterface
      */
     public function refresh(): void
     {
-        return;
+    }
+
+    /**
+     * Get the domain associated with the usage.
+     *
+     * @return ManagedDomainInterface|null
+     */
+    protected function getDomain(): ?ManagedDomainInterface
+    {
+        if (! $this->domainId) {
+            return null;
+        }
+        return $this->client->domain->get($this->domainId);
     }
 }

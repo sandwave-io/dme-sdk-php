@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -10,6 +10,7 @@ use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
 
 /**
  * Represents a Template Record resource.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property TemplateInterface $template
@@ -21,9 +22,13 @@ class TemplateRecord extends Record implements TemplateRecordInterface
 
     /**
      * Sets the template for the record.
+     *
      * @param TemplateInterface $template
-     * @return $this
+     *
      * @throws ReadOnlyPropertyException
+     *
+     * @return $this
+     *
      * @internal
      */
     public function setTemplate(TemplateInterface $template): self
@@ -37,6 +42,7 @@ class TemplateRecord extends Record implements TemplateRecordInterface
 
     /**
      * Gets the template for the record.
+     *
      * @return TemplateRecordInterface|null
      */
     protected function getTemplate(): ?TemplateRecordInterface
@@ -46,11 +52,12 @@ class TemplateRecord extends Record implements TemplateRecordInterface
 
     /**
      * Gets the template ID for the record.
+     *
      * @return int|null
      */
     protected function getTemplateId(): ?int
     {
-        if (!$this->template) {
+        if (! $this->template) {
             return null;
         }
         return $this->template->id;

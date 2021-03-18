@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models;
 
 /**
- * Represents a Record
+ * Represents a Record.
  *
  * @package DnsMadeEasy\Interfaces
  *
@@ -16,7 +16,9 @@ interface TemplateRecordInterface extends RecordInterface
 {
     /**
      * Set the template for the record.
+     *
      * @param TemplateInterface $template
+     *
      * @return $this
      */
     public function setTemplate(TemplateInterface $template): self;

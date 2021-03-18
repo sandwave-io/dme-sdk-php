@@ -36,7 +36,8 @@ jobs:
       - name: Static analysis
         run: vendor/bin/phpstan --memory-limit=1G
 
-#      TODO: Add codestyle checks
+      - name: Check codestyle
+        run: vendor/bin/php-cs-fixer fix --dry-run --show-progress=none --diff-format=udiff -vvv
 
       - name: Run testsuite
         run: vendor/bin/phpunit

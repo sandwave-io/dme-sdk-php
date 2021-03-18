@@ -1,13 +1,14 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Enums;
 
 use Spatie\Enum\Enum;
 
 /**
- * Enums to represent record types
+ * Enums to represent record types.
+ *
  * @package DnsMadeEasy\Enums
  *
  * @method static self A()
@@ -25,5 +26,4 @@ use Spatie\Enum\Enum;
  */
 class RecordType extends Enum
 {
-
 }

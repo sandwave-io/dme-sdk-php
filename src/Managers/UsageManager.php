@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -12,6 +12,7 @@ use DnsMadeEasy\Models\Usage;
 
 /**
  * Manager for query usage.
+ *
  * @package DnsMadeEasy\Managers
  */
 class UsageManager implements UsageManagerInterface
@@ -20,7 +21,9 @@ class UsageManager implements UsageManagerInterface
 
     /**
      * Createsa new Query Usage manager.
+     *
      * @param ClientInterface $client
+     *
      * @internal
      */
     public function __construct(ClientInterface $client)
@@ -50,15 +53,18 @@ class UsageManager implements UsageManagerInterface
 
     /**
      * Returns the data from the API for the usage requested.
-     * @param string $url
+     *
+     * @param string   $url
      * @param int|null $domainId
-     * @return array
+     *
      * @throws HttpException
+     *
+     * @return array
      */
     protected function getData(string $url, ?int $domainId = null): array
     {
         $response = $this->client->get($url);
-        $data = json_decode((string)$response->getBody());
+        $data = json_decode((string) $response->getBody());
         return array_map(
             function ($item) use ($domainId) {
                 $item->domainId = $domainId;

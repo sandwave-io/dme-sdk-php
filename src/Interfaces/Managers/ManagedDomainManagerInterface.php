@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
 
@@ -11,6 +11,7 @@ use DnsMadeEasy\Managers\Multiple\MultipleDomainManager;
 
 /**
  * Manages Managed Domain resources from the API.
+ *
  * @package DnsMadeEasy\Interfaces
  *
  * @property-read MultipleDomainManager $multiple;
@@ -19,16 +20,20 @@ interface ManagedDomainManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Managed Domain.
+     *
      * @return ManagedDomainInterface
      */
     public function create(): ManagedDomainInterface;
 
     /**
      * Gets the ManagedDomain with the specified ID.
+     *
      * @param int $id
-     * @return ManagedDomainInterface
+     *
      * @throws ModelNotFoundException
      * @throws HttpException
+     *
+     * @return ManagedDomainInterface
      */
     public function get(int $id): ManagedDomainInterface;
 }

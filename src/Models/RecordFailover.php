@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -10,6 +10,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
 
 /**
  * Represents Record Failover and Monitoring Configuration.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property bool $monitor
@@ -100,7 +101,7 @@ class RecordFailover extends AbstractModel implements RecordFailoverInterface
     public function save(): void
     {
         // This is different to most other models in that we care about recordId and not id.
-        if ($this->recordId && !$this->hasChanged()) {
+        if ($this->recordId && ! $this->hasChanged()) {
             return;
         }
         $this->manager->save($this);

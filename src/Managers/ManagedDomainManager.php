@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -14,6 +14,7 @@ use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Manager for Managed Domain objects.
+ *
  * @package DnsMadeEasy\Managers
  *
  * @property-read MultipleDomainManagerInterface $multiple;
@@ -24,15 +25,27 @@ class ManagedDomainManager extends AbstractManager implements ManagedDomainManag
 
     /**
      * Manager for multiple domains.
+     *
      * @var MultipleDomainManagerInterface|null
      */
     protected ?MultipleDomainManagerInterface $multipleDomainManager = null;
 
     /**
-     * Base URI for managed domain objects
+     * Base URI for managed domain objects.
+     *
      * @var string
      */
     protected string $baseUri = '/dns/managed';
+
+    public function __get($name)
+    {
+        if ($name == 'multiple') {
+            if (! $this->multipleDomainManager) {
+                $this->multipleDomainManager = new MultipleDomainManager($this->client);
+            }
+            return $this->multipleDomainManager;
+        }
+    }
 
     public function create(): ManagedDomainInterface
     {
@@ -46,21 +59,13 @@ class ManagedDomainManager extends AbstractManager implements ManagedDomainManag
 
     /**
      * Return the name of the model class for the concise version of a managed domains.
-     * @return string
+     *
      * @throws \ReflectionException
+     *
+     * @return string
      */
     protected function getConciseModelClass(): string
     {
         return ConciseManagedDomain::class;
-    }
-
-    public function __get($name)
-    {
-        if ($name == 'multiple') {
-            if (!$this->multipleDomainManager) {
-                $this->multipleDomainManager = new MultipleDomainManager($this->client);
-            }
-            return $this->multipleDomainManager;
-        }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models\Common;
 
@@ -18,15 +18,19 @@ interface CommonManagedDomainInterface extends AbstractModelInterface
 {
     /**
      * Create a new template based on this domain.
+     *
      * @param string $name
+     *
      * @return TemplateInterface
      */
     public function createTemplate(string $name): TemplateInterface;
 
     /**
      * Get query usage for the domain.
+     *
      * @param int $year
      * @param int $month
+     *
      * @return UsageInterface[]
      */
     public function getUsage(int $year, int $month): array;

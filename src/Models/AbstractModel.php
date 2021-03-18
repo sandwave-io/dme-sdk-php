@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -14,81 +14,74 @@ use JsonSerializable;
  * An abstract class for resource models in the Dns Made Easy API.
  *
  * @package DnsMadeEasy\Models
+ *
  * @property-read int $id
  */
 abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 {
     /**
      * The manager for this object.
+     *
      * @var AbstractManagerInterface
      */
     protected AbstractManagerInterface $manager;
 
     /**
-     * The Dns Made Easy API Client
+     * The Dns Made Easy API Client.
+     *
      * @var ClientInterface
      */
     protected ClientInterface $client;
 
     /**
      * The ID of the object.
+     *
      * @var int|null
      */
     protected ?int $id = null;
 
     /**
      * A list of properties that have been modified since the object was last saved.
+     *
      * @var array
      */
     protected array $changed = [];
 
     /**
      * The properties of this object.
+     *
      * @var array
      */
     protected array $props = [];
 
     /**
      * The original properties from when the object was instantiated/last loaded from the API.
+     *
      * @var array
      */
     protected array $originalProps = [];
 
     /**
      * A list of properties that are editable on this model.
+     *
      * @var array
      */
     protected array $editable = [];
 
     /**
      * The original data retrieved from the API.
+     *
      * @var object|null
      */
     protected ?object $apiData = null;
 
-    public function save(): void
-    {
-        if ($this->id && !$this->hasChanged()) {
-            return;
-        }
-        $this->manager->save($this);
-        $this->originalProps = $this->props;
-        $this->changed = [];
-    }
-
-    public function delete(): void
-    {
-        if (!$this->id) {
-            return;
-        }
-        $this->manager->delete($this);
-    }
-
     /**
      * Creates the model and optionally populates it with data.
+     *
      * @param AbstractManagerInterface $manager
-     * @param ClientInterface $client
-     * @param object|null $data
+     * @param ClientInterface          $client
+     * @param object|null              $data
+     *
      * @internal
      */
     public function __construct(AbstractManagerInterface $manager, ClientInterface $client, ?object $data = null)
@@ -103,8 +96,11 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Returns a string representation of the model's class and ID.
-     * @return string
+     *
      * @throws \ReflectionException
+     *
+     * @return string
+     *
      * @internal
      */
     public function __toString()
@@ -117,97 +113,14 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         return "{$modelName}:{$this->id}";
     }
 
-    public function hasChanged(): bool
-    {
-        return (bool)$this->changed;
-    }
-
-    /**
-     * @param object $data
-     * @internal
-     */
-    public function populateFromApi(object $data): void
-    {
-        $this->apiData = $data;
-        $this->id = $data->id;
-        $this->parseApiData($data);
-        $this->originalProps = $this->props;
-        $this->changed = [];
-    }
-
-    /**
-     * Parses the API data and assigns it to properties on this object.
-     * @param object $data
-     */
-    protected function parseApiData(object $data): void
-    {
-        foreach ($data as $prop => $value) {
-            try {
-                $this->{$prop} = $value;
-            } catch (ReadOnlyPropertyException $ex) {
-                $this->props[$prop] = $value;
-            }
-        }
-    }
-
-    /**
-     * Generate a representation of the object for sending to the API.
-     * @return object
-     * @internal
-     */
-    public function transformForApi(): object
-    {
-        $obj = $this->jsonSerialize();
-        if ($this->id === null) {
-            unset($obj->{$this->id});
-        }
-        // These don't exist
-        foreach ($obj as $key => $value) {
-            if ($value === null || (is_array($value) && !$value)) {
-                unset($obj->$key);
-            }
-        }
-        return $obj;
-    }
-
-    /**
-     * Returns a JSON serializable representation of the resource.
-     * @return mixed|object
-     * @internal
-     */
-    public function jsonSerialize()
-    {
-        $result = (object)[
-            'id' => $this->id,
-        ];
-        foreach ($this->props as $name => $value) {
-            if ($value instanceof \DateTime) {
-                $value = $value->format('c');
-            }
-            $result->{$name} = $value;
-        }
-        return $result;
-    }
-
-    public function refresh(): void
-    {
-        $this->manager->refresh($this);
-    }
-
-    /**
-     * Returns the ID of the object. Since ID is a protected property, this is required for fetching it.
-     * @return int|null
-     */
-    protected function getId(): ?int
-    {
-        return $this->id;
-    }
-
     /**
      * Magic method to fetch properties for the object. If a get{Name} method exists, it will be called  first,
      * otherwise it will try and fetch it from the properties array.
+     *
      * @param $name
+     *
      * @return mixed
+     *
      * @internal
      */
     public function __get($name)
@@ -228,7 +141,9 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
      *
      * @param $name
      * @param $value
+     *
      * @throws ReadOnlyPropertyException
+     *
      * @internal
      */
     public function __set($name, $value)
@@ -242,5 +157,116 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         } elseif (array_key_exists($name, $this->props)) {
             throw new ReadOnlyPropertyException("Unable to set {$name}");
         }
+    }
+
+    public function save(): void
+    {
+        if ($this->id && ! $this->hasChanged()) {
+            return;
+        }
+        $this->manager->save($this);
+        $this->originalProps = $this->props;
+        $this->changed = [];
+    }
+
+    public function delete(): void
+    {
+        if (! $this->id) {
+            return;
+        }
+        $this->manager->delete($this);
+    }
+
+    public function hasChanged(): bool
+    {
+        return (bool) $this->changed;
+    }
+
+    /**
+     * @param object $data
+     *
+     * @internal
+     */
+    public function populateFromApi(object $data): void
+    {
+        $this->apiData = $data;
+        $this->id = $data->id;
+        $this->parseApiData($data);
+        $this->originalProps = $this->props;
+        $this->changed = [];
+    }
+
+    /**
+     * Generate a representation of the object for sending to the API.
+     *
+     * @return object
+     *
+     * @internal
+     */
+    public function transformForApi(): object
+    {
+        $obj = $this->jsonSerialize();
+        if ($this->id === null) {
+            unset($obj->{$this->id});
+        }
+        // These don't exist
+        foreach ($obj as $key => $value) {
+            if ($value === null || (is_array($value) && ! $value)) {
+                unset($obj->$key);
+            }
+        }
+        return $obj;
+    }
+
+    /**
+     * Returns a JSON serializable representation of the resource.
+     *
+     * @return mixed|object
+     *
+     * @internal
+     */
+    public function jsonSerialize()
+    {
+        $result = (object) [
+            'id' => $this->id,
+        ];
+        foreach ($this->props as $name => $value) {
+            if ($value instanceof \DateTime) {
+                $value = $value->format('c');
+            }
+            $result->{$name} = $value;
+        }
+        return $result;
+    }
+
+    public function refresh(): void
+    {
+        $this->manager->refresh($this);
+    }
+
+    /**
+     * Parses the API data and assigns it to properties on this object.
+     *
+     * @param object $data
+     */
+    protected function parseApiData(object $data): void
+    {
+        foreach ($data as $prop => $value) {
+            try {
+                $this->{$prop} = $value;
+            } catch (ReadOnlyPropertyException $ex) {
+                $this->props[$prop] = $value;
+            }
+        }
+    }
+
+    /**
+     * Returns the ID of the object. Since ID is a protected property, this is required for fetching it.
+     *
+     * @return int|null
+     */
+    protected function getId(): ?int
+    {
+        return $this->id;
     }
 }

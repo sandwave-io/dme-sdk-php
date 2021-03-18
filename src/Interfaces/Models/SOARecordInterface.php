@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models;
 
 /**
- * Represents an SOA Record
+ * Represents an SOA Record.
  *
  * @package DnsMadeEasy\Interfaces
  *
