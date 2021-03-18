@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Managers\FolderManagerInterface;
 use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
 use DnsMadeEasy\Models\Concise\ConciseFolder;
+use DnsMadeEasy\Models\Folder;
 
 /**
  * Manager for Folder resources.
@@ -22,6 +23,8 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
      * @var string
      */
     protected string $baseUri = '/security/folder';
+
+    protected string $model = Folder::class;
 
     /**
      * Paginates folder resources.

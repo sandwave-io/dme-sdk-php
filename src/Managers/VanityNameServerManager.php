@@ -7,6 +7,7 @@ namespace DnsMadeEasy\Managers;
 use DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface;
 use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Models\VanityNameServer;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -19,6 +20,8 @@ class VanityNameServerManager extends AbstractManager implements
                                                                  ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = VanityNameServer::class;
 
     /**
      * Base URI for Vanity NameServer resources.

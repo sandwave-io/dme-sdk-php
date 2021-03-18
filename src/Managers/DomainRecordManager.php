@@ -11,6 +11,7 @@ use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use DnsMadeEasy\Interfaces\Models\DomainRecordInterface;
 use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Managers\Multiple\MultipleRecordManager;
+use DnsMadeEasy\Models\DomainRecord;
 
 /**
  * Represents a Domain Record.
@@ -27,6 +28,8 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
      * @var string
      */
     protected string $baseUri = '/dns/managed/:domain/records';
+
+    protected string $model = DomainRecord::class;
 
     /**
      * Manager for multiple domain records.

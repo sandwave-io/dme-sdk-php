@@ -7,6 +7,7 @@ namespace DnsMadeEasy\Managers;
 use DnsMadeEasy\Interfaces\Managers\SecondaryIPSetManagerInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
+use DnsMadeEasy\Models\SecondaryIPSet;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -17,6 +18,8 @@ use DnsMadeEasy\Traits\ListableManager;
 class SecondaryIPSetManager extends AbstractManager implements SecondaryIPSetManagerInterface, ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = SecondaryIPSet::class;
 
     /**
      * Base URI for secondary domain IP sets.

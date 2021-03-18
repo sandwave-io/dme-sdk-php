@@ -311,11 +311,6 @@ parameters:
 			path: src/Managers/AbstractManager.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
 			message: "#^Method DnsMadeEasy\\\\Managers\\\\ContactListManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ContactListInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
 			count: 1
 			path: src/Managers/ContactListManager.php

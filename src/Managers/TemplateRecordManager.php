@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Managers\TemplateRecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\AbstractModelInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
+use DnsMadeEasy\Models\TemplateRecord;
 
 /**
  * Manager for Template record resources.
@@ -16,6 +17,8 @@ use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
  */
 class TemplateRecordManager extends RecordManager implements TemplateRecordManagerInterface
 {
+    protected string $model = TemplateRecord::class;
+
     /**
      * Base URI for template record resources.
      *

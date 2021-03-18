@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Managers\SecondaryDomainManagerInterface;
 use DnsMadeEasy\Interfaces\Models\SecondaryDomainInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
 use DnsMadeEasy\Models\Concise\ConciseSecondaryDomain;
+use DnsMadeEasy\Models\SecondaryDomain;
 use DnsMadeEasy\Traits\ListableManager;
 
 /**
@@ -20,6 +21,8 @@ class SecondaryDomainManager extends AbstractManager implements
                                                                 ListableManagerInterface
 {
     use ListableManager;
+
+    protected string $model = SecondaryDomain::class;
 
     /**
      * Base URI for secondary domain resources.
