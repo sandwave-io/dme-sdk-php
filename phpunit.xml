@@ -13,11 +13,14 @@
         <ini name="error_reporting" value="-1"/>
         <ini name="display_errors" value="on"/>
     </php>
-    <coverage>
-        <include>
-            <directory suffix=".php">src/</directory>
-        </include>
-    </coverage>
+	<coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">
+		<report>
+			<clover outputFile="clover.xml"/>
+		</report>
+		<include>
+			<directory suffix=".php">src</directory>
+		</include>
+	</coverage>
     <testsuites>
         <testsuite name="Tests">
             <directory>tests/</directory>
