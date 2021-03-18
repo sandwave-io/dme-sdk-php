@@ -1,0 +1,40 @@
+{
+	"delegateNameServers": [
+		"ns1.namefind.com.",
+		"ns2.namefind.com."
+	],
+	"nameServers": [
+		{
+			"ipv6": "2600:1800:0::1",
+			"ipv4": "208.94.148.2",
+			"fqdn": "ns0.dnsmadeeasy.com"
+		},
+		{
+			"ipv6": "2600:1801:1::1",
+			"ipv4": "208.80.124.2",
+			"fqdn": "ns1.dnsmadeeasy.com"
+		},
+		{
+			"ipv6": "2600:1802:2::1",
+			"ipv4": "208.80.126.2",
+			"fqdn": "ns2.dnsmadeeasy.com"
+		},
+		{
+			"ipv6": "2600:1801:3::1",
+			"ipv4": "208.80.125.2",
+			"fqdn": "ns3.dnsmadeeasy.com"
+		},
+		{
+			"ipv6": "2600:1802:4::1",
+			"ipv4": "208.80.127.2",
+			"fqdn": "ns4.dnsmadeeasy.com"
+		}
+	],
+	"updated": 1504807431610,
+	"processMulti": false,
+	"activeThirdParties": [],
+	"created": 1398384000000,
+	"pendingActionId": 0,
+	"name": "exampledomain.com",
+	"id": 1119443
+}
