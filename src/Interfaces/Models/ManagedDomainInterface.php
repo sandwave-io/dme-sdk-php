@@ -13,8 +13,16 @@ use DnsMadeEasy\Models\TransferAcl;
  *
  * @package DnsMadeEasy\Interfaces
  *
+ * @property string $name
+ * @property-read array $activeThirdParties
+ * @property-read \DateTime $created
+ * @property-read \DateTime $updated
  * @property bool $gtdEnabled
- * @property-read int $soaID
+ * @property-read string[] $axfrServers
+ * @property-read string[] $delegateNameServers
+ * @property-read object[] $nameServers
+ * @property SOARecordInterface $soa;
+ * @property int $soaID
  * @property VanityNameServerInterface $vanity
  * @property int $vanityId
  * @property TransferAcl $transferAcl
