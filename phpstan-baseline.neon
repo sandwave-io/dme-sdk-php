@@ -316,26 +316,6 @@ parameters:
 			path: src/Managers/AbstractManager.php
 
 		-
-			message: "#^Call to function array_key_exists\\(\\) with array and 'id' will always evaluate to false\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Parameter \\#1 \\$key of function array_key_exists expects int\\|string, array given\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, string given\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Result of && is always false\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
 			message: "#^Method DnsMadeEasy\\\\Managers\\\\ContactListManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ContactListInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
 			count: 1
 			path: src/Managers/ContactListManager.php

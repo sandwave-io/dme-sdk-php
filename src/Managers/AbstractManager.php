@@ -293,7 +293,7 @@ abstract class AbstractManager implements AbstractManagerInterface
             return "{$name}:{$input}";
         } elseif (is_object($input) && property_exists($input, 'id')) {
             return "{$name}:{$input->id}";
-        } elseif (is_array($input) && array_key_exists($input, 'id')) {
+        } elseif (is_array($input) && array_key_exists('id', $input)) {
             return "{$name}:{$input['id']}";
         }
         return "{$name}:" . (string) $input;
