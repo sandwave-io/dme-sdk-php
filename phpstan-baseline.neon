@@ -11,6 +11,16 @@ parameters:
 			path: src/Client.php
 
 		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:__get\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Client\\:\\:__get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
 			message: "#^Method DnsMadeEasy\\\\Client\\:\\:get\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Client.php
@@ -61,7 +71,7 @@ parameters:
 			path: src/Client.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 88$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 93$#"
 			count: 1
 			path: src/Client.php
 
@@ -71,17 +81,7 @@ parameters:
 			path: src/Client.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 69$#"
-			count: 1
-			path: src/Client.php
-
-		-
-			message: "#^Method DnsMadeEasy\\\\Client\\:\\:__get\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: src/Client.php
-
-		-
-			message: "#^Method DnsMadeEasy\\\\Client\\:\\:__get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 74$#"
 			count: 1
 			path: src/Client.php
 
@@ -106,7 +106,7 @@ parameters:
 			path: src/Interfaces/ClientInterface.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$payload\\)\\: Unexpected token \"\\$payload\", expected type at offset 210$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$payload\\)\\: Unexpected token \"\\$payload\", expected type at offset 213$#"
 			count: 1
 			path: src/Interfaces/ClientInterface.php
 
@@ -116,7 +116,7 @@ parameters:
 			path: src/Interfaces/ClientInterface.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$payload\\)\\: Unexpected token \"\\$payload\", expected type at offset 209$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$payload\\)\\: Unexpected token \"\\$payload\", expected type at offset 212$#"
 			count: 1
 			path: src/Interfaces/ClientInterface.php
 
@@ -126,7 +126,7 @@ parameters:
 			path: src/Interfaces/Managers/AbstractManagerInterface.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 66$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 71$#"
 			count: 1
 			path: src/Interfaces/Managers/AbstractManagerInterface.php
 
@@ -146,12 +146,12 @@ parameters:
 			path: src/Interfaces/Managers/AbstractManagerInterface.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 64$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 69$#"
 			count: 1
 			path: src/Interfaces/Managers/AbstractManagerInterface.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 84$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 88$#"
 			count: 1
 			path: src/Interfaces/Managers/AbstractManagerInterface.php
 
@@ -166,7 +166,7 @@ parameters:
 			path: src/Interfaces/Managers/AbstractManagerInterface.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 67$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 72$#"
 			count: 1
 			path: src/Interfaces/Managers/AbstractManagerInterface.php
 
@@ -206,26 +206,6 @@ parameters:
 			path: src/Interfaces/Traits/ListableManagerInterface.php
 
 		-
-			message: "#^If condition is always true\\.$#"
-			count: 2
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Only booleans are allowed in an if condition, DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface given\\.$#"
-			count: 2
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 2
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Only booleans are allowed in a negated boolean, string\\|null given\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
 			message: "#^Only booleans are allowed in a negated boolean, int given\\.$#"
 			count: 2
 			path: src/Managers/AbstractManager.php
@@ -236,47 +216,12 @@ parameters:
 			path: src/Managers/AbstractManager.php
 
 		-
-			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:getObjectId\\(\\) has parameter \\$input with no typehint specified\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$input\\)\\: Unexpected token \"\\$input\", expected type at offset 85$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Call to function array_key_exists\\(\\) with array and 'id' will always evaluate to false\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Parameter \\#1 \\$key of function array_key_exists expects int\\|string, array given\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, string given\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
-			message: "#^Result of && is always false\\.$#"
-			count: 1
-			path: src/Managers/AbstractManager.php
-
-		-
 			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:getFromCache\\(\\) has parameter \\$key with no typehint specified\\.$#"
 			count: 1
 			path: src/Managers/AbstractManager.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 66$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 71$#"
 			count: 1
 			path: src/Managers/AbstractManager.php
 
@@ -306,12 +251,12 @@ parameters:
 			path: src/Managers/AbstractManager.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 64$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$key\\)\\: Unexpected token \"\\$key\", expected type at offset 69$#"
 			count: 1
 			path: src/Managers/AbstractManager.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 84$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 88$#"
 			count: 1
 			path: src/Managers/AbstractManager.php
 
@@ -326,12 +271,67 @@ parameters:
 			path: src/Managers/AbstractManager.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 67$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$object\\)\\: Unexpected token \"\\$object\", expected type at offset 72$#"
 			count: 1
 			path: src/Managers/AbstractManager.php
 
 		-
 			message: "#^Call to function array_search\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 2
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface given\\.$#"
+			count: 2
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 2
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, string\\|null given\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\AbstractManager\\:\\:getObjectId\\(\\) has parameter \\$input with no typehint specified\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$input\\)\\: Unexpected token \"\\$input\", expected type at offset 90$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Call to function array_key_exists\\(\\) with array and 'id' will always evaluate to false\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Parameter \\#1 \\$key of function array_key_exists expects int\\|string, array given\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, string given\\.$#"
+			count: 1
+			path: src/Managers/AbstractManager.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
 			count: 1
 			path: src/Managers/AbstractManager.php
 
@@ -361,26 +361,6 @@ parameters:
 			path: src/Managers/ContactListManager.php
 
 		-
-			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
-			count: 1
-			path: src/Managers/DomainRecordManager.php
-
-		-
-			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
-			count: 1
-			path: src/Managers/DomainRecordManager.php
-
-		-
-			message: "#^Parameter \\#2 \\$replace of function str_replace expects array\\|string, int given\\.$#"
-			count: 1
-			path: src/Managers/DomainRecordManager.php
-
-		-
-			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\:\\:setDomain\\(\\)\\.$#"
-			count: 1
-			path: src/Managers/DomainRecordManager.php
-
-		-
 			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:__get\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Managers/DomainRecordManager.php
@@ -397,6 +377,26 @@ parameters:
 
 		-
 			message: "#^Parameter \\#2 \\$domain of class DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleRecordManager constructor expects DnsMadeEasy\\\\Interfaces\\\\Models\\\\Common\\\\CommonManagedDomainInterface, DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface\\|null given\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\DomainRecordManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\DomainRecordInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Parameter \\#2 \\$replace of function str_replace expects array\\|string, int given\\.$#"
+			count: 1
+			path: src/Managers/DomainRecordManager.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\:\\:setDomain\\(\\)\\.$#"
 			count: 1
 			path: src/Managers/DomainRecordManager.php
 
@@ -431,16 +431,6 @@ parameters:
 			path: src/Managers/FolderManager.php
 
 		-
-			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
-			count: 1
-			path: src/Managers/ManagedDomainManager.php
-
-		-
-			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
-			count: 1
-			path: src/Managers/ManagedDomainManager.php
-
-		-
 			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:__get\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Managers/ManagedDomainManager.php
@@ -452,6 +442,16 @@ parameters:
 
 		-
 			message: "#^Only booleans are allowed in a negated boolean, DnsMadeEasy\\\\Interfaces\\\\Managers\\\\MultipleDomainManagerInterface\\|null given\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:create\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
+			count: 1
+			path: src/Managers/ManagedDomainManager.php
+
+		-
+			message: "#^Method DnsMadeEasy\\\\Managers\\\\ManagedDomainManager\\:\\:get\\(\\) should return DnsMadeEasy\\\\Interfaces\\\\Models\\\\ManagedDomainInterface but returns DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\.$#"
 			count: 1
 			path: src/Managers/ManagedDomainManager.php
 
@@ -469,16 +469,6 @@ parameters:
 			message: "#^Anonymous function should have native return typehint \"DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\"\\.$#"
 			count: 1
 			path: src/Managers/ManagedDomainManager.php
-
-		-
-			message: "#^Only booleans are allowed in a negated boolean, object\\|null given\\.$#"
-			count: 1
-			path: src/Managers/Multiple/MultipleDomainManager.php
-
-		-
-			message: "#^Variable property access on object\\.$#"
-			count: 1
-			path: src/Managers/Multiple/MultipleDomainManager.php
 
 		-
 			message: "#^Method DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleDomainManager\\:\\:create\\(\\) has parameter \\$domainNames with no value type specified in iterable type array\\.$#"
@@ -517,6 +507,16 @@ parameters:
 
 		-
 			message: "#^Method DnsMadeEasy\\\\Managers\\\\Multiple\\\\MultipleDomainManager\\:\\:delete\\(\\) has parameter \\$ids with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, object\\|null given\\.$#"
+			count: 1
+			path: src/Managers/Multiple/MultipleDomainManager.php
+
+		-
+			message: "#^Variable property access on object\\.$#"
 			count: 1
 			path: src/Managers/Multiple/MultipleDomainManager.php
 
@@ -806,47 +806,7 @@ parameters:
 			path: src/Models/AbstractModel.php
 
 		-
-			message: "#^Only booleans are allowed in &&, int\\|null given on the left side\\.$#"
-			count: 1
-			path: src/Models/AbstractModel.php
-
-		-
-			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
-			count: 1
-			path: src/Models/AbstractModel.php
-
-		-
 			message: "#^Only booleans are allowed in an if condition, object\\|null given\\.$#"
-			count: 1
-			path: src/Models/AbstractModel.php
-
-		-
-			message: "#^Access to an undefined property object\\:\\:\\$id\\.$#"
-			count: 1
-			path: src/Models/AbstractModel.php
-
-		-
-			message: "#^Argument of an invalid type object supplied for foreach, only iterables are supported\\.$#"
-			count: 1
-			path: src/Models/AbstractModel.php
-
-		-
-			message: "#^Variable property access on \\$this\\(DnsMadeEasy\\\\Models\\\\AbstractModel\\)\\.$#"
-			count: 1
-			path: src/Models/AbstractModel.php
-
-		-
-			message: "#^Variable property access on mixed\\.$#"
-			count: 2
-			path: src/Models/AbstractModel.php
-
-		-
-			message: "#^Only booleans are allowed in a negated boolean, array given\\.$#"
-			count: 1
-			path: src/Models/AbstractModel.php
-
-		-
-			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:refresh\\(\\)\\.$#"
 			count: 1
 			path: src/Models/AbstractModel.php
 
@@ -856,7 +816,7 @@ parameters:
 			path: src/Models/AbstractModel.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 202$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 206$#"
 			count: 1
 			path: src/Models/AbstractModel.php
 
@@ -886,17 +846,57 @@ parameters:
 			path: src/Models/AbstractModel.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 309$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$name\\)\\: Unexpected token \"\\$name\", expected type at offset 303$#"
 			count: 1
 			path: src/Models/AbstractModel.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$value\\)\\: Unexpected token \"\\$value\", expected type at offset 330$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$value\\)\\: Unexpected token \"\\$value\", expected type at offset 323$#"
 			count: 1
 			path: src/Models/AbstractModel.php
 
 		-
 			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Only booleans are allowed in &&, int\\|null given on the left side\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$id\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Variable property access on mixed\\.$#"
+			count: 2
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, array given\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\AbstractManagerInterface\\:\\:refresh\\(\\)\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Argument of an invalid type object supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/Models/AbstractModel.php
+
+		-
+			message: "#^Variable property access on \\$this\\(DnsMadeEasy\\\\Models\\\\AbstractModel\\)\\.$#"
 			count: 1
 			path: src/Models/AbstractModel.php
 
@@ -1041,6 +1041,21 @@ parameters:
 			path: src/Models/ManagedDomain.php
 
 		-
+			message: "#^Access to an undefined property object\\:\\:\\$updated\\.$#"
+			count: 2
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Only booleans are allowed in a ternary operator condition, object\\|null given\\.$#"
+			count: 2
+			path: src/Models/ManagedDomain.php
+
+		-
+			message: "#^Access to an undefined property object\\:\\:\\$created\\.$#"
+			count: 2
+			path: src/Models/ManagedDomain.php
+
+		-
 			message: "#^Method DnsMadeEasy\\\\Models\\\\ManagedDomain\\:\\:setFolder\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Models/ManagedDomain.php
@@ -1051,7 +1066,7 @@ parameters:
 			path: src/Models/ManagedDomain.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$folder\\)\\: Unexpected token \"\\$folder\", expected type at offset 55$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$folder\\)\\: Unexpected token \"\\$folder\", expected type at offset 60$#"
 			count: 1
 			path: src/Models/ManagedDomain.php
 
@@ -1066,7 +1081,7 @@ parameters:
 			path: src/Models/ManagedDomain.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$vanity\\)\\: Unexpected token \"\\$vanity\", expected type at offset 70$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$vanity\\)\\: Unexpected token \"\\$vanity\", expected type at offset 75$#"
 			count: 1
 			path: src/Models/ManagedDomain.php
 
@@ -1081,7 +1096,7 @@ parameters:
 			path: src/Models/ManagedDomain.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$transferAcl\\)\\: Unexpected token \"\\$transferAcl\", expected type at offset 65$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$transferAcl\\)\\: Unexpected token \"\\$transferAcl\", expected type at offset 70$#"
 			count: 1
 			path: src/Models/ManagedDomain.php
 
@@ -1096,7 +1111,7 @@ parameters:
 			path: src/Models/ManagedDomain.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$template\\)\\: Unexpected token \"\\$template\", expected type at offset 61$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$template\\)\\: Unexpected token \"\\$template\", expected type at offset 66$#"
 			count: 1
 			path: src/Models/ManagedDomain.php
 
@@ -1111,7 +1126,7 @@ parameters:
 			path: src/Models/ManagedDomain.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$soa\\)\\: Unexpected token \"\\$soa\", expected type at offset 69$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$soa\\)\\: Unexpected token \"\\$soa\", expected type at offset 74$#"
 			count: 1
 			path: src/Models/ManagedDomain.php
 
@@ -1136,21 +1151,6 @@ parameters:
 			path: src/Models/ManagedDomain.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$updated\\.$#"
-			count: 2
-			path: src/Models/ManagedDomain.php
-
-		-
-			message: "#^Only booleans are allowed in a ternary operator condition, object\\|null given\\.$#"
-			count: 2
-			path: src/Models/ManagedDomain.php
-
-		-
-			message: "#^Access to an undefined property object\\:\\:\\$created\\.$#"
-			count: 2
-			path: src/Models/ManagedDomain.php
-
-		-
 			message: "#^Property DnsMadeEasy\\\\Models\\\\Record\\:\\:\\$props type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Models/Record.php
@@ -1161,17 +1161,17 @@ parameters:
 			path: src/Models/Record.php
 
 		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/Record.php
+
+		-
 			message: "#^Method DnsMadeEasy\\\\Models\\\\Record\\:\\:setType\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Models/Record.php
 
 		-
 			message: "#^Only booleans are allowed in &&, int\\|null given on the left side\\.$#"
-			count: 1
-			path: src/Models/Record.php
-
-		-
-			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
 			count: 1
 			path: src/Models/Record.php
 
@@ -1211,6 +1211,16 @@ parameters:
 			path: src/Models/SecondaryDomain.php
 
 		-
+			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
+			count: 1
+			path: src/Models/SecondaryDomain.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int given\\.$#"
+			count: 2
+			path: src/Models/SecondaryDomain.php
+
+		-
 			message: "#^Method DnsMadeEasy\\\\Models\\\\SecondaryDomain\\:\\:setFolder\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Models/SecondaryDomain.php
@@ -1221,7 +1231,7 @@ parameters:
 			path: src/Models/SecondaryDomain.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$folder\\)\\: Unexpected token \"\\$folder\", expected type at offset 76$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$folder\\)\\: Unexpected token \"\\$folder\", expected type at offset 81$#"
 			count: 1
 			path: src/Models/SecondaryDomain.php
 
@@ -1262,16 +1272,6 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property object\\:\\:\\$ipSet\\.$#"
-			count: 2
-			path: src/Models/SecondaryDomain.php
-
-		-
-			message: "#^Only booleans are allowed in a negated boolean, int\\|null given\\.$#"
-			count: 1
-			path: src/Models/SecondaryDomain.php
-
-		-
-			message: "#^Only booleans are allowed in an if condition, int given\\.$#"
 			count: 2
 			path: src/Models/SecondaryDomain.php
 
