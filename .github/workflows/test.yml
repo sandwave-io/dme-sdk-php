@@ -41,3 +41,8 @@ jobs:
 
       - name: Run testsuite
         run: vendor/bin/phpunit
+
+      - name: Upload code coverage
+        env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: bash <(curl -s https://codecov.io/bash)
