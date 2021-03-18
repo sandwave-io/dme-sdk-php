@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models\Concise;
 
@@ -10,7 +10,7 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
 use DnsMadeEasy\Interfaces\Models\TemplateInterface;
 
 /**
- * Represents a concise version of a Managed Domain resource
+ * Represents a concise version of a Managed Domain resource.
  *
  * @package DnsMadeEasy\Interfaces
  *
@@ -21,7 +21,6 @@ use DnsMadeEasy\Interfaces\Models\TemplateInterface;
  * @property-read bool $gtdEnabled
  * @property-read string[] $axfrServers
  * @property-read string[] $delegateNameservers
- *
  * @property-read FolderInterface $folder
  * @property-read int $folderId
  * @property-read TemplateInterface $template

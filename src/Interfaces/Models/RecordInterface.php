@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models;
 
 /**
- * Represents a Record
+ * Represents a Record.
  *
  * @package DnsMadeEasy\Interfaces
  *

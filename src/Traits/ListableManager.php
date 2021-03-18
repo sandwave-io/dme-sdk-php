@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Traits;
 
@@ -17,11 +17,13 @@ trait ListableManager
      * By default this is a Paginator with a similar interface to the LengthAwarePaginator that is provided with
      * Laravel.
      *
-     * @param int $page
-     * @param int $perPage
+     * @param int        $page
+     * @param int        $perPage
      * @param array|null $filters
-     * @return Paginator|mixed
+     *
      * @throws HttpException
+     *
+     * @return Paginator|mixed
      */
     public function paginate(int $page = 1, int $perPage = 20, $filters = [])
     {
@@ -30,11 +32,11 @@ trait ListableManager
                 'rows' => $perPage,
             ];
         $response = $this->client->get($this->getBaseUri(), $params);
-        $data = json_decode((string)$response->getBody());
+        $data = json_decode((string) $response->getBody());
         $items = array_map(
             function ($data) {
                 $data = $this->transformConciseApiData($data);
-                return $this->createExistingObject($data, $this->getConciseModelClass());;
+                return $this->createExistingObject($data, $this->getConciseModelClass());
             },
             $data->data
         );

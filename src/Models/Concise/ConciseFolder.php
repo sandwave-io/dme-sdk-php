@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models\Concise;
 
@@ -19,13 +19,29 @@ use DnsMadeEasy\Models\Common\CommonFolder;
  */
 class ConciseFolder extends CommonFolder implements ConciseFolderInterface
 {
-
     protected array $props = [
         'name' => null,
     ];
 
     /**
+     * Override the save method, we can't save concise resources, so we don't do anything.
+     *
+     * @internal
+     */
+    public function save(): void
+    {
+    }
+
+    /**
+     * Override the refresh method. Refreshing it would fetch the full version of the resource.
+     */
+    public function refresh(): void
+    {
+    }
+
+    /**
      * Get the full representation of the Folder.
+     *
      * @return FolderInterface
      */
     protected function getFull(): FolderInterface
@@ -34,24 +50,8 @@ class ConciseFolder extends CommonFolder implements ConciseFolderInterface
     }
 
     /**
-     * Override the save method, we can't save concise resources, so we don't do anything.
-     * @internal
-     */
-    public function save(): void
-    {
-        return;
-    }
-
-    /**
-     * Override the refresh method. Refreshing it would fetch the full version of the resource.
-     */
-    public function refresh(): void
-    {
-        return;
-    }
-
-    /**
      * Parse the API data and assign it to properties on this model.
+     *
      * @param object $data
      */
     protected function parseApiData(object $data): void

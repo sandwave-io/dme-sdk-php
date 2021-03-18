@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models;
 
@@ -9,7 +9,7 @@ use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
 use DnsMadeEasy\Models\TransferAcl;
 
 /**
- * Represents a Managed Domain resource
+ * Represents a Managed Domain resource.
  *
  * @package DnsMadeEasy\Interfaces
  *

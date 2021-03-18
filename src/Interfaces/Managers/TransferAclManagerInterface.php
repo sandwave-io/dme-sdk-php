@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
 
@@ -9,21 +9,26 @@ use DnsMadeEasy\Interfaces\Models\TransferAclInterface;
 
 /**
  * Manages Transfer ACL resources from the API.
+ *
  * @package DnsMadeEasy\Interfaces
  */
 interface TransferAclManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Transfer ACL resource.
+     *
      * @return TransferAclInterface
      */
     public function create(): TransferAclInterface;
 
     /**
      * Returns the TransferAcl resource with the specified ID.
+     *
      * @param int $id
-     * @return TransferAclInterface
+     *
      * @throws HttpException
+     *
+     * @return TransferAclInterface
      */
     public function get(int $id): TransferAclInterface;
 }

@@ -24,7 +24,8 @@
         "symfony/var-dumper": "^5.1",
         "phpstan/phpstan-strict-rules": "^0.12.9",
         "phpstan/phpstan-phpunit": "^0.12.18",
-        "phpstan/phpstan-deprecation-rules": "^0.12.6"
+        "phpstan/phpstan-deprecation-rules": "^0.12.6",
+        "uptimeproject/php-cs-fixer-config": "^1.0.0"
     },
     "config": {
         "optimize-autoloader": true,

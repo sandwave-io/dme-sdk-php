@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -9,6 +9,7 @@ use DnsMadeEasy\Models\Common\CommonFolder;
 
 /**
  * Represents a Folder resource.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property string $name

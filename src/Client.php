@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy;
 
@@ -43,7 +43,8 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
 /**
- * DNS Made Easy API Client SDK
+ * DNS Made Easy API Client SDK.
+ *
  * @package DnsMadeEasy
  *
  * @property-read ContactListManagerInterface $contactlists
@@ -61,49 +62,56 @@ use Psr\Log\NullLogger;
 class Client implements ClientInterface, LoggerAwareInterface
 {
     /**
+     * Logger interface to use for log messages.
+     *
+     * @var LoggerInterface|NullLogger|null
+     */
+    public LoggerInterface $logger;
+    /**
      * The HTTP Client for all requests.
+     *
      * @var HttpClientInterface
      */
     protected HttpClientInterface $client;
 
     /**
-     * The DNS Made Easy API Key
+     * The DNS Made Easy API Key.
+     *
      * @var string
      */
     protected string $apiKey;
 
     /**
-     * The DNS Made Easy Secret Key
+     * The DNS Made Easy Secret Key.
+     *
      * @var string
      */
     protected string $secretKey;
 
     /**
-     * The DNS Made Easy API Endpoint
+     * The DNS Made Easy API Endpoint.
+     *
      * @var string
      */
     protected string $endpoint = 'https://api.dnsmadeeasy.com/V2.0';
 
     /**
-     * The pagination factory to use for paginated resource collections
+     * The pagination factory to use for paginated resource collections.
+     *
      * @var PaginatorFactoryInterface|PaginatorFactory
      */
     protected PaginatorFactoryInterface $paginatorFactory;
 
     /**
-     * Logger interface to use for log messages
-     * @var LoggerInterface|NullLogger|null
-     */
-    public LoggerInterface $logger;
-
-    /**
      * A cache of instantiated manager classes.
+     *
      * @var array
      */
     protected array $managers = [];
 
     /**
      * A map of manager names to classes.
+     *
      * @var array|string[]
      */
     protected array $managerMap = [
@@ -121,18 +129,21 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * The ID of the last request to the API.
+     *
      * @var string|null
      */
     protected ?string $requestId;
 
     /**
      * The request limit on the API.
+     *
      * @var int|null
      */
     protected ?int $requestLimit;
 
     /**
      * The number of requests remaining until the limit is hit.
+     *
      * @var int|null
      */
     protected ?int $requestsRemaining;
@@ -140,9 +151,9 @@ class Client implements ClientInterface, LoggerAwareInterface
     /**
      * Creates a new client.
      *
-     * @param HttpClientInterface|null $client
+     * @param HttpClientInterface|null       $client
      * @param PaginatorFactoryInterface|null $paginatorFactory
-     * @param LoggerInterface|null $logger
+     * @param LoggerInterface|null           $logger
      */
     public function __construct(
         ?HttpClientInterface $client = null,
@@ -151,12 +162,12 @@ class Client implements ClientInterface, LoggerAwareInterface
     ) {
         // If we weren't given a HTTP client, create a new Guzzle client.
         if ($client === null) {
-            $client = new \GuzzleHttp\Client;
+            $client = new \GuzzleHttp\Client();
         }
 
         // If we don't have a paginator factory, use our own.
         if ($paginatorFactory === null) {
-            $this->paginatorFactory = new PaginatorFactory;
+            $this->paginatorFactory = new PaginatorFactory();
         }
 
         $this->setHttpClient($client);
@@ -166,6 +177,22 @@ class Client implements ClientInterface, LoggerAwareInterface
             $logger = new NullLogger();
         }
         $this->logger = $logger;
+    }
+
+    public function __get($name)
+    {
+        // Usage is a special manager and not like the others.
+        if ($name == 'usage') {
+            if (! isset($this->managers['usage'])) {
+                $this->managers['usage'] = new UsageManager($this);
+            }
+            return $this->managers['usage'];
+        }
+
+        // If we have a manager with this name, return it.
+        if ($this->hasManager($name)) {
+            return $this->getManager($name);
+        }
     }
 
     public function setLogger(LoggerInterface $logger)
@@ -277,49 +304,27 @@ class Client implements ClientInterface, LoggerAwareInterface
         $this->logger->debug("[DnsMadeEasy] API Response: {$response->getStatusCode()} {$response->getReasonPhrase()}");
         $this->updateLimits($response);
         $statusCode = $response->getStatusCode();
-        if ((int)substr((string)$statusCode, 0, 1) <= 3) {
+        if ((int) substr((string) $statusCode, 0, 1) <= 3) {
             return $response;
-        } else {
-            $lookup = [
+        }
+        $lookup = [
                 400 => BadRequestException::class,
                 404 => NotFoundException::class,
             ];
-            if (array_key_exists($statusCode, $lookup)) {
-                $exceptionClass = $lookup[$statusCode];
-            } else {
-                $exceptionClass = HttpException::class;
-            }
-            $exception = new $exceptionClass($response->getReasonPhrase(), $statusCode);
-            $exception->setRequest($request);
-            $exception->setResponse($response);
-            throw $exception;
+        if (array_key_exists($statusCode, $lookup)) {
+            $exceptionClass = $lookup[$statusCode];
+        } else {
+            $exceptionClass = HttpException::class;
         }
-    }
-
-    /**
-     * Fetch the API request details from the last API response.
-     * @param ResponseInterface $response
-     */
-    protected function updateLimits(ResponseInterface $response)
-    {
-        $this->requestId = current($response->getHeader('x-dnsme-requestId'));
-        if ($this->requestId === false) {
-            $this->requestId = null;
-        }
-
-        $this->requestsRemaining = (int)current($response->getHeader('x-dnsme-requestsRemaining'));
-        if ($this->requestsRemaining === false) {
-            $this->requestsRemaining = null;
-        }
-
-        $this->requestLimit = (int)current($response->getHeader('x-dnsme-requestLimit'));
-        if ($this->requestLimit === false) {
-            $this->requestLimit = null;
-        }
+        $exception = new $exceptionClass($response->getReasonPhrase(), $statusCode);
+        $exception->setRequest($request);
+        $exception->setResponse($response);
+        throw $exception;
     }
 
     /**
      * Return the ID of the last API request.
+     *
      * @return string|null
      */
     public function getLastRequestId(): ?string
@@ -329,6 +334,7 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Get the request limit.
+     *
      * @return int|null
      */
     public function getRequestLimit(): ?int
@@ -338,6 +344,7 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Get the number of requests remaining before you hit the request limit.
+     *
      * @return int|null
      */
     public function getRequestsRemaining(): ?int
@@ -346,10 +353,36 @@ class Client implements ClientInterface, LoggerAwareInterface
     }
 
     /**
+     * Fetch the API request details from the last API response.
+     *
+     * @param ResponseInterface $response
+     */
+    protected function updateLimits(ResponseInterface $response)
+    {
+        $this->requestId = current($response->getHeader('x-dnsme-requestId'));
+        if ($this->requestId === false) {
+            $this->requestId = null;
+        }
+
+        $this->requestsRemaining = (int) current($response->getHeader('x-dnsme-requestsRemaining'));
+        if ($this->requestsRemaining === false) {
+            $this->requestsRemaining = null;
+        }
+
+        $this->requestLimit = (int) current($response->getHeader('x-dnsme-requestLimit'));
+        if ($this->requestLimit === false) {
+            $this->requestLimit = null;
+        }
+    }
+
+    /**
      * Adds auth headers to requests. These are generated based on the Api Key and the Secret Key.
+     *
      * @param RequestInterface $request
-     * @return RequestInterface
+     *
      * @throws \Exception
+     *
+     * @return RequestInterface
      */
     protected function addAuthHeaders(RequestInterface $request): RequestInterface
     {
@@ -365,7 +398,9 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Check if a manager exists with that name in our manager map.
+     *
      * @param $name
+     *
      * @return bool
      */
     protected function hasManager($name): bool
@@ -376,38 +411,25 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Gets the manager with the specified name.
+     *
      * @param $name
-     * @return AbstractManagerInterface
+     *
      * @throws ManagerNotFoundException
+     *
+     * @return AbstractManagerInterface
      */
     protected function getManager($name): AbstractManagerInterface
     {
-        if (!$this->hasManager($name)) {
-            throw new ManagerNotFoundException;
+        if (! $this->hasManager($name)) {
+            throw new ManagerNotFoundException();
         }
 
         $name = strtolower($name);
 
-        if (!isset($this->managers[$name])) {
+        if (! isset($this->managers[$name])) {
             $this->managers[$name] = new $this->managerMap[$name]($this);
         }
 
         return $this->managers[$name];
-    }
-
-    public function __get($name)
-    {
-        // Usage is a special manager and not like the others.
-        if ($name == 'usage') {
-            if (!isset($this->managers['usage'])) {
-                $this->managers['usage'] = new UsageManager($this);
-            }
-            return $this->managers['usage'];
-        }
-
-        // If we have a manager with this name, return it.
-        if ($this->hasManager($name)) {
-            return $this->getManager($name);
-        }
     }
 }

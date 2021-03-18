@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -8,6 +8,7 @@ use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 
 /**
  * Represents a Contact List resource.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property string $name
@@ -36,7 +37,7 @@ class ContactList extends AbstractModel implements ContactListInterface
                 return $this;
             }
         }
-        $emails[] = (object)[
+        $emails[] = (object) [
             'email' => $email,
             'confirmed' => false,
         ];

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Managers;
 
@@ -10,22 +10,27 @@ use DnsMadeEasy\Interfaces\Models\ContactListInterface;
 
 /**
  * Manages ContactList objects from the API.
+ *
  * @package DnsMadeEasy\Interfaces
  */
 interface ContactListManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new ContactList.
+     *
      * @return ContactListInterface
      */
     public function create(): ContactListInterface;
 
     /**
      * Gets the ContactList with the specified ID.
+     *
      * @param int $id
-     * @return ContactListInterface
+     *
      * @throws ModelNotFoundException
      * @throws HttpException
+     *
+     * @return ContactListInterface
      */
     public function get(int $id): ContactListInterface;
 }

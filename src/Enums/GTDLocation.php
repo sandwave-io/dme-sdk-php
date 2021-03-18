@@ -1,13 +1,14 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Enums;
 
 use Spatie\Enum\Enum;
 
 /**
- * Enums to represent Global Traffic Director locations
+ * Enums to represent Global Traffic Director locations.
+ *
  * @package DnsMadeEasy\Enums
  *
  * @method static self DEFAULT()
@@ -19,5 +20,4 @@ use Spatie\Enum\Enum;
  */
 class GTDLocation extends Enum
 {
-
 }

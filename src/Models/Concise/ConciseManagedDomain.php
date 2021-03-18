@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models\Concise;
 
@@ -23,7 +23,6 @@ use DnsMadeEasy\Models\Common\CommonManagedDomain;
  * @property-read bool $gtdEnabled
  * @property-read string[] $axfrServers
  * @property-read string[] $delegateNameservers
- *
  * @property-read FolderInterface $folder
  * @property-read int $folderId
  * @property-read TemplateInterface $template
@@ -32,7 +31,6 @@ use DnsMadeEasy\Models\Common\CommonManagedDomain;
  */
 class ConciseManagedDomain extends CommonManagedDomain implements ConciseManagedDomainInterface
 {
-
     protected array $props = [
         'name' => null,
         'activeThirdParties' => [],
@@ -47,21 +45,12 @@ class ConciseManagedDomain extends CommonManagedDomain implements ConciseManaged
     ];
 
     /**
-     * Retrieves the full representation of the ManagedDomain.
-     * @return ManagedDomainInterface
-     */
-    protected function getFull(): ManagedDomainInterface
-    {
-        return $this->manager->get($this->id);
-    }
-
-    /**
      * Override the save method, we can't save concise resources, so we don't do anything.
+     *
      * @internal
      */
     public function save(): void
     {
-        return;
     }
 
     /**
@@ -69,6 +58,15 @@ class ConciseManagedDomain extends CommonManagedDomain implements ConciseManaged
      */
     public function refresh(): void
     {
-        return;
+    }
+
+    /**
+     * Retrieves the full representation of the ManagedDomain.
+     *
+     * @return ManagedDomainInterface
+     */
+    protected function getFull(): ManagedDomainInterface
+    {
+        return $this->manager->get($this->id);
     }
 }

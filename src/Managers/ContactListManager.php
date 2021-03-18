@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -11,6 +11,7 @@ use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Represents a Contact List API resource.
+ *
  * @package DnsMadeEasy\Managers
  */
 class ContactListManager extends AbstractManager implements ContactListManagerInterface, ListableManagerInterface
@@ -19,6 +20,7 @@ class ContactListManager extends AbstractManager implements ContactListManagerIn
 
     /**
      * The base URI for contact lists.
+     *
      * @var string
      */
     protected string $baseUri = '/contactList';

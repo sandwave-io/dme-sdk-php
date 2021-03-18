@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Interfaces\Models;
 
 use DnsMadeEasy\Interfaces\Models\Common\CommonSecondaryDomainInterface;
 
 /**
- * Represents a Managed Domain resource
+ * Represents a Managed Domain resource.
  *
  * @package DnsMadeEasy\Interfaces
  *
@@ -17,7 +17,6 @@ use DnsMadeEasy\Interfaces\Models\Common\CommonSecondaryDomainInterface;
  * @property-read bool $gtdEnabled
  * @property-read int $nameServerGroupId
  * @property-read int $pendingActionId
- *
  * @property SecondaryIPSetInterface $ipSet
  * @property int $ipSetId
  * @property FolderInterface $folder

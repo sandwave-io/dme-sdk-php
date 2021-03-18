@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers;
 
@@ -11,6 +11,7 @@ use DnsMadeEasy\Traits\ListableManager;
 
 /**
  * Manager for Secondary Domain IP sets.
+ *
  * @package DnsMadeEasy\Managers
  */
 class SecondaryIPSetManager extends AbstractManager implements SecondaryIPSetManagerInterface, ListableManagerInterface
@@ -19,6 +20,7 @@ class SecondaryIPSetManager extends AbstractManager implements SecondaryIPSetMan
 
     /**
      * Base URI for secondary domain IP sets.
+     *
      * @var string
      */
     protected string $baseUri = '/dns/secondary/ipSet';

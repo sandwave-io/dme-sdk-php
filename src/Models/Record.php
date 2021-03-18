@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DnsMadeEasy\Models;
 
@@ -13,6 +13,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
 
 /**
  * Abstract model representing records for domains and templates.
+ *
  * @package DnsMadeEasy\Models
  *
  * @property string $value
@@ -83,19 +84,9 @@ abstract class Record extends AbstractModel implements RecordInterface
         'failover',
     ];
 
-    protected function parseApiData(object $data): void
-    {
-        if (property_exists($data, 'type') && $data->type) {
-            $data->type = new RecordType($data->type);
-        }
-        if (property_exists($data, 'gtdLocation') && $data->gtdLocation) {
-            $data->gtdLocation = new GTDLocation($data->gtdLocation);
-        }
-        parent::parseApiData($data);
-    }
-
     /**
      * @return mixed|object
+     *
      * @internal
      */
     public function jsonSerialize()
@@ -111,8 +102,36 @@ abstract class Record extends AbstractModel implements RecordInterface
     }
 
     /**
+     * Get the record's failover and monitoring configuration.
+     *
+     * @throws DnsMadeEasyException
+     *
+     * @return RecordFailoverInterface
+     */
+    public function getRecordFailover(): RecordFailoverInterface
+    {
+        if (! $this->id) {
+            throw new DnsMadeEasyException('Unable to fetch failover record for a record that has not been saved');
+        }
+        return $this->client->failover->get($this->id);
+    }
+
+    protected function parseApiData(object $data): void
+    {
+        if (property_exists($data, 'type') && $data->type) {
+            $data->type = new RecordType($data->type);
+        }
+        if (property_exists($data, 'gtdLocation') && $data->gtdLocation) {
+            $data->gtdLocation = new GTDLocation($data->gtdLocation);
+        }
+        parent::parseApiData($data);
+    }
+
+    /**
      * Sets the type of record. This can only be done on new records.
+     *
      * @param RecordType $type
+     *
      * @throws ReadOnlyPropertyException
      */
     protected function setType(RecordType $type)
@@ -121,18 +140,5 @@ abstract class Record extends AbstractModel implements RecordInterface
             throw new ReadOnlyPropertyException('Type can only be set before a record has been saved');
         }
         $this->props['type'] = $type;
-    }
-
-    /**
-     * Get the record's failover and monitoring configuration.
-     * @return RecordFailoverInterface
-     * @throws DnsMadeEasyException
-     */
-    public function getRecordFailover(): RecordFailoverInterface
-    {
-        if (!$this->id) {
-            throw new DnsMadeEasyException('Unable to fetch failover record for a record that has not been saved');
-        }
-        return $this->client->failover->get($this->id);
     }
 }
