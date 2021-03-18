@@ -27,7 +27,8 @@ use DnsMadeEasy\Models\Common\CommonManagedDomain;
  * @property-read \DateTime $updated
  * @property bool $gtdEnabled
  * @property-read string[] $axfrServers
- * @property-read string[] $delegateNameservers
+ * @property-read string[] $delegateNameServers
+ * @property-read object[] $nameServers
  * @property SOARecordInterface $soa;
  * @property int $soaID
  * @property VanityNameServerInterface $vanity
