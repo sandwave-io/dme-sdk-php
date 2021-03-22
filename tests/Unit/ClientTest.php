@@ -63,4 +63,13 @@ class ClientTest extends TestCase
         $client->setHttpClient($httpClient);
         Assert::assertSame($httpClient, $client->getHttpClient(), 'HttpClient on client is not the setted httpclient');
     }
+
+    public function testClientRequestProperty(): void
+    {
+        $client = new Client();
+
+        Assert::assertNull($client->getLastRequestId(), 'Last request should not be set');
+        Assert::assertNull($client->getRequestLimit(), 'Request limit should not be set');
+        Assert::assertNull($client->getRequestsRemaining(), 'Remaining request should not be set');
+    }
 }

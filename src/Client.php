@@ -128,21 +128,21 @@ class Client implements ClientInterface, LoggerAwareInterface
      *
      * @var string|null
      */
-    protected ?string $requestId;
+    protected ?string $requestId = null;
 
     /**
      * The request limit on the API.
      *
      * @var int|null
      */
-    protected ?int $requestLimit;
+    protected ?int $requestLimit = null;
 
     /**
      * The number of requests remaining until the limit is hit.
      *
      * @var int|null
      */
-    protected ?int $requestsRemaining;
+    protected ?int $requestsRemaining = null;
 
     public function __construct(?HttpClient $client = null, ?PaginatorFactoryInterface $paginatorFactory = null, ?LoggerInterface $logger = null)
     {
