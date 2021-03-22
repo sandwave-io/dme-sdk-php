@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers\Multiple;
 
-use DnsMadeEasy\Enums\GTDLocation;
 use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\MultipleRecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
