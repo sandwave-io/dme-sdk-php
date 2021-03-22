@@ -7,6 +7,7 @@ use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
@@ -34,6 +35,7 @@ class ClientTest extends TestCase
 
         $response = $client->get('/test', ['test' => 'test']);
         Assert::assertInstanceOf(Response::class, $response);
+        Assert::assertSame('OK', $response->getReasonPhrase(), 'Response reason phrase is not the same as get reason phrase');
 
         Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
         Assert::assertSame('999', $client->getLastRequestId(), 'Last request id is not the same as set value');
@@ -100,6 +102,28 @@ class ClientTest extends TestCase
         $response = $client->delete('/test/delete', ['object_id' => 21]);
         Assert::assertInstanceOf(Response::class, $response, 'Response is not instance of guzzle response');
         Assert::assertSame('No Content', $response->getReasonPhrase(), 'Response phrase is not same as deleted response phrase');
+
+        Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
+        Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
+        Assert::assertNotNull($client->getRequestsRemaining(), 'Request remaining should be set');
+    }
+
+    public function testClientSend(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(200, self::HEADER),
+        ]));
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setSecretKey('secretKey');
+        $client->setApiKey('secertKey');
+
+        $request = new Request('GET', '/test');
+        $response = $client->send($request);
+
+        Assert::assertInstanceOf(Response::class, $response);
+        Assert::assertSame('OK', $response->getReasonPhrase(), 'Response reason phrase is not the same as get reason phrase');
 
         Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
         Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
