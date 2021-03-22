@@ -16,7 +16,7 @@ use DnsMadeEasy\Interfaces\Managers\TemplateManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\TransferAclManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\UsageManagerInterface;
 use DnsMadeEasy\Interfaces\Managers\VanityNameServerManagerInterface;
-use Psr\Http\Client\ClientInterface as HttpClientInterface;
+use GuzzleHttp\Client;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -42,18 +42,18 @@ interface ClientInterface
     /**
      * Set a custom HTTP Client for all requests. If one is not provided, one is created automatically.
      *
-     * @param HttpClientInterface $client
+     * @param Client $client
      *
      * @return ClientInterface
      */
-    public function setHttpClient(HttpClientInterface $client): ClientInterface;
+    public function setHttpClient(Client $client): ClientInterface;
 
     /**
      * Fetches the current HTTP Client used for requests.
      *
-     * @return HttpClientInterface
+     * @return Client
      */
-    public function getHttpClient(): HttpClientInterface;
+    public function getHttpClient(): Client;
 
     /**
      * Set the API endpoint to use. By default this is `https://api.dnsmadeeasy.com/V2.0`. You can set this to
