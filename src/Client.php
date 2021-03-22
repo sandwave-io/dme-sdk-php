@@ -34,8 +34,8 @@ use DnsMadeEasy\Managers\TransferAclManager;
 use DnsMadeEasy\Managers\UsageManager;
 use DnsMadeEasy\Managers\VanityNameServerManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
+use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request;
-use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerAwareInterface;
@@ -67,12 +67,8 @@ class Client implements ClientInterface, LoggerAwareInterface
      * @var LoggerInterface|NullLogger|null
      */
     public LoggerInterface $logger;
-    /**
-     * The HTTP Client for all requests.
-     *
-     * @var HttpClientInterface
-     */
-    protected HttpClientInterface $client;
+
+    protected HttpClient $client;
 
     /**
      * The DNS Made Easy API Key.
@@ -148,21 +144,11 @@ class Client implements ClientInterface, LoggerAwareInterface
      */
     protected ?int $requestsRemaining;
 
-    /**
-     * Creates a new client.
-     *
-     * @param HttpClientInterface|null       $client
-     * @param PaginatorFactoryInterface|null $paginatorFactory
-     * @param LoggerInterface|null           $logger
-     */
-    public function __construct(
-        ?HttpClientInterface $client = null,
-        ?PaginatorFactoryInterface $paginatorFactory = null,
-        ?LoggerInterface $logger = null
-    ) {
+    public function __construct(?HttpClient $client = null, ?PaginatorFactoryInterface $paginatorFactory = null, ?LoggerInterface $logger = null)
+    {
         // If we weren't given a HTTP client, create a new Guzzle client.
         if ($client === null) {
-            $client = new \GuzzleHttp\Client();
+            $client = new HttpClient();
         }
 
         // If we don't have a paginator factory, use our own.
@@ -200,13 +186,13 @@ class Client implements ClientInterface, LoggerAwareInterface
         $this->logger = $logger;
     }
 
-    public function setHttpClient(HttpClientInterface $client): self
+    public function setHttpClient(HttpClient $client): self
     {
         $this->client = $client;
         return $this;
     }
 
-    public function getHttpClient(): HttpClientInterface
+    public function getHttpClient(): HttpClient
     {
         return $this->client;
     }
@@ -299,7 +285,7 @@ class Client implements ClientInterface, LoggerAwareInterface
 
         $request = $request->withHeader('Accept', 'application/json');
         $request = $this->addAuthHeaders($request);
-        $response = $this->client->sendRequest($request);
+        $response = $this->client->send($request);
 
         $this->logger->debug("[DnsMadeEasy] API Response: {$response->getStatusCode()} {$response->getReasonPhrase()}");
         $this->updateLimits($response);
