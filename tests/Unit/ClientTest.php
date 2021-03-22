@@ -4,6 +4,9 @@ namespace DnsMadeEasy\Tests\Unit;
 
 use DnsMadeEasy\Client;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
@@ -11,6 +14,37 @@ use Psr\Log\Test\TestLogger;
 
 class ClientTest extends TestCase
 {
+    public function testClientGet(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(
+                200,
+                [
+                    'x-dnsme-requestId' => '999',
+                    'x-dnsme-requestsRemaining' => '999',
+                    'x-dnsme-requestLimit' => '999',
+                ],
+            ),
+        ]));
+        $httpClient = new \GuzzleHttp\Client(['handler' => $handlerStack]);
+        $client = new Client($httpClient);
+        $client->setApiKey('apiKey');
+        $client->setSecretKey('secretKey');
+        $url = '/test';
+        $response = $client->get($url);
+        Assert::assertInstanceOf(Response::class, $response);
+
+        // Headers check
+        // Check if data is set
+        Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
+        Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
+        Assert::assertNotNull($client->getRequestsRemaining(), 'Request remaining should be set');
+        // Check if setted data is the same as in the handler stack
+        Assert::assertSame('999', $client->getLastRequestId(), 'Last request id is not the same as set value');
+        Assert::assertSame(999, $client->getRequestLimit(), 'Request limit is not the same as set value');
+        Assert::assertSame(999, $client->getRequestsRemaining(), 'Requests remaining is not the same as set value');
+    }
+
     public function testGetterAndSetterEndpoint(): void
     {
         $client = new Client();
