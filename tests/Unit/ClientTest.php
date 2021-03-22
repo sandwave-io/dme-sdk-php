@@ -49,6 +49,18 @@ class ClientTest extends TestCase
     public function testGetClientPaginator(): void
     {
         $client = new Client();
-        Assert::assertInstanceOf(PaginatorFactory::class, $client->getPaginatorFactory(), 'Client Paginator is not instance of PaginatorFactory');
+        $paginatorFactory = new PaginatorFactory();
+
+        $client->setPaginatorFactory($paginatorFactory);
+        Assert::assertSame($paginatorFactory, $client->getPaginatorFactory());
     }
+
+    public function testGetAndSetHttpClient(): void
+	{
+		$client = new Client();
+		$httpClient = new \GuzzleHttp\Client();
+
+		$client->setHttpClient($httpClient);
+		Assert::assertSame($httpClient, $client->getHttpClient(), 'HttpClient on client is not the setted httpclient');
+	}
 }
