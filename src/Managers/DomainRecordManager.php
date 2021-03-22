@@ -77,7 +77,7 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
     public function setDomain(ManagedDomainInterface $domain): DomainRecordManagerInterface
     {
         $this->domain = $domain;
-        $this->baseUri = str_replace(':domain', $domain->id, $this->baseUri);
+        $this->baseUri = str_replace(':domain', (string) $domain->id, $this->baseUri);
         return $this;
     }
 
