@@ -36,6 +36,7 @@ use DnsMadeEasy\Managers\VanityNameServerManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerAwareInterface;
@@ -128,21 +129,21 @@ class Client implements ClientInterface, LoggerAwareInterface
      *
      * @var string|null
      */
-    protected ?string $requestId;
+    protected ?string $requestId = null;
 
     /**
      * The request limit on the API.
      *
      * @var int|null
      */
-    protected ?int $requestLimit;
+    protected ?int $requestLimit = null;
 
     /**
      * The number of requests remaining until the limit is hit.
      *
      * @var int|null
      */
-    protected ?int $requestsRemaining;
+    protected ?int $requestsRemaining = null;
 
     public function __construct(?HttpClient $client = null, ?PaginatorFactoryInterface $paginatorFactory = null, ?LoggerInterface $logger = null)
     {
@@ -175,15 +176,17 @@ class Client implements ClientInterface, LoggerAwareInterface
             return $this->managers['usage'];
         }
 
-        // If we have a manager with this name, return it.
-        if ($this->hasManager($name)) {
-            return $this->getManager($name);
-        }
+        return $this->getManager($name);
     }
 
     public function setLogger(LoggerInterface $logger)
     {
         $this->logger = $logger;
+    }
+
+    public function getLogger(): LoggerInterface
+    {
+        return $this->logger;
     }
 
     public function setHttpClient(HttpClient $client): self
@@ -285,7 +288,7 @@ class Client implements ClientInterface, LoggerAwareInterface
 
         $request = $request->withHeader('Accept', 'application/json');
         $request = $this->addAuthHeaders($request);
-        $response = $this->client->send($request);
+        $response = $this->client->send($request, [RequestOptions::HTTP_ERRORS => false]);
 
         $this->logger->debug("[DnsMadeEasy] API Response: {$response->getStatusCode()} {$response->getReasonPhrase()}");
         $this->updateLimits($response);
@@ -345,19 +348,25 @@ class Client implements ClientInterface, LoggerAwareInterface
      */
     protected function updateLimits(ResponseInterface $response)
     {
-        $this->requestId = current($response->getHeader('x-dnsme-requestId'));
-        if ($this->requestId === false) {
+        $requestId = current($response->getHeader('x-dnsme-requestId'));
+        if ($requestId === false) {
             $this->requestId = null;
+        } else {
+            $this->requestId = $requestId;
         }
 
-        $this->requestsRemaining = (int) current($response->getHeader('x-dnsme-requestsRemaining'));
-        if ($this->requestsRemaining === false) {
+        $requestsRemaining = current($response->getHeader('x-dnsme-requestsRemaining'));
+        if ($requestsRemaining === false) {
             $this->requestsRemaining = null;
+        } else {
+            $this->requestsRemaining = (int) $requestsRemaining;
         }
 
-        $this->requestLimit = (int) current($response->getHeader('x-dnsme-requestLimit'));
-        if ($this->requestLimit === false) {
+        $requestLimit = current($response->getHeader('x-dnsme-requestLimit'));
+        if ($requestLimit === false) {
             $this->requestLimit = null;
+        } else {
+            $this->requestLimit = (int) $requestLimit;
         }
     }
 
