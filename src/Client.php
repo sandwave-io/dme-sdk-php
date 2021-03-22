@@ -186,6 +186,11 @@ class Client implements ClientInterface, LoggerAwareInterface
         $this->logger = $logger;
     }
 
+    public function getLogger(): LoggerInterface
+    {
+        return $this->logger;
+    }
+
     public function setHttpClient(HttpClient $client): self
     {
         $this->client = $client;
