@@ -1,0 +1,52 @@
+{
+	"totalRecords": 3,
+	"totalPages": 1,
+	"data": [
+		{
+			"source": 1,
+			"ttl": 1800,
+			"gtdLocation": "DEFAULT",
+			"sourceId": 1119443,
+			"failover": false,
+			"monitor": false,
+			"hardLink": false,
+			"dynamicDns": false,
+			"failed": false,
+			"name": "ns1",
+			"value": "208.94.148.2",
+			"id": 66813434,
+			"type": "A"
+		},
+		{
+			"source": 1,
+			"ttl": 1800,
+			"gtdLocation": "DEFAULT",
+			"sourceId": 1119443,
+			"failover": false,
+			"monitor": false,
+			"hardLink": false,
+			"dynamicDns": false,
+			"failed": false,
+			"name": "ns2",
+			"value": "208.80.124.2",
+			"id": 66813437,
+			"type": "A"
+		},
+		{
+			"source": 1,
+			"ttl": 86400,
+			"gtdLocation": "DEFAULT",
+			"sourceId": 1119443,
+			"failover": false,
+			"monitor": false,
+			"hardLink": false,
+			"dynamicDns": false,
+			"failed": false,
+			"name": "www",
+			"value": "1.1.1.1",
+			"id": 57181329,
+			"type": "A"
+		}
+	],
+	"page": 0
+}

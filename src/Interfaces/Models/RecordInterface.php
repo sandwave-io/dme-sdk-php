@@ -11,6 +11,7 @@ namespace DnsMadeEasy\Interfaces\Models;
  *
  * @property string $value
  * @property string $type
+ * @property string $name
  * @property-read int $source
  * @property-read int $sourceId
  * @property bool $dynamicDns

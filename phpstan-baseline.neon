@@ -366,11 +366,6 @@ parameters:
 			path: src/Managers/DomainRecordManager.php
 
 		-
-			message: "#^Parameter \\#2 \\$replace of function str_replace expects array\\|string, int given\\.$#"
-			count: 1
-			path: src/Managers/DomainRecordManager.php
-
-		-
 			message: "#^Call to an undefined method DnsMadeEasy\\\\Interfaces\\\\Models\\\\AbstractModelInterface\\:\\:setDomain\\(\\)\\.$#"
 			count: 1
 			path: src/Managers/DomainRecordManager.php
@@ -677,11 +672,6 @@ parameters:
 
 		-
 			message: "#^Return type \\(DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateRecordManagerInterface\\) of method DnsMadeEasy\\\\Managers\\\\TemplateRecordManager\\:\\:setTemplate\\(\\) should be covariant with return type \\(\\$this\\(DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateRecordManagerInterface\\)\\) of method DnsMadeEasy\\\\Interfaces\\\\Managers\\\\TemplateRecordManagerInterface\\:\\:setTemplate\\(\\)$#"
-			count: 1
-			path: src/Managers/TemplateRecordManager.php
-
-		-
-			message: "#^Parameter \\#2 \\$replace of function str_replace expects array\\|string, int given\\.$#"
 			count: 1
 			path: src/Managers/TemplateRecordManager.php
 

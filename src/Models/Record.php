@@ -18,6 +18,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  *
  * @property string $value
  * @property string $type
+ * @property string $name
  * @property-read int $source
  * @property-read int $sourceId
  * @property bool $dynamicDns
@@ -42,6 +43,7 @@ abstract class Record extends AbstractModel implements RecordInterface
     protected array $props = [
         'value' => null,
         'type' => null,
+        'name' => null,
         'source' => null,
         'sourceId' => null,
         'dynamicDns' => null,
