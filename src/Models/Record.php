@@ -17,7 +17,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  * @package DnsMadeEasy\Models
  *
  * @property string $value
- * @property string $type
+ * @property RecordType $type
  * @property-read int $source
  * @property-read int $sourceId
  * @property bool $dynamicDns
@@ -26,7 +26,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  * @property-read bool $monitor
  * @property-read bool $failover
  * @property-read bool $failed
- * @property string $gtdLocation
+ * @property GTDLocation $gtdLocation
  * @property string $description
  * @property string $keywords
  * @property string $title
@@ -36,6 +36,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  * @property int $weight
  * @property int $priority
  * @property int $port
+ * @property string $name
  */
 abstract class Record extends AbstractModel implements RecordInterface
 {
@@ -60,6 +61,7 @@ abstract class Record extends AbstractModel implements RecordInterface
         'weight' => null,
         'priority' => null,
         'port' => null,
+		'name' => null,
 
     ];
 

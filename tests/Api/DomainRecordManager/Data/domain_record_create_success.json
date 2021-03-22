@@ -1,0 +1,15 @@
+{
+	"source": 1,
+	"ttl": 86400,
+	"gtdLocation": "DEFAULT",
+	"sourceId": 1119443,
+	"failover": false,
+	"monitor": false,
+	"hardLink": false,
+	"dynamicDns": false,
+	"failed": false,
+	"name": "mail",
+	"value": "192.168.1.1",
+	"id": 66814826,
+	"type": "A"
+}

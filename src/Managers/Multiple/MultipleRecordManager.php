@@ -59,9 +59,7 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
             if ($record->id) {
                 continue;
             }
-            if (! $record->gtdLocation) {
-                $record->gtdLocation = GTDLocation::DEFAULT();
-            }
+
             $payload[] = $record->transformForApi();
         }
 
