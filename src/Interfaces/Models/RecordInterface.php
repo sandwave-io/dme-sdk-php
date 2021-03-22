@@ -14,6 +14,7 @@ use DnsMadeEasy\Enums\RecordType;
  *
  * @property string $value
  * @property RecordType $type
+ * @property string $name
  * @property-read int $source
  * @property-read int $sourceId
  * @property bool $dynamicDns
@@ -32,7 +33,6 @@ use DnsMadeEasy\Enums\RecordType;
  * @property int $weight
  * @property int $priority
  * @property int $port
- * @property string $name
  */
 interface RecordInterface extends AbstractModelInterface
 {

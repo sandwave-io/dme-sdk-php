@@ -55,7 +55,7 @@ class TemplateRecordManager extends RecordManager implements TemplateRecordManag
     public function setTemplate(TemplateInterface $template): TemplateRecordManagerInterface
     {
         $this->template = $template;
-        $this->baseUri = str_replace(':template', $template->id, $this->baseUri);
+        $this->baseUri = str_replace(':template', (string) $template->id, $this->baseUri);
         return $this;
     }
 
