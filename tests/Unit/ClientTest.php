@@ -14,35 +14,55 @@ use Psr\Log\Test\TestLogger;
 
 class ClientTest extends TestCase
 {
+    const HEADER = [
+        'x-dnsme-requestId' => '999',
+        'x-dnsme-requestsRemaining' => '999',
+        'x-dnsme-requestLimit' => '999',
+    ];
+
     public function testClientGet(): void
     {
         $handlerStack = HandlerStack::create(new MockHandler([
-            new Response(
-                200,
-                [
-                    'x-dnsme-requestId' => '999',
-                    'x-dnsme-requestsRemaining' => '999',
-                    'x-dnsme-requestLimit' => '999',
-                ],
-            ),
+            new Response(200, self::HEADER),
         ]));
         $httpClient = new \GuzzleHttp\Client(['handler' => $handlerStack]);
+
         $client = new Client($httpClient);
         $client->setApiKey('apiKey');
         $client->setSecretKey('secretKey');
-        $url = '/test';
-        $response = $client->get($url, ['test' => 'test']);
+
+        $response = $client->get('/test', ['test' => 'test']);
         Assert::assertInstanceOf(Response::class, $response);
 
-        // Headers check
-        // Check if data is set
+        Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
+        Assert::assertSame('999', $client->getLastRequestId(), 'Last request id is not the same as set value');
+
+        Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
+        Assert::assertSame(999, $client->getRequestLimit(), 'Request limit is not the same as set value');
+
+        Assert::assertNotNull($client->getRequestsRemaining(), 'Request remaining should be set');
+        Assert::assertSame(999, $client->getRequestsRemaining(), 'Requests remaining is not the same as set value');
+    }
+
+    public function testClientPost(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(201, self::HEADER),
+        ]));
+        $httpClient = new \GuzzleHttp\Client(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setApiKey('apiKey');
+        $client->setSecretKey('secretKey');
+
+        $response = $client->post('/test', ['item' => 'yes']);
+
+        Assert::assertInstanceOf(Response::class, $response);
+        Assert::assertSame('Created', $response->getReasonPhrase(), 'Reason phrase is not the same as Post value');
+
         Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
         Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
         Assert::assertNotNull($client->getRequestsRemaining(), 'Request remaining should be set');
-        // Check if setted data is the same as in the handler stack
-        Assert::assertSame('999', $client->getLastRequestId(), 'Last request id is not the same as set value');
-        Assert::assertSame(999, $client->getRequestLimit(), 'Request limit is not the same as set value');
-        Assert::assertSame(999, $client->getRequestsRemaining(), 'Requests remaining is not the same as set value');
     }
 
     public function testGetterAndSetterEndpoint(): void
