@@ -56,16 +56,6 @@ parameters:
 			path: src/Client.php
 
 		-
-			message: "#^Property DnsMadeEasy\\\\Client\\:\\:\\$requestId \\(string\\|null\\) does not accept string\\|false\\.$#"
-			count: 1
-			path: src/Client.php
-
-		-
-			message: "#^Strict comparison using \\=\\=\\= between int and false will always evaluate to false\\.$#"
-			count: 2
-			path: src/Client.php
-
-		-
 			message: "#^Method DnsMadeEasy\\\\Client\\:\\:hasManager\\(\\) has parameter \\$name with no typehint specified\\.$#"
 			count: 1
 			path: src/Client.php

@@ -4,7 +4,11 @@ namespace DnsMadeEasy\Tests\Unit;
 
 use DnsMadeEasy\Client;
 use DnsMadeEasy\Exceptions\Client\Http\BadRequestException;
+use DnsMadeEasy\Exceptions\Client\Http\HttpException;
 use DnsMadeEasy\Exceptions\Client\Http\NotFoundException;
+use DnsMadeEasy\Exceptions\Client\ManagerNotFoundException;
+use DnsMadeEasy\Managers\ManagedDomainManager;
+use DnsMadeEasy\Managers\UsageManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\MockHandler;
@@ -162,6 +166,79 @@ class ClientTest extends TestCase
         $request = new Request('GET', '/test', self::HEADERS);
         $this->expectException(BadRequestException::class);
         $client->send($request);
+    }
+
+    public function testClientSendHttpException(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(500, self::HEADERS),
+        ]));
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setSecretKey('secretKey');
+        $client->setApiKey('secertKey');
+
+        $request = new Request('GET', '/test', self::HEADERS);
+        $this->expectException(HttpException::class);
+        $client->send($request);
+    }
+
+    public function testClientLimits(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(200),
+            new Response(200, self::HEADERS),
+            new Response(200),
+        ]));
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setSecretKey('secretKey');
+        $client->setApiKey('secertKey');
+
+        $request = new Request('GET', '/test');
+        $client->send($request);
+
+        Assert::assertNull($client->getLastRequestId(), 'Last request id should not be set');
+        Assert::assertNull($client->getRequestLimit(), 'Request limit should not be set');
+        Assert::assertNull($client->getRequestsRemaining(), 'Request remaining should not be set');
+
+        $client->send($request);
+        Assert::assertSame('999', $client->getLastRequestId(), 'Last request id is not the same as set value');
+        Assert::assertSame(999, $client->getRequestLimit(), 'Request limit is not the same as set value');
+        Assert::assertSame(999, $client->getRequestsRemaining(), 'Requests remaining is not the same as set value');
+
+        $client->send($request);
+
+        Assert::assertNull($client->getLastRequestId(), 'Last request id should not be set');
+        Assert::assertNull($client->getRequestLimit(), 'Request limit should not be set');
+        Assert::assertNull($client->getRequestsRemaining(), 'Request remaining should not be set');
+    }
+
+    public function testClientMagicGet(): void
+    {
+        $client = new Client();
+
+        $usage = $client->usage;
+        Assert::assertInstanceOf(UsageManager::class, $usage, 'usages is not instance of UsageManager');
+    }
+
+    public function testClientMagicGetManager(): void
+    {
+        $client = new Client();
+
+        $domains = $client->domains;
+        Assert::assertInstanceOf(ManagedDomainManager::class, $domains, 'domains is not instance of Managed domains');
+    }
+
+    public function testClientGetMissingManager(): void
+    {
+        $client = new Client();
+
+        $this->expectException(ManagerNotFoundException::class);
+        /** @phpstan-ignore-next-line */
+        $client->missing;
     }
 
     public function testGetterAndSetterEndpoint(): void

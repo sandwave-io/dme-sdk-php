@@ -176,10 +176,7 @@ class Client implements ClientInterface, LoggerAwareInterface
             return $this->managers['usage'];
         }
 
-        // If we have a manager with this name, return it.
-        if ($this->hasManager($name)) {
-            return $this->getManager($name);
-        }
+        return $this->getManager($name);
     }
 
     public function setLogger(LoggerInterface $logger)
@@ -351,19 +348,25 @@ class Client implements ClientInterface, LoggerAwareInterface
      */
     protected function updateLimits(ResponseInterface $response)
     {
-        $this->requestId = current($response->getHeader('x-dnsme-requestId'));
-        if ($this->requestId === false) {
+        $requestId = current($response->getHeader('x-dnsme-requestId'));
+        if ($requestId === false) {
             $this->requestId = null;
+        } else {
+            $this->requestId = $requestId;
         }
 
-        $this->requestsRemaining = (int) current($response->getHeader('x-dnsme-requestsRemaining'));
-        if ($this->requestsRemaining === false) {
+        $requestsRemaining = current($response->getHeader('x-dnsme-requestsRemaining'));
+        if ($requestsRemaining === false) {
             $this->requestsRemaining = null;
+        } else {
+            $this->requestsRemaining = (int) $requestsRemaining;
         }
 
-        $this->requestLimit = (int) current($response->getHeader('x-dnsme-requestLimit'));
-        if ($this->requestLimit === false) {
+        $requestLimit = current($response->getHeader('x-dnsme-requestLimit'));
+        if ($requestLimit === false) {
             $this->requestLimit = null;
+        } else {
+            $this->requestLimit = (int) $requestLimit;
         }
     }
 
