@@ -36,6 +36,7 @@ use DnsMadeEasy\Managers\VanityNameServerManager;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerAwareInterface;
@@ -290,7 +291,7 @@ class Client implements ClientInterface, LoggerAwareInterface
 
         $request = $request->withHeader('Accept', 'application/json');
         $request = $this->addAuthHeaders($request);
-        $response = $this->client->send($request);
+        $response = $this->client->send($request, [RequestOptions::HTTP_ERRORS => false]);
 
         $this->logger->debug("[DnsMadeEasy] API Response: {$response->getStatusCode()} {$response->getReasonPhrase()}");
         $this->updateLimits($response);

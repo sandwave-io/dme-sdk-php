@@ -3,6 +3,8 @@
 namespace DnsMadeEasy\Tests\Unit;
 
 use DnsMadeEasy\Client;
+use DnsMadeEasy\Exceptions\Client\Http\BadRequestException;
+use DnsMadeEasy\Exceptions\Client\Http\NotFoundException;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\MockHandler;
@@ -16,7 +18,7 @@ use Psr\Log\Test\TestLogger;
 
 class ClientTest extends TestCase
 {
-    const HEADER = [
+    const HEADERS = [
         'x-dnsme-requestId' => '999',
         'x-dnsme-requestsRemaining' => '999',
         'x-dnsme-requestLimit' => '999',
@@ -25,7 +27,7 @@ class ClientTest extends TestCase
     public function testClientGet(): void
     {
         $handlerStack = HandlerStack::create(new MockHandler([
-            new Response(200, self::HEADER),
+            new Response(200, self::HEADERS),
         ]));
         $httpClient = new HttpClient(['handler' => $handlerStack]);
 
@@ -50,7 +52,7 @@ class ClientTest extends TestCase
     public function testClientPost(): void
     {
         $handlerStack = HandlerStack::create(new MockHandler([
-            new Response(201, self::HEADER),
+            new Response(201, self::HEADERS),
         ]));
         $httpClient = new HttpClient(['handler' => $handlerStack]);
 
@@ -71,7 +73,7 @@ class ClientTest extends TestCase
     public function testClientPut(): void
     {
         $handlerStack = HandlerStack::create(new MockHandler([
-            new Response(200, self::HEADER),
+            new Response(200, self::HEADERS),
         ]));
         $httpClient = new HttpClient(['handler' => $handlerStack]);
 
@@ -91,7 +93,7 @@ class ClientTest extends TestCase
     public function testClientDelete(): void
     {
         $handlerStack = HandlerStack::create(new MockHandler([
-            new Response(204, self::HEADER),
+            new Response(204, self::HEADERS),
         ]));
         $httpClient = new HttpClient(['handler' => $handlerStack]);
 
@@ -111,7 +113,7 @@ class ClientTest extends TestCase
     public function testClientSend(): void
     {
         $handlerStack = HandlerStack::create(new MockHandler([
-            new Response(200, self::HEADER),
+            new Response(200, self::HEADERS),
         ]));
         $httpClient = new HttpClient(['handler' => $handlerStack]);
 
@@ -128,6 +130,38 @@ class ClientTest extends TestCase
         Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
         Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
         Assert::assertNotNull($client->getRequestsRemaining(), 'Request remaining should be set');
+    }
+
+    public function testClientSendNotFound(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(404, self::HEADERS),
+        ]));
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setSecretKey('secretKey');
+        $client->setApiKey('secertKey');
+
+        $request = new Request('GET', '/test', self::HEADERS);
+        $this->expectException(NotFoundException::class);
+        $client->send($request);
+    }
+
+    public function testClientSendBadRequest(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(400, self::HEADERS),
+        ]));
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setSecretKey('secretKey');
+        $client->setApiKey('secertKey');
+
+        $request = new Request('GET', '/test', self::HEADERS);
+        $this->expectException(BadRequestException::class);
+        $client->send($request);
     }
 
     public function testGetterAndSetterEndpoint(): void
