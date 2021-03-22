@@ -56,11 +56,11 @@ class ClientTest extends TestCase
     }
 
     public function testGetAndSetHttpClient(): void
-	{
-		$client = new Client();
-		$httpClient = new \GuzzleHttp\Client();
+    {
+        $client = new Client();
+        $httpClient = new \GuzzleHttp\Client();
 
-		$client->setHttpClient($httpClient);
-		Assert::assertSame($httpClient, $client->getHttpClient(), 'HttpClient on client is not the setted httpclient');
-	}
+        $client->setHttpClient($httpClient);
+        Assert::assertSame($httpClient, $client->getHttpClient(), 'HttpClient on client is not the setted httpclient');
+    }
 }
