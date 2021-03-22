@@ -4,6 +4,7 @@ namespace DnsMadeEasy\Tests\Unit;
 
 use DnsMadeEasy\Client;
 use DnsMadeEasy\Pagination\Factories\PaginatorFactory;
+use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
@@ -25,7 +26,7 @@ class ClientTest extends TestCase
         $handlerStack = HandlerStack::create(new MockHandler([
             new Response(200, self::HEADER),
         ]));
-        $httpClient = new \GuzzleHttp\Client(['handler' => $handlerStack]);
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
 
         $client = new Client($httpClient);
         $client->setApiKey('apiKey');
@@ -49,7 +50,7 @@ class ClientTest extends TestCase
         $handlerStack = HandlerStack::create(new MockHandler([
             new Response(201, self::HEADER),
         ]));
-        $httpClient = new \GuzzleHttp\Client(['handler' => $handlerStack]);
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
 
         $client = new Client($httpClient);
         $client->setApiKey('apiKey');
@@ -59,6 +60,46 @@ class ClientTest extends TestCase
 
         Assert::assertInstanceOf(Response::class, $response);
         Assert::assertSame('Created', $response->getReasonPhrase(), 'Reason phrase is not the same as Post value');
+
+        Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
+        Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
+        Assert::assertNotNull($client->getRequestsRemaining(), 'Request remaining should be set');
+    }
+
+    public function testClientPut(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(200, self::HEADER),
+        ]));
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setSecretKey('secertKey');
+        $client->setApiKey('apiKey');
+
+        $response = $client->put('/test/put', ['updated' => 'updated']);
+        Assert::assertInstanceOf(Response::class, $response);
+        Assert::assertSame('OK', $response->getReasonPhrase(), 'Response reasonphrase is not the same as put reason phrase');
+
+        Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
+        Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
+        Assert::assertNotNull($client->getRequestsRemaining(), 'Request remaining should be set');
+    }
+
+    public function testClientDelete(): void
+    {
+        $handlerStack = HandlerStack::create(new MockHandler([
+            new Response(204, self::HEADER),
+        ]));
+        $httpClient = new HttpClient(['handler' => $handlerStack]);
+
+        $client = new Client($httpClient);
+        $client->setApiKey('apiKey');
+        $client->setSecretKey('secretKey');
+
+        $response = $client->delete('/test/delete', ['object_id' => 21]);
+        Assert::assertInstanceOf(Response::class, $response, 'Response is not instance of guzzle response');
+        Assert::assertSame('No Content', $response->getReasonPhrase(), 'Response phrase is not same as deleted response phrase');
 
         Assert::assertNotNull($client->getLastRequestId(), 'Last request id should be set');
         Assert::assertNotNull($client->getRequestLimit(), 'Request limit should be set');
@@ -112,7 +153,7 @@ class ClientTest extends TestCase
     public function testGetAndSetHttpClient(): void
     {
         $client = new Client();
-        $httpClient = new \GuzzleHttp\Client();
+        $httpClient = new HttpClient();
 
         $client->setHttpClient($httpClient);
         Assert::assertSame($httpClient, $client->getHttpClient(), 'HttpClient on client is not the setted httpclient');
