@@ -500,15 +500,6 @@ parameters:
 			count: 1
 			path: src/Managers/Multiple/MultipleRecordManager.php
 
-		-
-			message: "#^Only booleans are allowed in a negated boolean, string given\\.$#"
-			count: 1
-			path: src/Managers/Multiple/MultipleRecordManager.php
-
-		-
-			message: "#^Property DnsMadeEasy\\\\Interfaces\\\\Models\\\\RecordInterface\\:\\:\\$gtdLocation \\(string\\) does not accept DnsMadeEasy\\\\Enums\\\\GTDLocation\\.$#"
-			count: 1
-			path: src/Managers/Multiple/MultipleRecordManager.php
 
 		-
 			message: "#^Only booleans are allowed in a negated boolean, array\\<int, object\\> given\\.$#"

@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace DnsMadeEasy\Managers\Multiple;
 
-use DnsMadeEasy\Enums\GTDLocation;
 use DnsMadeEasy\Interfaces\ClientInterface;
 use DnsMadeEasy\Interfaces\Managers\MultipleRecordManagerInterface;
 use DnsMadeEasy\Interfaces\Models\Common\CommonManagedDomainInterface;
@@ -59,9 +58,7 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
             if ($record->id) {
                 continue;
             }
-            if (! $record->gtdLocation) {
-                $record->gtdLocation = GTDLocation::DEFAULT();
-            }
+
             $payload[] = $record->transformForApi();
         }
 

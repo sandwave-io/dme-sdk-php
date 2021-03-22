@@ -17,7 +17,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  * @package DnsMadeEasy\Models
  *
  * @property string $value
- * @property string $type
+ * @property RecordType $type
  * @property string $name
  * @property-read int $source
  * @property-read int $sourceId
@@ -27,7 +27,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  * @property-read bool $monitor
  * @property-read bool $failover
  * @property-read bool $failed
- * @property string $gtdLocation
+ * @property GTDLocation $gtdLocation
  * @property string $description
  * @property string $keywords
  * @property string $title
