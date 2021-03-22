@@ -31,7 +31,7 @@ class ClientTest extends TestCase
         $client->setApiKey('apiKey');
         $client->setSecretKey('secretKey');
         $url = '/test';
-        $response = $client->get($url);
+        $response = $client->get($url, ['test' => 'test']);
         Assert::assertInstanceOf(Response::class, $response);
 
         // Headers check
