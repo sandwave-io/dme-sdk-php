@@ -34,5 +34,15 @@ class PaginatorTest extends TestCase
         Assert::assertArrayNotHasKey('test11', $paginator, 'Key has not been unset properly');
         Assert::assertTrue($paginator->hasMorePages(), 'Paginator does not have more pages');
         Assert::assertInstanceOf(ArrayIterator::class, $paginator->getIterator(), 'Paginator iterator class is not instance of Array iterator');
+
+        Assert::assertTrue($paginator->onFirstPage(), 'Paginator is not on the first page as set');
     }
+
+    public function testPaginatorEmpty(): void
+	{
+		$paginator = new Paginator([], 0, 2);
+
+		Assert::assertNull($paginator->firstItem());
+		Assert::assertNull($paginator->lastItem());
+	}
 }
