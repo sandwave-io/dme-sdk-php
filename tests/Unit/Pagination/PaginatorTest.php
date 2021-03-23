@@ -39,10 +39,10 @@ class PaginatorTest extends TestCase
     }
 
     public function testPaginatorEmpty(): void
-	{
-		$paginator = new Paginator([], 0, 2);
+    {
+        $paginator = new Paginator([], 0, 2);
 
-		Assert::assertNull($paginator->firstItem());
-		Assert::assertNull($paginator->lastItem());
-	}
+        Assert::assertNull($paginator->firstItem());
+        Assert::assertNull($paginator->lastItem());
+    }
 }
