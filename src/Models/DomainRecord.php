@@ -33,7 +33,7 @@ class DomainRecord extends Record implements DomainRecordInterface
      */
     public function setDomain(ManagedDomainInterface $domain): self
     {
-        if ($this->domain) {
+        if ($this->domain !== null) {
             throw new ReadOnlyPropertyException('Domain can only be set once');
         }
         $this->domain = $domain;
@@ -45,7 +45,7 @@ class DomainRecord extends Record implements DomainRecordInterface
      *
      * @return ManagedDomainInterface|null
      */
-    protected function getDomain(): ?ManagedDomainInterface
+    public function getDomain(): ?ManagedDomainInterface
     {
         return $this->domain;
     }
@@ -55,9 +55,9 @@ class DomainRecord extends Record implements DomainRecordInterface
      *
      * @return int|null
      */
-    protected function getDomainId(): ?int
+    public function getDomainId(): ?int
     {
-        if (! $this->domain) {
+        if ($this->domain === null) {
             return null;
         }
         return $this->domain->id;

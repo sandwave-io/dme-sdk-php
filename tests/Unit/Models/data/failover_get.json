@@ -1,0 +1,20 @@
+{
+	"sensitivity": 5,
+	"autoFailover": false,
+	"ip1Failed": 2,
+	"ip2Failed": 2,
+	"ip3Failed": 0,
+	"ip4Failed": 0,
+	"ip5Failed": 0,
+	"maxEmails": 1,
+	"protocolId": 3,
+	"recordId": 111,
+	"systemDescription": "Test",
+	"source": 1,
+	"ip1": "192.168.1.2",
+	"ip2": "10.10.10.11",
+	"sourceId": 1119443,
+	"failover": true,
+	"monitor": true,
+	"port": 8080
+}
