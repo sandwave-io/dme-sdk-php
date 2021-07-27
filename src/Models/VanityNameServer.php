@@ -11,9 +11,9 @@ use DnsMadeEasy\Interfaces\Models\VanityNameServerInterface;
  *
  * @package DnsMadeEasy\Models
  *
- * @property int $nameServerGroupId
- * @property string $nameServerGroup
- * @property bool $default
+ * @property int      $nameServerGroupId
+ * @property string   $nameServerGroup
+ * @property bool     $default
  * @property string[] $servers
  * @property-read bool $public
  * @property string $name

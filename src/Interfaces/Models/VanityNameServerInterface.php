@@ -9,9 +9,9 @@ namespace DnsMadeEasy\Interfaces\Models;
  *
  * @package DnsMadeEasy\Interfaces
  *
- * @property int $nameServerGroupId
- * @property string $nameServerGroup
- * @property bool $default
+ * @property int      $nameServerGroupId
+ * @property string   $nameServerGroup
+ * @property bool     $default
  * @property string[] $servers
  * @property-read bool $public
  * @property string $name

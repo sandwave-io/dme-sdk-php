@@ -10,14 +10,14 @@ namespace DnsMadeEasy\Interfaces\Models;
  * @package DnsMadeEasy\Interfaces
  *
  * @property bool $monitor
- * @property int $recordId
+ * @property int  $recordId
  * @property-read string $systemDescription
- * @property int $maxEmails
- * @property int $sensitivity
- * @property int $protocolId
- * @property int $port
- * @property bool $failover
- * @property bool $autoFailover
+ * @property int    $maxEmails
+ * @property int    $sensitivity
+ * @property int    $protocolId
+ * @property int    $port
+ * @property bool   $failover
+ * @property bool   $autoFailover
  * @property string $ip1
  * @property string $ip2
  * @property string $ip3
@@ -30,12 +30,12 @@ namespace DnsMadeEasy\Interfaces\Models;
  * @property-read int $ip5Failed
  * @property-read int $source
  * @property-read int $sourceId
- * @property int $contactListId
+ * @property int                  $contactListId
  * @property ContactListInterface $contactList;
- * @property string $httpFqdn
- * @property string $httpFile
- * @property string $httpQueryString
- * @property RecordInterface $record
+ * @property string               $httpFqdn
+ * @property string               $httpFile
+ * @property string               $httpQueryString
+ * @property RecordInterface      $record
  */
 interface RecordFailoverInterface extends RecordInterface
 {

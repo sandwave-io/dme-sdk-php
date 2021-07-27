@@ -9,9 +9,9 @@ namespace DnsMadeEasy\Interfaces\Models;
  *
  * @package DnsMadeEasy\Interfaces
  *
- * @property string $name
+ * @property string   $name
  * @property string[] $emails
- * @property int[] $groups
+ * @property int[]    $groups
  */
 interface ContactListInterface extends AbstractModelInterface
 {

@@ -14,7 +14,7 @@ use DnsMadeEasy\Interfaces\Models\ManagedDomainInterface;
  * @package DnsMadeEasy\Models
  *
  * @property ManagedDomainInterface $domain
- * @property int $domainId
+ * @property int                    $domainId
  */
 class DomainRecord extends Record implements DomainRecordInterface
 {

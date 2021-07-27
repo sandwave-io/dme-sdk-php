@@ -23,9 +23,9 @@ use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
  * @property-read int $nameServerGroupId
  * @property-read int $pendingActionId
  * @property SecondaryIPSetInterface $ipSet
- * @property int $ipSetId
- * @property FolderInterface $folder
- * @property int $folderId
+ * @property int                     $ipSetId
+ * @property FolderInterface         $folder
+ * @property int                     $folderId
  * @property-read object[] $nameServers
  */
 class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainInterface
