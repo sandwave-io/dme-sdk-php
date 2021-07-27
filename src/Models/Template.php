@@ -26,6 +26,7 @@ class Template extends AbstractModel implements TemplateInterface
      * @var TemplateRecordManagerInterface|null
      */
     protected ?TemplateRecordManagerInterface $recordManager = null;
+
     protected array $props = [
         'name',
         'domainIds',

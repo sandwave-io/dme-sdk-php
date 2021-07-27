@@ -29,16 +29,16 @@ use DnsMadeEasy\Models\Common\CommonManagedDomain;
  * @property-read string[] $axfrServers
  * @property-read string[] $delegateNameServers
  * @property-read object[] $nameServers
- * @property SOARecordInterface $soa;
- * @property int $soaID
+ * @property SOARecordInterface        $soa;
+ * @property int                       $soaID
  * @property VanityNameServerInterface $vanity
- * @property int $vanityId
- * @property TransferAcl $transferAcl
- * @property int $transferAclId
- * @property FolderInterface $folder
- * @property int $folderId
- * @property TemplateInterface $template
- * @property int $templateId
+ * @property int                       $vanityId
+ * @property TransferAcl               $transferAcl
+ * @property int                       $transferAclId
+ * @property FolderInterface           $folder
+ * @property int                       $folderId
+ * @property TemplateInterface         $template
+ * @property int                       $templateId
  * @property-read DomainRecordManagerInterface $records
  */
 class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterface

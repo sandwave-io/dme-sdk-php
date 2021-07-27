@@ -10,12 +10,12 @@ namespace DnsMadeEasy\Interfaces\Models;
  * @package DnsMadeEasy\Interfaces
  *
  * @property string $email
- * @property int $expire
- * @property int $negativeCache
- * @property int $refresh
- * @property int $retry
- * @property int $serial
- * @property int $ttl
+ * @property int    $expire
+ * @property int    $negativeCache
+ * @property int    $refresh
+ * @property int    $retry
+ * @property int    $serial
+ * @property int    $ttl
  * @property string $comp
  * @property string $name
  */

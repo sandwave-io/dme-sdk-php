@@ -11,7 +11,7 @@ use DnsMadeEasy\Interfaces\Models\SecondaryIPSetInterface;
  *
  * @package DnsMadeEasy\Models
  *
- * @property string $name
+ * @property string   $name
  * @property string[] $ips
  */
 class SecondaryIPSet extends AbstractModel implements SecondaryIPSetInterface

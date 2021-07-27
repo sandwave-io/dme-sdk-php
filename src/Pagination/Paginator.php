@@ -16,9 +16,13 @@ use Traversable;
 class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 {
     protected array $items;
+
     protected int $totalItems;
+
     protected int $perPage;
+
     protected int $currentPage;
+
     protected int $lastPage;
 
     /**

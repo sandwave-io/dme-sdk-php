@@ -14,7 +14,7 @@ use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
  * @package DnsMadeEasy\Models
  *
  * @property TemplateInterface $template
- * @property int $templateId
+ * @property int               $templateId
  */
 class TemplateRecord extends Record implements TemplateRecordInterface
 {

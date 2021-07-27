@@ -7,3 +7,4 @@ composer.lock
 clover.xml
 .phpunit.cache
 report
+.php-cs-fixer.cache

@@ -9,7 +9,7 @@ namespace DnsMadeEasy\Interfaces\Models;
  *
  * @package DnsMadeEasy\Interfaces
  *
- * @property string $name
+ * @property string   $name
  * @property string[] $ips
  */
 interface SecondaryIPSetInterface extends AbstractModelInterface

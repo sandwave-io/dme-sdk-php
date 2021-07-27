@@ -37,7 +37,7 @@ jobs:
         run: vendor/bin/phpstan --memory-limit=1G
 
       - name: Check codestyle
-        run: vendor/bin/php-cs-fixer fix --dry-run --show-progress=none --diff-format=udiff -vvv
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --show-progress=none -vvv
 
       - name: Run testsuite
         run: vendor/bin/phpunit
