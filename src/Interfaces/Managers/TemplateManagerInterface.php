@@ -18,20 +18,14 @@ interface TemplateManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Template resource.
-     *
-     * @return TemplateInterface
      */
     public function create(): TemplateInterface;
 
     /**
      * Fetches the template resource with the specified ID.
      *
-     * @param int $id
-     *
      * @throws ModelNotFoundException
      * @throws HttpException
-     *
-     * @return TemplateInterface
      */
     public function get(int $id): TemplateInterface;
 
@@ -39,12 +33,7 @@ interface TemplateManagerInterface extends AbstractManagerInterface
      * Creates a new Template based on the specified domain. This is created immediately on the API and save() does not
      * need to be called on the created resource.
      *
-     * @param ManagedDomainInterface $domain
-     * @param string                 $name
-     *
      * @throws HttpException
-     *
-     * @return TemplateInterface
      */
     public function createFromDomain(ManagedDomainInterface $domain, string $name): TemplateInterface;
 
@@ -52,12 +41,7 @@ interface TemplateManagerInterface extends AbstractManagerInterface
      * Creates a new Template based on the specified domain ID. This is created immediately on the API and save() does
      * not need to be called on the created resource.
      *
-     * @param int    $domainId
-     * @param string $name
-     *
      * @throws HttpException
-     *
-     * @return TemplateInterface
      */
     public function createFromDomainId(int $domainId, string $name): TemplateInterface;
 }

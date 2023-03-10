@@ -23,8 +23,6 @@ class TransferAclManager extends AbstractManager implements TransferAclManagerIn
 
     /**
      * Base URI for Transfer ACLs.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/transferAcl';
 

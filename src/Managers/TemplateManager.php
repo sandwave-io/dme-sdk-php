@@ -24,8 +24,6 @@ class TemplateManager extends AbstractManager implements TemplateManagerInterfac
 
     /**
      * Base URI for template resources.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/template';
 

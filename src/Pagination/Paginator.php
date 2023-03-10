@@ -15,6 +15,7 @@ use Traversable;
  */
 class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 {
+    /** @var mixed[] */
     protected array $items;
 
     protected int $totalItems;
@@ -28,10 +29,7 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Creates a new Paginator.
      *
-     * @param array $items
-     * @param int   $totalItems
-     * @param int   $perPage
-     * @param int   $currentPage
+     * @param mixed[] $items
      */
     public function __construct(array $items, int $totalItems, int $perPage, int $currentPage = 1)
     {
@@ -44,63 +42,48 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Returns true if the specified offset exists in the items.
-     *
-     * @param mixed $offset
-     *
-     * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->items[$offset]);
     }
 
     /**
      * Get the item at the specified offset.
-     *
-     * @param mixed $offset
-     *
-     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->items[$offset];
     }
 
     /**
      * Sets the item at the specified offset.
-     *
-     * @param mixed $offset
-     * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->items[$offset] = $value;
     }
 
     /**
      * Removes the item at the specified offset.
-     *
-     * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->items[$offset]);
     }
 
     /**
      * Gets the number of items in the current page.
-     *
-     * @return int
      */
-    public function count()
+    public function count(): int
     {
-        return (int) count($this->items);
+        return count($this->items);
     }
 
     /**
      * Gets the items in the current page.
      *
-     * @return array
+     * @return mixed[]
      */
     public function items(): array
     {
@@ -109,12 +92,10 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the index of the first item in the page.
-     *
-     * @return int|null
      */
     public function firstItem(): ?int
     {
-        if (count($this->items) > 0) {
+        if ($this->count() > 0) {
             return ($this->currentPage - 1) * $this->perPage + 1;
         }
         return null;
@@ -122,21 +103,18 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the index of the last item in the page.
-     *
-     * @return int|null
      */
     public function lastItem(): ?int
     {
-        if (count($this->items) > 0) {
-            return $this->firstItem() + $this->count() - 1;
+        if ($this->count() > 0) {
+            $offset = $this->firstItem() ?? 0;
+            return $offset + $this->count() - 1;
         }
         return null;
     }
 
     /**
      * Get the current number of items per page in the pagination.
-     *
-     * @return int
      */
     public function perPage(): int
     {
@@ -145,8 +123,6 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the total number of items we are paginating through.
-     *
-     * @return int
      */
     public function total(): int
     {
@@ -155,8 +131,6 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the number of the last page.
-     *
-     * @return int
      */
     public function lastPage(): int
     {
@@ -165,8 +139,6 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Get the number of the current page.
-     *
-     * @return int
      */
     public function currentPage(): int
     {
@@ -175,8 +147,6 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Return true if this is the first page.
-     *
-     * @return bool
      */
     public function onFirstPage(): bool
     {
@@ -185,20 +155,18 @@ class Paginator implements \ArrayAccess, \Countable, \IteratorAggregate
 
     /**
      * Return true if there are more pages after this page.
-     *
-     * @return bool
      */
     public function hasMorePages(): bool
     {
-        return $this->currentPage() < $this->lastpage();
+        return $this->currentPage() < $this->lastPage();
     }
 
     /**
      * Fetch an iterator for the items in the page. Allows the paginator to be iterated through.
      *
-     * @return ArrayIterator|Traversable
+     * @return Traversable<mixed>
      */
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->items());
     }

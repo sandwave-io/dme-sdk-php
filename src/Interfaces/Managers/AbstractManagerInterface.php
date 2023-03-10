@@ -20,8 +20,6 @@ interface AbstractManagerInterface
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
      *
-     * @param AbstractModelInterface $object
-     *
      * @throws HttpException
      *
      * @internal
@@ -30,8 +28,6 @@ interface AbstractManagerInterface
 
     /**
      * Uses the API to delete the specified object. If the object is new, then no action is taken on the API.
-     *
-     * @param AbstractModelInterface $object
      *
      * @throws HttpException
      *
@@ -42,30 +38,21 @@ interface AbstractManagerInterface
     /**
      * Fetch the object from the local cache.
      *
-     * @param $key
-     *
-     * @return AbstractModelInterface
-     *
      * @internal
      */
-    public function getFromCache($key);
+    public function getFromCache(string $key): ?AbstractModelInterface;
 
     /**
      * Put the object into the local cache.
      *
-     * @param $key
-     * @param $object
-     *
      * @internal
      */
-    public function putInCache($key, $object);
+    public function putInCache(string $key, AbstractModelInterface $object): void;
 
     /**
      * Remove the object from the local cache.
      *
-     * @param $object
-     *
      * @internal
      */
-    public function removeFromCache($object);
+    public function removeFromCache(mixed $object): void;
 }

@@ -18,9 +18,6 @@ interface MultipleRecordManagerInterface
 {
     /**
      * Creates a new manager for the supplied domain.
-     *
-     * @param ClientInterface              $client
-     * @param CommonManagedDomainInterface $domain
      */
     public function __construct(ClientInterface $client, CommonManagedDomainInterface $domain);
 

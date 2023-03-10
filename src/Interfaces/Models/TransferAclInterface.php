@@ -16,19 +16,11 @@ interface TransferAclInterface extends AbstractModelInterface
 {
     /**
      * Add an IP address to the ACL's IPs.
-     *
-     * @param string $ip
-     *
-     * @return $this
      */
     public function addIP(string $ip): self;
 
     /**
      * Remove the IP address from the ACL's IPs.
-     *
-     * @param string $ip
-     *
-     * @return $this
      */
     public function removeIP(string $ip): self;
 }

@@ -22,8 +22,6 @@ class Template extends AbstractModel implements TemplateInterface
 {
     /**
      * The record manager for the template.
-     *
-     * @var TemplateRecordManagerInterface|null
      */
     protected ?TemplateRecordManagerInterface $recordManager = null;
 
@@ -39,12 +37,10 @@ class Template extends AbstractModel implements TemplateInterface
 
     /**
      * Returns the record manager for this template.
-     *
-     * @return TemplateRecordManagerInterface
      */
     protected function getRecords(): TemplateRecordManagerInterface
     {
-        if (! $this->recordManager) {
+        if ($this->recordManager === null) {
             $this->recordManager = new TemplateRecordManager($this->client);
             $this->recordManager->setDomain($this);
         }

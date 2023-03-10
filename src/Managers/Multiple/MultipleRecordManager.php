@@ -19,22 +19,16 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
 {
     /**
      * The DNS Made Easy API Client.
-     *
-     * @var ClientInterface
      */
     protected ClientInterface $client;
 
     /**
      * The domain to manage records for.
-     *
-     * @var CommonManagedDomainInterface
      */
     protected CommonManagedDomainInterface $domain;
 
     /**
      * The base URI for managed domains.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/managed';
 
@@ -45,24 +39,22 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
         $this->baseUri = "/dns/managed/{$domain->id}/records";
     }
 
+    /**
+     * @param DomainRecordInterface[] $records
+     */
     public function create(array $records): array
     {
         $payload = [];
         foreach ($records as $record) {
-            // We only handle Domain Records
-            if (! $record instanceof DomainRecordInterface) {
-                continue;
-            }
-
             // We only work on new records
-            if ($record->id) {
+            if ($record->id !== null) {
                 continue;
             }
 
             $payload[] = $record->transformForApi();
         }
 
-        if (! $payload) {
+        if (count($payload) === 0) {
             return [];
         }
 
@@ -75,17 +67,15 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
         return $result;
     }
 
+    /**
+     * @param DomainRecordInterface[] $records
+     */
     public function update(array $records): void
     {
         $payload = [];
         foreach ($records as $record) {
-            // We only handle Domain Records
-            if (! $record instanceof DomainRecordInterface) {
-                continue;
-            }
-
             // We only work on exsiting records
-            if (! $record->id) {
+            if ($record->id === null) {
                 continue;
             }
             $payload[] = $record->transformForApi();
@@ -93,13 +83,14 @@ class MultipleRecordManager implements MultipleRecordManagerInterface
         $this->client->put($this->baseUri . '/updateMulti', $payload);
     }
 
+    /**
+     * @param int[] $ids
+     */
     public function delete(array $ids): void
     {
         $uri = "{$this->baseUri}?";
         foreach ($ids as $id) {
-            if (is_numeric($id)) {
-                $uri .= "ids={$id}&";
-            }
+            $uri .= "ids={$id}&";
         }
         if ($uri == "{$this->baseUri}?") {
             return;

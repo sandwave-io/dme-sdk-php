@@ -16,19 +16,13 @@ interface TransferAclManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Transfer ACL resource.
-     *
-     * @return TransferAclInterface
      */
     public function create(): TransferAclInterface;
 
     /**
      * Returns the TransferAcl resource with the specified ID.
      *
-     * @param int $id
-     *
      * @throws HttpException
-     *
-     * @return TransferAclInterface
      */
     public function get(int $id): TransferAclInterface;
 }

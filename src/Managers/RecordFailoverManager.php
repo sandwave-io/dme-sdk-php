@@ -22,8 +22,6 @@ class RecordFailoverManager extends AbstractManager implements RecordFailoverMan
 
     /**
      * Base URI for failover configuration.
-     *
-     * @var string
      */
     protected string $baseUri = '/monitor';
 
@@ -45,8 +43,6 @@ class RecordFailoverManager extends AbstractManager implements RecordFailoverMan
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
      *
-     * @param RecordFailoverInterface $object
-     *
      * @throws HttpException
      *
      * @internal
@@ -58,10 +54,6 @@ class RecordFailoverManager extends AbstractManager implements RecordFailoverMan
 
     /**
      * Applies transformations to the API data before it is used to instantiate a model.
-     *
-     * @param object $data
-     *
-     * @return object
      */
     protected function transformApiData(object $data): object
     {

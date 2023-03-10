@@ -23,11 +23,7 @@ class DomainRecord extends Record implements DomainRecordInterface
     /**
      * Sets the domain for the record. This can only be set once.
      *
-     * @param ManagedDomainInterface $domain
-     *
      * @throws ReadOnlyPropertyException
-     *
-     * @return $this
      *
      * @internal
      */
@@ -42,8 +38,6 @@ class DomainRecord extends Record implements DomainRecordInterface
 
     /**
      * Get the domain associated with this record.
-     *
-     * @return ManagedDomainInterface|null
      */
     public function getDomain(): ?ManagedDomainInterface
     {
@@ -52,8 +46,6 @@ class DomainRecord extends Record implements DomainRecordInterface
 
     /**
      * Get the ID of the domain associated with the record.
-     *
-     * @return int|null
      */
     public function getDomainId(): ?int
     {

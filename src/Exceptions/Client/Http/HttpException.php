@@ -17,32 +17,24 @@ class HttpException extends DnsMadeEasyException
 {
     /**
      * The request that was made when the exception was thrown.
-     *
-     * @var RequestInterface|null
      */
     protected ?RequestInterface $request = null;
 
     /**
      * The response to the request.
-     *
-     * @var ResponseInterface|null
      */
     protected ?ResponseInterface $response = null;
 
     /**
      * Set the request that caused the exception.
-     *
-     * @param RequestInterface $request
      */
-    public function setRequest(RequestInterface $request)
+    public function setRequest(RequestInterface $request): void
     {
         $this->request = $request;
     }
 
     /**
      * Get the request that caused the exception.
-     *
-     * @return RequestInterface|null
      */
     public function getRequest(): ?RequestInterface
     {
@@ -51,18 +43,14 @@ class HttpException extends DnsMadeEasyException
 
     /**
      * Set the response that caused the exception.
-     *
-     * @param ResponseInterface $response
      */
-    public function setResponse(ResponseInterface $response)
+    public function setResponse(ResponseInterface $response): void
     {
         $this->response = $response;
     }
 
     /**
      * Get the response that caused the exception.
-     *
-     * @return ResponseInterface|null
      */
     public function getResponse(): ?ResponseInterface
     {

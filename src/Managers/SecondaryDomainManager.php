@@ -18,7 +18,7 @@ use DnsMadeEasy\Traits\ListableManager;
  */
 class SecondaryDomainManager extends AbstractManager implements
     SecondaryDomainManagerInterface,
-                                                                ListableManagerInterface
+    ListableManagerInterface
 {
     use ListableManager;
 
@@ -26,8 +26,6 @@ class SecondaryDomainManager extends AbstractManager implements
 
     /**
      * Base URI for secondary domain resources.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/secondary';
 
@@ -43,8 +41,6 @@ class SecondaryDomainManager extends AbstractManager implements
 
     /**
      * Return the name of the model class for the concise version secondary domain resources.
-     *
-     * @return string
      */
     protected function getConciseModelClass(): string
     {

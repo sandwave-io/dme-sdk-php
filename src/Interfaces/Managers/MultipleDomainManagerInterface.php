@@ -16,28 +16,24 @@ interface MultipleDomainManagerInterface
 {
     /**
      * Creates a new Multiple Domain Manager.
-     *
-     * @param ClientInterface $client
      */
     public function __construct(ClientInterface $client);
 
     /**
      * Creates new domains with the specified names and the properties.
      *
-     * @param array       $domainNames
-     * @param object|null $properties
+     * @param string[] $domainNames
      *
      * @throws HttpException
      *
-     * @return array
+     * @return mixed[]
      */
     public function create(array $domainNames, ?object $properties = null): array;
 
     /**
      * Updates the domains with the IDs specified, with the properties in the properties object.
      *
-     * @param array       $ids
-     * @param object|null $properties
+     * @param int[] $ids
      *
      * @throws HttpException
      */
@@ -46,7 +42,7 @@ interface MultipleDomainManagerInterface
     /**
      * Deletes the domains with the specified IDs.
      *
-     * @param array $ids
+     * @param int[] $ids
      *
      * @throws HttpException
      */

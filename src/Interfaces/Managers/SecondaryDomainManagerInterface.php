@@ -16,19 +16,13 @@ interface SecondaryDomainManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Secondary Domain resource.
-     *
-     * @return SecondaryDomainInterface
      */
     public function create(): SecondaryDomainInterface;
 
     /**
      * Gets the Secondary Domain resource with the specified ID.
      *
-     * @param int $id
-     *
      * @throws HttpException
-     *
-     * @return SecondaryDomainInterface
      */
     public function get(int $id): SecondaryDomainInterface;
 }

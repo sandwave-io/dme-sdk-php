@@ -19,8 +19,6 @@ interface UsageManagerInterface
     /**
      * Creates the Usage Manager.
      *
-     * @param ClientInterface $client
-     *
      * @internal
      */
     public function __construct(ClientInterface $client);
@@ -35,19 +33,12 @@ interface UsageManagerInterface
     /**
      * Fetches usage for the specified year and month.
      *
-     * @param int $year
-     * @param int $month
-     *
      * @return UsageInterface[]
      */
     public function forMonth(int $year, int $month): array;
 
     /**
      * Fetches usage for the specified domain ID, year and month.
-     *
-     * @param int $domainId
-     * @param int $year
-     * @param int $month
      *
      * @return UsageInterface[]
      */
@@ -56,13 +47,9 @@ interface UsageManagerInterface
     /**
      * Fetches usage for the specified domain, year and month.
      *
-     * @param CommonManagedDomainInterface $domain
-     * @param int                          $year
-     * @param int                          $month
-     *
      * @throws HttpException
      *
      * @return UsageInterface[]
      */
-    public function forDomain(CommonManagedDomainInterface $domain, int $year, int $month);
+    public function forDomain(CommonManagedDomainInterface $domain, int $year, int $month): array;
 }

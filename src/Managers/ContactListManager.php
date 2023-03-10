@@ -23,8 +23,6 @@ class ContactListManager extends AbstractManager implements ContactListManagerIn
 
     /**
      * The base URI for contact lists.
-     *
-     * @var string
      */
     protected string $baseUri = '/contactList';
 

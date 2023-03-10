@@ -16,19 +16,13 @@ interface VanityNameServerManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Vanity NameServer resource.
-     *
-     * @return VanityNameServerInterface
      */
     public function create(): VanityNameServerInterface;
 
     /**
      * Gets the Vanity NameServer resource with the specified ID.
      *
-     * @param int $id
-     *
      * @throws HttpException
-     *
-     * @return VanityNameServerInterface
      */
     public function get(int $id): VanityNameServerInterface;
 }

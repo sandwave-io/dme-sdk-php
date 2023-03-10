@@ -26,17 +26,17 @@ class SecondaryIPSet extends AbstractModel implements SecondaryIPSetInterface
         'ips',
     ];
 
-    public function addIP(string $ip): self
+    public function addIP(string $ip): SecondaryIPSetInterface
     {
-        if (! in_array($ip, $this->props['ips'])) {
+        if (! in_array($ip, $this->props['ips'], true)) {
             $this->props['ips'][] = $ip;
         }
         return $this;
     }
 
-    public function removeIP(string $ip): self
+    public function removeIP(string $ip): SecondaryIPSetInterface
     {
-        $index = array_search($ip, $this->props['ips']);
+        $index = array_search($ip, $this->props['ips'], true);
         if ($index !== false) {
             unset($this->props['ips'][$index]);
         }

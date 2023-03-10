@@ -24,8 +24,6 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
 {
     /**
      * The base URI for domain records.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/managed/:domain/records';
 
@@ -33,26 +31,23 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
 
     /**
      * Manager for multiple domain records.
-     *
-     * @var MultipleRecordManager|null
      */
     protected ?MultipleRecordManagerInterface $multipleRecordManager = null;
 
     /**
      * The domain for this manager.
-     *
-     * @var ManagedDomainInterface|null
      */
     protected ?ManagedDomainInterface $domain = null;
 
-    public function __get($name)
+    public function __get(string $name): ?MultipleRecordManagerInterface
     {
-        if ($name == 'multiple') {
-            if (! $this->multipleRecordManager) {
+        if ($name === 'multiple') {
+            if ($this->multipleRecordManager === null) {
                 $this->multipleRecordManager = new MultipleRecordManager($this->client, $this->domain);
             }
             return $this->multipleRecordManager;
         }
+        return null;
     }
 
     public function create(): DomainRecordInterface
@@ -68,10 +63,6 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
     /**
      * Sets the domain used for the manager.
      *
-     * @param ManagedDomainInterface $domain
-     *
-     * @return $this
-     *
      * @internal
      */
     public function setDomain(ManagedDomainInterface $domain): DomainRecordManagerInterface
@@ -83,8 +74,6 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
 
     /**
      * Fetches the domain for the manager.
-     *
-     * @return ManagedDomainInterface|null
      *
      * @internal
      */
@@ -105,10 +94,6 @@ class DomainRecordManager extends RecordManager implements DomainRecordManagerIn
 
     /**
      * Creates a new instance of a Domain Record with the Domain property set.
-     *
-     * @param string|null $className
-     *
-     * @return AbstractModelInterface
      */
     protected function createObject(?string $className = null): AbstractModelInterface
     {

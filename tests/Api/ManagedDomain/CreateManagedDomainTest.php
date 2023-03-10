@@ -17,9 +17,8 @@ class CreateManagedDomainTest extends ApiTestCase
         );
 
         $domain = $client->domains->create();
-        /* @var ManagedDomain $domain*/
+        Assert::assertInstanceOf(ManagedDomain::class, $domain);
         $domain->name = 'exampledomain1.com';
         $domain->save();
-        Assert::assertInstanceOf(ManagedDomain::class, $domain);
     }
 }

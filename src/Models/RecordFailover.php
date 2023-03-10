@@ -15,7 +15,7 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  *
  * @property bool $monitor
  * @property int  $recordId
- * @property-read string $systemDescription
+ * @property-read string          $systemDescription
  * @property int    $maxEmails
  * @property int    $sensitivity
  * @property int    $protocolId
@@ -27,13 +27,13 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  * @property string $ip3
  * @property string $ip4
  * @property string $ip5
- * @property-read int $ip1Failed
- * @property-read int $ip2Failed
- * @property-read int $ip3Failed
- * @property-read int $ip4Failed
- * @property-read int $ip5Failed
- * @property-read int $source
- * @property-read int $sourceId
+ * @property-read int             $ip1Failed
+ * @property-read int             $ip2Failed
+ * @property-read int             $ip3Failed
+ * @property-read int             $ip4Failed
+ * @property-read int             $ip5Failed
+ * @property-read int             $source
+ * @property-read int             $sourceId
  * @property int                  $contactListId
  * @property ContactListInterface $contactList;
  * @property string               $httpFqdn
@@ -101,7 +101,7 @@ class RecordFailover extends AbstractModel implements RecordFailoverInterface
     public function save(): void
     {
         // This is different to most other models in that we care about recordId and not id.
-        if ($this->recordId && ! $this->hasChanged()) {
+        if ($this->recordId !== null && ! $this->hasChanged()) {
             return;
         }
         $this->manager->save($this);

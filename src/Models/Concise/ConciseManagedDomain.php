@@ -62,8 +62,6 @@ class ConciseManagedDomain extends CommonManagedDomain implements ConciseManaged
 
     /**
      * Retrieves the full representation of the ManagedDomain.
-     *
-     * @return ManagedDomainInterface
      */
     protected function getFull(): ManagedDomainInterface
     {

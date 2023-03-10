@@ -12,7 +12,7 @@ use DnsMadeEasy\Interfaces\Models\ContactListInterface;
  * @package DnsMadeEasy\Models
  *
  * @property string   $name
- * @property string[] $emails
+ * @property object[] $emails
  * @property int[]    $groups
  */
 class ContactList extends AbstractModel implements ContactListInterface

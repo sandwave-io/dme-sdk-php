@@ -20,20 +20,14 @@ interface ManagedDomainManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Managed Domain.
-     *
-     * @return ManagedDomainInterface
      */
     public function create(): ManagedDomainInterface;
 
     /**
      * Gets the ManagedDomain with the specified ID.
      *
-     * @param int $id
-     *
      * @throws ModelNotFoundException
      * @throws HttpException
-     *
-     * @return ManagedDomainInterface
      */
     public function get(int $id): ManagedDomainInterface;
 }

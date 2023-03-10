@@ -20,8 +20,6 @@ abstract class CommonSecondaryDomain extends AbstractModel implements CommonSeco
     /**
      * Parses the API data.
      *
-     * @param object $data
-     *
      * @throws \Exception
      */
     protected function parseApiData(object $data): void
@@ -33,12 +31,10 @@ abstract class CommonSecondaryDomain extends AbstractModel implements CommonSeco
 
     /**
      * Fetches the folder that the secondary domain is using.
-     *
-     * @return FolderInterface|null
      */
     protected function getFolder(): ?FolderInterface
     {
-        if (! $this->folderId) {
+        if ($this->folderId === null) {
             return null;
         }
         return $this->client->folders->get($this->folderId);

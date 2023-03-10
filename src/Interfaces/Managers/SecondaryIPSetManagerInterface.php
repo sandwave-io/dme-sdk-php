@@ -16,19 +16,13 @@ interface SecondaryIPSetManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Secondary IP Set resource.
-     *
-     * @return SecondaryIPSetInterface
      */
     public function create(): SecondaryIPSetInterface;
 
     /**
      * Gets the Secondary IP Set resource with the specified ID.
      *
-     * @param int $id
-     *
      * @throws HttpException
-     *
-     * @return SecondaryIPSetInterface
      */
     public function get(int $id): SecondaryIPSetInterface;
 }

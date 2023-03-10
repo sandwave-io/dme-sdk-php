@@ -65,7 +65,7 @@ class Client implements ClientInterface, LoggerAwareInterface
     /**
      * Logger interface to use for log messages.
      *
-     * @var LoggerInterface|NullLogger|null
+     * @var LoggerInterface|NullLogger
      */
     public LoggerInterface $logger;
 
@@ -73,22 +73,16 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * The DNS Made Easy API Key.
-     *
-     * @var string
      */
     protected string $apiKey;
 
     /**
      * The DNS Made Easy Secret Key.
-     *
-     * @var string
      */
     protected string $secretKey;
 
     /**
      * The DNS Made Easy API Endpoint.
-     *
-     * @var string
      */
     protected string $endpoint = 'https://api.dnsmadeeasy.com/V2.0';
 
@@ -102,14 +96,14 @@ class Client implements ClientInterface, LoggerAwareInterface
     /**
      * A cache of instantiated manager classes.
      *
-     * @var array
+     * @var mixed[]
      */
     protected array $managers = [];
 
     /**
      * A map of manager names to classes.
      *
-     * @var array|string[]
+     * @var string[]
      */
     protected array $managerMap = [
         'contactlists' => ContactListManager::class,
@@ -126,22 +120,16 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * The ID of the last request to the API.
-     *
-     * @var string|null
      */
     protected ?string $requestId = null;
 
     /**
      * The request limit on the API.
-     *
-     * @var int|null
      */
     protected ?int $requestLimit = null;
 
     /**
      * The number of requests remaining until the limit is hit.
-     *
-     * @var int|null
      */
     protected ?int $requestsRemaining = null;
 
@@ -166,10 +154,10 @@ class Client implements ClientInterface, LoggerAwareInterface
         $this->logger = $logger;
     }
 
-    public function __get($name)
+    public function __get(string $name): mixed
     {
         // Usage is a special manager and not like the others.
-        if ($name == 'usage') {
+        if ($name === 'usage') {
             if (! isset($this->managers['usage'])) {
                 $this->managers['usage'] = new UsageManager($this);
             }
@@ -179,7 +167,7 @@ class Client implements ClientInterface, LoggerAwareInterface
         return $this->getManager($name);
     }
 
-    public function setLogger(LoggerInterface $logger)
+    public function setLogger(LoggerInterface $logger): void
     {
         $this->logger = $logger;
     }
@@ -244,10 +232,10 @@ class Client implements ClientInterface, LoggerAwareInterface
         return $this->paginatorFactory;
     }
 
-    public function get(string $url, array $params = []): ResponseInterface
+    public function get(string $url, ?array $params = null): ResponseInterface
     {
         $queryString = '';
-        if ($params) {
+        if ($params !== null) {
             $queryString = '?' . http_build_query($params);
         }
         $url .= $queryString;
@@ -256,28 +244,28 @@ class Client implements ClientInterface, LoggerAwareInterface
         return $this->send($request);
     }
 
-    public function post(string $url, $payload): ResponseInterface
+    public function post(string $url, mixed $payload): ResponseInterface
     {
         $request = new Request('POST', $this->endpoint . $url, [], 'php://temp');
         $request->withHeader('Content-Type', 'application/json');
-        $request->getBody()->write(json_encode($payload));
+        $request->getBody()->write(json_encode($payload, JSON_THROW_ON_ERROR));
         return $this->send($request);
     }
 
-    public function put(string $url, $payload): ResponseInterface
+    public function put(string $url, mixed $payload): ResponseInterface
     {
         $request = new Request('PUT', $this->endpoint . $url, [], 'php://temp');
         $request->withHeader('Content-Type', 'application/json');
-        $request->getBody()->write(json_encode($payload));
+        $request->getBody()->write(json_encode($payload, JSON_THROW_ON_ERROR));
         return $this->send($request);
     }
 
-    public function delete(string $url, $payload = null): ResponseInterface
+    public function delete(string $url, mixed $payload = null): ResponseInterface
     {
         $request = new Request('DELETE', $this->endpoint . $url);
-        if ($payload) {
+        if ($payload !== null) {
             $request->withHeader('Content-Type', 'application/json');
-            $request->getBody()->write(json_encode($payload));
+            $request->getBody()->write(json_encode($payload, JSON_THROW_ON_ERROR));
         }
         return $this->send($request);
     }
@@ -313,8 +301,6 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Return the ID of the last API request.
-     *
-     * @return string|null
      */
     public function getLastRequestId(): ?string
     {
@@ -323,8 +309,6 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Get the request limit.
-     *
-     * @return int|null
      */
     public function getRequestLimit(): ?int
     {
@@ -333,8 +317,6 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Get the number of requests remaining before you hit the request limit.
-     *
-     * @return int|null
      */
     public function getRequestsRemaining(): ?int
     {
@@ -343,10 +325,8 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Fetch the API request details from the last API response.
-     *
-     * @param ResponseInterface $response
      */
-    protected function updateLimits(ResponseInterface $response)
+    protected function updateLimits(ResponseInterface $response): void
     {
         $requestId = current($response->getHeader('x-dnsme-requestId'));
         if ($requestId === false) {
@@ -373,11 +353,7 @@ class Client implements ClientInterface, LoggerAwareInterface
     /**
      * Adds auth headers to requests. These are generated based on the Api Key and the Secret Key.
      *
-     * @param RequestInterface $request
-     *
      * @throws \Exception
-     *
-     * @return RequestInterface
      */
     protected function addAuthHeaders(RequestInterface $request): RequestInterface
     {
@@ -393,12 +369,8 @@ class Client implements ClientInterface, LoggerAwareInterface
 
     /**
      * Check if a manager exists with that name in our manager map.
-     *
-     * @param $name
-     *
-     * @return bool
      */
-    protected function hasManager($name): bool
+    protected function hasManager(string $name): bool
     {
         $name = strtolower($name);
         return array_key_exists($name, $this->managerMap);
@@ -407,13 +379,9 @@ class Client implements ClientInterface, LoggerAwareInterface
     /**
      * Gets the manager with the specified name.
      *
-     * @param $name
-     *
      * @throws ManagerNotFoundException
-     *
-     * @return AbstractManagerInterface
      */
-    protected function getManager($name): AbstractManagerInterface
+    protected function getManager(string $name): AbstractManagerInterface
     {
         if (! $this->hasManager($name)) {
             throw new ManagerNotFoundException();

@@ -17,19 +17,13 @@ interface RecordFailoverManagerInterface
     /**
      * Returns the failover resource for the specified record ID. If the resource doesn't exist, a new one is created.
      *
-     * @param int $recordId
-     *
      * @throws HttpException
      * @throws \ReflectionException
-     *
-     * @return RecordFailoverInterface
      */
     public function get(int $recordId): RecordFailoverInterface;
 
     /**
      * Updates the API with changes made to the specified object. If the object is new, it will be created.
-     *
-     * @param RecordFailoverInterface $object
      *
      * @throws HttpException
      *
@@ -39,8 +33,6 @@ interface RecordFailoverManagerInterface
 
     /**
      * Uses the API to delete the specified object. If the object is new, then no action is taken on the API.
-     *
-     * @param RecordFailoverInterface $recordFailover
      *
      * @throws HttpException
      *
