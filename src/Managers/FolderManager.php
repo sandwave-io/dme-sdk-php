@@ -9,6 +9,7 @@ use DnsMadeEasy\Interfaces\Models\FolderInterface;
 use DnsMadeEasy\Interfaces\Traits\ListableManagerInterface;
 use DnsMadeEasy\Models\Concise\ConciseFolder;
 use DnsMadeEasy\Models\Folder;
+use DnsMadeEasy\Pagination\Paginator;
 
 /**
  * Manager for Folder resources.
@@ -19,8 +20,6 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
 {
     /**
      * Base URI for Folder resources.
-     *
-     * @var string
      */
     protected string $baseUri = '/security/folder';
 
@@ -32,16 +31,12 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
      * {@internal This is different to the other resources in that the API endpoint does not appear to
      * be paginated. Instead for consistency, we'll simulate pagination.}
      *
-     * @param int        $page
-     * @param int        $perPage
-     * @param array|null $filters
+     * @param mixed[] $filters
      *
      * @throws \DnsMadeEasy\Exceptions\Client\Http\HttpException
      * @throws \ReflectionException
-     *
-     * @return \DnsMadeEasy\Pagination\Paginator|mixed
      */
-    public function paginate(int $page = 1, int $perPage = 20, $filters = [])
+    public function paginate(int $page = 1, int $perPage = 20, ?array $filters = []): Paginator|mixed
     {
         $response = $this->client->get($this->getBaseUri());
         $data = json_decode((string) $response->getBody());
@@ -69,8 +64,6 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
 
     /**
      * Returns the model class for Concise Folder resources.
-     *
-     * @return string
      */
     protected function getConciseModelClass(): string
     {
@@ -79,10 +72,6 @@ class FolderManager extends AbstractManager implements FolderManagerInterface, L
 
     /**
      * Applies transformations to the concise data for a Folder.
-     *
-     * @param object $data
-     *
-     * @return object
      */
     protected function transformConciseApiData(object $data): object
     {

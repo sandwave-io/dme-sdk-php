@@ -22,23 +22,23 @@ use DnsMadeEasy\Models\Common\CommonManagedDomain;
  * @package DnsMadeEasy\Models
  *
  * @property string $name
- * @property-read array $activeThirdParties
- * @property-read \DateTime $created
- * @property-read \DateTime $updated
+ * @property-read array                $activeThirdParties
+ * @property-read \DateTime            $created
+ * @property-read \DateTime            $updated
  * @property bool $gtdEnabled
- * @property-read string[] $axfrServers
- * @property-read string[] $delegateNameServers
- * @property-read object[] $nameServers
- * @property SOARecordInterface $soa;
- * @property int $soaID
+ * @property-read string[]             $axfrServers
+ * @property-read string[]             $delegateNameServers
+ * @property-read object[]             $nameServers
+ * @property SOARecordInterface        $soa;
+ * @property int                       $soaID
  * @property VanityNameServerInterface $vanity
- * @property int $vanityId
- * @property TransferAcl $transferAcl
- * @property int $transferAclId
- * @property FolderInterface $folder
- * @property int $folderId
- * @property TemplateInterface $template
- * @property int $templateId
+ * @property int                       $vanityId
+ * @property TransferAcl               $transferAcl
+ * @property int                       $transferAclId
+ * @property FolderInterface           $folder
+ * @property int                       $folderId
+ * @property TemplateInterface         $template
+ * @property int                       $templateId
  * @property-read DomainRecordManagerInterface $records
  */
 class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterface
@@ -69,14 +69,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * The record manager for this domain.
-     *
-     * @var DomainRecordManagerInterface|null
      */
     protected ?DomainRecordManagerInterface $recordManager = null;
 
     /**
-     * @return object
-     *
      * @internal
      */
     public function transformForApi(): object
@@ -85,18 +81,16 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
         $payload = parent::transformForApi();
 
         // We can't update these
-        $payload->updated = $this->apiData ? $this->apiData->updated : null;
-        $payload->created = $this->apiData ? $this->apiData->created : null;
+        $payload->updated = $this->apiData?->updated ?? null;
+        $payload->created = $this->apiData?->created ?? null;
 
         return $payload;
     }
 
     /**
      * Sets the folder for domain.
-     *
-     * @param $folder
      */
-    protected function setFolder($folder)
+    protected function setFolder(mixed $folder): void
     {
         if (is_integer($folder)) {
             $this->folderId = $folder;
@@ -107,10 +101,8 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * Sets the Vanity Nameserver for the domain.
-     *
-     * @param $vanity
      */
-    protected function setVanity($vanity)
+    protected function setVanity(mixed $vanity): void
     {
         if (is_integer($vanity)) {
             $this->vanityId = $vanity;
@@ -121,10 +113,8 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * Sets the Transfer ACL for the domain.
-     *
-     * @param $transferAcl
      */
-    protected function setTransferAcl($transferAcl)
+    protected function setTransferAcl(mixed $transferAcl): void
     {
         if (is_integer($transferAcl)) {
             $this->transferAclId = $transferAcl;
@@ -135,10 +125,8 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * Sets the Template for the domain.
-     *
-     * @param $template
      */
-    protected function setTemplate($template)
+    protected function setTemplate(mixed $template): void
     {
         if (is_integer($template)) {
             $this->templateId = $template;
@@ -149,10 +137,8 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * Set the custom SOA Record for the domain.
-     *
-     * @param $soa
      */
-    protected function setSOA($soa)
+    protected function setSOA(mixed $soa): void
     {
         if (is_integer($soa)) {
             $this->soaID = $soa;
@@ -163,12 +149,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * Get the custom SOA record assigned to the domain.
-     *
-     * @return SOARecordInterface|null
      */
     protected function getSOA(): ?SOARecordInterface
     {
-        if (! $this->soaID) {
+        if ($this->soaID === null) {
             return null;
         }
         return $this->client->soarecords->get($this->soaID);
@@ -176,12 +160,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * Get the Transfer ACL assigned to the domain.
-     *
-     * @return TransferAclInterface|null
      */
     protected function getTransferAcl(): ?TransferAclInterface
     {
-        if (! $this->transferAclId) {
+        if ($this->transferAclId === null) {
             return null;
         }
         return $this->client->transferacls->get($this->transferAclId);
@@ -189,12 +171,10 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
 
     /**
      * Get the Vanity Nameserver assigned to the domain.
-     *
-     * @return VanityNameServerInterface|null
      */
     protected function getVanity(): ?VanityNameServerInterface
     {
-        if (! $this->vanityId) {
+        if ($this->vanityId === null) {
             return null;
         }
         return $this->client->vanity->get($this->vanityId);
@@ -203,26 +183,22 @@ class ManagedDomain extends CommonManagedDomain implements ManagedDomainInterfac
     /**
      * Sets the name of the domain. This can only be set on new domains.
      *
-     * @param string $name
-     *
      * @throws ReadOnlyPropertyException
      */
-    protected function setName(string $name)
+    protected function setName(string $name): void
     {
-        if ($this->id) {
-            throw new ReadOnlyPropertyException('Unable to set name');
+        if ($this->id !== null) {
+            throw new ReadOnlyPropertyException('Unable to set name because id is filled');
         }
         $this->props['name'] = $name;
     }
 
     /**
      * Gets the record manager for this domain.
-     *
-     * @return DomainRecordManagerInterface
      */
     protected function getRecords(): DomainRecordManagerInterface
     {
-        if (! $this->recordManager) {
+        if ($this->recordManager === null) {
             $this->recordManager = new DomainRecordManager($this->client);
             $this->recordManager->setDomain($this);
         }

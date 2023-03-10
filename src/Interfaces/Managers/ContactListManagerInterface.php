@@ -17,20 +17,14 @@ interface ContactListManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new ContactList.
-     *
-     * @return ContactListInterface
      */
     public function create(): ContactListInterface;
 
     /**
      * Gets the ContactList with the specified ID.
      *
-     * @param int $id
-     *
      * @throws ModelNotFoundException
      * @throws HttpException
-     *
-     * @return ContactListInterface
      */
     public function get(int $id): ContactListInterface;
 }

@@ -17,20 +17,14 @@ interface FolderManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new Folder resource.
-     *
-     * @return FolderInterface
      */
     public function create(): FolderInterface;
 
     /**
      * Gets the Folder resource with the specified ID.
      *
-     * @param int $id
-     *
      * @throws ModelNotFoundException
      * @throws HttpException
-     *
-     * @return FolderInterface
      */
     public function get(int $id): FolderInterface;
 }

@@ -17,16 +17,16 @@ use DnsMadeEasy\Models\Common\CommonSecondaryDomain;
  * @package DnsMadeEasy\Models
  *
  * @property string $name
- * @property-read \DateTime $created
- * @property-read \DateTime $updated
- * @property-read bool $gtdEnabled
- * @property-read int $nameServerGroupId
- * @property-read int $pendingActionId
+ * @property-read \DateTime          $created
+ * @property-read \DateTime          $updated
+ * @property-read bool               $gtdEnabled
+ * @property-read int                $nameServerGroupId
+ * @property-read int                $pendingActionId
  * @property SecondaryIPSetInterface $ipSet
- * @property int $ipSetId
- * @property FolderInterface $folder
- * @property int $folderId
- * @property-read object[] $nameServers
+ * @property int                     $ipSetId
+ * @property FolderInterface         $folder
+ * @property int                     $folderId
+ * @property-read object[]           $nameServers
  */
 class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainInterface
 {
@@ -50,20 +50,18 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
     ];
 
     /**
-     * @return object
-     *
      * @internal
      */
     public function transformForApi(): object
     {
         $payload = (object) [];
-        if (! $this->id) {
+        if ($this->id === null) {
             $payload->name = $this->name;
         }
-        if ($this->ipSetId) {
+        if ($this->ipSetId !== null) {
             $payload->ipSetId = $this->ipSetId;
         }
-        if ($this->folderId) {
+        if ($this->folderId !== null) {
             $payload->folderId = $this->folderId;
         }
         return $payload;
@@ -71,10 +69,8 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Sets the folder the domain has been assigned to.
-     *
-     * @param $folder
      */
-    protected function setFolder($folder)
+    protected function setFolder(mixed $folder): void
     {
         if (is_integer($folder)) {
             $this->folderId = $folder;
@@ -85,10 +81,8 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Sets the secondary IP set for the domain.
-     *
-     * @param SecondaryIPSet $set
      */
-    protected function setIpSet(SecondaryIPSet $set)
+    protected function setIpSet(SecondaryIPSet $set): void
     {
         $this->props['ipSet'] = $set;
         $this->props['ipSetId'] = $set->id;
@@ -96,10 +90,8 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Sets the secondary IP set ID for the domain.
-     *
-     * @param int $id
      */
-    protected function setIpSetId(int $id)
+    protected function setIpSetId(int $id): void
     {
         $this->props['ipSetId'] = $id;
         $this->props['ipSet'] = null;
@@ -107,37 +99,34 @@ class SecondaryDomain extends CommonSecondaryDomain implements SecondaryDomainIn
 
     /**
      * Get the secondary IP set for the domain.
-     *
-     * @return mixed|null
      */
-    protected function getIpSet()
+    protected function getIpSet(): mixed
     {
-        if ($this->props['ipSet']) {
+        if ($this->props['ipSet'] !== null) {
             return $this->props['ipSet'];
-        } elseif ($this->props['ipSet']) {
-            return $this->client->secondaryipsets->get($this->props['ipSet']);
         }
+        // elseif ($this->props['ipSet'] !== null) {
+        //     return $this->client->secondaryipsets->get($this->props['ipSet']);
+        // }
         return null;
     }
 
     /**
      * Set the name of the domain. This can only be set on new domain objects.
      *
-     * @param string $name
-     *
      * @throws ReadOnlyPropertyException
      */
-    protected function setName(string $name)
+    protected function setName(string $name): void
     {
-        if ($this->id) {
-            throw new ReadOnlyPropertyException('Unable to set name');
+        if ($this->id !== null) {
+            throw new ReadOnlyPropertyException('Unable to set name because id is filled');
         }
         $this->props['name'] = $name;
     }
 
     protected function parseApiData(object $data): void
     {
-        if ($data->ipSetId) {
+        if ($data->ipSetId !== null) {
             $data->ipSet = new SecondaryIPSet($this->client->secondaryipsets, $this->client, $data->ipSet);
         }
         parent::parseApiData($data);

@@ -9,27 +9,19 @@ namespace DnsMadeEasy\Interfaces\Models;
  *
  * @package DnsMadeEasy\Interfaces
  *
- * @property string $name
- * @property string[] $emails
- * @property int[] $groups
+ * @property string   $name
+ * @property object[] $emails
+ * @property int[]    $groups
  */
 interface ContactListInterface extends AbstractModelInterface
 {
     /**
      * Add an email to the contactlist.
-     *
-     * @param string $email
-     *
-     * @return ContactListInterface
      */
     public function addEmail(string $email): ContactListInterface;
 
     /**
      * Remove an email from the contactlist.
-     *
-     * @param string $email
-     *
-     * @return ContactListInterface
      */
     public function removeEmail(string $email): ContactListInterface;
 }

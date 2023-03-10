@@ -19,7 +19,6 @@ class GetManagedDomainTest extends ApiTestCase
         $domain = $client->domains->get(1119443);
         Assert::assertInstanceOf(ManagedDomain::class, $domain);
 
-        /** @var ManagedDomain $domain */
         Assert::assertEquals(1119443, $domain->id);
         Assert::assertEquals('exampledomain.com', $domain->name);
 

@@ -16,10 +16,6 @@ interface TemplateRecordInterface extends RecordInterface
 {
     /**
      * Set the template for the record.
-     *
-     * @param TemplateInterface $template
-     *
-     * @return $this
      */
     public function setTemplate(TemplateInterface $template): self;
 }

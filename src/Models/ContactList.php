@@ -11,9 +11,9 @@ use DnsMadeEasy\Interfaces\Models\ContactListInterface;
  *
  * @package DnsMadeEasy\Models
  *
- * @property string $name
- * @property string[] $emails
- * @property int[] $groups
+ * @property string   $name
+ * @property object[] $emails
+ * @property int[]    $groups
  */
 class ContactList extends AbstractModel implements ContactListInterface
 {

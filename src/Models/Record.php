@@ -16,27 +16,27 @@ use DnsMadeEasy\Interfaces\Models\RecordInterface;
  *
  * @package DnsMadeEasy\Models
  *
- * @property string $value
+ * @property string     $value
  * @property RecordType $type
- * @property string $name
- * @property-read int $source
- * @property-read int $sourceId
- * @property bool $dynamicDns
+ * @property string     $name
+ * @property-read int    $source
+ * @property-read int    $sourceId
+ * @property bool   $dynamicDns
  * @property string $password
- * @property int $ttl
- * @property-read bool $monitor
- * @property-read bool $failover
- * @property-read bool $failed
+ * @property int    $ttl
+ * @property-read bool   $monitor
+ * @property-read bool   $failover
+ * @property-read bool   $failed
  * @property GTDLocation $gtdLocation
- * @property string $description
- * @property string $keywords
- * @property string $title
- * @property string $redirectType
- * @property bool $hardlink
- * @property int $mxLevel
- * @property int $weight
- * @property int $priority
- * @property int $port
+ * @property string      $description
+ * @property string      $keywords
+ * @property string      $title
+ * @property string      $redirectType
+ * @property bool        $hardlink
+ * @property int         $mxLevel
+ * @property int         $weight
+ * @property int         $priority
+ * @property int         $port
  */
 abstract class Record extends AbstractModel implements RecordInterface
 {
@@ -87,11 +87,9 @@ abstract class Record extends AbstractModel implements RecordInterface
     ];
 
     /**
-     * @return mixed|object
-     *
      * @internal
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $obj = parent::jsonSerialize();
         if ($obj->type) {
@@ -107,12 +105,10 @@ abstract class Record extends AbstractModel implements RecordInterface
      * Get the record's failover and monitoring configuration.
      *
      * @throws DnsMadeEasyException
-     *
-     * @return RecordFailoverInterface
      */
     public function getRecordFailover(): RecordFailoverInterface
     {
-        if (! $this->id) {
+        if ($this->id === null) {
             throw new DnsMadeEasyException('Unable to fetch failover record for a record that has not been saved');
         }
         return $this->client->failover->get($this->id);
@@ -132,13 +128,11 @@ abstract class Record extends AbstractModel implements RecordInterface
     /**
      * Sets the type of record. This can only be done on new records.
      *
-     * @param RecordType $type
-     *
      * @throws ReadOnlyPropertyException
      */
-    protected function setType(RecordType $type)
+    protected function setType(RecordType $type): void
     {
-        if ($this->id && $this->props['type']) {
+        if ($this->id !== null && $this->props['type'] !== null) {
             throw new ReadOnlyPropertyException('Type can only be set before a record has been saved');
         }
         $this->props['type'] = $type;

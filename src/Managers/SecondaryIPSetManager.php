@@ -23,8 +23,6 @@ class SecondaryIPSetManager extends AbstractManager implements SecondaryIPSetMan
 
     /**
      * Base URI for secondary domain IP sets.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/secondary/ipSet';
 

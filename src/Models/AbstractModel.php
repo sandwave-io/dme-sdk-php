@@ -21,66 +21,54 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 {
     /**
      * The manager for this object.
-     *
-     * @var AbstractManagerInterface
      */
     protected AbstractManagerInterface $manager;
 
     /**
      * The Dns Made Easy API Client.
-     *
-     * @var ClientInterface
      */
     protected ClientInterface $client;
 
     /**
      * The ID of the object.
-     *
-     * @var int|null
      */
     protected ?int $id = null;
 
     /**
      * A list of properties that have been modified since the object was last saved.
      *
-     * @var array
+     * @var string[]
      */
     protected array $changed = [];
 
     /**
      * The properties of this object.
      *
-     * @var array
+     * @var mixed[]
      */
     protected array $props = [];
 
     /**
      * The original properties from when the object was instantiated/last loaded from the API.
      *
-     * @var array
+     * @var string[]
      */
     protected array $originalProps = [];
 
     /**
      * A list of properties that are editable on this model.
      *
-     * @var array
+     * @var string[]
      */
     protected array $editable = [];
 
     /**
      * The original data retrieved from the API.
-     *
-     * @var object|null
      */
     protected ?object $apiData = null;
 
     /**
      * Creates the model and optionally populates it with data.
-     *
-     * @param AbstractManagerInterface $manager
-     * @param ClientInterface          $client
-     * @param object|null              $data
      *
      * @internal
      */
@@ -89,7 +77,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         $this->manager = $manager;
         $this->client = $client;
         $this->originalProps = $this->props;
-        if ($data) {
+        if ($data !== null) {
             $this->populateFromApi($data);
         }
     }
@@ -99,11 +87,9 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
      *
      * @throws \ReflectionException
      *
-     * @return string
-     *
      * @internal
      */
-    public function __toString()
+    public function __toString(): string
     {
         $rClass = new \ReflectionClass($this);
         $modelName = $rClass->getShortName();
@@ -117,13 +103,9 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
      * Magic method to fetch properties for the object. If a get{Name} method exists, it will be called  first,
      * otherwise it will try and fetch it from the properties array.
      *
-     * @param $name
-     *
-     * @return mixed
-     *
      * @internal
      */
-    public function __get($name)
+    public function __get(string $name): mixed
     {
         $methodName = 'get' . ucfirst($name);
         if (method_exists($this, $methodName)) {
@@ -131,6 +113,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
         } elseif (array_key_exists($name, $this->props)) {
             return $this->props[$name];
         }
+        return null;
     }
 
     /**
@@ -139,19 +122,16 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
      *
      * Changes are tracked to allow us to see any changes.
      *
-     * @param $name
-     * @param $value
-     *
      * @throws ReadOnlyPropertyException
      *
      * @internal
      */
-    public function __set($name, $value)
+    public function __set(string $name, mixed $value): void
     {
         $methodName = 'set' . ucfirst($name);
         if (method_exists($this, $methodName)) {
             $this->{$methodName}($value);
-        } elseif (in_array($name, $this->editable)) {
+        } elseif (in_array($name, $this->editable, true)) {
             $this->props[$name] = $value;
             $this->changed[] = $name;
         } elseif (array_key_exists($name, $this->props)) {
@@ -161,7 +141,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     public function save(): void
     {
-        if ($this->id && ! $this->hasChanged()) {
+        if ($this->id !== null && ! $this->hasChanged()) {
             return;
         }
         $this->manager->save($this);
@@ -171,7 +151,7 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     public function delete(): void
     {
-        if (! $this->id) {
+        if ($this->id === null) {
             return;
         }
         $this->manager->delete($this);
@@ -183,8 +163,6 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     }
 
     /**
-     * @param object $data
-     *
      * @internal
      */
     public function populateFromApi(object $data): void
@@ -198,8 +176,6 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Generate a representation of the object for sending to the API.
-     *
-     * @return object
      *
      * @internal
      */
@@ -221,11 +197,9 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
     /**
      * Returns a JSON serializable representation of the resource.
      *
-     * @return mixed|object
-     *
      * @internal
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $result = (object) [
             'id' => $this->id,
@@ -246,8 +220,6 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Parses the API data and assigns it to properties on this object.
-     *
-     * @param object $data
      */
     protected function parseApiData(object $data): void
     {
@@ -262,8 +234,6 @@ abstract class AbstractModel implements AbstractModelInterface, JsonSerializable
 
     /**
      * Returns the ID of the object. Since ID is a protected property, this is required for fetching it.
-     *
-     * @return int|null
      */
     protected function getId(): ?int
     {

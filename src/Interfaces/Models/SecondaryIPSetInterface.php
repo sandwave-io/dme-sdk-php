@@ -9,26 +9,18 @@ namespace DnsMadeEasy\Interfaces\Models;
  *
  * @package DnsMadeEasy\Interfaces
  *
- * @property string $name
+ * @property string   $name
  * @property string[] $ips
  */
 interface SecondaryIPSetInterface extends AbstractModelInterface
 {
     /**
      * Add an IP address to the secondary IP set.
-     *
-     * @param string $ip
-     *
-     * @return $this
      */
     public function addIP(string $ip): self;
 
     /**
      * Remove the IP address from the secondary IP set.
-     *
-     * @param string $ip
-     *
-     * @return $this
      */
     public function removeIP(string $ip): self;
 }

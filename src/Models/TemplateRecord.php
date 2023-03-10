@@ -14,7 +14,7 @@ use DnsMadeEasy\Interfaces\Models\TemplateRecordInterface;
  * @package DnsMadeEasy\Models
  *
  * @property TemplateInterface $template
- * @property int $templateId
+ * @property int               $templateId
  */
 class TemplateRecord extends Record implements TemplateRecordInterface
 {
@@ -23,17 +23,13 @@ class TemplateRecord extends Record implements TemplateRecordInterface
     /**
      * Sets the template for the record.
      *
-     * @param TemplateInterface $template
-     *
      * @throws ReadOnlyPropertyException
-     *
-     * @return $this
      *
      * @internal
      */
     public function setTemplate(TemplateInterface $template): self
     {
-        if ($this->template) {
+        if ($this->template !== null) {
             throw new ReadOnlyPropertyException('Template can only be set once');
         }
         $this->template = $template;
@@ -42,8 +38,6 @@ class TemplateRecord extends Record implements TemplateRecordInterface
 
     /**
      * Gets the template for the record.
-     *
-     * @return TemplateInterface|null
      */
     protected function getTemplate(): ?TemplateInterface
     {
@@ -52,12 +46,10 @@ class TemplateRecord extends Record implements TemplateRecordInterface
 
     /**
      * Gets the template ID for the record.
-     *
-     * @return int|null
      */
     protected function getTemplateId(): ?int
     {
-        if (! $this->template) {
+        if ($this->template === null) {
             return null;
         }
         return $this->template->id;

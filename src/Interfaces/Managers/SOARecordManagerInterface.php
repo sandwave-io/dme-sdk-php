@@ -16,19 +16,13 @@ interface SOARecordManagerInterface extends AbstractManagerInterface
 {
     /**
      * Creates a new SOA Record resource.
-     *
-     * @return SOARecordInterface
      */
     public function create(): SOARecordInterface;
 
     /**
      * Returns the SOA Record resource with the specified ID.
      *
-     * @param int $id
-     *
      * @throws HttpException
-     *
-     * @return SOARecordInterface
      */
     public function get(int $id): SOARecordInterface;
 }

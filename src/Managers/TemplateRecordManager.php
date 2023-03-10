@@ -21,15 +21,11 @@ class TemplateRecordManager extends RecordManager implements TemplateRecordManag
 
     /**
      * Base URI for template record resources.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/template/:template/records';
 
     /**
      * The Template for the manager.
-     *
-     * @var TemplateInterface|null
      */
     protected ?TemplateInterface $template = null;
 
@@ -46,8 +42,6 @@ class TemplateRecordManager extends RecordManager implements TemplateRecordManag
     /**
      * Sets the template for the manager.
      *
-     * @param TemplateInterface $template
-     *
      * @return $this|TemplateRecordManagerInterface
      *
      * @internal
@@ -62,8 +56,6 @@ class TemplateRecordManager extends RecordManager implements TemplateRecordManag
     /**
      * Gets the template for the manager.
      *
-     * @return TemplateInterface|null
-     *
      * @internal
      */
     public function getTemplate(): ?TemplateInterface
@@ -73,10 +65,6 @@ class TemplateRecordManager extends RecordManager implements TemplateRecordManag
 
     /**
      * Create a new Template Record.
-     *
-     * @param string|null $className
-     *
-     * @return AbstractModelInterface
      */
     protected function createObject(?string $className = null): AbstractModelInterface
     {

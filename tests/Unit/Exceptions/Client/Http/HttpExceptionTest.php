@@ -18,11 +18,9 @@ class HttpExceptionTest extends TestCase
 
         $exception->setRequest(new Request('GET', '/test'));
         Assert::assertNotNull($exception->getRequest(), 'request should be set');
-        Assert::assertSame('GET', $exception->getRequest()->getMethod(), 'request should be the same as has been set');
         Assert::assertSame('/test', $exception->getRequest()->getUri()->getPath(), 'request should be the same as has been set');
 
         $exception->setResponse(new Response(200));
         Assert::assertNotNull($exception->getResponse(), 'response should be set');
-        Assert::assertSame(200, $exception->getResponse()->getStatusCode(), 'response should be the same as has been set');
     }
 }

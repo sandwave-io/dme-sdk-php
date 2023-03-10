@@ -14,7 +14,9 @@ use Psr\Http\Message\RequestInterface;
 abstract class ApiTestCase extends TestCase
 {
     const API_KEY = 'test_key';
+
     const API_SECRET = 'test_secret';
+
     const HEADERS = [
         'x-dnsme-requestId' => '999',
         'x-dnsme-requestsRemaining' => '999',

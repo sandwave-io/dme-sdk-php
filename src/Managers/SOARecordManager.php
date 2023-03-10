@@ -23,8 +23,6 @@ class SOARecordManager extends AbstractManager implements SOARecordManagerInterf
 
     /**
      * Base URI for SOA records.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/soa';
 

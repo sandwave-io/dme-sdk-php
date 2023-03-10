@@ -30,7 +30,6 @@ class ListDomainRecordsTest extends ApiTestCase
         Assert::assertEquals(3, $records->count(), 'Unexpected number of records.');
         $record = $records[0];
         Assert::assertInstanceOf(Record::class, $record);
-        /** @var Record $record */
         Assert::assertEquals('A', $record->type);
         Assert::assertEquals('208.94.148.2', $record->value);
         Assert::assertEquals('ns1', $record->name);

@@ -19,10 +19,6 @@ interface AbstractModelInterface
     /**
      * Creates a new model of the resource.
      *
-     * @param AbstractManagerInterface $manager
-     * @param ClientInterface          $client
-     * @param object|null              $data
-     *
      * @internal
      */
     public function __construct(AbstractManagerInterface $manager, ClientInterface $client, ?object $data = null);
@@ -39,8 +35,6 @@ interface AbstractModelInterface
 
     /**
      * Returns true if the object has been modified since it was fetched.
-     *
-     * @return bool
      */
     public function hasChanged(): bool;
 
@@ -52,16 +46,12 @@ interface AbstractModelInterface
     /**
      * Populate the object from API data.
      *
-     * @param object $data
-     *
      * @internal
      */
     public function populateFromApi(object $data): void;
 
     /**
      * Generate a representation of the object for sending to the API.
-     *
-     * @return object
      *
      * @internal
      */

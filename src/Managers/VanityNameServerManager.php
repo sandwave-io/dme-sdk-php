@@ -17,7 +17,7 @@ use DnsMadeEasy\Traits\ListableManager;
  */
 class VanityNameServerManager extends AbstractManager implements
     VanityNameServerManagerInterface,
-                                                                 ListableManagerInterface
+    ListableManagerInterface
 {
     use ListableManager;
 
@@ -25,8 +25,6 @@ class VanityNameServerManager extends AbstractManager implements
 
     /**
      * Base URI for Vanity NameServer resources.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/vanity';
 

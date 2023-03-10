@@ -17,15 +17,11 @@ trait ListableManager
      * By default this is a Paginator with a similar interface to the LengthAwarePaginator that is provided with
      * Laravel.
      *
-     * @param int        $page
-     * @param int        $perPage
-     * @param array|null $filters
+     * @param mixed[]|null $filters
      *
      * @throws HttpException
-     *
-     * @return Paginator|mixed
      */
-    public function paginate(int $page = 1, int $perPage = 20, $filters = [])
+    public function paginate(int $page = 1, int $perPage = 20, mixed $filters = []): mixed
     {
         $params = $filters + [
                 'page' => $page,

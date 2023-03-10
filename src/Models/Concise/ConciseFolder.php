@@ -41,8 +41,6 @@ class ConciseFolder extends CommonFolder implements ConciseFolderInterface
 
     /**
      * Get the full representation of the Folder.
-     *
-     * @return FolderInterface
      */
     protected function getFull(): FolderInterface
     {
@@ -51,8 +49,6 @@ class ConciseFolder extends CommonFolder implements ConciseFolderInterface
 
     /**
      * Parse the API data and assign it to properties on this model.
-     *
-     * @param object $data
      */
     protected function parseApiData(object $data): void
     {

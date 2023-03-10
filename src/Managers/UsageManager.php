@@ -24,8 +24,6 @@ class UsageManager implements UsageManagerInterface
     /**
      * Createsa new Query Usage manager.
      *
-     * @param ClientInterface $client
-     *
      * @internal
      */
     public function __construct(ClientInterface $client)
@@ -56,12 +54,9 @@ class UsageManager implements UsageManagerInterface
     /**
      * Returns the data from the API for the usage requested.
      *
-     * @param string   $url
-     * @param int|null $domainId
-     *
      * @throws HttpException
      *
-     * @return array
+     * @return Usage[]
      */
     protected function getData(string $url, ?int $domainId = null): array
     {

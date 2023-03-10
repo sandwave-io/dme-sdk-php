@@ -44,11 +44,9 @@ class Usage extends AbstractModel implements UsageInterface
     /**
      * Since there's no string representation of usage, just return 'Usage'.
      *
-     * @return string
-     *
      * @internal
      */
-    public function __toString()
+    public function __toString(): string
     {
         return 'Usage';
     }
@@ -76,12 +74,10 @@ class Usage extends AbstractModel implements UsageInterface
 
     /**
      * Get the domain associated with the usage.
-     *
-     * @return ManagedDomainInterface|null
      */
     protected function getDomain(): ?ManagedDomainInterface
     {
-        if (! $this->domainId) {
+        if ($this->domainId === null) {
             return null;
         }
         return $this->client->domain->get($this->domainId);

@@ -52,6 +52,8 @@ class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSec
 
     /**
      * Override the refresh method. Refreshing it would fetch the full version of the resource.
+     *
+     * @internal
      */
     public function refresh(): void
     {
@@ -59,8 +61,6 @@ class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSec
 
     /**
      * Retrieves the full representation of the Secondary Domain.
-     *
-     * @return SecondaryDomainInterface
      */
     protected function getFull(): SecondaryDomainInterface
     {
@@ -69,12 +69,10 @@ class ConciseSecondaryDomain extends CommonSecondaryDomain implements ConciseSec
 
     /**
      * Return the Secondary IP set assigned to this domain.
-     *
-     * @return SecondaryIPSetInterface|null
      */
     protected function getIpSet(): ?SecondaryIPSetInterface
     {
-        if (! $this->ipSetId) {
+        if ($this->ipSetId === null) {
             return null;
         }
         return $this->client->secondaryipsets->get($this->ipSetId);

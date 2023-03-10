@@ -18,14 +18,9 @@ class IlluminatePaginatorFactory implements PaginatorFactoryInterface
     /**
      * Returns a LengthAwarePaginator for the items and paramters.
      *
-     * @param array $items
-     * @param int   $totalItems
-     * @param int   $perPage
-     * @param int   $currentPage
-     *
-     * @return LengthAwarePaginator
+     * @param mixed[] $items
      */
-    public function paginate(array $items, int $totalItems, int $perPage, int $currentPage = 1)
+    public function paginate(array $items, int $totalItems, int $perPage, int $currentPage = 1): LengthAwarePaginator
     {
         return new LengthAwarePaginator($items, $totalItems, $perPage, $currentPage);
     }

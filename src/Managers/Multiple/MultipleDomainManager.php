@@ -17,15 +17,11 @@ class MultipleDomainManager implements MultipleDomainManagerInterface
 {
     /**
      * The DNS Made Easy API Client.
-     *
-     * @var ClientInterface
      */
     protected ClientInterface $client;
 
     /**
      * The URI for managed domains.
-     *
-     * @var string
      */
     protected string $baseUri = '/dns/managed';
 
@@ -49,7 +45,7 @@ class MultipleDomainManager implements MultipleDomainManagerInterface
 
     public function create(array $domainNames, ?object $properties = null): array
     {
-        if (! $domainNames) {
+        if (count($domainNames) === 0) {
             return [];
         }
 
@@ -70,7 +66,7 @@ class MultipleDomainManager implements MultipleDomainManagerInterface
 
     public function update(array $ids, ?object $properties = null): void
     {
-        if (! $ids) {
+        if (count($ids) === 0) {
             return;
         }
 
@@ -82,7 +78,7 @@ class MultipleDomainManager implements MultipleDomainManagerInterface
 
     public function delete(array $ids): void
     {
-        if (! $ids) {
+        if (count($ids) === 0) {
             return;
         }
 
@@ -95,15 +91,11 @@ class MultipleDomainManager implements MultipleDomainManagerInterface
 
     /**
      * Gets the payload based on the supplied properties.
-     *
-     * @param object|null $properties
-     *
-     * @return object
      */
     protected function getPayload(?object $properties = null): object
     {
         $payload = new \stdClass();
-        if (! $properties) {
+        if ($properties === null) {
             return $payload;
         }
 
