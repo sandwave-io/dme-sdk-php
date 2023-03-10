@@ -3,7 +3,7 @@
 /.phpdoc
 composer.lock
 .phpunit.result.cache
-.php_cs.cache
+.phpunit.cache
 clover.xml
 .phpunit.cache
 report

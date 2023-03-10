@@ -4,26 +4,26 @@
     "type": "library",
     "require": {
         "ext-json": "*",
-        "php": "^7.4|^8.0",
+        "php": "^8.1",
         "ext-mbstring": "*",
-        "psr/container": "^1.0",
-        "guzzlehttp/psr7": "^1.4.2|^1.7",
-        "psr/log": "^1.1",
-        "spatie/enum": "^3.6",
-        "guzzlehttp/guzzle": "^6.2.0|^7.0",
-        "illuminate/pagination": "^5.8|^6.0|^7.0|^8.0|^9.0"
+        "psr/container": "^2.0.2",
+        "guzzlehttp/psr7": "^2.4.4",
+        "psr/log": "^3.0.0",
+        "spatie/enum": "^3.13.0",
+        "guzzlehttp/guzzle": "^7.5.0",
+        "illuminate/pagination": "^10.3.3"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.0",
-        "php-http/mock-client": "^1.4",
-        "phpstan/phpstan": "^0.12",
-        "phpunit/phpunit": "^9.0",
-        "monolog/monolog": "^2.1",
-        "symfony/var-dumper": "^5.1",
-        "phpstan/phpstan-strict-rules": "^0.12",
-        "phpstan/phpstan-phpunit": "^0.12",
-        "phpstan/phpstan-deprecation-rules": "^0.12",
-        "sandwave-io/php-cs-fixer-config": "^1.0"
+        "friendsofphp/php-cs-fixer": "^3.14.4",
+        "php-http/mock-client": "^1.5.0",
+        "phpstan/phpstan": "^1.10.6",
+        "phpunit/phpunit": "^10.0.15",
+        "monolog/monolog": "^3.3.1",
+        "symfony/var-dumper": "^6.2.7",
+        "phpstan/phpstan-strict-rules": "^1.5.0",
+        "phpstan/phpstan-phpunit": "^1.3.10",
+        "phpstan/phpstan-deprecation-rules": "^1.1.2",
+        "sandwave-io/php-cs-fixer-config": "^1.0.0"
     },
     "config": {
         "optimize-autoloader": true,
