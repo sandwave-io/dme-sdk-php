@@ -40,9 +40,24 @@
         }
     },
     "scripts": {
-        "cs-check": "phpcs",
-        "cs-fix": "phpcbf",
-        "test": "phpunit"
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "@test:types",
+            "@lint",
+            "@test:unit"
+        ],
+        "test:unit": [
+            "vendor/bin/phpunit --coverage-text"
+        ],
+        "test:types": [
+            "vendor/bin/phpstan analyze"
+        ],
+        "lint": [
+            "vendor/bin/php-cs-fixer fix --dry-run --diff --show-progress=none -vvv"
+        ],
+        "lint:fix": [
+            "vendor/bin/php-cs-fixer fix"
+        ]
     },
     "license": "MIT",
     "authors": [
