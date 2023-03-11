@@ -17,6 +17,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\AbstractLogger;
 use Psr\Log\NullLogger;
 
 class ClientTest extends TestCase
@@ -270,9 +271,9 @@ class ClientTest extends TestCase
         $client = new Client();
         Assert::assertInstanceOf(NullLogger::class, $client->getLogger(), 'Client logger should be NullLogger if not set');
 
-        // $logger = new TestLogger();
-        // $client->setLogger($logger);
-        // Assert::assertInstanceOf(TestLogger::class, $client->getLogger(), 'Client logger is not instance of set Logger');
+        $logger = $this->getMockForAbstractClass(AbstractLogger::class);
+        $client->setLogger($logger);
+        Assert::assertInstanceOf(AbstractLogger::class, $client->getLogger(), 'Client logger is not instance of set Logger');
     }
 
     public function testGetClientPaginator(): void
