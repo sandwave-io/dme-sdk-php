@@ -8,15 +8,7 @@
 [![Packagist PHP Version Support](https://img.shields.io/packagist/v/sandwave-io/dns-made-easy)](https://packagist.org/packages/sandwave-io/dns-made-easy)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/sandwave-io/dns-made-easy)](https://packagist.org/packages/sandwave-io/dns-made-easy)
 
-<p align="center">
-<br><br>
-<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/tractor_1f69c.png" />
- <br><br>
-</p>
-<p align="center">
 This package is a fork from the original <a href="https://github.com/DNSMadeEasy/dme-php-sdk">DNSMadeEasy/dme-php-sdk</a>. 
-<br><br>
-</p>
 
 This is an API client library for the [DNS Made Easy](https://www.dnsmadeeasy.com) API.
 
