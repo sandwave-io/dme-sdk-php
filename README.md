@@ -3,7 +3,7 @@
 # DNS Made Easy PHP Client Library
 
 [![Codecov](https://codecov.io/gh/sandwave-io/dme-sdk-php/branch/main/graph/badge.svg?token=CDT60O8O03)](https://app.codecov.io/gh/sandwave-io/dme-sdk-php)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sandwave-io/dme-sdk-php/CI)](https://github.com/sandwave-io/dme-sdk-php/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/sandwave-io/dme-sdk-php/test.yml?branch=main)](https://github.com/sandwave-io/dme-sdk-php/actions)
 [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/sandwave-io/dns-made-easy)](https://packagist.org/packages/sandwave-io/dns-made-easy)
 [![Packagist PHP Version Support](https://img.shields.io/packagist/v/sandwave-io/dns-made-easy)](https://packagist.org/packages/sandwave-io/dns-made-easy)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/sandwave-io/dns-made-easy)](https://packagist.org/packages/sandwave-io/dns-made-easy)
