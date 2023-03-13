@@ -62,7 +62,6 @@ abstract class Record extends AbstractModel implements RecordInterface
         'weight' => null,
         'priority' => null,
         'port' => null,
-
     ];
 
     protected array $editable = [
@@ -117,10 +116,10 @@ abstract class Record extends AbstractModel implements RecordInterface
     protected function parseApiData(object $data): void
     {
         if (property_exists($data, 'type') && $data->type) {
-            $data->type = new RecordType($data->type);
+            $data->type = RecordType::tryFrom($data->type);
         }
         if (property_exists($data, 'gtdLocation') && $data->gtdLocation) {
-            $data->gtdLocation = new GTDLocation($data->gtdLocation);
+            $data->gtdLocation = GTDLocation::tryFrom($data->gtdLocation);
         }
         parent::parseApiData($data);
     }

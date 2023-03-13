@@ -29,9 +29,9 @@ class CreateDomainRecordTest extends ApiTestCase
         $domainRecordManager->setDomain($domain);
         $record = $domainRecordManager->create();
         $record->name = 'mail';
-        $record->type = RecordType::A();
+        $record->type = RecordType::A;
         $record->value = '192.168.1.1';
-        $record->gtdLocation = GTDLocation::DEFAULT();
+        $record->gtdLocation = GTDLocation::DEFAULT;
         $record->ttl = 86400;
         $record->save();
         Assert::assertInstanceOf(DomainRecord::class, $record);

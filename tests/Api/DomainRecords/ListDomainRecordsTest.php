@@ -2,6 +2,8 @@
 
 namespace DnsMadeEasy\Tests\Api\DomainRecords;
 
+use DnsMadeEasy\Enums\GTDLocation;
+use DnsMadeEasy\Enums\RecordType;
 use DnsMadeEasy\Managers\DomainRecordManager;
 use DnsMadeEasy\Managers\ManagedDomainManager;
 use DnsMadeEasy\Models\ManagedDomain;
@@ -30,10 +32,10 @@ class ListDomainRecordsTest extends ApiTestCase
         Assert::assertEquals(3, $records->count(), 'Unexpected number of records.');
         $record = $records[0];
         Assert::assertInstanceOf(Record::class, $record);
-        Assert::assertEquals('A', $record->type);
+        Assert::assertEquals(RecordType::A, $record->type);
         Assert::assertEquals('208.94.148.2', $record->value);
         Assert::assertEquals('ns1', $record->name);
         Assert::assertEquals(1800, $record->ttl);
-        Assert::assertEquals('DEFAULT', $record->gtdLocation);
+        Assert::assertEquals(GTDLocation::DEFAULT, $record->gtdLocation);
     }
 }

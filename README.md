@@ -8,7 +8,7 @@
 [![Packagist PHP Version Support](https://img.shields.io/packagist/v/sandwave-io/dns-made-easy)](https://packagist.org/packages/sandwave-io/dns-made-easy)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/sandwave-io/dns-made-easy)](https://packagist.org/packages/sandwave-io/dns-made-easy)
 
-This package is a fork from the original <a href="https://github.com/DNSMadeEasy/dme-php-sdk">DNSMadeEasy/dme-php-sdk</a>. 
+This package is a fork from the original <a href="https://github.com/DNSMadeEasy/dme-php-sdk">DNSMadeEasy/dme-php-sdk</a>.
 
 This is an API client library for the [DNS Made Easy](https://www.dnsmadeeasy.com) API.
 
@@ -187,7 +187,7 @@ $domain->save();
 
 // Create a record on the domain
 $record = $domain->records->create();
-$record->type = \DnsMadeEasy\Enums\RecordType::A();
+$record->type = \DnsMadeEasy\Enums\RecordType::A;
 $record->name = 'www';
 $record->value = '192.0.2.1';
 $record->save();

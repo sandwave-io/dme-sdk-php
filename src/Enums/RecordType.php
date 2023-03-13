@@ -4,26 +4,23 @@ declare(strict_types = 1);
 
 namespace DnsMadeEasy\Enums;
 
-use Spatie\Enum\Enum;
-
 /**
  * Enums to represent record types.
  *
  * @package DnsMadeEasy\Enums
- *
- * @method static self A()
- * @method static self AAAA()
- * @method static self ANAME()
- * @method static self CNAME()
- * @method static self HTTPRED()
- * @method static self MX()
- * @method static self NS()
- * @method static self PTR()
- * @method static self SRV()
- * @method static self TXT()
- * @method static self SPF()
- * @method static self SOA()
  */
-class RecordType extends Enum
+enum RecordType: string
 {
+    case A = 'A';
+    case AAAA = 'AAAA';
+    case ANAME = 'ANAME';
+    case CNAME = 'CNAME';
+    case HTTPRED = 'HTTPRED';
+    case MX = 'MX';
+    case NS = 'NS';
+    case PTR = 'PTR';
+    case SRV = 'SRV';
+    case TXT = 'TXT';
+    case SPF = 'SPF';
+    case SOA = 'SOA';
 }
