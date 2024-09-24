@@ -214,4 +214,3 @@ $ vendor/bin/phpunit
 ```bash
 $ vendor/bin/php-cs-fixer fix
 ```
-
